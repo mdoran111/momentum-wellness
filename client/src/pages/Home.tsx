@@ -111,15 +111,15 @@ export default function Home() {
       </section>
 
       {/* E) Featured programs */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="flex justify-between items-end mb-12">
             <div>
-              <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-4">Featured Programs</h2>
-              <p className="text-muted-foreground max-w-2xl">A glimpse inside the library. Your membership unlocks them all.</p>
+              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">Featured Programs</h2>
+              <p className="text-white/80 max-w-2xl">A glimpse inside the library. Your membership unlocks them all.</p>
             </div>
             <Link href="/programs">
-              <a className="hidden md:flex items-center text-primary font-semibold hover:underline">
+              <a className="hidden md:flex items-center text-white font-semibold hover:underline">
                 View All <ArrowRight className="w-4 h-4 ml-1" />
               </a>
             </Link>
@@ -127,21 +127,21 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {/* Card 1 */}
-            <Card className="overflow-hidden border-border flex flex-col hover:shadow-lg transition-shadow">
+            <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow">
               <div className="h-48 overflow-hidden relative">
                 <img src={programStrength} alt="12-Week Strength" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
               </div>
               <CardHeader>
                 <div className="flex gap-2 mb-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded">Strength</span>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground bg-secondary px-2 py-1 rounded">Full Gym</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Strength</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">Full Gym</span>
                 </div>
-                <CardTitle>12-Week Strength Foundation</CardTitle>
-                <CardDescription>Build raw strength and master the big lifts with structured progression.</CardDescription>
+                <CardTitle className="text-white">12-Week Strength Foundation</CardTitle>
+                <CardDescription className="text-white/70">Build raw strength and master the big lifts with structured progression.</CardDescription>
               </CardHeader>
-              <CardFooter className="mt-auto pt-4 border-t">
+              <CardFooter className="mt-auto pt-4 border-t border-white/10">
                 <Link href="/programs">
-                  <a className="text-sm font-semibold text-primary flex items-center w-full justify-between group">
+                  <a className="text-sm font-semibold text-white flex items-center w-full justify-between group">
                     View Details <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Link>
@@ -149,21 +149,21 @@ export default function Home() {
             </Card>
 
             {/* Card 2 */}
-            <Card className="overflow-hidden border-border flex flex-col hover:shadow-lg transition-shadow">
+            <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow">
               <div className="h-48 overflow-hidden relative">
                 <img src={programFatloss} alt="Fat Loss" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
               </div>
               <CardHeader>
                 <div className="flex gap-2 mb-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-primary/10 px-2 py-1 rounded">Fat Loss</span>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-muted-foreground bg-secondary px-2 py-1 rounded">Dumbbells</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Fat Loss</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">Dumbbells</span>
                 </div>
-                <CardTitle>12-Week Fat Loss + Strength</CardTitle>
-                <CardDescription>Shed body fat while maintaining muscle mass with high-intensity intervals.</CardDescription>
+                <CardTitle className="text-white">12-Week Fat Loss + Strength</CardTitle>
+                <CardDescription className="text-white/70">Shed body fat while maintaining muscle mass with high-intensity intervals.</CardDescription>
               </CardHeader>
-              <CardFooter className="mt-auto pt-4 border-t">
+              <CardFooter className="mt-auto pt-4 border-t border-white/10">
                 <Link href="/programs">
-                  <a className="text-sm font-semibold text-primary flex items-center w-full justify-between group">
+                  <a className="text-sm font-semibold text-white flex items-center w-full justify-between group">
                     View Details <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                   </a>
                 </Link>
@@ -171,7 +171,7 @@ export default function Home() {
             </Card>
 
             {/* Card 3 */}
-            <Card className="overflow-hidden border-border flex flex-col hover:shadow-lg transition-shadow bg-primary text-white">
+            <Card className="overflow-hidden border-white/10 flex flex-col hover:shadow-lg transition-shadow bg-white/10 text-white">
               <CardHeader className="flex-1 flex flex-col justify-center items-center text-center p-8">
                 <LayoutGrid className="w-12 h-12 mb-6 text-white/80" />
                 <CardTitle className="text-2xl mb-4">And Many More...</CardTitle>
@@ -191,7 +191,7 @@ export default function Home() {
           
           <div className="mt-8 text-center md:hidden">
             <Link href="/programs">
-              <Button variant="outline" className="w-full">View All Programs</Button>
+              <Button variant="outline" className="w-full text-white border-white hover:bg-white/10">View All Programs</Button>
             </Link>
           </div>
         </div>
