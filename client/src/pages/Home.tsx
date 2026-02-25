@@ -20,7 +20,7 @@ export default function Home() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
             <Link href="/programs" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-white text-primary hover:bg-white/90 font-bold" data-testid="button-hero-start">
+              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] font-bold border-none" data-testid="button-hero-start">
                 Start Membership — $14.99/mo
               </Button>
             </Link>
@@ -205,7 +205,7 @@ export default function Home() {
             <div className="text-6xl font-bold font-heading mb-4">$14.99<span className="text-2xl text-white/70 font-normal">/month</span></div>
             <p className="text-xl text-white/90 mb-8 font-medium">Unlimited programs • Cancel anytime</p>
             <Link href="/programs">
-              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-12 h-14 bg-white text-primary hover:bg-white/90 font-bold" data-testid="button-pricing-teaser">
+              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-12 h-14 bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] font-bold border-none" data-testid="button-pricing-teaser">
                 Start Your Membership
               </Button>
             </Link>
@@ -251,7 +251,7 @@ export default function Home() {
           <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6">Start today. Build momentum.</h2>
           <p className="text-xl text-muted-foreground mb-10">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
           <Link href="/programs">
-            <Button size="lg" className="rounded-full text-base px-10 h-14 font-bold shadow-lg hover:shadow-xl transition-all" data-testid="button-final-cta">
+            <Button size="lg" className="rounded-full text-base px-10 h-14 font-bold shadow-lg hover:shadow-xl transition-all bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none" data-testid="button-final-cta">
               Start Membership Now
             </Button>
           </Link>

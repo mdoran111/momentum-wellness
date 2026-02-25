@@ -40,7 +40,7 @@ export default function Pricing() {
               </ul>
               
               <Link href="/programs" className="block w-full">
-                <Button className="w-full rounded-full h-14 text-lg font-bold shadow-md">
+                <Button className="w-full rounded-full h-14 text-lg font-bold shadow-md bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none">
                   Start Membership
                 </Button>
               </Link>
