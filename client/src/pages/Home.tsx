@@ -10,7 +10,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* A) Hero Section */}
-      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-[#333333]">
         <div className="container relative z-10 mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 animate-in slide-in-from-bottom-8 duration-700">
             Stronger. Faster.<br className="md:hidden" /> More Capable.
@@ -198,7 +198,7 @@ export default function Home() {
       </section>
 
       {/* F) Pricing teaser */}
-      <section className="py-24 bg-primary text-white">
+      <section className="py-24 bg-[#333333] text-white">
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-8">Simple, Transparent Pricing</h2>
           <div className="bg-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm border border-white/20">
@@ -246,9 +246,9 @@ export default function Home() {
       </section>
 
       {/* H) Final CTA */}
-      <section className="py-24 bg-secondary border-t">
+      <section className="py-24 bg-[#333333] border-t">
         <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6">Start today. Build momentum.</h2>
+          <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Start today. Build momentum.</h2>
           <p className="text-xl text-muted-foreground mb-10">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
           <Link href="/programs">
             <Button size="lg" className="rounded-full text-base px-10 h-14 font-bold shadow-lg hover:shadow-xl transition-all bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none" data-testid="button-final-cta">
