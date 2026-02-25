@@ -217,21 +217,21 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-4">Common Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-4">Frequently Asked Questions</h2>
           </div>
           
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-secondary/50 border">
+            <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2">What do I get with the membership?</h3>
-              <p className="text-muted-foreground">You get unlimited, instant access to our entire library of training programs, updates to existing programs, and all new programs added during your membership.</p>
+              <p className="text-white/80">You get unlimited, instant access to our entire library of training programs, updates to existing programs, and all new programs added during your membership.</p>
             </div>
-            <div className="p-6 rounded-2xl bg-secondary/50 border">
+            <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2">Can beginners do these programs?</h3>
-              <p className="text-muted-foreground">Absolutely. We have specific tracks designed for beginners, and all our programs include scalable options to match your current fitness level.</p>
+              <p className="text-white/80">Absolutely. We have specific tracks designed for beginners, and all our programs include scalable options to match your current fitness level.</p>
             </div>
-            <div className="p-6 rounded-2xl bg-secondary/50 border">
+            <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2">How do I cancel?</h3>
-              <p className="text-muted-foreground">You can cancel anytime directly from your account settings with just two clicks. No hidden fees or lengthy commitments.</p>
+              <p className="text-white/80">You can cancel anytime directly from your account settings with just two clicks. No hidden fees or lengthy commitments.</p>
             </div>
           </div>
           
