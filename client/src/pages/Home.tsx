@@ -54,11 +54,11 @@ export default function Home() {
       </section>
 
       {/* C) What you get */}
-      <section id="includes" className="py-24 bg-white">
+      <section id="includes" className="py-24 bg-primary text-white">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-4">Everything You Need To Succeed</h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">Stop guessing what to do when you walk into the gym. Your membership gives you the roadmap.</p>
+            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">Everything You Need To Succeed</h2>
+            <p className="text-white/80 max-w-2xl mx-auto">Stop guessing what to do when you walk into the gym. Your membership gives you the roadmap.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -70,12 +70,12 @@ export default function Home() {
               "New programs added regularly",
               "Cancel anytime"
             ].map((feature, i) => (
-              <Card key={i} className="border-border shadow-sm hover:shadow-md transition-shadow">
+              <Card key={i} className="bg-white/5 border-white/10 shadow-sm hover:shadow-md transition-shadow">
                 <CardHeader className="pb-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
-                    <CheckCircle2 className="w-6 h-6 text-primary" />
+                  <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-4">
+                    <CheckCircle2 className="w-6 h-6 text-white" />
                   </div>
-                  <CardTitle className="text-xl">{feature}</CardTitle>
+                  <CardTitle className="text-xl text-white">{feature}</CardTitle>
                 </CardHeader>
               </Card>
             ))}
