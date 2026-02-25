@@ -35,69 +35,68 @@
 :root {
   --radius: 0.5rem;
   
-  /* Momentum Wellness Brand Colors: Navy Blue & White */
+  /* Momentum Wellness Brand Colors: Navy Blue & Light Grey */
   /* Navy Blue: #0B1F3B -> HSL: 215 69% 14% */
-  /* White: #FFFFFF -> HSL: 0 0% 100% */
+  /* Light Grey: #D1D5DB -> HSL: 215 14% 83% */
   
-  --background: 0 0% 100%;
-  --foreground: 215 69% 14%;
+  --background: 215 69% 14%;
+  --foreground: 215 14% 83%;
   
-  --card: 0 0% 100%;
-  --card-foreground: 215 69% 14%;
+  --card: 215 69% 12%;
+  --card-foreground: 215 14% 83%;
   
-  --popover: 0 0% 100%;
-  --popover-foreground: 215 69% 14%;
+  --popover: 215 69% 12%;
+  --popover-foreground: 215 14% 83%;
   
-  /* Primary is Navy */
-  --primary: 215 69% 14%;
-  --primary-foreground: 0 0% 100%;
+  /* Primary is Light Grey for text contrast on Navy */
+  --primary: 215 14% 83%;
+  --primary-foreground: 215 69% 14%;
   
-  /* Secondary is a light blue/gray for subtle backgrounds */
-  --secondary: 215 20% 96%;
-  --secondary-foreground: 215 69% 14%;
+  --secondary: 215 60% 18%;
+  --secondary-foreground: 215 14% 83%;
   
-  --muted: 215 20% 96%;
-  --muted-foreground: 215 20% 40%;
+  --muted: 215 60% 18%;
+  --muted-foreground: 215 14% 60%;
   
-  --accent: 215 20% 96%;
-  --accent-foreground: 215 69% 14%;
+  --accent: 215 60% 20%;
+  --accent-foreground: 215 14% 83%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 215 20% 90%;
-  --input: 215 20% 90%;
-  --ring: 215 69% 14%;
+  --border: 215 60% 20%;
+  --input: 215 60% 20%;
+  --ring: 215 14% 83%;
 }
 
 .dark {
   --background: 215 69% 10%;
-  --foreground: 0 0% 100%;
+  --foreground: 215 14% 90%;
   
-  --card: 215 69% 12%;
-  --card-foreground: 0 0% 100%;
+  --card: 215 69% 8%;
+  --card-foreground: 215 14% 90%;
   
-  --popover: 215 69% 12%;
-  --popover-foreground: 0 0% 100%;
+  --popover: 215 69% 8%;
+  --popover-foreground: 215 14% 90%;
   
-  --primary: 0 0% 100%;
-  --primary-foreground: 215 69% 14%;
+  --primary: 215 14% 90%;
+  --primary-foreground: 215 69% 10%;
   
-  --secondary: 215 30% 20%;
-  --secondary-foreground: 0 0% 100%;
+  --secondary: 215 60% 15%;
+  --secondary-foreground: 215 14% 90%;
   
-  --muted: 215 30% 20%;
-  --muted-foreground: 215 20% 70%;
+  --muted: 215 60% 15%;
+  --muted-foreground: 215 14% 65%;
   
-  --accent: 215 30% 20%;
-  --accent-foreground: 0 0% 100%;
+  --accent: 215 60% 18%;
+  --accent-foreground: 215 14% 90%;
   
   --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 100%;
   
-  --border: 215 30% 20%;
-  --input: 215 30% 20%;
-  --ring: 215 20% 80%;
+  --border: 215 60% 18%;
+  --input: 215 60% 18%;
+  --ring: 215 14% 90%;
 }
 
 @layer base {
