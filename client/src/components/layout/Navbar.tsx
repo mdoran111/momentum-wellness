@@ -6,12 +6,11 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-[#333333] backdrop-blur supports-[backdrop-filter]:bg-[#333333]/80">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <a className="font-heading font-extrabold text-2xl tracking-tighter flex items-center gap-3 group">
+          <a className="font-heading font-extrabold text-2xl tracking-tighter flex items-center group">
             <div className="flex items-center">
               <span className="text-white">Momentum</span>
               <span className="text-[#0B1F3B]">Wellness</span>
             </div>
-            <img src="/logo-icon.png" alt="" className="h-8 w-8 object-contain brightness-0 invert opacity-90 group-hover:opacity-100 transition-opacity" />
           </a>
         </Link>
         <nav className="hidden md:flex gap-6">
