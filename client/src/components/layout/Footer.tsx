@@ -1,4 +1,5 @@
 import { Link } from "wouter";
+import { Instagram, Twitter, Facebook, Youtube } from "lucide-react";
 
 export function Footer() {
   return (
@@ -6,9 +7,23 @@ export function Footer() {
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="col-span-1 md:col-span-2">
           <h3 className="font-heading font-bold text-xl mb-4">Momentum Wellness</h3>
-          <p className="text-primary font-medium max-w-sm mb-4">
+          <p className="text-primary font-medium max-w-sm mb-6">
             Strength, fat loss, and performance programs built to be followed — with structure, progression, and zero guesswork.
           </p>
+          <div className="flex gap-4 mb-6">
+            <a href="https://instagram.com" target="_blank" rel="noreferrer" className="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all text-primary">
+              <Instagram className="w-5 h-5" />
+            </a>
+            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all text-primary">
+              <Twitter className="w-5 h-5" />
+            </a>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all text-primary">
+              <Facebook className="w-5 h-5" />
+            </a>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all text-primary">
+              <Youtube className="w-5 h-5" />
+            </a>
+          </div>
           <p className="text-xs text-primary/70 font-semibold italic">
             Disclaimer: The information provided is not medical advice. Always consult with a healthcare professional before starting any exercise program.
           </p>
