@@ -10,21 +10,19 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-[#333333] backdrop-blur supports-[backdrop-filter]:bg-[#333333]/80">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/">
-          <a className="font-heading font-extrabold text-2xl tracking-tighter flex items-center group">
+        <Link href="/" className="font-heading font-extrabold text-2xl tracking-tighter flex items-center group">
             <div className="flex items-center">
               <span className="text-white">Momentum</span>
               <span className="text-[#0B1F3B]">Wellness</span>
             </div>
-          </a>
         </Link>
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6">
-          <Link href="/about"><a className="text-sm font-medium text-white/70 hover:text-white transition-colors">About</a></Link>
-          <Link href="/programs"><a className="text-sm font-medium text-white/70 hover:text-white transition-colors">Programs</a></Link>
-          <Link href="/pricing"><a className="text-sm font-medium text-white/70 hover:text-white transition-colors">Pricing</a></Link>
-          <Link href="/faq"><a className="text-sm font-medium text-white/70 hover:text-white transition-colors">FAQ</a></Link>
+          <Link href="/about" className="text-sm font-medium text-white/70 hover:text-white transition-colors">About</Link>
+          <Link href="/programs" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Programs</Link>
+          <Link href="/pricing" className="text-sm font-medium text-white/70 hover:text-white transition-colors">Pricing</Link>
+          <Link href="/faq" className="text-sm font-medium text-white/70 hover:text-white transition-colors">FAQ</Link>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -51,10 +49,10 @@ export function Navbar() {
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-6 pt-10">
-                  <Link href="/about"><a onClick={() => setOpen(false)} className="text-lg font-medium text-white/70 hover:text-white transition-colors">About</a></Link>
-                  <Link href="/programs"><a onClick={() => setOpen(false)} className="text-lg font-medium text-white/70 hover:text-white transition-colors">Programs</a></Link>
-                  <Link href="/pricing"><a onClick={() => setOpen(false)} className="text-lg font-medium text-white/70 hover:text-white transition-colors">Pricing</a></Link>
-                  <Link href="/faq"><a onClick={() => setOpen(false)} className="text-lg font-medium text-white/70 hover:text-white transition-colors">FAQ</a></Link>
+                  <Link href="/about" onClick={() => setOpen(false)} className="text-lg font-medium text-white/70 hover:text-white transition-colors">About</Link>
+                  <Link href="/programs" onClick={() => setOpen(false)} className="text-lg font-medium text-white/70 hover:text-white transition-colors">Programs</Link>
+                  <Link href="/pricing" onClick={() => setOpen(false)} className="text-lg font-medium text-white/70 hover:text-white transition-colors">Pricing</Link>
+                  <Link href="/faq" onClick={() => setOpen(false)} className="text-lg font-medium text-white/70 hover:text-white transition-colors">FAQ</Link>
                   <div className="pt-6 border-t border-white/10">
                     <Link href="/programs">
                       <Button onClick={() => setOpen(false)} className="w-full rounded-full h-12 font-bold bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none">

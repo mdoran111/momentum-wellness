@@ -157,10 +157,8 @@ export default function Home() {
               <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">Featured Programs</h2>
               <p className="text-white/80 max-w-2xl">A glimpse inside the library. Your membership unlocks them all.</p>
             </div>
-            <Link href="/programs">
-              <a className="hidden md:flex items-center text-white font-semibold hover:underline">
+            <Link href="/programs" className="hidden md:flex items-center text-white font-semibold hover:underline">
                 View All <ArrowRight className="w-4 h-4 ml-1" />
-              </a>
             </Link>
           </div>
           
@@ -179,10 +177,8 @@ export default function Home() {
                 <CardDescription className="text-white/70">Build raw strength and master the big lifts with structured progression.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4 border-t border-white/10">
-                <Link href="/programs">
-                  <a className="text-sm font-semibold text-white flex items-center w-full justify-between group">
+                <Link href="/programs" className="text-sm font-semibold text-white flex items-center w-full justify-between group">
                     View Details <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                  </a>
                 </Link>
               </CardFooter>
             </Card>
@@ -201,10 +197,8 @@ export default function Home() {
                 <CardDescription className="text-white/70">Shed body fat while maintaining muscle mass with high-intensity intervals.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4 border-t border-white/10">
-                <Link href="/programs">
-                  <a className="text-sm font-semibold text-white flex items-center w-full justify-between group">
+                <Link href="/programs" className="text-sm font-semibold text-white flex items-center w-full justify-between group">
                     View Details <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                  </a>
                 </Link>
               </CardFooter>
             </Card>
