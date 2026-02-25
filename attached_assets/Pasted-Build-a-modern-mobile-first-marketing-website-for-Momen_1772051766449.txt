@@ -1,0 +1,113 @@
+Build a modern, mobile-first marketing website for Momentum Wellness that sells a $14.99/month subscription that unlocks all programs.
+
+Brand:
+- Name: Momentum Wellness
+- Colors: Navy blue (#0B1F3B) and White (#FFFFFF). Use navy as primary background/accents, white for text/background sections. Minimal, premium look.
+- Style: clean, athletic, high-trust, not “spammy.” Plenty of whitespace, strong typography, subtle shadows, rounded corners.
+
+Primary goal:
+- Convert visitors into paying subscribers for $14.99/month.
+- Every page should have a clear CTA: “Start Membership” that links to a placeholder URL: https://example.com/checkout (make it easy to swap later).
+
+Pages / routes:
+1) Home (/)
+2) Programs (/programs)
+3) Pricing (/pricing)
+4) FAQ (/faq)
+5) Contact (/contact)
+6) Legal (/legal) with placeholders for Terms + Privacy
+
+Site-wide requirements:
+- Sticky top nav with logo text “Momentum Wellness” and links to pages. Right side has primary button “Start Membership”.
+- Responsive design (mobile first).
+- SEO basics: unique title + meta description per page, semantic headings, accessible buttons/contrast.
+- Footer with: © current year Momentum Wellness, links to Legal, Contact, and a short disclaimer: “Not medical advice.”
+
+HOME PAGE SECTIONS (in this order):
+A) Hero:
+- Headline: “All Programs. One Membership.”
+- Subhead: “Strength, fat loss, and performance programs built to be followed — with structure, progression, and zero guesswork.”
+- Primary CTA button: “Start Membership — $14.99/mo”
+- Secondary CTA: “See What’s Included” scrolls to inclusion section.
+
+B) Social proof band (simple):
+- 3 short trust bullets (no fake numbers): “Structured programming”, “Beginner-to-advanced options”, “New programs added regularly”
+
+C) What you get (inclusion cards):
+- “Unlimited access to all programs”
+- “Step-by-step workouts inside the app”
+- “Progression built in”
+- “Simple weekly schedule”
+- “New programs added regularly”
+- “Cancel anytime”
+
+D) How it works (3 steps):
+1. Join membership
+2. Pick a program
+3. Start training today
+
+E) Featured programs preview (3–6 cards) with short descriptions:
+- “12-Week Strength Foundation”
+- “12-Week Fat Loss + Strength”
+- “Hypertrophy Builder”
+- “Athletic Performance”
+- “Minimal Equipment”
+- “Return-to-Training”
+Each card links to /programs.
+
+F) Pricing teaser:
+- Big price: “$14.99/month”
+- Includes: “Unlimited programs • Cancel anytime”
+- CTA button.
+
+G) FAQ preview (3 questions) linking to /faq
+
+H) Final CTA section:
+- Headline: “Start today. Build momentum.”
+- CTA button.
+
+PROGRAMS PAGE (/programs):
+- Intro copy: “Your membership unlocks every program below.”
+- Program library grid with filters (simple front-end filtering):
+  - Goals: Strength, Fat Loss, Muscle, Performance, Beginner
+  - Equipment: Full Gym, Dumbbells, Minimal Equipment
+- Each program has a detail modal or expandable section showing:
+  - Who it’s for
+  - Time per session
+  - Days per week
+  - Equipment needed
+  - What you’ll achieve
+- CTA repeated.
+
+PRICING PAGE (/pricing):
+- Single plan emphasized:
+  - “Momentum Membership — $14.99/mo”
+  - Bullet list of what’s included
+  - “Cancel anytime”
+- Add small comparison section:
+  - “Membership” vs “Hiring a coach” (no attacking, just neutral)
+- CTA.
+
+FAQ PAGE (/faq):
+Include at least these questions:
+- What do I get with the membership?
+- Can beginners do these programs?
+- Do I need a full gym?
+- How do I cancel?
+- Is nutrition included?
+- How do I access the workouts?
+- Are refunds offered?
+
+CONTACT PAGE (/contact):
+- Simple contact form (name, email, message) with client-side validation.
+- On submit: show success message (no backend required). Also list a placeholder email: support@momentumwellness.com (easy to change).
+
+LEGAL PAGE (/legal):
+- Sections for Terms of Service and Privacy Policy with placeholder text and a note: “Replace with finalized legal language.”
+
+Technical:
+- Use Next.js + React + TypeScript + Tailwind CSS.
+- No external paid services required.
+- Include simple analytics-ready structure (but don’t add tracking code).
+- Ensure everything runs in Replit and can be deployed.
+- Put all key copy directly in components (no CMS needed).
