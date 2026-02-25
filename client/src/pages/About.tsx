@@ -16,7 +16,7 @@ export default function About() {
             Momentum Wellness was built on one simple idea: progress should be structured, visible, and sustainable.
           </p>
           
-          <p>
+          <p className="text-center max-w-2xl mx-auto text-lg">
             We created a clean, subscription-based training platform designed for people who want real organization in their fitness — without hiring a coach or piecing together random workouts online.
           </p>
 
