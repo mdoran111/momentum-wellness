@@ -35,69 +35,69 @@
 :root {
   --radius: 0.5rem;
   
-  /* Momentum Wellness Brand Colors */
-  /* Navy Blue: #0B1F3B -> HSL: 215 69% 14% */
-  /* White: #FFFFFF -> HSL: 0 0% 100% */
+  /* Momentum Wellness Brand Colors: Red & Black */
+  /* Red: #E11D48 (Tailwind Rose 600) -> HSL: 347 77% 50% */
+  /* Black: #000000 -> HSL: 0 0% 0% */
   
   --background: 0 0% 100%;
-  --foreground: 215 69% 14%;
+  --foreground: 0 0% 0%;
   
   --card: 0 0% 100%;
-  --card-foreground: 215 69% 14%;
+  --card-foreground: 0 0% 0%;
   
   --popover: 0 0% 100%;
-  --popover-foreground: 215 69% 14%;
+  --popover-foreground: 0 0% 0%;
   
-  /* Primary is Navy */
-  --primary: 215 69% 14%;
+  /* Primary is Black */
+  --primary: 0 0% 0%;
   --primary-foreground: 0 0% 100%;
   
-  /* Secondary is a light blue/gray for subtle backgrounds */
-  --secondary: 215 20% 96%;
-  --secondary-foreground: 215 69% 14%;
+  /* Accent/Highlight is Red */
+  --accent: 347 77% 50%;
+  --accent-foreground: 0 0% 100%;
   
-  --muted: 215 20% 96%;
-  --muted-foreground: 215 20% 40%;
+  --secondary: 0 0% 96%;
+  --secondary-foreground: 0 0% 0%;
   
-  --accent: 215 20% 96%;
-  --accent-foreground: 215 69% 14%;
+  --muted: 0 0% 96%;
+  --muted-foreground: 0 0% 40%;
   
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 215 20% 90%;
-  --input: 215 20% 90%;
-  --ring: 215 69% 14%;
+  --border: 0 0% 90%;
+  --input: 0 0% 90%;
+  --ring: 347 77% 50%;
 }
 
 .dark {
-  --background: 215 69% 10%;
+  --background: 0 0% 0%;
   --foreground: 0 0% 100%;
   
-  --card: 215 69% 12%;
+  --card: 0 0% 5%;
   --card-foreground: 0 0% 100%;
   
-  --popover: 215 69% 12%;
+  --popover: 0 0% 5%;
   --popover-foreground: 0 0% 100%;
   
   --primary: 0 0% 100%;
-  --primary-foreground: 215 69% 14%;
+  --primary-foreground: 0 0% 0%;
   
-  --secondary: 215 30% 20%;
+  --secondary: 0 0% 10%;
   --secondary-foreground: 0 0% 100%;
   
-  --muted: 215 30% 20%;
-  --muted-foreground: 215 20% 70%;
+  --muted: 0 0% 15%;
+  --muted-foreground: 0 0% 70%;
   
-  --accent: 215 30% 20%;
+  --accent: 347 77% 50%;
   --accent-foreground: 0 0% 100%;
   
   --destructive: 0 62% 30%;
   --destructive-foreground: 0 0% 100%;
   
-  --border: 215 30% 20%;
-  --input: 215 30% 20%;
-  --ring: 215 20% 80%;
+  --border: 0 0% 15%;
+  --input: 0 0% 15%;
+  --ring: 347 77% 50%;
 }
 
 @layer base {
