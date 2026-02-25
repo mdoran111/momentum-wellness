@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { CheckCircle2, X } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Pricing() {
   return (

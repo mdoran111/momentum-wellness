@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, CheckCircle2 } from "lucide-react";
+import { Link } from "wouter";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);

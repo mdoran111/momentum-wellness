@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ArrowRight, Clock, CalendarDays, Dumbbell, Target } from "lucide-react";
+import { Link } from "wouter";
 import programStrength from '../assets/images/program-strength.png';
 import programFatloss from '../assets/images/program-fatloss.png';
 
