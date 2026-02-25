@@ -3,12 +3,12 @@ import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-[#1a1a1a] backdrop-blur supports-[backdrop-filter]:bg-[#1a1a1a]/80">
+    <header className="sticky top-0 z-50 w-full border-b bg-[#333333] backdrop-blur supports-[backdrop-filter]:bg-[#333333]/80">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
           <a className="font-heading font-bold text-xl tracking-tight flex items-center">
             <span className="text-white">Momentum</span>
-            <span className="text-[#3b82f6]">Wellness</span>
+            <span className="text-[#0B1F3B]">Wellness</span>
           </a>
         </Link>
         <nav className="hidden md:flex gap-6">
