@@ -3,18 +3,19 @@ import { Button } from "@/components/ui/button";
 
 export function Navbar() {
   return (
-    <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <header className="sticky top-0 z-50 w-full border-b bg-[#1a1a1a] backdrop-blur supports-[backdrop-filter]:bg-[#1a1a1a]/80">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <a className="font-heading font-bold text-xl tracking-tight text-primary flex items-center gap-2">
-            Momentum Wellness
+          <a className="font-heading font-bold text-xl tracking-tight flex items-center">
+            <span className="text-white">Momentum</span>
+            <span className="text-[#3b82f6]">Wellness</span>
           </a>
         </Link>
         <nav className="hidden md:flex gap-6">
-          <Link href="/about"><a className="text-sm font-medium hover:text-primary transition-colors">About</a></Link>
-          <Link href="/programs"><a className="text-sm font-medium hover:text-primary transition-colors">Programs</a></Link>
-          <Link href="/pricing"><a className="text-sm font-medium hover:text-primary transition-colors">Pricing</a></Link>
-          <Link href="/faq"><a className="text-sm font-medium hover:text-primary transition-colors">FAQ</a></Link>
+          <Link href="/about"><a className="text-sm font-medium text-white/70 hover:text-white transition-colors">About</a></Link>
+          <Link href="/programs"><a className="text-sm font-medium text-white/70 hover:text-white transition-colors">Programs</a></Link>
+          <Link href="/pricing"><a className="text-sm font-medium text-white/70 hover:text-white transition-colors">Pricing</a></Link>
+          <Link href="/faq"><a className="text-sm font-medium text-white/70 hover:text-white transition-colors">FAQ</a></Link>
         </nav>
         <div className="flex items-center gap-4">
           <Link href="/programs">
