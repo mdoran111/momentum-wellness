@@ -39,11 +39,11 @@ export default function Pricing() {
                 ))}
               </ul>
               
-              <a href="https://example.com/checkout" target="_blank" rel="noreferrer" className="block w-full">
+              <Link href="/programs" className="block w-full">
                 <Button className="w-full rounded-full h-14 text-lg font-bold shadow-md">
                   Start Membership
                 </Button>
-              </a>
+              </Link>
               <p className="text-center text-sm text-muted-foreground mt-4">7-day money-back guarantee.</p>
             </CardContent>
           </Card>

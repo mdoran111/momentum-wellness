@@ -16,11 +16,11 @@ export function Navbar() {
           <Link href="/faq"><a className="text-sm font-medium hover:text-primary transition-colors">FAQ</a></Link>
         </nav>
         <div className="flex items-center gap-4">
-          <a href="https://example.com/checkout" target="_blank" rel="noreferrer">
+          <Link href="/programs">
             <Button className="rounded-full px-6 font-semibold" data-testid="button-start-membership-nav">
               Start Membership
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </header>

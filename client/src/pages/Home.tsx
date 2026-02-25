@@ -29,11 +29,11 @@ export default function Home() {
             Strength, fat loss, and performance programs built to be followed — with structure, progression, and zero guesswork.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
-            <a href="https://example.com/checkout" target="_blank" rel="noreferrer" className="w-full sm:w-auto">
+            <Link href="/programs" className="w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-white text-primary hover:bg-white/90 font-bold" data-testid="button-hero-start">
                 Start Membership — $14.99/mo
               </Button>
-            </a>
+            </Link>
             <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white text-white hover:bg-white/10" onClick={() => document.getElementById('includes')?.scrollIntoView({ behavior: 'smooth' })}>
               See What's Included
             </Button>
@@ -214,11 +214,11 @@ export default function Home() {
           <div className="bg-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm border border-white/20">
             <div className="text-6xl font-bold font-heading mb-4">$14.99<span className="text-2xl text-white/70 font-normal">/month</span></div>
             <p className="text-xl text-white/90 mb-8 font-medium">Unlimited programs • Cancel anytime</p>
-            <a href="https://example.com/checkout" target="_blank" rel="noreferrer">
+            <Link href="/programs">
               <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-12 h-14 bg-white text-primary hover:bg-white/90 font-bold" data-testid="button-pricing-teaser">
                 Start Your Membership
               </Button>
-            </a>
+            </Link>
           </div>
         </div>
       </section>
@@ -260,11 +260,11 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6">Start today. Build momentum.</h2>
           <p className="text-xl text-muted-foreground mb-10">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
-          <a href="https://example.com/checkout" target="_blank" rel="noreferrer">
+          <Link href="/programs">
             <Button size="lg" className="rounded-full text-base px-10 h-14 font-bold shadow-lg hover:shadow-xl transition-all" data-testid="button-final-cta">
               Start Membership Now
             </Button>
-          </a>
+          </Link>
         </div>
       </section>
     </div>
