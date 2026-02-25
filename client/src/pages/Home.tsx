@@ -23,10 +23,10 @@ export default function Home() {
         
         <div className="container relative z-10 mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 animate-in slide-in-from-bottom-8 duration-700">
-            All Programs.<br className="md:hidden" /> One Membership.
+            Stronger. Faster.<br className="md:hidden" /> More Capable.
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 animate-in slide-in-from-bottom-8 duration-700 delay-150">
-            Strength, fat loss, and performance programs built to be followed — with structure, progression, and zero guesswork.
+            Expertly designed training plans for those who value structure, science-based progression, and real-world results.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
             <Link href="/programs" className="w-full sm:w-auto">
