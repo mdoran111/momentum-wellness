@@ -10,17 +10,7 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* A) Hero Section */}
-      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh]">
-        {/* Background Image & Overlay */}
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/logo.png" 
-            alt="Momentum Wellness Background" 
-            className="w-full h-full object-contain p-20 opacity-10"
-          />
-          <div className="absolute inset-0 bg-primary/10"></div>
-        </div>
-        
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
         <div className="container relative z-10 mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 animate-in slide-in-from-bottom-8 duration-700">
             Stronger. Faster.<br className="md:hidden" /> More Capable.
