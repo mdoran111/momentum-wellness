@@ -11,6 +11,7 @@ export function Navbar() {
           </a>
         </Link>
         <nav className="hidden md:flex gap-6">
+          <Link href="/about"><a className="text-sm font-medium hover:text-primary transition-colors">About</a></Link>
           <Link href="/programs"><a className="text-sm font-medium hover:text-primary transition-colors">Programs</a></Link>
           <Link href="/pricing"><a className="text-sm font-medium hover:text-primary transition-colors">Pricing</a></Link>
           <Link href="/faq"><a className="text-sm font-medium hover:text-primary transition-colors">FAQ</a></Link>
