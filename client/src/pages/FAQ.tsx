@@ -34,21 +34,21 @@ const FAQS = [
 
 export default function FAQ() {
   return (
-    <div className="pt-16 pb-24 min-h-screen bg-background">
+    <div className="pt-16 pb-24 min-h-screen bg-primary text-white">
       <div className="container mx-auto px-4 max-w-3xl">
         <div className="text-center mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6">Frequently Asked Questions</h1>
-          <p className="text-xl text-muted-foreground">Everything you need to know about the Momentum Wellness membership.</p>
+          <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Frequently Asked Questions</h1>
+          <p className="text-xl text-white/80">Everything you need to know about the Momentum Wellness membership.</p>
         </div>
 
-        <div className="bg-white rounded-3xl p-6 md:p-8 border shadow-sm">
+        <div className="bg-white/5 rounded-3xl p-6 md:p-8 border border-white/10 shadow-sm">
           <Accordion type="single" collapsible className="w-full">
             {FAQS.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b-primary/10">
-                <AccordionTrigger className="text-left font-bold text-lg hover:text-primary py-6">
+              <AccordionItem key={index} value={`item-${index}`} className="border-b-white/10">
+                <AccordionTrigger className="text-left font-bold text-lg hover:text-white py-6 text-white">
                   {faq.question}
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-muted-foreground pb-6 leading-relaxed">
+                <AccordionContent className="text-base text-white/70 pb-6 leading-relaxed">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -56,11 +56,11 @@ export default function FAQ() {
           </Accordion>
         </div>
 
-        <div className="mt-16 text-center bg-secondary p-8 rounded-3xl">
-          <h2 className="text-2xl font-bold font-heading mb-4">Still have questions?</h2>
-          <p className="text-muted-foreground mb-6">We're here to help. Reach out to our team and we'll get back to you shortly.</p>
+        <div className="mt-16 text-center bg-white/10 p-8 rounded-3xl border border-white/10">
+          <h2 className="text-2xl font-bold font-heading mb-4 text-white">Still have questions?</h2>
+          <p className="text-white/60 mb-6">We're here to help. Reach out to our team and we'll get back to you shortly.</p>
           <a href="/contact">
-            <Button variant="outline" className="rounded-full px-8 bg-white">
+            <Button variant="outline" className="rounded-full px-8 bg-white/10 text-white border-white/20 hover:bg-white/20">
               Contact Support
             </Button>
           </a>
