@@ -1,12 +1,51 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight, ShieldCheck, Dumbbell, Calendar, LayoutGrid } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Dumbbell, Calendar, LayoutGrid, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import heroBg from '../assets/images/hero-bg.png';
 import programStrength from '../assets/images/program-strength.png';
 import programFatloss from '../assets/images/program-fatloss.png';
 import { Link } from "wouter";
 
+const TESTIMONIALS = [
+  {
+    name: "Sarah Jenkins",
+    role: "Member since 2024",
+    content: "The structure of these programs is exactly what I needed. No more wandering around the gym wondering what to do next. I've seen more progress in 3 months than in 2 years of training on my own.",
+    avatar: "SJ"
+  },
+  {
+    name: "Marcus Thompson",
+    role: "Member since 2025",
+    content: "The 12-Week Strength Foundation changed everything for me. My big lifts have all increased by at least 20%, and my form has never been better. It's like having a high-end coach for a fraction of the price.",
+    avatar: "MT"
+  },
+  {
+    name: "Elena Rodriguez",
+    role: "Member since 2024",
+    content: "I love the minimal equipment programs. As someone who travels a lot for work, being able to get a structured, professional workout in a hotel gym or even a living room is a game changer.",
+    avatar: "ER"
+  }
+];
+
 export default function Home() {
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* A) Hero Section */}
@@ -209,6 +248,64 @@ export default function Home() {
                 Start Your Membership
               </Button>
             </Link>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="py-24 bg-secondary">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
+          <Quote className="w-12 h-12 text-primary/20 mx-auto mb-8" />
+          <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-12">Member Results</h2>
+          
+          <div className="relative bg-white p-8 md:p-16 rounded-[40px] shadow-xl border border-primary/5 min-h-[400px] flex flex-col justify-center">
+            <div className="transition-opacity duration-500 ease-in-out">
+              <p className="text-xl md:text-2xl text-primary font-medium leading-relaxed italic mb-8">
+                "{TESTIMONIALS[currentTestimonial].content}"
+              </p>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold mb-3 shadow-lg">
+                  {TESTIMONIALS[currentTestimonial].avatar}
+                </div>
+                <h4 className="font-bold text-lg text-primary">{TESTIMONIALS[currentTestimonial].name}</h4>
+                <p className="text-sm text-primary/60 font-medium">{TESTIMONIALS[currentTestimonial].role}</p>
+              </div>
+            </div>
+
+            {/* Navigation Buttons */}
+            <div className="absolute top-1/2 -translate-y-1/2 left-4 md:-left-6">
+              <Button 
+                variant="outline" 
+                size="icon" 
+                onClick={prevTestimonial}
+                className="rounded-full bg-white border-primary/10 shadow-lg hover:bg-primary hover:text-white transition-all h-12 w-12"
+              >
+                <ChevronLeft className="w-6 h-6" />
+              </Button>
+            </div>
+            <div className="absolute top-1/2 -translate-y-1/2 right-4 md:-right-6">
+              <Button 
+                variant="outline" 
+                size="icon" 
+                onClick={nextTestimonial}
+                className="rounded-full bg-white border-primary/10 shadow-lg hover:bg-primary hover:text-white transition-all h-12 w-12"
+              >
+                <ChevronRight className="w-6 h-6" />
+              </Button>
+            </div>
+
+            {/* Pagination Dots */}
+            <div className="flex justify-center gap-2 mt-8 md:absolute md:bottom-8 md:left-0 md:right-0">
+              {TESTIMONIALS.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentTestimonial(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    currentTestimonial === i ? "w-8 bg-primary" : "bg-primary/20"
+                  }`}
+                />
+              ))}
+            </div>
           </div>
         </div>
       </section>
