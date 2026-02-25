@@ -12,7 +12,7 @@ export default function About() {
         </div>
 
         <div className="prose prose-lg max-w-none text-muted-foreground space-y-8">
-          <p className="text-xl text-primary font-medium leading-relaxed">
+          <p className="text-xl text-primary font-medium leading-relaxed text-center max-w-2xl mx-auto">
             Momentum Wellness was built on one simple idea: progress should be structured, visible, and sustainable.
           </p>
           
