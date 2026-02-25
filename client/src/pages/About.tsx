@@ -7,7 +7,7 @@ export default function About() {
     <div className="pt-16 pb-24 min-h-screen bg-background">
       <div className="container mx-auto px-4 max-w-4xl">
         <div className="text-center mb-16 flex flex-col items-center">
-          <h1 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6 italic tracking-tight">Building Momentum.</h1>
+          <h1 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6 italic tracking-tight">Momentum built with you in mind.</h1>
           <div className="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
         </div>
 
