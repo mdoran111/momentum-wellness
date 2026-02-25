@@ -41,7 +41,7 @@ export default function About() {
             Inside the Momentum Wellness app, members get unlimited access to professionally built programs and a streamlined system for tracking their progress. Connect your wearable device — Apple Watch, Fitbit, or others — and centralize your key metrics in one place. Log body measurements, track trends over time, upload progress photos, and see your data clearly visualized.
           </p>
 
-          <div className="bg-secondary text-foreground p-8 rounded-3xl my-12 not-prose">
+          <div className="bg-primary text-white p-8 rounded-3xl my-12 not-prose">
             <ul className="space-y-4 text-xl font-heading font-bold">
               <li className="flex items-center gap-3"><Zap className="w-6 h-6 text-white/60" /> No clutter.</li>
               <li className="flex items-center gap-3"><Zap className="w-6 h-6 text-white/60" /> No unnecessary messaging.</li>
