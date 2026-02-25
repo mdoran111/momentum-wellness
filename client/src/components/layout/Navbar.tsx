@@ -6,11 +6,8 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/">
-          <a className="flex items-center gap-2 group">
-            <img src="/logo.png" alt="Momentum Wellness" className="h-10 w-auto object-contain" />
-            <span className="font-heading font-bold text-xl tracking-tight text-primary hidden sm:inline-block">
-              Momentum Wellness
-            </span>
+          <a className="font-heading font-bold text-xl tracking-tight text-primary flex items-center gap-2">
+            Momentum Wellness
           </a>
         </Link>
         <nav className="hidden md:flex gap-6">

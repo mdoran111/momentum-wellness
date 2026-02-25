@@ -14,11 +14,11 @@ export default function Home() {
         {/* Background Image & Overlay */}
         <div className="absolute inset-0 z-0">
           <img 
-            src={heroBg} 
-            alt="Premium gym facility" 
-            className="w-full h-full object-cover object-center"
+            src="/logo.png" 
+            alt="Momentum Wellness Background" 
+            className="w-full h-full object-contain p-20 opacity-10"
           />
-          <div className="absolute inset-0 bg-primary/80 backdrop-blur-[2px]"></div>
+          <div className="absolute inset-0 bg-primary/10"></div>
         </div>
         
         <div className="container relative z-10 mx-auto px-4 text-center">
