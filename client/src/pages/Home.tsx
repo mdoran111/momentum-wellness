@@ -7,28 +7,24 @@ import programStrength from '../assets/images/program-strength.png';
 import programFatloss from '../assets/images/program-fatloss.png';
 import { Link } from "wouter";
 
-import testimonialSarah from '../assets/images/testimonial-sarah.jpg';
-import testimonialMarcus from '../assets/images/testimonial-marcus.jpg';
-import testimonialElena from '../assets/images/testimonial-elena.jpg';
-
 const TESTIMONIALS = [
   {
     name: "Sarah Jenkins",
     role: "Member since 2024",
     content: "The structure of these programs is exactly what I needed. No more wandering around the gym wondering what to do next. I've seen more progress in 3 months than in 2 years of training on my own.",
-    image: testimonialSarah
+    avatar: "SJ"
   },
   {
     name: "Marcus Thompson",
     role: "Member since 2025",
     content: "The 12-Week Strength Foundation changed everything for me. My big lifts have all increased by at least 20%, and my form has never been better. It's like having a high-end coach for a fraction of the price.",
-    image: testimonialMarcus
+    avatar: "MT"
   },
   {
     name: "Elena Rodriguez",
     role: "Member since 2024",
     content: "I love the minimal equipment programs. As someone who travels a lot for work, being able to get a structured, professional workout in a hotel gym or even a living room is a game changer.",
-    image: testimonialElena
+    avatar: "ER"
   }
 ];
 
@@ -258,35 +254,26 @@ export default function Home() {
 
       {/* Testimonials Section */}
       <section className="py-24 bg-secondary">
-        <div className="container mx-auto px-4 max-w-5xl text-center">
+        <div className="container mx-auto px-4 max-w-4xl text-center">
           <Quote className="w-12 h-12 text-primary/20 mx-auto mb-8" />
           <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-12">Member Results</h2>
           
-          <div className="relative bg-white p-8 md:p-16 rounded-[40px] shadow-xl border border-primary/5 min-h-[450px] flex flex-col justify-center overflow-hidden">
-            <div className="flex flex-col md:flex-row items-center gap-12 transition-all duration-500 ease-in-out">
-              <div className="w-48 h-48 md:w-64 md:h-64 shrink-0 rounded-[32px] overflow-hidden shadow-2xl rotate-3 hover:rotate-0 transition-transform duration-500">
-                <img 
-                  src={TESTIMONIALS[currentTestimonial].image} 
-                  alt={TESTIMONIALS[currentTestimonial].name} 
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              
-              <div className="text-left flex-1">
-                <p className="text-xl md:text-2xl text-primary font-medium leading-relaxed italic mb-8 relative">
-                  <span className="absolute -left-6 -top-4 text-4xl text-primary/10 font-serif">"</span>
-                  {TESTIMONIALS[currentTestimonial].content}
-                  <span className="absolute -bottom-4 ml-1 text-4xl text-primary/10 font-serif">"</span>
-                </p>
-                <div>
-                  <h4 className="font-extrabold text-2xl text-primary">{TESTIMONIALS[currentTestimonial].name}</h4>
-                  <p className="text-primary/60 font-bold uppercase tracking-widest text-xs mt-1">{TESTIMONIALS[currentTestimonial].role}</p>
+          <div className="relative bg-white p-8 md:p-16 rounded-[40px] shadow-xl border border-primary/5 min-h-[400px] flex flex-col justify-center">
+            <div className="transition-opacity duration-500 ease-in-out">
+              <p className="text-xl md:text-2xl text-primary font-medium leading-relaxed italic mb-8">
+                "{TESTIMONIALS[currentTestimonial].content}"
+              </p>
+              <div className="flex flex-col items-center">
+                <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold mb-3 shadow-lg">
+                  {TESTIMONIALS[currentTestimonial].avatar}
                 </div>
+                <h4 className="font-bold text-lg text-primary">{TESTIMONIALS[currentTestimonial].name}</h4>
+                <p className="text-sm text-primary/60 font-medium">{TESTIMONIALS[currentTestimonial].role}</p>
               </div>
             </div>
 
             {/* Navigation Buttons */}
-            <div className="absolute bottom-8 right-8 flex gap-3">
+            <div className="absolute top-1/2 -translate-y-1/2 left-4 md:-left-6">
               <Button 
                 variant="outline" 
                 size="icon" 
@@ -295,6 +282,8 @@ export default function Home() {
               >
                 <ChevronLeft className="w-6 h-6" />
               </Button>
+            </div>
+            <div className="absolute top-1/2 -translate-y-1/2 right-4 md:-right-6">
               <Button 
                 variant="outline" 
                 size="icon" 
@@ -305,64 +294,21 @@ export default function Home() {
               </Button>
             </div>
 
-            {/* Pagination Line */}
-            <div className="absolute bottom-0 left-0 h-1 bg-primary/10 w-full">
-              <div 
-                className="h-full bg-primary transition-all duration-1000 ease-linear"
-                style={{ width: `${((currentTestimonial + 1) / TESTIMONIALS.length) * 100}%` }}
-              />
+            {/* Pagination Dots */}
+            <div className="flex justify-center gap-2 mt-8 md:absolute md:bottom-8 md:left-0 md:right-0">
+              {TESTIMONIALS.map((_, i) => (
+                <button
+                  key={i}
+                  onClick={() => setCurrentTestimonial(i)}
+                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                    currentTestimonial === i ? "w-8 bg-primary" : "bg-primary/20"
+                  }`}
+                />
+              ))}
             </div>
           </div>
         </div>
       </section>
-
-      {/* G) FAQ Preview */}
-      <section className="py-24 bg-white">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-4">Frequently Asked Questions</h2>
-          </div>
-          
-          <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
-              <h3 className="text-lg font-bold font-heading mb-2">What do I get with the membership?</h3>
-              <p className="text-white/80">You get unlimited, instant access to our entire library of training programs, updates to existing programs, and all new programs added during your membership.</p>
-            </div>
-            <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
-              <h3 className="text-lg font-bold font-heading mb-2">Can beginners do these programs?</h3>
-              <p className="text-white/80">Absolutely. We have specific tracks designed for beginners, and all our programs include scalable options to match your current fitness level.</p>
-            </div>
-            <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
-              <h3 className="text-lg font-bold font-heading mb-2">How do I cancel?</h3>
-              <p className="text-white/80">You can cancel anytime directly from your account settings with just two clicks. No hidden fees or lengthy commitments.</p>
-            </div>
-          </div>
-          
-          <div className="mt-10 text-center">
-            <Link href="/faq">
-              <a className="text-primary font-semibold hover:underline inline-flex items-center">
-                Read all FAQs <ArrowRight className="w-4 h-4 ml-1" />
-              </a>
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* H) Final CTA */}
-      <section className="py-24 bg-primary text-white border-t border-white/10">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Start today. Build momentum.</h2>
-          <p className="text-xl text-white/70 mb-10">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
-          <Link href="/programs">
-            <Button size="lg" className="rounded-full text-base px-10 h-14 font-bold shadow-lg hover:shadow-xl transition-all bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none" data-testid="button-final-cta">
-              Start Membership Now
-            </Button>
-          </Link>
-        </div>
-      </section>
-    </div>
-  );
-}
 
       {/* G) FAQ Preview */}
       <section className="py-24 bg-white">
