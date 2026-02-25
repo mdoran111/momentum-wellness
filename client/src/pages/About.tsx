@@ -6,7 +6,8 @@ export default function About() {
   return (
     <div className="pt-16 pb-24 min-h-screen bg-background">
       <div className="container mx-auto px-4 max-w-4xl">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 flex flex-col items-center">
+          <img src="/logo.png" alt="Momentum Wellness" className="h-24 w-auto mb-8" />
           <h1 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6">About Momentum Wellness</h1>
           <div className="h-1.5 w-20 bg-primary mx-auto rounded-full"></div>
         </div>

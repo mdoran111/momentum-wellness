@@ -5,7 +5,10 @@ export function Footer() {
     <footer className="bg-primary text-primary-foreground py-12">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="col-span-1 md:col-span-2">
-          <h3 className="font-heading font-bold text-xl mb-4">Momentum Wellness</h3>
+          <div className="flex items-center gap-3 mb-4">
+            <img src="/logo.png" alt="Momentum Wellness" className="h-12 w-auto brightness-0 invert" />
+            <h3 className="font-heading font-bold text-xl">Momentum Wellness</h3>
+          </div>
           <p className="text-primary-foreground/80 max-w-sm mb-4">
             Strength, fat loss, and performance programs built to be followed — with structure, progression, and zero guesswork.
           </p>
