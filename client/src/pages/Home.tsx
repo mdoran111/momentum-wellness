@@ -52,7 +52,7 @@ export default function Home() {
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
         <div className="container relative z-10 mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 animate-in slide-in-from-bottom-8 duration-700">
-            Stronger. Faster.<br className="md:hidden" /> More Capable.
+            Momentum That<br className="md:hidden" /> Moves With You.
           </h1>
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 animate-in slide-in-from-bottom-8 duration-700 delay-150">
             Expertly designed training plans for those who value structure, science-based progression, and real-world results.
