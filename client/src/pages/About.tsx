@@ -1,73 +1,146 @@
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { Activity, Shield, Smartphone, Zap } from "lucide-react";
+import { ShieldCheck, Zap, Target, LayoutGrid, ArrowRight } from "lucide-react";
+import aboutHero from '../assets/images/about-hero.jpg';
+import aboutTraining from '../assets/images/about-training.jpg';
 
 export default function About() {
   return (
-    <div className="pt-16 pb-24 min-h-screen bg-primary text-white">
-      <div className="container mx-auto px-4 max-w-4xl text-white">
-        <div className="text-center mb-16 flex flex-col items-center">
-          <h1 className="text-2xl md:text-4xl lg:text-5xl font-extrabold font-heading text-white mb-6 tracking-tight uppercase whitespace-nowrap">MOMENTUM built with you in mind.</h1>
-          <div className="h-1.5 w-20 bg-white mx-auto rounded-full"></div>
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative pt-32 pb-40 flex items-center justify-center overflow-hidden bg-primary">
+        <div className="container relative z-10 mx-auto px-4 text-center">
+          <div className="max-w-4xl mx-auto">
+            <h1 className="text-4xl md:text-7xl font-extrabold font-heading text-white mb-8 animate-in slide-in-from-bottom-8 duration-700 tracking-tight">
+              TRAINING BUILT FOR RESULTS.
+            </h1>
+            <p className="text-xl md:text-2xl text-white/90 leading-relaxed animate-in slide-in-from-bottom-8 duration-700 delay-150 max-w-3xl mx-auto">
+              Momentum Wellness is a commitment to structure, science, and the belief that elite training should be accessible to those who value their time and performance.
+            </p>
+          </div>
         </div>
+      </section>
 
-        <div className="prose prose-lg max-w-none text-white/80 space-y-8">
-          <p className="text-xl text-white font-medium leading-relaxed text-center max-w-2xl mx-auto">
-            Momentum Wellness was built on one simple idea: progress should be structured, visible, and sustainable through our signature 6-month progressive curricula.
-          </p>
-          
-          <p className="text-center max-w-2xl mx-auto text-lg text-white/80">
-            We've created a holistic, subscription-based training platform where your journey is mapped out for half a year, but delivered one focused month at a time to ensure total mastery and zero burnout.
-          </p>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12 not-prose">
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex gap-4">
-              <Activity className="w-6 h-6 text-white shrink-0" />
-              <div>
-                <h3 className="font-bold text-white mb-2">Device Integration</h3>
-                <p className="text-sm text-white/70">Connect your Apple Watch, Fitbit, or other wearables to centralize your key metrics.</p>
+      {/* Philosophy Section with Image */}
+      <section className="py-32 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+            <div className="relative">
+              <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl bg-secondary">
+                <img src={aboutTraining} alt="Focused training" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+              </div>
+              <div className="absolute -bottom-10 -right-10 bg-primary text-white p-10 rounded-3xl shadow-2xl hidden md:block max-w-xs">
+                <p className="font-bold text-xl leading-snug italic">
+                  "Progress isn't found in random effort. It's found in structured consistency."
+                </p>
               </div>
             </div>
-            <div className="p-6 rounded-2xl bg-white/5 border border-white/10 flex gap-4">
-              <Shield className="w-6 h-6 text-white shrink-0" />
-              <div>
-                <h3 className="font-bold text-white mb-2">Data Visualization</h3>
-                <p className="text-sm text-white/70">Log body measurements, track trends, and upload progress photos with clear visuals.</p>
+            
+            <div className="space-y-10">
+              <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight">A Phased Approach to Mastery</h2>
+              <div className="space-y-6 text-lg text-primary/70 leading-relaxed">
+                <p>
+                  We don't believe in "quick fixes" or random daily workouts. Real transformation requires a roadmap. Our philosophy is centered around structured 6-month cycles, delivered in focused monthly phases. 
+                </p>
+                <p>
+                  This ensures you master the mechanics, build the necessary capacity, and progress with intent. By focusing on one month at a time, we remove the guesswork and provide a clear path for continuous evolution.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6">
+                <div className="flex gap-5">
+                  <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0">
+                    <ShieldCheck className="w-7 h-7 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary text-lg">Expert Programming</h4>
+                    <p className="text-primary/60">Science-based plans built by professionals.</p>
+                  </div>
+                </div>
+                <div className="flex gap-5">
+                  <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0">
+                    <Target className="w-7 h-7 text-primary" />
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-primary text-lg">Precision Focus</h4>
+                    <p className="text-primary/60">One month of focused mastery at a time.</p>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
+        </div>
+      </section>
 
-          <p className="text-white/80">
-            Inside the Momentum Wellness app, members get unlimited access to professionally built programs and a streamlined system for tracking their progress. Connect your wearable device — Apple Watch, Fitbit, or others — and centralize your key metrics in one place. Log body measurements, track trends over time, upload progress photos, and see your data clearly visualized.
-          </p>
-
-          <div className="bg-white/10 text-white p-8 rounded-3xl my-12 not-prose border border-white/10">
-            <ul className="space-y-4 text-xl font-heading font-bold">
-              <li className="flex items-center gap-3"><Zap className="w-6 h-6 text-white/60" /> No clutter.</li>
-              <li className="flex items-center gap-3"><Zap className="w-6 h-6 text-white/60" /> No unnecessary messaging.</li>
-              <li className="flex items-center gap-3"><Zap className="w-6 h-6 text-white/60" /> No guesswork.</li>
-            </ul>
+      {/* Brand Values / Features */}
+      <section className="py-32 bg-secondary/50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6">The Momentum Standard</h2>
+            <p className="text-primary/60 max-w-2xl mx-auto text-xl">We've cut the noise to focus on what actually moves the needle.</p>
           </div>
 
-          <p className="text-white/80 text-center">
-            Just structured programming and intelligent tracking designed to help you stay consistent and see measurable results.
-          </p>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+            {[
+              {
+                icon: Zap,
+                title: "Zero Noise",
+                desc: "No unnecessary messaging, no community clutter. Just your training and your results."
+              },
+              {
+                icon: LayoutGrid,
+                title: "Elite Structure",
+                desc: "Every program is a comprehensive 6-month series designed for long-term development."
+              },
+              {
+                icon: ShieldCheck,
+                title: "Sustainable Growth",
+                desc: "Intelligent intensity that respects your recovery and ensures you stay in the game."
+              }
+            ].map((value, i) => (
+              <div key={i} className="bg-white p-10 rounded-[40px] shadow-sm border border-primary/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                <div className="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+                  <value.icon className="w-8 h-8" />
+                </div>
+                <h3 className="text-2xl font-bold text-primary mb-4">{value.title}</h3>
+                <p className="text-primary/70 leading-relaxed text-lg">{value.desc}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
 
-          <p className="text-white/80 text-center">
-            Whether you're building strength, losing fat, gaining muscle, or simply maintaining your edge, Momentum Wellness gives you the framework to move forward — at your pace, on your schedule.
-          </p>
+      {/* Full-width Image Break */}
+      <section className="h-[600px] relative overflow-hidden group">
+        <img src={aboutHero} alt="Premium gym environment" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+        <div className="absolute inset-0 bg-primary/30 backdrop-blur-[1px]"></div>
+        <div className="absolute inset-0 flex items-center justify-center">
+          <div className="h-20 w-px bg-white/30"></div>
+        </div>
+      </section>
 
-          <div className="text-center pt-12 border-t border-white/10 not-prose">
-            <p className="text-2xl font-heading font-bold text-white mb-2">All programs. One membership. $14.99 per month.</p>
-            <p className="text-white/60 mb-8 text-lg">Start building momentum today.</p>
+      {/* CTA Section */}
+      <section className="py-32 bg-primary text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+        
+        <div className="container relative z-10 mx-auto px-4 text-center max-w-4xl">
+          <h2 className="text-4xl md:text-6xl font-bold font-heading mb-8">Ready to build your momentum?</h2>
+          <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto">Join a community of individuals who value structure, performance, and real progress.</p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="/programs">
-              <Button size="lg" className="rounded-full px-12 h-14 text-lg font-bold bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none">
+              <Button size="lg" className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none shadow-2xl transition-all hover:scale-105">
                 Unlock Full Access
+              </Button>
+            </Link>
+            <Link href="/pricing">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold border-white text-white hover:bg-white/10 transition-all">
+                View Pricing
               </Button>
             </Link>
           </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

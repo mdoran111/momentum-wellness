@@ -152,7 +152,7 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-sm font-medium text-primary">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5" />
-              <span>Structured 6-month curricula</span>
+              <span>Structured 6-month series</span>
             </div>
             <div className="hidden md:block w-1 h-1 rounded-full bg-primary/30"></div>
             <div className="flex items-center gap-2">
