@@ -19,7 +19,7 @@ const TESTIMONIALS = [
   {
     name: "Marcus Thompson",
     role: "Member since 2025",
-    content: "The 12-Week Strength Foundation changed everything for me. My big lifts have all increased by at least 20%, and my form has never been better. It's like having a high-end coach for a fraction of the price.",
+    content: "The 6-month cycles changed everything for me. My big lifts have all increased by at least 20%, and my form has never been better. It's like having a high-end coach for a fraction of the price.",
     avatar: "MT"
   },
   {
@@ -27,6 +27,36 @@ const TESTIMONIALS = [
     role: "Member since 2024",
     content: "I love the minimal equipment programs. As someone who travels a lot for work, being able to get a structured, professional workout in a hotel gym or even a living room is a game changer.",
     avatar: "ER"
+  },
+  {
+    name: "David Kim",
+    role: "Member since 2023",
+    content: "The phased approach is brilliant. It stops me from getting overwhelmed and keeps me focused on mastering one thing at a time. My mobility has improved drastically since starting the Flow series.",
+    avatar: "DK"
+  },
+  {
+    name: "Jessica Low",
+    role: "Performance Athlete",
+    content: "As a busy professional, I don't have time to plan. Momentum does it for me with elite-level precision. The Apex Path has redefined what I thought was possible for my absolute strength.",
+    avatar: "JL"
+  },
+  {
+    name: "Ryan Patel",
+    role: "Member since 2024",
+    content: "I started with Zero Equipment and just moved to Essential Gear. The transition was seamless. The programs actually build on each other. It's truly a perpetual system that evolves with you.",
+    avatar: "RP"
+  },
+  {
+    name: "Sofia Valenti",
+    role: "Fitness Enthusiast",
+    content: "Finally, a subscription that isn't just random workouts. The 6-month cycles give me a real goal to work towards. I've never felt more athletic or more capable in my daily life.",
+    avatar: "SV"
+  },
+  {
+    name: "James Taylor",
+    role: "Amateur Athlete",
+    content: "The science behind the monthly unlocks is clear. You can't rush results, and Momentum respects that. It's the most sustainable progress I've ever made in over a decade of training.",
+    avatar: "JT"
   }
 ];
 
