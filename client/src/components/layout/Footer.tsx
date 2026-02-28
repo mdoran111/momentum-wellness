@@ -9,7 +9,7 @@ export function Footer() {
         <div className="col-span-1 md:col-span-2">
           <div className="flex items-center gap-2 mb-4">
             <img src={logo} alt="Momentum Wellness" className="h-8 w-auto" />
-            <h3 className="font-heading font-bold text-xl">Momentum Wellness</h3>
+            <h3 className="font-heading font-extrabold text-xl tracking-tighter">MomentumWellness</h3>
           </div>
           <p className="text-primary font-medium max-w-sm mb-6">
             Strength, fat loss, and performance programs built to be followed — with structure, progression, and zero guesswork.

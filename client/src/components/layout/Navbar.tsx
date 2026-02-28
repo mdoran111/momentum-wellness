@@ -12,9 +12,9 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b bg-white backdrop-blur supports-[backdrop-filter]:bg-white/80">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
         <Link href="/" className="flex items-center gap-2 group">
-          <div className="flex flex-col -space-y-1">
-            <span className="font-heading font-extrabold text-xl tracking-tighter text-primary">MOMENTUM</span>
-            <span className="font-heading font-bold text-[10px] tracking-[0.2em] text-primary/80 uppercase">Wellness</span>
+          <div className="flex items-baseline -space-x-px">
+            <span className="font-heading font-extrabold text-xl tracking-tighter text-primary">Momentum</span>
+            <span className="font-heading font-bold text-xl tracking-tighter text-primary/60">Wellness</span>
           </div>
         </Link>
 
