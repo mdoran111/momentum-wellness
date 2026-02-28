@@ -103,7 +103,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">Everything You Need To Succeed</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">Stop guessing what to do when you walk into the gym. Your membership gives you the roadmap.</p>
+            <p className="text-white/80 max-w-2xl mx-auto">Get the exact structure and guidance required to reach your goals, no matter where you train.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -112,15 +112,15 @@ export default function Home() {
               "Step-by-step workouts inside the app",
               "Progression built in",
               "Simple weekly schedule",
-              "New programs added regularly",
+              "Fresh content & updates",
               "Cancel anytime"
             ].map((feature, i) => (
-              <Card key={i} className="bg-white/5 border-white/10 shadow-sm hover:shadow-md transition-shadow">
+              <Card key={i} className="bg-white border-none shadow-xl hover:shadow-2xl transition-all duration-300 group">
                 <CardHeader className="pb-4">
-                  <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mb-4">
-                    <CheckCircle2 className="w-6 h-6 text-white" />
+                  <div className="w-12 h-12 bg-primary/5 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                    <CheckCircle2 className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
                   </div>
-                  <CardTitle className="text-xl text-white">{feature}</CardTitle>
+                  <CardTitle className="text-xl text-primary">{feature}</CardTitle>
                 </CardHeader>
               </Card>
             ))}
