@@ -1,5 +1,7 @@
+import { useState, useEffect } from "react";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
 import { Button } from "@/components/ui/button";
+import { useLocation } from "wouter";
 
 const FAQS = [
   {
@@ -33,6 +35,12 @@ const FAQS = [
 ];
 
 export default function FAQ() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
+
   return (
     <div className="pt-16 pb-24 min-h-screen bg-primary text-white">
       <div className="container mx-auto px-4 max-w-3xl">
