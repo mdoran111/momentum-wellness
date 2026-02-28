@@ -52,7 +52,7 @@ export default function Home() {
   const FEATURES = [
     {
       title: "Unlimited access to all programs",
-      description: "Instantly unlock our complete library of 6-month progressive curricula, covering all equipment levels and fitness goals."
+      description: "Instantly unlock our complete library of 6-month progressive curricula. To ensure total focus and optimal results, your training is delivered and followed one month at a time."
     },
     {
       title: "Step-by-step workouts inside the app",
@@ -60,7 +60,7 @@ export default function Home() {
     },
     {
       title: "Progression built in",
-      description: "Our algorithms and structured planning ensure you're always moving forward, with weights and intensity that scale with your strength."
+      description: "Our expert-built programs and structured planning ensure you're always moving forward, with weights and intensity that scale with your strength."
     },
     {
       title: "Zero guesswork",
