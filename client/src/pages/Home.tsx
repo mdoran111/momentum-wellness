@@ -87,7 +87,7 @@ export default function Home() {
             <div className="hidden md:block w-1 h-1 rounded-full bg-primary/30"></div>
             <div className="flex items-center gap-2">
               <LayoutGrid className="w-5 h-5" />
-              <span>Home, Minimal, & Full Gym Tracks</span>
+              <span>Home, Minimal, & Full Gym Programs</span>
             </div>
             <div className="hidden md:block w-1 h-1 rounded-full bg-primary/30"></div>
             <div className="flex items-center gap-2">
@@ -324,7 +324,7 @@ export default function Home() {
             </div>
             <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2">Can beginners do these programs?</h3>
-              <p className="text-white/80">Absolutely. We have specific tracks designed for beginners, and all our programs include scalable options to match your current fitness level.</p>
+              <p className="text-white/80">Absolutely. We have specific programs designed for all levels, and all our programs include scalable options to match your current fitness level.</p>
             </div>
             <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2">How do I cancel?</h3>
