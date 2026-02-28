@@ -30,7 +30,7 @@ export function Navbar() {
           <div className="hidden md:block">
             <Link href="/programs">
               <Button className="rounded-full px-6 font-semibold bg-primary text-white hover:bg-primary/90 border-none" data-testid="button-start-membership-nav">
-                Start Membership
+                Unlock Full Access
               </Button>
             </Link>
           </div>
@@ -57,7 +57,7 @@ export function Navbar() {
                   <div className="pt-6 border-t border-primary/10">
                     <Link href="/programs">
                       <Button onClick={() => setOpen(false)} className="w-full rounded-full h-12 font-bold bg-primary text-white hover:bg-primary/90 border-none">
-                        Start Membership
+                        Unlock Full Access
                       </Button>
                     </Link>
                   </div>

@@ -62,7 +62,7 @@ export default function About() {
             <p className="text-white/60 mb-8 text-lg">Start building momentum today.</p>
             <Link href="/programs">
               <Button size="lg" className="rounded-full px-12 h-14 text-lg font-bold bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none">
-                See The Programs
+                Unlock Full Access
               </Button>
             </Link>
           </div>

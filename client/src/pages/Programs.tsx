@@ -195,7 +195,7 @@ export default function Programs() {
                   <div className="pt-2">
                     <a href="https://example.com/checkout" target="_blank" rel="noreferrer" className="block w-full">
                       <Button className="w-full rounded-full h-12 text-base font-bold bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none">
-                        Start Membership to Unlock
+                        Unlock Full Access
                       </Button>
                     </a>
                   </div>

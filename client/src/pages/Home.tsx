@@ -216,7 +216,7 @@ export default function Home() {
             <div className="hidden md:block absolute top-10 left-[15%] right-[15%] h-[1px] bg-primary/10 z-0"></div>
             
             {[
-              { step: 1, title: "Join membership", desc: "Sign up and get instant access." },
+              { step: 1, title: "Unlock Access", desc: "Sign up and get instant access." },
               { step: 2, title: "Pick a program", desc: "Choose your goal and equipment." },
               { step: 3, title: "Start training", desc: "Follow workouts and build momentum." }
             ].map((item, i) => (
