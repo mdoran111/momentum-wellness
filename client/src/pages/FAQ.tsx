@@ -59,11 +59,11 @@ export default function FAQ() {
         <div className="mt-16 text-center bg-white/10 p-8 rounded-3xl border border-white/10">
           <h2 className="text-2xl font-bold font-heading mb-4 text-white">Still have questions?</h2>
           <p className="text-white/60 mb-6">We're here to help. Reach out to our team and we'll get back to you shortly.</p>
-          <a href="/contact">
+          <Link href="/programs">
             <Button variant="outline" className="rounded-full px-8 bg-white/10 text-white border-white/20 hover:bg-white/20">
               Contact Support
             </Button>
-          </a>
+          </Link>
         </div>
       </div>
     </div>

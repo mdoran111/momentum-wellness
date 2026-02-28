@@ -50,9 +50,11 @@ export default function Contact() {
                 </div>
                 <h3 className="text-2xl font-bold font-heading text-white mb-2">Message Sent!</h3>
                 <p className="text-white/70 mb-8">Thanks for reaching out. We'll be in touch shortly.</p>
-                <Button onClick={() => setSubmitted(false)} variant="outline" className="rounded-full text-white border-white/20 hover:bg-white/10">
-                  Send another message
-                </Button>
+                <Link href="/programs">
+                  <Button variant="outline" className="rounded-full text-white border-white/20 hover:bg-white/10">
+                    Send another message
+                  </Button>
+                </Link>
               </div>
             ) : (
               <form onSubmit={handleSubmit} className="space-y-6">
@@ -77,9 +79,11 @@ export default function Contact() {
                   <Textarea id="message" required placeholder="Write your message here..." className="min-h-[150px] bg-white/5 border-white/10 text-white placeholder:text-white/30" />
                 </div>
                 
-                <Button type="submit" className="w-full rounded-full h-12 text-base font-bold bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none">
-                  Send Message
-                </Button>
+                <Link href="/programs">
+                  <Button type="submit" className="w-full rounded-full h-12 text-base font-bold bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none">
+                    Send Message
+                  </Button>
+                </Link>
               </form>
             )}
           </div>
