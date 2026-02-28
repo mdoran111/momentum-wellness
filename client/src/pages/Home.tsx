@@ -3,8 +3,9 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { CheckCircle2, ArrowRight, ShieldCheck, Dumbbell, Calendar, LayoutGrid, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import heroBg from '../assets/images/hero-bg.png';
-import programStrength from '../assets/images/program-strength.png';
-import programFatloss from '../assets/images/program-fatloss.png';
+import programHome from '../assets/images/program-home.jpg';
+import programMinimal from '../assets/images/program-minimal.jpg';
+import programGym from '../assets/images/program-gym.jpg';
 import logo from '../assets/images/logo.png';
 import { Link } from "wouter";
 
@@ -169,18 +170,18 @@ export default function Home() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1 */}
+            {/* Card 1: Full Gym */}
             <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow">
               <div className="h-48 overflow-hidden relative">
-                <img src={programStrength} alt="12-Week Strength" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <img src={programGym} alt="12-Week Gym Mastery" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
               </div>
               <CardHeader>
                 <div className="flex gap-2 mb-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Strength</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Performance</span>
                   <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">Full Gym</span>
                 </div>
-                <CardTitle className="text-white">12-Week Strength Foundation</CardTitle>
-                <CardDescription className="text-white/70">Build raw strength and master the big lifts with structured progression.</CardDescription>
+                <CardTitle className="text-white">12-Week Gym Mastery</CardTitle>
+                <CardDescription className="text-white/70">Master the big lifts and build a powerful physique with professional gym equipment.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4 border-t border-white/10">
                 <Link href="/programs" className="text-sm font-semibold text-white flex items-center w-full justify-between group">
@@ -189,18 +190,18 @@ export default function Home() {
               </CardFooter>
             </Card>
 
-            {/* Card 2 */}
+            {/* Card 2: Minimal Equipment */}
             <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow">
               <div className="h-48 overflow-hidden relative">
-                <img src={programFatloss} alt="Fat Loss" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <img src={programMinimal} alt="12-Week Minimalist" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
               </div>
               <CardHeader>
                 <div className="flex gap-2 mb-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Fat Loss</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Efficiency</span>
                   <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">Dumbbells</span>
                 </div>
-                <CardTitle className="text-white">12-Week Fat Loss + Strength</CardTitle>
-                <CardDescription className="text-white/70">Shed body fat while maintaining muscle mass with high-intensity intervals.</CardDescription>
+                <CardTitle className="text-white">12-Week Minimalist</CardTitle>
+                <CardDescription className="text-white/70">Maximum results with minimal gear. Perfect for home gyms or busy spaces using just dumbbells.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4 border-t border-white/10">
                 <Link href="/programs" className="text-sm font-semibold text-white flex items-center w-full justify-between group">
@@ -209,20 +210,22 @@ export default function Home() {
               </CardFooter>
             </Card>
 
-            {/* Card 3 */}
-            <Card className="overflow-hidden border-white/10 flex flex-col hover:shadow-lg transition-shadow bg-white/10 text-white">
-              <CardHeader className="flex-1 flex flex-col justify-center items-center text-center p-8">
-                <LayoutGrid className="w-12 h-12 mb-6 text-white/80" />
-                <CardTitle className="text-2xl mb-4">And Many More...</CardTitle>
-                <CardDescription className="text-white/80 text-base">
-                  Hypertrophy Builder, Athletic Performance, Minimal Equipment, Return-to-Training, and new additions regularly.
-                </CardDescription>
+            {/* Card 3: At Home */}
+            <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow">
+              <div className="h-48 overflow-hidden relative">
+                <img src={programHome} alt="12-Week At Home" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+              </div>
+              <CardHeader>
+                <div className="flex gap-2 mb-2">
+                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Freedom</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">No Equipment</span>
+                </div>
+                <CardTitle className="text-white">12-Week At Home</CardTitle>
+                <CardDescription className="text-white/70">No gym, no problem. High-intensity bodyweight training you can do anywhere, anytime.</CardDescription>
               </CardHeader>
-              <CardFooter className="pt-4 border-t border-white/20 bg-white/5">
-                <Link href="/programs">
-                  <a className="text-sm font-semibold text-white flex items-center w-full justify-center group py-2">
-                    Explore The Library
-                  </a>
+              <CardFooter className="mt-auto pt-4 border-t border-white/10">
+                <Link href="/programs" className="text-sm font-semibold text-white flex items-center w-full justify-between group">
+                    View Details <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                 </Link>
               </CardFooter>
             </Card>
