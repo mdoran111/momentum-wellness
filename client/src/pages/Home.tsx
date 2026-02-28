@@ -111,7 +111,7 @@ export default function Home() {
               "Unlimited access to all programs",
               "Step-by-step workouts inside the app",
               "Progression built in",
-              "Simple weekly schedule",
+              "Zero guesswork",
               "Fresh content & updates",
               "Cancel anytime"
             ].map((feature, i) => (
