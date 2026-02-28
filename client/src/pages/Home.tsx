@@ -72,7 +72,7 @@ export default function Home() {
     },
     {
       title: "Cancel anytime",
-      description: "No contracts, no hidden fees. You can pause or cancel your membership directly from your account settings with two clicks."
+      description: "No contracts, no hidden fees. You have full control over your membership and can cancel whenever you choose."
     }
   ];
 
