@@ -52,8 +52,8 @@ export default function Home() {
       {/* A) Hero Section */}
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
         {/* Background Logo watermark */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-15 pointer-events-none overflow-hidden translate-y-32">
-          <img src={logo} alt="" className="w-[100%] max-w-none grayscale invert" />
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-10 pointer-events-none overflow-hidden translate-y-48">
+          <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert" />
         </div>
         
         <div className="container relative z-10 mx-auto px-4 text-center">
