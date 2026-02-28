@@ -136,7 +136,7 @@ export default function Home() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
             <Link href="/programs" className="w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] font-bold border-none" data-testid="button-hero-start">
-                Start Membership — $14.99/mo
+                Unlock Full Access — $14.99/mo
               </Button>
             </Link>
             <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white text-white hover:bg-white/10" onClick={() => document.getElementById('includes')?.scrollIntoView({ behavior: 'smooth' })}>
@@ -324,7 +324,7 @@ export default function Home() {
             <p className="text-xl text-white/90 mb-8 font-medium">Unlimited programs • Cancel anytime</p>
             <Link href="/programs">
               <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-12 h-14 bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] font-bold border-none" data-testid="button-pricing-teaser">
-                Start Your Membership
+                Unlock Full Access
               </Button>
             </Link>
           </div>
@@ -428,7 +428,7 @@ export default function Home() {
           <p className="text-xl text-white/70 mb-10">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
           <Link href="/programs">
             <Button size="lg" className="rounded-full text-base px-10 h-14 font-bold shadow-lg hover:shadow-xl transition-all bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none" data-testid="button-final-cta">
-              Start Membership Now
+              Get Started Today
             </Button>
           </Link>
         </div>

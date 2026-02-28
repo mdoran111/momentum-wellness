@@ -42,7 +42,7 @@ export default function Pricing() {
               
               <Link href="/programs" className="block w-full">
                 <Button className="w-full rounded-full h-14 text-lg font-bold shadow-md bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none">
-                  Start Membership
+                  Unlock Full Access
                 </Button>
               </Link>
               <p className="text-center text-sm text-white/60 mt-4">7-day money-back guarantee.</p>

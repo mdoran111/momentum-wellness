@@ -215,7 +215,7 @@ export default function Programs() {
           <p className="text-white/80 mb-8 max-w-xl mx-auto">Get instant access to all programs above, plus every future program we release, for just $14.99/month.</p>
           <a href="https://example.com/checkout" target="_blank" rel="noreferrer">
             <Button size="lg" className="rounded-full bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] font-bold px-8 h-12 border-none">
-              Start Membership
+              Unlock Full Access
             </Button>
           </a>
         </div>
