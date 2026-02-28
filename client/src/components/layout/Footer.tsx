@@ -1,12 +1,16 @@
 import { Link } from "wouter";
 import { Instagram, Twitter, Facebook, Youtube } from "lucide-react";
+import logo from "@/assets/images/logo.png";
 
 export function Footer() {
   return (
     <footer className="bg-white text-primary py-12">
       <div className="container mx-auto px-4 grid grid-cols-1 md:grid-cols-4 gap-8">
         <div className="col-span-1 md:col-span-2">
-          <h3 className="font-heading font-bold text-xl mb-4">Momentum Wellness</h3>
+          <div className="flex items-center gap-2 mb-4">
+            <img src={logo} alt="Momentum Wellness" className="h-8 w-auto" />
+            <h3 className="font-heading font-bold text-xl">Momentum Wellness</h3>
+          </div>
           <p className="text-primary font-medium max-w-sm mb-6">
             Strength, fat loss, and performance programs built to be followed — with structure, progression, and zero guesswork.
           </p>

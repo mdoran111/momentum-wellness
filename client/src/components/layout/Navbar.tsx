@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import logo from "@/assets/images/logo.png";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -10,11 +11,12 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b bg-[#333333] backdrop-blur supports-[backdrop-filter]:bg-[#333333]/80">
       <div className="container mx-auto px-4 h-16 flex items-center justify-between">
-        <Link href="/" className="font-heading font-extrabold text-2xl tracking-tighter flex items-center group">
-            <div className="flex items-center">
-              <span className="text-white">Momentum</span>
-              <span className="text-[#0B1F3B]">Wellness</span>
-            </div>
+        <Link href="/" className="flex items-center gap-2 group">
+          <img src={logo} alt="Momentum Wellness" className="h-10 w-auto invert brightness-0" />
+          <div className="flex flex-col -space-y-1">
+            <span className="font-heading font-extrabold text-xl tracking-tighter text-white">MOMENTUM</span>
+            <span className="font-heading font-bold text-[10px] tracking-[0.2em] text-[#0B1F3B] uppercase">Wellness</span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}

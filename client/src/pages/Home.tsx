@@ -5,6 +5,7 @@ import { CheckCircle2, ArrowRight, ShieldCheck, Dumbbell, Calendar, LayoutGrid, 
 import heroBg from '../assets/images/hero-bg.png';
 import programStrength from '../assets/images/program-strength.png';
 import programFatloss from '../assets/images/program-fatloss.png';
+import logo from '../assets/images/logo.png';
 import { Link } from "wouter";
 
 const TESTIMONIALS = [
@@ -50,6 +51,11 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* A) Hero Section */}
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
+        {/* Background Logo watermark */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-5 pointer-events-none overflow-hidden">
+          <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert" />
+        </div>
+        
         <div className="container relative z-10 mx-auto px-4 text-center">
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 animate-in slide-in-from-bottom-8 duration-700">
             Momentum That<br className="md:hidden" /> Moves With You.
