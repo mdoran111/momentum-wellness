@@ -20,10 +20,10 @@ export function Navbar() {
 
         {/* Desktop Navigation */}
         <nav className="hidden md:flex gap-6">
-          <Link href="/programs" className="text-sm font-medium text-primary/70 hover:text-primary transition-colors">About</Link>
+          <Link href="/about" className="text-sm font-medium text-primary/70 hover:text-primary transition-colors">About</Link>
           <Link href="/programs" className="text-sm font-medium text-primary/70 hover:text-primary transition-colors">Programs</Link>
-          <Link href="/programs" className="text-sm font-medium text-primary/70 hover:text-primary transition-colors">Pricing</Link>
-          <Link href="/programs" className="text-sm font-medium text-primary/70 hover:text-primary transition-colors">FAQ</Link>
+          <Link href="/pricing" className="text-sm font-medium text-primary/70 hover:text-primary transition-colors">Pricing</Link>
+          <Link href="/faq" className="text-sm font-medium text-primary/70 hover:text-primary transition-colors">FAQ</Link>
         </nav>
 
         <div className="flex items-center gap-4">
@@ -50,10 +50,10 @@ export function Navbar() {
                   </SheetTitle>
                 </SheetHeader>
                 <nav className="flex flex-col gap-6 pt-10">
-                  <Link href="/programs" onClick={() => setOpen(false)} className="text-lg font-medium text-primary/70 hover:text-primary transition-colors">About</Link>
+                  <Link href="/about" onClick={() => setOpen(false)} className="text-lg font-medium text-primary/70 hover:text-primary transition-colors">About</Link>
                   <Link href="/programs" onClick={() => setOpen(false)} className="text-lg font-medium text-primary/70 hover:text-primary transition-colors">Programs</Link>
-                  <Link href="/programs" onClick={() => setOpen(false)} className="text-lg font-medium text-primary/70 hover:text-primary transition-colors">Pricing</Link>
-                  <Link href="/programs" onClick={() => setOpen(false)} className="text-lg font-medium text-primary/70 hover:text-primary transition-colors">FAQ</Link>
+                  <Link href="/pricing" onClick={() => setOpen(false)} className="text-lg font-medium text-primary/70 hover:text-primary transition-colors">Pricing</Link>
+                  <Link href="/faq" onClick={() => setOpen(false)} className="text-lg font-medium text-primary/70 hover:text-primary transition-colors">FAQ</Link>
                   <div className="pt-6 border-t border-primary/10">
                     <Link href="/programs">
                       <Button onClick={() => setOpen(false)} className="w-full rounded-full h-12 font-bold bg-primary text-white hover:bg-primary/90 border-none">

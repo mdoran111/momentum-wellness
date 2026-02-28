@@ -188,11 +188,11 @@ export default function Programs() {
                   </div>
                   
                   <div className="pt-2">
-                    <Link href="/programs">
+                    <a href="https://example.com/checkout" target="_blank" rel="noreferrer" className="block w-full">
                       <Button className="w-full rounded-full h-12 text-base font-bold bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none">
                         Start Membership to Unlock
                       </Button>
-                    </Link>
+                    </a>
                   </div>
                 </DialogContent>
               </Dialog>
@@ -208,11 +208,11 @@ export default function Programs() {
         <div className="mt-24 p-12 bg-white/10 rounded-3xl text-center text-white border border-white/10">
           <h2 className="text-3xl font-bold font-heading mb-4">Ready to start training?</h2>
           <p className="text-white/80 mb-8 max-w-xl mx-auto">Get instant access to all programs above, plus every future program we release, for just $14.99/month.</p>
-          <Link href="/programs">
+          <a href="https://example.com/checkout" target="_blank" rel="noreferrer">
             <Button size="lg" className="rounded-full bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] font-bold px-8 h-12 border-none">
               Start Membership
             </Button>
-          </Link>
+          </a>
         </div>
       </div>
     </div>

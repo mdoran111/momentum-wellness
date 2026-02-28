@@ -139,11 +139,9 @@ export default function Home() {
                 Start Membership — $14.99/mo
               </Button>
             </Link>
-            <Link href="/programs" className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white text-white hover:bg-white/10">
-                See What's Included
-              </Button>
-            </Link>
+            <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white text-white hover:bg-white/10" onClick={() => document.getElementById('includes')?.scrollIntoView({ behavior: 'smooth' })}>
+              See What's Included
+            </Button>
           </div>
         </div>
       </section>
@@ -414,10 +412,10 @@ export default function Home() {
           </div>
           
           <div className="mt-10 text-center">
-            <Link href="/programs">
-              <span className="text-primary font-semibold hover:underline inline-flex items-center cursor-pointer">
+            <Link href="/faq">
+              <a className="text-primary font-semibold hover:underline inline-flex items-center">
                 Read all FAQs <ArrowRight className="w-4 h-4 ml-1" />
-              </span>
+              </a>
             </Link>
           </div>
         </div>
@@ -428,11 +426,11 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Start today. Build momentum.</h2>
           <p className="text-xl text-white/70 mb-10">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
-            <Link href="/programs">
-              <Button size="lg" className="rounded-full text-base px-10 h-14 font-bold shadow-lg hover:shadow-xl transition-all bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none" data-testid="button-final-cta">
-                Start Membership Now
-              </Button>
-            </Link>
+          <Link href="/programs">
+            <Button size="lg" className="rounded-full text-base px-10 h-14 font-bold shadow-lg hover:shadow-xl transition-all bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none" data-testid="button-final-cta">
+              Start Membership Now
+            </Button>
+          </Link>
         </div>
       </section>
     </div>
