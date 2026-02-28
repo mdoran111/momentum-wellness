@@ -33,26 +33,37 @@ const TESTIMONIALS = [
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [expandedFeature, setExpandedFeature] = useState<number | null>(null);
+  const [isAnimating, setIsAnimating] = useState(false);
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
-    }, 5000);
+      handleNext();
+    }, 6000);
     return () => clearInterval(timer);
-  }, []);
+  }, [currentTestimonial]);
 
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
+  const handleNext = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
+      setIsAnimating(false);
+    }, 300);
   };
 
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+  const handlePrev = () => {
+    if (isAnimating) return;
+    setIsAnimating(true);
+    setTimeout(() => {
+      setCurrentTestimonial((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+      setIsAnimating(false);
+    }, 300);
   };
 
   const FEATURES = [
     {
       title: "Unlimited access to all programs",
-      description: "Instantly unlock our library of elite 6-month cycles. To ensure total focus and optimal results, your training is delivered in progressive monthly phases designed for perpetual growth."
+      description: "Instantly unlock our library of elite 6-month cycles. To ensure total focus and mastery, your training is unlocked and followed phase by phase, month by month, providing a clear path for perpetual growth."
     },
     {
       title: "Step-by-step workouts inside the app",
@@ -294,10 +305,10 @@ export default function Home() {
       <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <Quote className="w-12 h-12 text-primary/20 mx-auto mb-8" />
-          <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-12">Member Results</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-12">Member Success Stories</h2>
           
-          <div className="relative bg-white p-8 md:p-16 rounded-[40px] shadow-xl border border-primary/5 min-h-[400px] flex flex-col justify-center">
-            <div className="transition-opacity duration-500 ease-in-out">
+          <div className="relative bg-white p-8 md:p-16 rounded-[40px] shadow-xl border border-primary/5 min-h-[400px] flex flex-col justify-center overflow-hidden">
+            <div className={`transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
               <p className="text-xl md:text-2xl text-primary font-medium leading-relaxed italic mb-8">
                 "{TESTIMONIALS[currentTestimonial].content}"
               </p>
@@ -311,21 +322,21 @@ export default function Home() {
             </div>
 
             {/* Navigation Buttons */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-4 md:-left-6">
+            <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-8">
               <Button 
                 variant="outline" 
                 size="icon" 
-                onClick={prevTestimonial}
+                onClick={handlePrev}
                 className="rounded-full bg-white border-primary/10 shadow-lg hover:bg-primary hover:text-white transition-all h-12 w-12"
               >
                 <ChevronLeft className="w-6 h-6" />
               </Button>
             </div>
-            <div className="absolute top-1/2 -translate-y-1/2 right-4 md:-right-6">
+            <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-8">
               <Button 
                 variant="outline" 
                 size="icon" 
-                onClick={nextTestimonial}
+                onClick={handleNext}
                 className="rounded-full bg-white border-primary/10 shadow-lg hover:bg-primary hover:text-white transition-all h-12 w-12"
               >
                 <ChevronRight className="w-6 h-6" />
