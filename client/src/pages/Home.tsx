@@ -30,6 +30,7 @@ const TESTIMONIALS = [
   }
 ];
 
+export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [expandedFeature, setExpandedFeature] = useState<number | null>(null);
 
@@ -74,21 +75,6 @@ const TESTIMONIALS = [
       description: "No contracts, no hidden fees. You can pause or cancel your membership directly from your account settings with two clicks."
     }
   ];
-
-  return (
-    const timer = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
-    }, 5000);
-    return () => clearInterval(timer);
-  }, []);
-
-  const nextTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
-  };
-
-  const prevTestimonial = () => {
-    setCurrentTestimonial((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
-  };
 
   return (
     <div className="flex flex-col min-h-screen">
