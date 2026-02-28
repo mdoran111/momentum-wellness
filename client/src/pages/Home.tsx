@@ -52,7 +52,7 @@ export default function Home() {
   const FEATURES = [
     {
       title: "Unlimited access to all programs",
-      description: "Instantly unlock our complete library of 6-month progressive curricula. To ensure total focus and optimal results, your training is delivered and followed one month at a time."
+      description: "Instantly unlock our library of elite 6-month cycles. To ensure total focus and optimal results, your training is delivered in progressive monthly phases designed for perpetual growth."
     },
     {
       title: "Step-by-step workouts inside the app",
@@ -132,7 +132,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">Everything You Need To Succeed</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">Get the exact structure and guidance required to reach your goals with our 6-month progressive curriculums, delivered one focused month at a time.</p>
+            <p className="text-white/80 max-w-2xl mx-auto">Access a continuous evolution of elite training. Our structured 6-month cycles are delivered in focused monthly phases, providing a perpetual roadmap for long-term growth and performance.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
