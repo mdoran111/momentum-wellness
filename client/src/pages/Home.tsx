@@ -43,7 +43,7 @@ const TESTIMONIALS = [
   {
     name: "Ryan Patel",
     role: "Member since 2024",
-    content: "I started with Zero Equipment and just moved to Essential Gear. The transition was seamless. The programs actually build on each other. It's truly a perpetual system that evolves with you.",
+    content: "I started with Zero Equipment and just moved to Essential Gear. The transition was seamless. The programs actually build on each other. It's truly a continuous system that evolves with you.",
     avatar: "RP"
   },
   {
@@ -93,7 +93,7 @@ export default function Home() {
   const FEATURES = [
     {
       title: "Unlimited access to all programs",
-      description: "Instantly unlock our library of elite 6-month cycles. To ensure total focus and mastery, your training is unlocked and followed phase by phase, month by month, providing a clear path for perpetual growth."
+      description: "Instantly unlock our library of elite 6-month cycles. To ensure total focus and mastery, your training is unlocked and followed phase by phase, month by month, providing a clear path for continuous growth."
     },
     {
       title: "Step-by-step workouts inside the app",
@@ -173,7 +173,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">Everything You Need To Succeed</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">Access a continuous evolution of elite training. Our structured 6-month cycles are delivered in focused monthly phases, providing a perpetual roadmap for long-term growth and performance.</p>
+            <p className="text-white/80 max-w-2xl mx-auto">Access a continuous evolution of elite training. Our structured 6-month cycles are delivered in focused monthly phases, providing a continuous roadmap for long-term growth and performance.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">

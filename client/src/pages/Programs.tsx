@@ -78,7 +78,7 @@ export default function Programs() {
         {/* Header */}
         <div className="max-w-3xl mb-16">
           <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Program Library</h1>
-          <p className="text-xl text-white/80 mb-4">Your membership provides a continuous roadmap for elite performance. Engage with our structured 6-month cycles, delivered in focused monthly phases to ensure total mastery and perpetual growth.</p>
+          <p className="text-xl text-white/80 mb-4">Your membership provides a continuous roadmap for elite performance. Engage with our structured 6-month cycles, delivered in focused monthly phases to ensure total mastery and continuous growth.</p>
           <div className="inline-block px-4 py-2 bg-white/10 rounded-lg border border-white/20">
             <p className="text-sm font-medium text-white/90">Note: New phases are unlocked month-by-month as you evolve through your training.</p>
           </div>
