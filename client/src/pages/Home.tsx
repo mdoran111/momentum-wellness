@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight, ShieldCheck, Dumbbell, Calendar, LayoutGrid, Quote, ChevronLeft, ChevronRight } from "lucide-react";
+import { CheckCircle2, ArrowRight, ShieldCheck, Dumbbell, Calendar, LayoutGrid, Quote, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
 import heroBg from '../assets/images/hero-bg.png';
 import programHome from '../assets/images/program-home-outdoor.jpg';
 import programMinimal from '../assets/images/program-minimal.jpg';
@@ -30,10 +30,52 @@ const TESTIMONIALS = [
   }
 ];
 
-export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [expandedFeature, setExpandedFeature] = useState<number | null>(null);
 
   useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
+    }, 5000);
+    return () => clearInterval(timer);
+  }, []);
+
+  const nextTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
+  };
+
+  const prevTestimonial = () => {
+    setCurrentTestimonial((prev) => (prev - 1 + TESTIMONIALS.length) % TESTIMONIALS.length);
+  };
+
+  const FEATURES = [
+    {
+      title: "Unlimited access to all programs",
+      description: "Instantly unlock our complete library of 6-month progressive curricula, covering all equipment levels and fitness goals."
+    },
+    {
+      title: "Step-by-step workouts inside the app",
+      description: "Follow clear, concise instructions for every exercise, with video demonstrations and timing cues to keep you on track."
+    },
+    {
+      title: "Progression built in",
+      description: "Our algorithms and structured planning ensure you're always moving forward, with weights and intensity that scale with your strength."
+    },
+    {
+      title: "Zero guesswork",
+      description: "Stop wondering what to do. Every session is pre-planned, giving you the mental freedom to just show up and execute."
+    },
+    {
+      title: "Fresh content & updates",
+      description: "We regularly refine our existing programs and add new specialized training blocks based on the latest sports science."
+    },
+    {
+      title: "Cancel anytime",
+      description: "No contracts, no hidden fees. You can pause or cancel your membership directly from your account settings with two clicks."
+    }
+  ];
+
+  return (
     const timer = setInterval(() => {
       setCurrentTestimonial((prev) => (prev + 1) % TESTIMONIALS.length);
     }, 5000);
@@ -107,21 +149,28 @@ export default function Home() {
             <p className="text-white/80 max-w-2xl mx-auto">Get the exact structure and guidance required to reach your goals with our 6-month progressive curriculums, delivered one focused month at a time.</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              "Unlimited access to all programs",
-              "Step-by-step workouts inside the app",
-              "Progression built in",
-              "Zero guesswork",
-              "Fresh content & updates",
-              "Cancel anytime"
-            ].map((feature, i) => (
-              <Card key={i} className="bg-white border-none shadow-xl hover:shadow-2xl transition-all duration-300 group">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+            {FEATURES.map((feature, i) => (
+              <Card 
+                key={i} 
+                className={`bg-white border-none shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer overflow-hidden ${expandedFeature === i ? 'ring-2 ring-primary/10' : ''}`}
+                onClick={() => setExpandedFeature(expandedFeature === i ? null : i)}
+              >
                 <CardHeader className="pb-4">
-                  <div className="w-12 h-12 bg-primary/5 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                    <CheckCircle2 className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                  <div className="flex items-center justify-between mb-4">
+                    <div className="w-12 h-12 bg-primary/5 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
+                      <CheckCircle2 className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                    </div>
+                    <ChevronDown className={`w-5 h-5 text-primary/30 transition-transform duration-300 ${expandedFeature === i ? 'rotate-180' : ''}`} />
                   </div>
-                  <CardTitle className="text-xl text-primary">{feature}</CardTitle>
+                  <CardTitle className="text-xl text-primary font-heading leading-tight">{feature.title}</CardTitle>
+                  <div className={`grid transition-all duration-300 ease-in-out ${expandedFeature === i ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'}`}>
+                    <div className="overflow-hidden">
+                      <p className="text-sm text-primary/70 leading-relaxed border-t border-primary/5 pt-4">
+                        {feature.description}
+                      </p>
+                    </div>
+                  </div>
                 </CardHeader>
               </Card>
             ))}
