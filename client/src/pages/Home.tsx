@@ -86,8 +86,8 @@ export default function Home() {
             </div>
             <div className="hidden md:block w-1 h-1 rounded-full bg-primary/30"></div>
             <div className="flex items-center gap-2">
-              <Dumbbell className="w-5 h-5" />
-              <span>Beginner-to-advanced options</span>
+              <LayoutGrid className="w-5 h-5" />
+              <span>Home, Minimal, & Full Gym Tracks</span>
             </div>
             <div className="hidden md:block w-1 h-1 rounded-full bg-primary/30"></div>
             <div className="flex items-center gap-2">

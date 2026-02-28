@@ -11,13 +11,13 @@ import programFatloss from '../assets/images/program-fatloss.png';
 const PROGRAMS = [
   {
     id: 1,
-    title: "12-Week Strength Foundation",
-    description: "Build raw strength and master the big lifts with structured progression.",
+    title: "12-Week Gym Mastery",
+    description: "Our flagship program for those with full gym access. Maximum tools for maximum results.",
     goal: "Strength",
     equipment: "Full Gym",
     image: programStrength,
     details: {
-      who: "Intermediate lifters looking to increase their 1-rep max on squat, bench, and deadlift.",
+      who: "Lifters with access to a commercial or well-equipped home gym.",
       time: "60-75 mins",
       days: "4 days/week",
       achieve: "Significant increases in raw strength, better lifting mechanics, and more muscle density."
@@ -25,13 +25,13 @@ const PROGRAMS = [
   },
   {
     id: 2,
-    title: "12-Week Fat Loss + Strength",
-    description: "Shed body fat while maintaining muscle mass with high-intensity intervals.",
+    title: "12-Week Minimalist",
+    description: "High-impact training using only dumbbells, kettlebells, and bands. Professional results without the big machines.",
     goal: "Fat Loss",
     equipment: "Dumbbells",
     image: programFatloss,
     details: {
-      who: "Anyone looking to lean out without losing hard-earned muscle.",
+      who: "Those training in a boutique studio, apartment gym, or home setup with basic weights.",
       time: "45-60 mins",
       days: "5 days/week",
       achieve: "Lower body fat percentage, improved cardiovascular conditioning, and maintained strength."
@@ -39,63 +39,21 @@ const PROGRAMS = [
   },
   {
     id: 3,
-    title: "Hypertrophy Builder",
-    description: "Focus purely on building muscle mass and improving body composition.",
-    goal: "Muscle",
-    equipment: "Full Gym",
-    image: programStrength, // Reuse image for mockup
-    details: {
-      who: "Lifters prioritizing muscle growth over raw strength numbers.",
-      time: "60-90 mins",
-      days: "5 days/week",
-      achieve: "Increased muscle size, better mind-muscle connection, and improved aesthetics."
-    }
-  },
-  {
-    id: 4,
-    title: "Athletic Performance",
-    description: "Train like an athlete. Speed, power, agility, and conditioning.",
+    title: "12-Week At Home",
+    description: "Zero equipment, zero excuses. A sophisticated bodyweight program designed for performance anywhere.",
     goal: "Performance",
-    equipment: "Full Gym",
-    image: programFatloss,
-    details: {
-      who: "Former athletes or those wanting to feel agile, fast, and explosive.",
-      time: "60 mins",
-      days: "4 days/week",
-      achieve: "Higher vertical jump, faster sprint times, and superior overall conditioning."
-    }
-  },
-  {
-    id: 5,
-    title: "Minimal Equipment",
-    description: "Travel-friendly workouts using only bands and bodyweight.",
-    goal: "Fat Loss",
     equipment: "Minimal Equipment",
     image: programStrength,
     details: {
-      who: "Frequent travelers or those without access to a full gym.",
+      who: "Frequent travelers or anyone who prefers the convenience of training at home with zero gear.",
       time: "30-45 mins",
       days: "3-5 days/week",
       achieve: "Maintained fitness levels on the road, improved mobility, and sweat-inducing workouts anywhere."
     }
-  },
-  {
-    id: 6,
-    title: "Return-to-Training",
-    description: "The perfect on-ramp if you've taken an extended break from the gym.",
-    goal: "Beginner",
-    equipment: "Dumbbells",
-    image: programFatloss,
-    details: {
-      who: "Beginners or those coming back after months/years off.",
-      time: "45 mins",
-      days: "3 days/week",
-      achieve: "Re-established gym habit, base level strength, and preparation for advanced programs."
-    }
   }
 ];
 
-const GOALS = ["All", "Strength", "Fat Loss", "Muscle", "Performance", "Beginner"];
+const GOALS = ["All", "Strength", "Fat Loss", "Performance"];
 const EQUIPMENT = ["All", "Full Gym", "Dumbbells", "Minimal Equipment"];
 
 export default function Programs() {
