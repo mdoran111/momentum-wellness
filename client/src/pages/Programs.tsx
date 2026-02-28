@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ArrowRight, Clock, CalendarDays, Dumbbell, Target } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
 import programGym from '../assets/images/program-gym.jpg';
 import programMinimal from '../assets/images/program-minimal.jpg';
 import programHome from '../assets/images/program-home-outdoor.jpg';
@@ -60,6 +60,11 @@ const EQUIPMENT = ["All", "Full Gym", "Essential Gear", "Zero Equipment"];
 export default function Programs() {
   const [activeGoal, setActiveGoal] = useState("All");
   const [activeEquipment, setActiveEquipment] = useState("All");
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
 
   const filteredPrograms = PROGRAMS.filter(p => {
     const matchGoal = activeGoal === "All" || p.goal === activeGoal;
