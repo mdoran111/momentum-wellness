@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { CheckCircle2, ArrowRight, ShieldCheck, Dumbbell, Calendar, LayoutGrid, Quote, ChevronLeft, ChevronRight } from "lucide-react";
 import heroBg from '../assets/images/hero-bg.png';
-import programHome from '../assets/images/program-home.jpg';
+import programHome from '../assets/images/program-home-outdoor.jpg';
 import programMinimal from '../assets/images/program-minimal.jpg';
 import programGym from '../assets/images/program-gym.jpg';
 import logo from '../assets/images/logo.png';
@@ -83,17 +83,17 @@ export default function Home() {
           <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-sm font-medium text-primary">
             <div className="flex items-center gap-2">
               <ShieldCheck className="w-5 h-5" />
-              <span>Structured programming</span>
+              <span>Structured 6-month curricula</span>
             </div>
             <div className="hidden md:block w-1 h-1 rounded-full bg-primary/30"></div>
             <div className="flex items-center gap-2">
               <LayoutGrid className="w-5 h-5" />
-              <span>Home, Minimal, & Full Gym Programs</span>
+              <span>Progressive monthly unlocks</span>
             </div>
             <div className="hidden md:block w-1 h-1 rounded-full bg-primary/30"></div>
             <div className="flex items-center gap-2">
               <Calendar className="w-5 h-5" />
-              <span>New programs added regularly</span>
+              <span>One focused month at a time</span>
             </div>
           </div>
         </div>
@@ -104,7 +104,7 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">Everything You Need To Succeed</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">Get the exact structure and guidance required to reach your goals, no matter where you train.</p>
+            <p className="text-white/80 max-w-2xl mx-auto">Get the exact structure and guidance required to reach your goals with our 6-month progressive curriculums, delivered one focused month at a time.</p>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -173,19 +173,19 @@ export default function Home() {
             {/* Card 1: Full Gym */}
             <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow">
               <div className="h-48 overflow-hidden relative">
-                <img src={programGym} alt="12-Week Gym Mastery" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <img src={programGym} alt="The Apex Path" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
               </div>
               <CardHeader>
                 <div className="flex gap-2 mb-2">
                   <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Performance</span>
                   <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">Full Gym</span>
                 </div>
-                <CardTitle className="text-white">12-Week Gym Mastery</CardTitle>
-                <CardDescription className="text-white/70">Master the big lifts and build a powerful physique with professional gym equipment.</CardDescription>
+                <CardTitle className="text-white">The Apex Path</CardTitle>
+                <CardDescription className="text-white/70">A comprehensive 6-month journey designed to transform your physical capability and mental focus using a full suite of strength equipment.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4 border-t border-white/10">
                 <Link href="/programs" className="text-sm font-semibold text-white flex items-center w-full justify-between group">
-                    View Details <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    View Current Month <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                 </Link>
               </CardFooter>
             </Card>
@@ -193,19 +193,19 @@ export default function Home() {
             {/* Card 2: Minimal Equipment */}
             <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow">
               <div className="h-48 overflow-hidden relative">
-                <img src={programMinimal} alt="12-Week Minimalist" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <img src={programMinimal} alt="The Versatile Edge" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
               </div>
               <CardHeader>
                 <div className="flex gap-2 mb-2">
                   <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Efficiency</span>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">Dumbbells</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">Essential Gear</span>
                 </div>
-                <CardTitle className="text-white">12-Week Minimalist</CardTitle>
-                <CardDescription className="text-white/70">Maximum results with minimal gear. Perfect for home gyms or busy spaces using just dumbbells.</CardDescription>
+                <h3 className="text-xl font-bold font-heading text-white mb-2">The Versatile Edge</h3>
+                <CardDescription className="text-white/70">Unlock total-body vitality with a 6-month curriculum centered around dumbbells, bands, and kettlebells—perfect for the modern, high-functioning individual.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4 border-t border-white/10">
                 <Link href="/programs" className="text-sm font-semibold text-white flex items-center w-full justify-between group">
-                    View Details <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    View Current Month <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                 </Link>
               </CardFooter>
             </Card>
@@ -213,19 +213,19 @@ export default function Home() {
             {/* Card 3: At Home */}
             <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow">
               <div className="h-48 overflow-hidden relative">
-                <img src={programHome} alt="12-Week At Home" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
+                <img src={programHome} alt="The Foundational Flow" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
               </div>
               <CardHeader>
                 <div className="flex gap-2 mb-2">
                   <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Freedom</span>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">No Equipment</span>
+                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">Zero Equipment</span>
                 </div>
-                <CardTitle className="text-white">12-Week At Home</CardTitle>
-                <CardDescription className="text-white/70">No gym, no problem. High-intensity bodyweight training you can do anywhere, anytime.</CardDescription>
+                <CardTitle className="text-white">The Foundational Flow</CardTitle>
+                <CardDescription className="text-white/70">Reconnect with your body through a 6-month bodyweight-only series focused on sustainable movement, mobility, and high-intensity conditioning.</CardDescription>
               </CardHeader>
               <CardFooter className="mt-auto pt-4 border-t border-white/10">
                 <Link href="/programs" className="text-sm font-semibold text-white flex items-center w-full justify-between group">
-                    View Details <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                    View Current Month <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                 </Link>
               </CardFooter>
             </Card>
@@ -323,7 +323,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2">What do I get with the membership?</h3>
-              <p className="text-white/80">You get unlimited, instant access to our entire library of training programs, updates to existing programs, and all new programs added during your membership.</p>
+              <p className="text-white/80">You get unlimited, instant access to our entire library of 6-month programs. To ensure optimal focus and results, you'll view and follow your training one month at a time.</p>
             </div>
             <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2">Can beginners do these programs?</h3>

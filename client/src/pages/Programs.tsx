@@ -4,57 +4,58 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter }
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { ArrowRight, Clock, CalendarDays, Dumbbell, Target } from "lucide-react";
 import { Link } from "wouter";
-import programStrength from '../assets/images/program-strength.png';
-import programFatloss from '../assets/images/program-fatloss.png';
+import programGym from '../assets/images/program-gym.jpg';
+import programMinimal from '../assets/images/program-minimal.jpg';
+import programHome from '../assets/images/program-home-outdoor.jpg';
 
 // Mock data for programs
 const PROGRAMS = [
   {
     id: 1,
-    title: "12-Week Gym Mastery",
-    description: "Our flagship program for those with full gym access. Maximum tools for maximum results.",
-    goal: "Strength",
+    title: "The Apex Path",
+    description: "A comprehensive 6-month journey designed to transform your physical capability and mental focus using a full suite of strength equipment. Build raw power and elite-level conditioning through structured, science-based progression.",
+    goal: "Performance",
     equipment: "Full Gym",
-    image: programStrength,
+    image: programGym,
     details: {
-      who: "Lifters with access to a commercial or well-equipped home gym.",
+      who: "Lifters with access to a commercial or well-equipped home gym looking for a long-term transformation.",
       time: "60-75 mins",
       days: "4 days/week",
-      achieve: "Significant increases in raw strength, better lifting mechanics, and more muscle density."
+      achieve: "Elite strength, mastered mechanics, and a powerful, resilient physique."
     }
   },
   {
     id: 2,
-    title: "12-Week Minimalist",
-    description: "High-impact training using only dumbbells, kettlebells, and bands. Professional results without the big machines.",
+    title: "The Versatile Edge",
+    description: "Unlock total-body vitality with a 6-month curriculum centered around dumbbells, bands, and kettlebells. This holistic approach blends strength, stability, and endurance for the modern, high-functioning individual.",
     goal: "Fat Loss",
-    equipment: "Dumbbells",
-    image: programFatloss,
+    equipment: "Essential Gear",
+    image: programMinimal,
     details: {
-      who: "Those training in a boutique studio, apartment gym, or home setup with basic weights.",
+      who: "Those training with essential weights and tools who want a balanced, high-performance body.",
       time: "45-60 mins",
       days: "5 days/week",
-      achieve: "Lower body fat percentage, improved cardiovascular conditioning, and maintained strength."
+      achieve: "Total-body lean muscle, improved functional movement, and high-energy conditioning."
     }
   },
   {
     id: 3,
-    title: "12-Week At Home",
-    description: "Zero equipment, zero excuses. A sophisticated bodyweight program designed for performance anywhere.",
+    title: "The Foundational Flow",
+    description: "Reconnect with your body through a 6-month bodyweight-only series focused on sustainable movement, mobility, and high-intensity conditioning. Find freedom in training anywhere while building a lean, athletic foundation.",
     goal: "Performance",
-    equipment: "Minimal Equipment",
-    image: programStrength,
+    equipment: "Zero Equipment",
+    image: programHome,
     details: {
-      who: "Frequent travelers or anyone who prefers the convenience of training at home with zero gear.",
+      who: "Anyone who values the freedom of training anywhere—at home, in the park, or on the road—with zero gear.",
       time: "30-45 mins",
       days: "3-5 days/week",
-      achieve: "Maintained fitness levels on the road, improved mobility, and sweat-inducing workouts anywhere."
+      achieve: "Lean athletic build, enhanced mobility, and the ability to train anywhere with intensity."
     }
   }
 ];
 
 const GOALS = ["All", "Strength", "Fat Loss", "Performance"];
-const EQUIPMENT = ["All", "Full Gym", "Dumbbells", "Minimal Equipment"];
+const EQUIPMENT = ["All", "Full Gym", "Essential Gear", "Zero Equipment"];
 
 export default function Programs() {
   const [activeGoal, setActiveGoal] = useState("All");
@@ -72,7 +73,10 @@ export default function Programs() {
         {/* Header */}
         <div className="max-w-3xl mb-16">
           <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Program Library</h1>
-          <p className="text-xl text-white/80">Your membership unlocks every program below. Filter by your goals and available equipment to find your perfect starting point.</p>
+          <p className="text-xl text-white/80 mb-4">Your membership unlocks every 6-month curriculum below. To ensure optimal focus and progression, you'll follow your training one month at a time.</p>
+          <div className="inline-block px-4 py-2 bg-white/10 rounded-lg border border-white/20">
+            <p className="text-sm font-medium text-white/90">Note: New months unlock automatically as you progress.</p>
+          </div>
         </div>
 
         {/* Filters */}
@@ -135,7 +139,7 @@ export default function Programs() {
                     </CardHeader>
                     <CardFooter className="pt-4 border-t border-white/10">
                       <span className="text-sm font-semibold text-white flex items-center w-full justify-between">
-                        View Details <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
+                        View Current Month <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
                       </span>
                     </CardFooter>
                   </Card>

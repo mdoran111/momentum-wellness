@@ -26,11 +26,11 @@ export default function Pricing() {
             <CardContent className="p-8">
               <ul className="space-y-4 mb-8">
                 {[
-                  "Unlimited access to all training programs",
+                  "Unlimited access to all 6-month programs",
+                  "Progressive monthly unlocks",
                   "Step-by-step app access",
                   "Built-in progression tracking",
                   "Nutrition guidelines & calculators",
-                  "New programs added regularly",
                   "Cancel anytime with 2 clicks"
                 ].map((feature, i) => (
                   <li key={i} className="flex items-start gap-3 text-white">

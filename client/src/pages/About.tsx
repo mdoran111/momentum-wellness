@@ -13,11 +13,11 @@ export default function About() {
 
         <div className="prose prose-lg max-w-none text-white/80 space-y-8">
           <p className="text-xl text-white font-medium leading-relaxed text-center max-w-2xl mx-auto">
-            Momentum Wellness was built on one simple idea: progress should be structured, visible, and sustainable.
+            Momentum Wellness was built on one simple idea: progress should be structured, visible, and sustainable through our signature 6-month progressive curricula.
           </p>
           
           <p className="text-center max-w-2xl mx-auto text-lg text-white/80">
-            We created a clean, subscription-based training platform designed for people who want real organization in their fitness — without hiring a coach or piecing together random workouts online.
+            We've created a holistic, subscription-based training platform where your journey is mapped out for half a year, but delivered one focused month at a time to ensure total mastery and zero burnout.
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 my-12 not-prose">
