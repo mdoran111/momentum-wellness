@@ -53,7 +53,6 @@ export default function Pricing() {
                   Get Started Now
                 </Button>
               </Link>
-              <p className="text-center text-xs text-white/30 mt-6 tracking-widest uppercase font-semibold">7-Day Full Refund Guarantee</p>
             </CardContent>
           </Card>
         </div>
