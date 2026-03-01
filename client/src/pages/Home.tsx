@@ -61,6 +61,39 @@ const TESTIMONIALS = [
   }
 ];
 
+const FEATURES = [
+  {
+    title: "Unlimited program access",
+    description: "Your membership unlocks our entire ecosystem. Switch between programs as your goals or environment change.",
+    details: "Choose from The Apex Path, The Versatile Edge, or The Foundational Flow at any time."
+  },
+  {
+    title: "Monthly phase unlocks",
+    description: "Focus is the key to progress. We deliver your training in structured 30-day blocks to ensure mastery before moving forward.",
+    details: "New training blocks appear in your dashboard every 30 days as you progress through the 6-month cycle."
+  },
+  {
+    title: "App-based coaching cues",
+    description: "Never wonder about form again. Every movement includes high-definition video cues and performance notes.",
+    details: "Detailed breakdowns of tempo, setup, and common pitfalls for every single exercise in the library."
+  },
+  {
+    title: "Zero guesswork",
+    description: "Stop wondering what to do. Every session is pre-planned, giving you the mental freedom to just show up and execute.",
+    details: "Warm-ups, working sets, intensity targets, and cool-downs are all handled for you."
+  },
+  {
+    title: "Fresh content & updates",
+    description: "We regularly refine our existing programs and add new specialized training blocks based on the latest sports science.",
+    details: "Continuous refinements to programming based on member feedback and emerging performance research."
+  },
+  {
+    title: "Cancel anytime",
+    description: "No contracts, no hidden fees. You have full control over your membership and can cancel whenever you choose.",
+    details: "Manage your subscription with a single click. No phone calls, no hassle, no questions asked."
+  }
+];
+
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [expandedFeature, setExpandedFeature] = useState<number | null>(null);
@@ -97,33 +130,6 @@ export default function Home() {
     }, 300);
   };
 
-  const FEATURES = [
-    {
-      title: "Unlimited access to all programs",
-      description: "Instantly unlock our library of elite 6-month cycles. To ensure total focus and mastery, your training is unlocked and followed phase by phase, month by month, providing a clear path for continuous growth."
-    },
-    {
-      title: "Step-by-step workouts inside the app",
-      description: "Follow clear, concise instructions for every exercise, with video demonstrations and timing cues to keep you on track."
-    },
-    {
-      title: "Progression built in",
-      description: "Our expert-built programs and structured planning ensure you're always moving forward, with weights and intensity that scale with your strength."
-    },
-    {
-      title: "Zero guesswork",
-      description: "Stop wondering what to do. Every session is pre-planned, giving you the mental freedom to just show up and execute."
-    },
-    {
-      title: "Fresh content & updates",
-      description: "We regularly refine our existing programs and add new specialized training blocks based on the latest sports science."
-    },
-    {
-      title: "Cancel anytime",
-      description: "No contracts, no hidden fees. You have full control over your membership and can cancel whenever you choose."
-    }
-  ];
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -151,83 +157,104 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* A) Hero Section */}
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
-        {/* Background Logo watermark with Pop Effect */}
-        <motion.div 
-          initial={{ scale: 0.5, opacity: 0, filter: "brightness(4)" }}
-          animate={{ 
-            scale: [0.5, 1.2, 1], 
-            opacity: [0, 1, 0.2],
-            filter: ["brightness(4)", "brightness(4)", "brightness(1)"]
-          }}
-          transition={{ 
-            duration: 2.8, 
-            times: [0, 0.6, 1],
-            ease: "easeOut" 
-          }}
-          className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden translate-y-4"
-        >
-          <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
-        </motion.div>
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+          <motion.img 
+            initial={{ opacity: 0, scale: 0.8, filter: "brightness(4)" }}
+            animate={{ 
+              opacity: [0, 1, 0.2],
+              scale: [0.8, 1.2, 1],
+              filter: ["brightness(4)", "brightness(4)", "brightness(1)"]
+            }}
+            transition={{ 
+              duration: 2.8,
+              times: [0, 0.2, 1],
+              ease: "easeOut"
+            }}
+            src={logo} 
+            alt="" 
+            className="w-[120%] max-w-none grayscale invert" 
+          />
+        </div>
+
+        <div className="container relative z-10 mx-auto px-4 text-center">
+          <AnimatePresence>
+            {showContent && (
+              <motion.div
+                initial={{ opacity: 0, y: 40 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 1, ease: "easeOut" }}
+                className="max-w-4xl mx-auto"
+              >
+                <motion.div 
+                  initial={{ opacity: 0 }}
+                  animate={{ opacity: 1 }}
+                  transition={{ delay: 0.5 }}
+                  className="inline-block mb-8 px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
+                >
+                  <span className="text-white/60 text-xs font-bold uppercase tracking-[0.3em]">Momentum Wellness Ecosystem</span>
+                </motion.div>
+                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-heading text-white mb-8 tracking-tighter italic uppercase leading-[0.9]">
+                  Performance <br/>
+                  <span className="text-white/20">Redefined</span>
+                </h1>
+                <p className="text-xl md:text-2xl text-white/50 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                  Elite training cycles delivered in monthly phases. Build measurable momentum for $14.99/mo.
+                </p>
+                <div className="flex flex-col sm:flex-row gap-6 justify-center">
+                  <Link href="/programs">
+                    <Button size="lg" className="rounded-full text-lg px-12 h-16 font-bold shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 bg-[#e5e7eb] text-primary hover:bg-white border-none" data-testid="button-get-started-hero">
+                      Explore Programs
+                    </Button>
+                  </Link>
+                  <Link href="/about">
+                    <Button size="lg" variant="outline" className="rounded-full text-lg px-12 h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300" data-testid="button-about-hero">
+                      Our Philosophy
+                    </Button>
+                  </Link>
+                </div>
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
         
-        <AnimatePresence>
-          {showContent && (
-            <motion.div 
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
-              className="container relative z-10 mx-auto px-4 text-center"
-            >
-              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 tracking-tight">
-                Momentum That<br className="md:hidden" /> Moves With You.
-              </h1>
-              <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-                Expertly designed training plans for those who value structure, science-based progression, and real-world results.
-              </p>
-              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-                <Link href="/programs" className="w-full sm:w-auto">
-                  <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-[#e5e7eb] text-primary hover:bg-white hover:scale-[1.02] transition-all duration-300 font-bold border-none" data-testid="button-hero-start">
-                    Unlock Full Access — $14.99/mo
-                  </Button>
-                </Link>
-                <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/20 text-white hover:bg-white/10 transition-all duration-300" onClick={() => document.getElementById('includes')?.scrollIntoView({ behavior: 'smooth' })}>
-                  See What's Included
-                </Button>
-              </div>
-            </motion.div>
-          )}
-        </AnimatePresence>
+        <motion.div 
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/20"
+        >
+          <ChevronDown className="w-8 h-8" />
+        </motion.div>
       </section>
 
-      {/* B) Social proof band */}
-      <section className="bg-secondary py-12 border-y border-primary/5 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.02] to-transparent"></div>
-        <div className="container mx-auto px-4 relative z-10">
+      {/* B) Trust Bar */}
+      <section className="py-16 bg-white border-b border-primary/5">
+        <div className="container mx-auto px-4">
           <motion.div 
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 text-sm font-bold text-primary uppercase tracking-[0.2em]"
+            className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 grayscale opacity-40"
           >
             <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
               <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                <ShieldCheck className="w-5 h-5" />
+                <Dumbbell className="w-5 h-5" />
               </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500">Structured 6-month series</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">Science-Based Programming</span>
             </motion.div>
             <div className="hidden md:block w-px h-8 bg-primary/10"></div>
             <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
               <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
                 <LayoutGrid className="w-5 h-5" />
               </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500">Progressive monthly unlocks</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">Progressive monthly unlocks</span>
             </motion.div>
             <div className="hidden md:block w-px h-8 bg-primary/10"></div>
             <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
               <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
                 <Calendar className="w-5 h-5" />
               </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500">One focused month at a time</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">One focused month at a time</span>
             </motion.div>
           </motion.div>
         </div>
@@ -245,7 +272,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic">Everything You Need To Succeed</motion.h2>
-            <motion.p variants={itemVariants} className="text-white/60 max-w-2xl mx-auto text-lg font-light">Access a continuous evolution of elite training. Our structured 6-month cycles are delivered in focused monthly phases, providing a continuous roadmap for long-term growth and performance.</p>
+            <motion.p variants={itemVariants} className="text-white/60 max-w-2xl mx-auto text-lg font-light">Access a continuous evolution of elite training. Our structured 6-month cycles are delivered in focused monthly phases, providing a continuous roadmap for long-term growth and performance.</motion.p>
           </motion.div>
           
           <motion.div 
@@ -267,20 +294,29 @@ export default function Home() {
                 >
                   <CardHeader className="pb-4">
                     <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-500">
-                        <CheckCircle2 className="w-6 h-6 text-white group-hover:text-primary transition-colors duration-500" />
-                      </div>
-                      <ChevronDown className={`w-5 h-5 text-white/20 transition-transform duration-500 ${expandedFeature === i ? 'rotate-180' : ''}`} />
-                    </div>
-                    <CardTitle className="text-xl text-white font-heading leading-tight tracking-wide">{feature.title}</CardTitle>
-                    <div className={`grid transition-all duration-500 ease-in-out ${expandedFeature === i ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'}`}>
-                      <div className="overflow-hidden">
-                        <p className="text-sm text-white/60 leading-relaxed border-t border-white/5 pt-4 font-light">
-                          {feature.description}
-                        </p>
+                      <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-500">
+                        <CheckCircle2 className="w-6 h-6" />
                       </div>
                     </div>
+                    <CardTitle className="text-xl font-bold font-heading text-white italic tracking-tight uppercase">{feature.title}</CardTitle>
+                    <CardDescription className="text-white/40 text-sm leading-relaxed font-light mt-2 group-hover:text-white/60 transition-colors">
+                      {feature.description}
+                    </CardDescription>
                   </CardHeader>
+                  <AnimatePresence>
+                    {expandedFeature === i && (
+                      <motion.div
+                        initial={{ height: 0, opacity: 0 }}
+                        animate={{ height: "auto", opacity: 1 }}
+                        exit={{ height: 0, opacity: 0 }}
+                        className="overflow-hidden"
+                      >
+                        <CardContent className="pb-8 pt-0 text-xs text-white/30 font-medium leading-relaxed uppercase tracking-widest border-t border-white/5 mt-4">
+                          <p className="mt-4">{feature.details}</p>
+                        </CardContent>
+                      </motion.div>
+                    )}
+                  </AnimatePresence>
                 </Card>
               </motion.div>
             ))}
@@ -335,16 +371,17 @@ export default function Home() {
       {/* E) Featured programs */}
       <section className="py-24 bg-primary text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-white/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+        <div className="container relative z-10 mx-auto px-4">
+          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
+              transition={{ duration: 0.8 }}
+              className="max-w-2xl text-center md:text-left"
             >
-              <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4 text-white italic tracking-tight">The Library</h2>
-              <p className="text-white/50 max-w-xl text-lg font-light leading-relaxed">A glimpse inside the Momentum ecosystem. Your membership unlocks every cycle, past and future.</p>
+              <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic uppercase">Select Your Path</h2>
+              <p className="text-white/40 text-lg font-light leading-relaxed">Structured cycles designed for measurable results. Select the roadmap that matches your environment.</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -405,10 +442,8 @@ export default function Home() {
               </motion.div>
             ))}
           </div>
-        </div>
-      </section>
-          
-          <div className="mt-8 text-center md:hidden">
+
+          <div className="mt-12 text-center md:hidden">
             <Link href="/programs">
               <Button variant="outline" className="w-full text-white border-white hover:bg-white/10">View All Programs</Button>
             </Link>
@@ -419,12 +454,12 @@ export default function Home() {
       {/* F) Pricing teaser */}
       <section className="py-24 bg-primary text-white">
         <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-8">Simple, Transparent Pricing</h2>
-          <div className="bg-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-sm border border-white/20">
-            <div className="text-6xl font-bold font-heading mb-4">$14.99<span className="text-2xl text-white/70 font-normal">/month</span></div>
-            <p className="text-xl text-white/90 mb-8 font-medium">Unlimited programs • Cancel anytime</p>
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-8 uppercase italic tracking-tight">Simple, Transparent Pricing</h2>
+          <div className="bg-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-md border border-white/20">
+            <div className="text-6xl font-bold font-heading mb-4 italic">$14.99<span className="text-2xl text-white/70 font-normal">/month</span></div>
+            <p className="text-xl text-white/90 mb-8 font-light uppercase tracking-widest">Unlimited programs • Cancel anytime</p>
             <Link href="/programs">
-              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-12 h-14 bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] font-bold border-none" data-testid="button-pricing-teaser">
+              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-12 h-14 bg-[#e5e7eb] text-primary hover:bg-white font-bold border-none shadow-2xl" data-testid="button-pricing-teaser">
                 Unlock Full Access
               </Button>
             </Link>
@@ -436,7 +471,7 @@ export default function Home() {
       <section className="py-24 bg-secondary">
         <div className="container mx-auto px-4 max-w-4xl text-center">
           <Quote className="w-12 h-12 text-primary/20 mx-auto mb-8" />
-          <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-12">Member Success Stories</h2>
+          <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-12 uppercase italic tracking-tight">Member Success Stories</h2>
           
           <div className="relative bg-white p-8 md:p-16 rounded-[40px] shadow-xl border border-primary/5 min-h-[400px] flex flex-col justify-center overflow-hidden">
             <div className={`transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
@@ -494,28 +529,28 @@ export default function Home() {
       <section className="py-24 bg-white">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-4">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-4 uppercase italic tracking-tight">Frequently Asked Questions</h2>
           </div>
           
           <div className="space-y-6">
-            <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
-              <h3 className="text-lg font-bold font-heading mb-2">What do I get with the membership?</h3>
-              <p className="text-white/80">You get unlimited, instant access to our entire library of 6-month programs. To ensure optimal focus and results, you'll view and follow your training one month at a time.</p>
+            <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
+              <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">What do I get with the membership?</h3>
+              <p className="text-white/60 font-light leading-relaxed">You get unlimited, instant access to our entire library of 6-month programs. To ensure optimal focus and results, you'll view and follow your training one month at a time.</p>
             </div>
-            <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
-              <h3 className="text-lg font-bold font-heading mb-2">Can beginners do these programs?</h3>
-              <p className="text-white/80">Absolutely. We have specific programs designed for all levels, and all our programs include scalable options to match your current fitness level.</p>
+            <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
+              <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">Can beginners do these programs?</h3>
+              <p className="text-white/60 font-light leading-relaxed">Absolutely. We have specific programs designed for all levels, and all our programs include scalable options to match your current fitness level.</p>
             </div>
-            <div className="p-6 rounded-2xl bg-primary text-white border-none shadow-lg">
-              <h3 className="text-lg font-bold font-heading mb-2">How do I cancel?</h3>
-              <p className="text-white/80">You can cancel anytime directly from your account settings with just two clicks. No hidden fees or lengthy commitments.</p>
+            <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
+              <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">How do I cancel?</h3>
+              <p className="text-white/60 font-light leading-relaxed">You can cancel anytime directly from your account settings with just two clicks. No hidden fees or lengthy commitments.</p>
             </div>
           </div>
           
-          <div className="mt-10 text-center">
+          <div className="mt-12 text-center">
             <Link href="/faq">
-              <span className="text-primary font-semibold hover:underline inline-flex items-center cursor-pointer">
-                Read all FAQs <ArrowRight className="w-4 h-4 ml-1" />
+              <span className="text-primary font-bold uppercase tracking-widest text-sm hover:underline inline-flex items-center cursor-pointer group">
+                Read all FAQs <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
               </span>
             </Link>
           </div>
@@ -533,7 +568,7 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-8 italic tracking-tighter uppercase">Start today.<br/>Build momentum.</h2>
+            <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-8 italic tracking-tighter uppercase leading-[0.9]">Start today.<br/>Build momentum.</h2>
             <p className="text-xl md:text-2xl text-white/50 mb-12 font-light leading-relaxed max-w-2xl mx-auto">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
             <Link href="/programs">
               <Button size="lg" className="rounded-full text-lg px-12 h-16 font-bold shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 bg-[#e5e7eb] text-primary hover:bg-white border-none" data-testid="button-final-cta">
