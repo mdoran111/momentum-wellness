@@ -6,31 +6,27 @@ import { useLocation } from "wouter";
 const FAQS = [
   {
     question: "What do I get with the membership?",
-    answer: "You get unlimited access to our entire library of training programs. This includes everything from beginner fundamentals to advanced hypertrophy and performance blocks. You can view all workouts, track progress, and access nutrition guidelines all in one place."
+    answer: "You get unlimited, instant access to our entire library of elite 6-month programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time."
   },
   {
     question: "Can beginners do these programs?",
-    answer: "Absolutely. We have specifically designed 'Return-to-Training' and 'Foundation' programs that are perfect for beginners. The app provides clear instructions for every movement, and you can progress at your own pace."
+    answer: "Absolutely. We have specific programs designed for all levels, including the Foundational Flow series for those starting their journey. All our programs include scalable options to match your current capability."
   },
   {
     question: "Do I need a full gym?",
-    answer: "Not necessarily. While our hypertrophy and heavy strength programs are best performed in a fully equipped gym, we have dedicated 'Dumbbell Only' and 'Minimal Equipment' tracks for those training at home or while traveling."
+    answer: "Not necessarily. We offer three distinct paths: 'The Apex Path' for full gym access, 'The Versatile Edge' for essential gear (dumbbells/kettlebells), and 'The Foundational Flow' for zero equipment training."
   },
   {
     question: "How do I cancel?",
-    answer: "Canceling is straightforward and transparent. You can cancel your membership at any time right from your account settings with just two clicks. There are no hidden fees or cancellation penalties."
-  },
-  {
-    question: "Is nutrition included?",
-    answer: "The membership focuses heavily on structured training, but it does include foundational nutrition guidelines and calculators to help you align your diet with your training goals (whether that's fat loss, maintenance, or muscle gain)."
+    answer: "You can cancel your membership at any time directly from your account settings with just two clicks. No hidden fees, no contracts, and no lengthy commitments."
   },
   {
     question: "How do I access the workouts?",
-    answer: "Once you start your membership, you'll get instant access to our web app. It is mobile-optimized so you can easily pull up your daily workout on your phone while on the gym floor."
+    answer: "Once you start your membership, you'll get instant access to our high-performance web platform. It is mobile-first and optimized for the gym floor, so you can easily follow your daily phase on your phone."
   },
   {
-    question: "Are refunds offered?",
-    answer: "We offer a 7-day money-back guarantee. If you log in, review the programs, and decide it's not the right fit for you within your first week, simply email support and we'll issue a full refund."
+    question: "How are the 6-month cycles structured?",
+    answer: "Each program is a structured 6-month roadmap divided into focused monthly phases. This ensuring you master the specific mechanics and intensity of one block before unlocking the next evolution of your training."
   }
 ];
 
@@ -42,21 +38,24 @@ export default function FAQ() {
   }, [location]);
 
   return (
-    <div className="pt-16 pb-24 min-h-screen bg-primary text-white">
-      <div className="container mx-auto px-4 max-w-3xl">
+    <div className="pt-24 pb-32 min-h-screen bg-primary text-white relative overflow-hidden">
+      <div className="container relative z-10 mx-auto px-4 max-w-3xl">
         <div className="text-center mb-16">
+          <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm font-medium tracking-wider uppercase">
+            Support
+          </div>
           <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Frequently Asked Questions</h1>
-          <p className="text-xl text-white/80">Everything you need to know about the Momentum Wellness membership.</p>
+          <p className="text-xl text-white/70 font-light">Everything you need to know about the Momentum Wellness experience.</p>
         </div>
 
-        <div className="bg-white/5 rounded-3xl p-6 md:p-8 border border-white/10 shadow-sm">
+        <div className="bg-white/5 backdrop-blur-sm rounded-[40px] p-6 md:p-12 border border-white/10 shadow-2xl">
           <Accordion type="single" collapsible className="w-full">
             {FAQS.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b-white/10">
-                <AccordionTrigger className="text-left font-bold text-lg hover:text-white py-6 text-white">
-                  {faq.question}
+              <AccordionItem key={index} value={`item-${index}`} className="border-b-white/5 last:border-0">
+                <AccordionTrigger className="text-left font-bold text-lg hover:text-white py-8 text-white hover:no-underline group">
+                  <span className="group-hover:translate-x-1 transition-transform duration-300">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-white/70 pb-6 leading-relaxed">
+                <AccordionContent className="text-base text-white/60 pb-8 leading-relaxed font-light">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -64,11 +63,11 @@ export default function FAQ() {
           </Accordion>
         </div>
 
-        <div className="mt-16 text-center bg-white/10 p-8 rounded-3xl border border-white/10">
-          <h2 className="text-2xl font-bold font-heading mb-4 text-white">Still have questions?</h2>
-          <p className="text-white/60 mb-6">We're here to help. Reach out to our team and we'll get back to you shortly.</p>
-          <a href="/contact">
-            <Button variant="outline" className="rounded-full px-8 bg-white/10 text-white border-white/20 hover:bg-white/20">
+        <div className="mt-16 text-center bg-white/5 p-12 rounded-[40px] border border-white/10 backdrop-blur-sm">
+          <h2 className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-wider">Still have questions?</h2>
+          <p className="text-white/50 mb-8 font-light">We're here to ensure your transition to elite training is seamless.</p>
+          <a href="mailto:support@momentumwellness.com">
+            <Button className="rounded-full px-10 h-14 bg-[#e5e7eb] text-primary hover:bg-white transition-all font-bold border-none">
               Contact Support
             </Button>
           </a>
