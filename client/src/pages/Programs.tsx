@@ -124,17 +124,17 @@ export default function Programs() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-16 space-y-8 p-8 bg-white/[0.02] backdrop-blur-md rounded-[40px] border border-white/5"
+          className="mb-16 space-y-10 p-10 bg-white/[0.02] backdrop-blur-md rounded-[48px] border border-white/5"
         >
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div>
-              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] mb-4">Goal</h3>
-              <div className="flex flex-wrap gap-2">
+          <div className="space-y-12">
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] w-32 shrink-0">Goal</h3>
+              <div className="flex flex-wrap gap-3">
                 {GOALS.map(goal => (
                   <button
                     key={goal}
                     onClick={() => setActiveGoal(goal)}
-                    className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
+                    className={`px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
                       activeGoal === goal 
                         ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
                         : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
@@ -145,14 +145,17 @@ export default function Programs() {
                 ))}
               </div>
             </div>
-            <div>
-              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] mb-4">Equipment</h3>
-              <div className="flex flex-wrap gap-2">
+
+            <div className="h-px bg-white/5 w-full"></div>
+
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] w-32 shrink-0">Equipment</h3>
+              <div className="flex flex-wrap gap-3">
                 {EQUIPMENT.map(eq => (
                   <button
                     key={eq}
                     onClick={() => setActiveEquipment(eq)}
-                    className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
+                    className={`px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
                       activeEquipment === eq 
                         ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
                         : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
@@ -163,14 +166,17 @@ export default function Programs() {
                 ))}
               </div>
             </div>
-            <div>
-              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] mb-4">Frequency</h3>
-              <div className="flex flex-wrap gap-2">
+
+            <div className="h-px bg-white/5 w-full"></div>
+
+            <div className="flex flex-col md:flex-row md:items-center gap-6">
+              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] w-32 shrink-0">Frequency</h3>
+              <div className="flex flex-wrap gap-3">
                 {FREQUENCY.map(freq => (
                   <button
                     key={freq}
                     onClick={() => setActiveFrequency(freq)}
-                    className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
+                    className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
                       activeFrequency === freq 
                         ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
                         : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
