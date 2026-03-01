@@ -185,14 +185,6 @@ export default function Home() {
                 transition={{ duration: 1, ease: "easeOut" }}
                 className="max-w-4xl mx-auto"
               >
-                <motion.div 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.5 }}
-                  className="inline-block mb-8 px-6 py-2 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
-                >
-                  <span className="text-white/60 text-xs font-bold uppercase tracking-[0.3em]">Momentum Wellness Ecosystem</span>
-                </motion.div>
                 <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-heading text-white mb-8 tracking-tighter italic uppercase leading-[0.9]">
                   Momentum<br/>
                   <span className="text-white/20">Wellness</span>
