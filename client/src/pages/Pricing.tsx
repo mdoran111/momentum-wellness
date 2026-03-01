@@ -31,19 +31,15 @@ export default function Pricing() {
                 <span className="text-7xl font-bold font-heading text-white">$14.99</span>
                 <span className="text-white/40 text-xl font-light">/month</span>
               </div>
-              <p className="mt-4 text-white/50 text-sm font-medium tracking-wide uppercase">Billed Monthly • Cancel Anytime</p>
+              <p className="mt-4 text-white/50 text-sm font-medium tracking-wide uppercase">Billed Monthly</p>
             </CardHeader>
             <CardContent className="p-12">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
                 {[
                   "Unlimited Program Access",
                   "Monthly Phase Unlocks",
-                  "Built-in Progress Tracking",
-                  "Elite Nutrition Guides",
                   "App-Based Coaching Cues",
-                  "Continuous Updates",
-                  "Zero Contract Policy",
-                  "2-Click Cancellation"
+                  "Continuous Updates"
                 ].map((feature, i) => (
                   <li key={i} className="flex items-center gap-3 text-white/90 list-none">
                     <CheckCircle2 className="w-5 h-5 text-white shrink-0" />
