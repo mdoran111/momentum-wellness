@@ -7,6 +7,7 @@ import { Link, useLocation } from "wouter";
 import programGym from '../assets/images/program-gym.jpg';
 import programMinimal from '../assets/images/program-minimal.jpg';
 import programHome from '../assets/images/program-home-outdoor.jpg';
+import logo from '../assets/images/logo.png';
 
 // Mock data for programs
 const PROGRAMS = [
@@ -79,8 +80,13 @@ export default function Programs() {
   });
 
   return (
-    <div className="pt-12 pb-24 min-h-screen bg-primary text-white">
-      <div className="container mx-auto px-4">
+    <div className="pt-12 pb-24 min-h-screen bg-primary text-white relative overflow-hidden">
+      {/* Background Logo watermark - Matching Home */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20 pointer-events-none overflow-hidden translate-y-4">
+        <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
         <div className="max-w-3xl mb-16">
           <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Program Library</h1>

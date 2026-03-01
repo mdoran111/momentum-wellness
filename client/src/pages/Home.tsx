@@ -413,9 +413,9 @@ export default function Home() {
           
           <div className="mt-10 text-center">
             <Link href="/faq">
-              <a className="text-primary font-semibold hover:underline inline-flex items-center">
+              <span className="text-primary font-semibold hover:underline inline-flex items-center cursor-pointer">
                 Read all FAQs <ArrowRight className="w-4 h-4 ml-1" />
-              </a>
+              </span>
             </Link>
           </div>
         </div>
