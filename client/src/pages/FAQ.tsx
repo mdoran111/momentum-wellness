@@ -52,17 +52,17 @@ export default function FAQ() {
             Support
           </div>
           <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6 italic tracking-tight">Frequently Asked Questions</h1>
-          <p className="text-xl text-white/50 font-light">Everything you need to know about the Momentum Wellness experience.</p>
+          <p className="text-xl text-white/60 font-light">Everything you need to know about the Momentum Wellness experience.</p>
         </div>
 
         <div className="bg-white/5 backdrop-blur-md rounded-[40px] p-6 md:p-12 border border-white/10 shadow-2xl">
           <Accordion type="single" collapsible className="w-full">
             {FAQS.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b-white/5 last:border-0">
+              <AccordionItem key={index} value={`item-${index}`} className="border-b-white/10 last:border-0">
                 <AccordionTrigger className="text-left font-bold text-lg hover:text-white py-8 text-white hover:no-underline group italic tracking-tight">
                   <span className="group-hover:translate-x-1 transition-transform duration-300 uppercase">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-white/60 pb-8 leading-relaxed font-light">
+                <AccordionContent className="text-base text-white/80 pb-8 leading-relaxed font-light">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -72,7 +72,7 @@ export default function FAQ() {
 
         <div className="mt-16 text-center bg-white/5 p-12 rounded-[40px] border border-white/10 backdrop-blur-md">
           <h2 className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-wider italic tracking-tight">Still have questions?</h2>
-          <p className="text-white/50 mb-8 font-light">We're here to ensure your transition to professional training is seamless.</p>
+          <p className="text-white/60 mb-8 font-light">We're here to ensure your transition to professional training is seamless.</p>
           <a href="mailto:support@momentumwellness.com">
             <Button className="rounded-full px-10 h-14 bg-[#e5e7eb] text-primary hover:bg-white transition-all font-bold border-none shadow-xl">
               Contact Support

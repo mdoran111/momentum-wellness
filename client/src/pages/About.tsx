@@ -43,7 +43,7 @@ export default function About() {
           <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 italic tracking-tight">
             Training Built<br className="md:hidden" /> For Results.
           </h1>
-          <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
             Momentum Wellness is a commitment to structure, science, and the belief that professional training should be accessible to those who value their time and performance.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
@@ -53,7 +53,7 @@ export default function About() {
               </Button>
             </Link>
             <Link href="/pricing" className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/20 text-white hover:bg-white/10 transition-all duration-300">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/40 text-white hover:bg-white/10 transition-all duration-300">
                 View Pricing
               </Button>
             </Link>
@@ -89,7 +89,7 @@ export default function About() {
               className="space-y-10"
             >
               <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight italic tracking-tight">A Synchronized Path to Wellness</motion.h2>
-              <motion.div variants={itemVariants} className="space-y-6 text-lg text-primary/70 leading-relaxed font-light">
+              <motion.div variants={itemVariants} className="space-y-6 text-lg text-primary/80 leading-relaxed font-light">
                 <p>
                   We don't believe in "quick fixes" or random daily workouts. Real transformation requires a roadmap. Our philosophy is centered around structured 6-month cycles, delivered in focused monthly phases. 
                 </p>
@@ -105,7 +105,7 @@ export default function About() {
                   </div>
                   <div>
                     <h4 className="font-bold text-primary text-lg">Expert Programming</h4>
-                    <p className="text-primary/60 font-light">Science-based plans built by professionals.</p>
+                    <p className="text-primary/80 font-light">Science-based plans built by professionals.</p>
                   </div>
                 </div>
                 <div className="flex gap-5 group">
@@ -114,7 +114,7 @@ export default function About() {
                   </div>
                   <div>
                     <h4 className="font-bold text-primary text-lg">Precision Focus</h4>
-                    <p className="text-primary/60 font-light">One month of focused mastery at a time.</p>
+                    <p className="text-primary/80 font-light">One month of focused mastery at a time.</p>
                   </div>
                 </div>
               </motion.div>
@@ -134,7 +134,7 @@ export default function About() {
             className="text-center mb-24"
           >
             <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6 italic tracking-tight">The Momentum Standard</h2>
-            <p className="text-primary/40 max-w-2xl mx-auto text-xl font-light">We've cut the noise to focus on what actually moves the needle.</p>
+            <p className="text-primary/60 max-w-2xl mx-auto text-xl font-light">We've cut the noise to focus on what actually moves the needle.</p>
           </motion.div>
 
           
@@ -172,7 +172,7 @@ export default function About() {
                   <value.icon className="w-8 h-8" />
                 </div>
                 <h3 className="text-2xl font-bold text-primary mb-4 italic tracking-tight">{value.title}</h3>
-                <p className="text-primary/50 leading-relaxed text-lg font-light">{value.desc}</p>
+                <p className="text-primary/60 leading-relaxed text-lg font-light">{value.desc}</p>
               </motion.div>
             ))}
           </motion.div>
@@ -200,7 +200,7 @@ export default function About() {
           <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading mb-8 leading-[1.1] tracking-tight text-white uppercase">
             Ready to build your MOMENTUM?
           </h2>
-          <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+          <p className="text-xl md:text-2xl text-white/80 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
             Join a community of high-performers who value structure, science-based programming, and measurable evolution.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
@@ -210,7 +210,7 @@ export default function About() {
               </Button>
             </Link>
             <Link href="/pricing" onClick={() => window.scrollTo(0, 0)}>
-              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold border-white/20 text-white hover:bg-white/10 hover:border-white transition-all duration-300">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold border-white/40 text-white hover:bg-white/10 hover:border-white transition-all duration-300">
                 View Pricing
               </Button>
             </Link>

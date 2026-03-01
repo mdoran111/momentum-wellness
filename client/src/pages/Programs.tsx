@@ -113,9 +113,9 @@ export default function Programs() {
           className="max-w-3xl mb-16"
         >
           <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Program Library</h1>
-          <p className="text-xl text-white/60 mb-6 font-light leading-relaxed">Your membership provides a continuous roadmap for professional performance. Engage with our structured 6-month cycles, delivered in focused monthly phases to ensure total mastery and continuous growth.</p>
+          <p className="text-xl text-white/80 mb-6 font-light leading-relaxed">Your membership provides a continuous roadmap for professional performance. Engage with our structured 6-month cycles, delivered in focused monthly phases to ensure total mastery and continuous growth.</p>
           <div className="inline-block px-6 py-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
-            <p className="text-sm font-medium text-white/80 italic">Note: New phases are unlocked month-by-month as you evolve through your training.</p>
+            <p className="text-sm font-medium text-white/90 italic">Note: New phases are unlocked month-by-month as you evolve through your training.</p>
           </div>
         </motion.div>
 
@@ -128,7 +128,7 @@ export default function Programs() {
         >
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             <div>
-              <h3 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-4">Goal</h3>
+              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] mb-4">Goal</h3>
               <div className="flex flex-wrap gap-2">
                 {GOALS.map(goal => (
                   <button
@@ -137,7 +137,7 @@ export default function Programs() {
                     className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
                       activeGoal === goal 
                         ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
-                        : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
+                        : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
                     }`}
                   >
                     {goal}
@@ -146,7 +146,7 @@ export default function Programs() {
               </div>
             </div>
             <div>
-              <h3 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-4">Equipment</h3>
+              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] mb-4">Equipment</h3>
               <div className="flex flex-wrap gap-2">
                 {EQUIPMENT.map(eq => (
                   <button
@@ -155,7 +155,7 @@ export default function Programs() {
                     className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
                       activeEquipment === eq 
                         ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
-                        : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
+                        : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
                     }`}
                   >
                     {eq}
@@ -164,7 +164,7 @@ export default function Programs() {
               </div>
             </div>
             <div>
-              <h3 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-4">Frequency</h3>
+              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] mb-4">Frequency</h3>
               <div className="flex flex-wrap gap-2">
                 {FREQUENCY.map(freq => (
                   <button
@@ -173,7 +173,7 @@ export default function Programs() {
                     className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
                       activeFrequency === freq 
                         ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
-                        : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
+                        : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
                     }`}
                   >
                     {freq}
@@ -204,7 +204,7 @@ export default function Programs() {
                 >
                   <Dialog>
                     <DialogTrigger asChild>
-                      <Card className="overflow-hidden border-white/5 bg-white/[0.03] backdrop-blur-sm flex flex-col hover:bg-white/[0.08] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 rounded-[32px] group h-full cursor-pointer relative">
+                      <Card className="overflow-hidden border-white/10 bg-white/[0.03] backdrop-blur-sm flex flex-col hover:bg-white/[0.08] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 rounded-[32px] group h-full cursor-pointer relative">
                         <div className="h-64 overflow-hidden relative">
                           <img src={program.image} alt={program.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
@@ -213,12 +213,12 @@ export default function Programs() {
                           </div>
                         </div>
                         <CardHeader className="flex-1 p-8 relative">
-                          <div className="absolute top-0 left-8 w-12 h-px bg-white/20 transform -translate-y-px group-hover:w-20 group-hover:bg-white/40 transition-all duration-500"></div>
-                          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-3 group-hover:text-white/60 transition-colors">{program.equipment}</p>
+                          <div className="absolute top-0 left-8 w-12 h-px bg-white/40 transform -translate-y-px group-hover:w-20 group-hover:bg-white/60 transition-all duration-500"></div>
+                          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60 mb-3 group-hover:text-white/80 transition-colors">{program.equipment}</p>
                           <h3 className="text-2xl font-bold font-heading text-white mb-4 italic tracking-tight">{program.title}</h3>
-                          <CardDescription className="text-white/40 text-base leading-relaxed font-light line-clamp-2 group-hover:text-white/60 transition-colors">{program.description}</CardDescription>
+                          <CardDescription className="text-white/60 text-base leading-relaxed font-light line-clamp-2 group-hover:text-white/80 transition-colors">{program.description}</CardDescription>
                         </CardHeader>
-                        <CardFooter className="p-8 pt-0 border-t border-white/5">
+                        <CardFooter className="p-8 pt-0 border-t border-white/10">
                           <span className="text-xs font-bold text-white uppercase tracking-widest flex items-center w-full justify-between group/link">
                             View Monthly Phase <ArrowRight className="w-4 h-4 transform group-hover:translate-x-3 transition-transform duration-300" />
                           </span>
@@ -232,24 +232,24 @@ export default function Programs() {
                         <div className="absolute bottom-8 left-8">
                           <div className="flex gap-2 mb-3">
                             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary bg-white px-3 py-1.5 rounded-full">{program.goal}</span>
-                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-md">{program.equipment}</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white bg-white/20 px-3 py-1.5 rounded-full backdrop-blur-md">{program.equipment}</span>
                           </div>
                           <DialogTitle className="text-4xl font-heading text-white italic tracking-tight">{program.title}</DialogTitle>
                         </div>
                       </div>
                       <div className="p-10">
-                        <DialogDescription className="text-lg font-light text-white/70 leading-relaxed mb-10">
+                        <DialogDescription className="text-lg font-light text-white/80 leading-relaxed mb-10">
                           {program.description}
                         </DialogDescription>
                         
-                        <div className="grid grid-cols-2 gap-8 py-10 border-y border-white/5 mb-10">
+                        <div className="grid grid-cols-2 gap-8 py-10 border-y border-white/10 mb-10">
                           <div className="flex items-start gap-4 group">
                             <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-primary transition-all duration-500">
                               <Target className="w-6 h-6" />
                             </div>
                             <div>
-                              <h4 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-1">Focus</h4>
-                              <p className="text-sm text-white/80 font-medium leading-tight">{program.details.who}</p>
+                              <h4 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] mb-1">Focus</h4>
+                              <p className="text-sm text-white/90 font-medium leading-tight">{program.details.who}</p>
                             </div>
                           </div>
                           <div className="flex items-start gap-4 group">
@@ -257,8 +257,8 @@ export default function Programs() {
                               <Clock className="w-6 h-6" />
                             </div>
                             <div>
-                              <h4 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-1">Duration</h4>
-                              <p className="text-sm text-white/80 font-medium leading-tight">{program.details.time}</p>
+                              <h4 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] mb-1">Duration</h4>
+                              <p className="text-sm text-white/90 font-medium leading-tight">{program.details.time}</p>
                             </div>
                           </div>
                           <div className="flex items-start gap-4 group">
@@ -266,8 +266,8 @@ export default function Programs() {
                               <CalendarDays className="w-6 h-6" />
                             </div>
                             <div>
-                              <h4 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-1">Frequency</h4>
-                              <p className="text-sm text-white/80 font-medium leading-tight">{program.details.days}</p>
+                              <h4 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] mb-1">Frequency</h4>
+                              <p className="text-sm text-white/90 font-medium leading-tight">{program.details.days}</p>
                             </div>
                           </div>
                           <div className="flex items-start gap-4 group">
@@ -275,8 +275,8 @@ export default function Programs() {
                               <Dumbbell className="w-6 h-6" />
                             </div>
                             <div>
-                              <h4 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-1">Outcome</h4>
-                              <p className="text-sm text-white/80 font-medium leading-tight">{program.details.achieve}</p>
+                              <h4 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] mb-1">Outcome</h4>
+                              <p className="text-sm text-white/90 font-medium leading-tight">{program.details.achieve}</p>
                             </div>
                           </div>
                         </div>
@@ -314,7 +314,7 @@ export default function Programs() {
         >
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
           <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 italic tracking-tight">Ready to start training?</h2>
-          <p className="text-white/50 mb-10 max-w-xl mx-auto text-lg font-light leading-relaxed">Get instant access to all programs above, plus every future program we release, for just $14.99/month.</p>
+          <p className="text-white/60 mb-10 max-w-xl mx-auto text-lg font-light leading-relaxed">Get instant access to all programs above, plus every future program we release, for just $14.99/month.</p>
           <a href="https://example.com/checkout" target="_blank" rel="noreferrer">
             <Button size="lg" className="rounded-full bg-[#e5e7eb] text-primary hover:bg-white hover:scale-105 transition-all duration-300 font-bold px-12 h-16 border-none shadow-2xl">
               Unlock Full Access

@@ -37,11 +37,11 @@ export default function Pricing() {
           transition={{ duration: 0.8 }}
           className="text-center max-w-3xl mx-auto mb-20"
         >
-          <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm font-medium tracking-wider uppercase">
+          <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm font-medium tracking-wider uppercase text-white/90">
             Membership
           </div>
           <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight italic">Simple, Elite Access</h1>
-          <p className="text-xl text-white/50 font-light leading-relaxed">High-performance training shouldn't be complicated. One membership, unlimited evolution.</p>
+          <p className="text-xl text-white/70 font-light leading-relaxed">High-performance training shouldn't be complicated. One membership, unlimited evolution.</p>
         </motion.div>
 
         {/* Main Pricing Card */}
@@ -51,15 +51,15 @@ export default function Pricing() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-2xl mx-auto mb-32"
         >
-          <Card className="border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.3)] relative overflow-hidden bg-white/5 backdrop-blur-md rounded-[40px] group transition-all duration-500 hover:bg-white/[0.08]">
-            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-            <CardHeader className="text-center pt-16 pb-10 border-b border-white/5">
+          <Card className="border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.3)] relative overflow-hidden bg-white/5 backdrop-blur-md rounded-[40px] group transition-all duration-500 hover:bg-white/[0.08]">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
+            <CardHeader className="text-center pt-16 pb-10 border-b border-white/10">
               <CardTitle className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-widest italic">Full Access Pass</CardTitle>
               <div className="flex items-baseline justify-center gap-2">
                 <span className="text-7xl font-bold font-heading text-white">$14.99</span>
-                <span className="text-white/40 text-xl font-light">/month</span>
+                <span className="text-white/60 text-xl font-light">/month</span>
               </div>
-              <p className="mt-4 text-white/50 text-sm font-medium tracking-wide uppercase">Billed Monthly</p>
+              <p className="mt-4 text-white/70 text-sm font-medium tracking-wide uppercase">Billed Monthly</p>
             </CardHeader>
             <CardContent className="p-12">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
@@ -69,8 +69,8 @@ export default function Pricing() {
                   "App-Based Coaching Cues",
                   "Continuous Updates"
                 ].map((feature, i) => (
-                  <li key={i} className="flex items-center gap-3 text-white/90 list-none group/item">
-                    <div className="w-5 h-5 rounded-full bg-white/10 flex items-center justify-center group-hover/item:bg-white group-hover/item:text-primary transition-all duration-300">
+                  <li key={i} className="flex items-center gap-3 text-white list-none group/item">
+                    <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover/item:bg-white group-hover/item:text-primary transition-all duration-300">
                       <CheckCircle2 className="w-3.5 h-3.5" />
                     </div>
                     <span className="font-medium text-sm tracking-wide">{feature}</span>
@@ -116,13 +116,13 @@ export default function Pricing() {
               key={i} 
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.4 } }}
-              className="text-center p-10 rounded-[40px] bg-white/5 border border-white/5 transition-all hover:bg-white/[0.08] backdrop-blur-sm group"
+              className="text-center p-10 rounded-[40px] bg-white/5 border border-white/10 transition-all hover:bg-white/[0.08] backdrop-blur-sm group"
             >
-              <div className="w-14 h-14 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-8 text-white group-hover:scale-110 group-hover:bg-white group-hover:text-primary transition-all duration-500">
+              <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-8 text-white group-hover:scale-110 group-hover:bg-white group-hover:text-primary transition-all duration-500">
                 <pillar.icon className="w-7 h-7" />
               </div>
               <h3 className="text-lg font-bold text-white mb-4 uppercase tracking-widest italic">{pillar.title}</h3>
-              <p className="text-white/40 text-sm leading-relaxed font-light">{pillar.desc}</p>
+              <p className="text-white/60 text-sm leading-relaxed font-light">{pillar.desc}</p>
             </motion.div>
           ))}
         </motion.div>

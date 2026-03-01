@@ -185,7 +185,7 @@ export default function Home() {
                 transition={{ duration: 1, ease: "easeOut" }}
                 className="max-w-4xl mx-auto"
               >
-                <p className="text-xl md:text-2xl text-white/50 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
                   Professional training cycles delivered in focused monthly phases. Build measurable momentum for $14.99/mo.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
@@ -195,7 +195,7 @@ export default function Home() {
                     </Button>
                   </Link>
                   <Link href="/about">
-                    <Button size="lg" variant="outline" className="rounded-full text-lg px-12 h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300" data-testid="button-about-hero">
+                    <Button size="lg" variant="outline" className="rounded-full text-lg px-12 h-16 font-bold border-white/40 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300" data-testid="button-about-hero">
                       Our Philosophy
                     </Button>
                   </Link>
@@ -260,7 +260,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic">Everything You Need To Succeed</motion.h2>
-            <motion.p variants={itemVariants} className="text-white/60 max-w-2xl mx-auto text-lg font-light">Access a continuous evolution of professional training. Our structured 6-month cycles are delivered in focused monthly phases, providing a continuous roadmap for long-term growth and performance.</motion.p>
+            <motion.p variants={itemVariants} className="text-white/80 max-w-2xl mx-auto text-lg font-light">Access a continuous evolution of professional training. Our structured 6-month cycles are delivered in focused monthly phases, providing a continuous roadmap for long-term growth and performance.</motion.p>
           </motion.div>
           
           <motion.div 
@@ -287,7 +287,7 @@ export default function Home() {
                       </div>
                     </div>
                     <CardTitle className="text-xl font-bold font-heading text-white italic tracking-tight uppercase">{feature.title}</CardTitle>
-                    <CardDescription className="text-white/40 text-sm leading-relaxed font-light mt-2 group-hover:text-white/60 transition-colors">
+                    <CardDescription className="text-white/60 text-sm leading-relaxed font-light mt-2 group-hover:text-white/80 transition-colors">
                       {feature.description}
                     </CardDescription>
                   </CardHeader>
@@ -299,7 +299,7 @@ export default function Home() {
                         exit={{ height: 0, opacity: 0 }}
                         className="overflow-hidden"
                       >
-                        <CardContent className="pb-8 pt-0 text-xs text-white/30 font-medium leading-relaxed uppercase tracking-widest border-t border-white/5 mt-4">
+                        <CardContent className="pb-8 pt-0 text-xs text-white/50 font-medium leading-relaxed uppercase tracking-widest border-t border-white/5 mt-4">
                           <p className="mt-4">{feature.details}</p>
                         </CardContent>
                       </motion.div>
@@ -323,7 +323,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary mb-4 italic tracking-tight uppercase">The Evolution</h2>
-            <p className="text-primary/40 max-w-xl mx-auto text-lg font-light leading-relaxed">Three steps to professional performance. One commitment to growth.</p>
+            <p className="text-primary/60 max-w-xl mx-auto text-lg font-light leading-relaxed">Three steps to professional performance. One commitment to growth.</p>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative max-w-5xl mx-auto">
@@ -349,7 +349,7 @@ export default function Home() {
                   {item.step}
                 </motion.div>
                 <h3 className="text-xl font-bold mb-3 italic tracking-tight text-primary uppercase">{item.title}</h3>
-                <p className="text-primary/50 text-base font-light leading-relaxed">{item.desc}</p>
+                <p className="text-primary/60 text-base font-light leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -369,7 +369,7 @@ export default function Home() {
               className="max-w-2xl text-center md:text-left"
             >
               <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic uppercase">Select Your Path</h2>
-              <p className="text-white/40 text-lg font-light leading-relaxed">Structured cycles designed for measurable results. Select the roadmap that matches your environment.</p>
+              <p className="text-white/60 text-lg font-light leading-relaxed">Structured cycles designed for measurable results. Select the roadmap that matches your environment.</p>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 20 }}
@@ -408,9 +408,9 @@ export default function Home() {
                   </div>
                   <CardHeader className="flex-1 p-8 relative">
                     <div className="absolute top-0 left-8 w-12 h-px bg-white/20 transform -translate-y-px group-hover:w-20 group-hover:bg-white/40 transition-all duration-500"></div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-3 group-hover:text-white/60 transition-colors">{prog.eq}</p>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60 mb-3 group-hover:text-white/80 transition-colors">{prog.eq}</p>
                     <h3 className="text-2xl font-bold font-heading text-white mb-4 italic tracking-tight">{prog.title}</h3>
-                    <CardDescription className="text-white/40 text-base leading-relaxed font-light line-clamp-3 group-hover:text-white/60 transition-colors">{prog.desc}</CardDescription>
+                    <CardDescription className="text-white/60 text-base leading-relaxed font-light line-clamp-3 group-hover:text-white/80 transition-colors">{prog.desc}</CardDescription>
                   </CardHeader>
                   <CardFooter className="p-8 pt-0 mt-auto">
                     <Link href="/programs" className="text-xs font-bold text-white uppercase tracking-widest flex items-center w-full justify-between group/link">
@@ -444,7 +444,7 @@ export default function Home() {
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <h2 className="text-3xl md:text-4xl font-bold font-heading mb-8 uppercase italic tracking-tight">Simple, Transparent Pricing</h2>
           <div className="bg-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-md border border-white/20">
-            <div className="text-6xl font-bold font-heading mb-4 italic">$14.99<span className="text-2xl text-white/70 font-normal">/month</span></div>
+            <div className="text-6xl font-bold font-heading mb-4 italic">$14.99<span className="text-2xl text-white/80 font-normal">/month</span></div>
             <p className="text-xl text-white/90 mb-8 font-light uppercase tracking-widest">Unlimited programs • Cancel anytime</p>
             <Link href="/programs">
               <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-12 h-14 bg-[#e5e7eb] text-primary hover:bg-white font-bold border-none shadow-2xl" data-testid="button-pricing-teaser">
@@ -523,15 +523,15 @@ export default function Home() {
           <div className="space-y-6">
             <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">What do I get with the membership?</h3>
-              <p className="text-white/60 font-light leading-relaxed">You get unlimited, instant access to our entire library of professional 6-month programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time.</p>
+              <p className="text-white/80 font-light leading-relaxed">You get unlimited, instant access to our entire library of professional 6-month programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time.</p>
             </div>
             <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">Can beginners do these programs?</h3>
-              <p className="text-white/60 font-light leading-relaxed">Absolutely. We have specific programs designed for all levels, and all our programs include scalable options to match your current fitness level.</p>
+              <p className="text-white/80 font-light leading-relaxed">Absolutely. We have specific programs designed for all levels, and all our programs include scalable options to match your current fitness level.</p>
             </div>
             <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">How do I cancel?</h3>
-              <p className="text-white/60 font-light leading-relaxed">You can cancel anytime directly from your account settings with just two clicks. No hidden fees or lengthy commitments.</p>
+              <p className="text-white/80 font-light leading-relaxed">You can cancel anytime directly from your account settings with just two clicks. No hidden fees or lengthy commitments.</p>
             </div>
           </div>
           
@@ -557,7 +557,7 @@ export default function Home() {
             transition={{ duration: 0.8 }}
           >
             <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-8 italic tracking-tighter uppercase leading-[0.9]">Start today.<br/>Build momentum.</h2>
-            <p className="text-xl md:text-2xl text-white/50 mb-12 font-light leading-relaxed max-w-2xl mx-auto">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
+            <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
             <Link href="/programs">
               <Button size="lg" className="rounded-full text-lg px-12 h-16 font-bold shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 bg-[#e5e7eb] text-primary hover:bg-white border-none" data-testid="button-final-cta">
                 Get Started Today
