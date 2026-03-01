@@ -43,16 +43,16 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative group">
-              <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl bg-primary flex items-center justify-center p-12 transition-all duration-700 hover:shadow-primary/20">
+              <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl bg-secondary flex items-center justify-center p-16 transition-all duration-700 hover:shadow-primary/10 border border-primary/5">
                 <div className="relative z-10 w-full animate-in fade-in zoom-in duration-1000">
-                  <img src={logo} alt="Momentum Wellness Logo" className="w-full h-auto grayscale invert opacity-90 transition-transform duration-700 group-hover:scale-105" />
+                  <img src={logo} alt="Momentum Wellness Logo" className="w-full h-auto opacity-90 transition-transform duration-700 group-hover:scale-105" />
                 </div>
-                {/* Decorative elements to make it look "crafted" */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-primary via-primary/95 to-primary/90 opacity-100"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-white/5 rounded-full rotate-45 pointer-events-none"></div>
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-white/10 rounded-full -rotate-12 pointer-events-none"></div>
+                {/* Decorative elements using theme colors */}
+                <div className="absolute inset-0 bg-gradient-to-tr from-secondary via-secondary/50 to-white opacity-100"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[140%] h-[140%] border border-primary/5 rounded-full rotate-45 pointer-events-none"></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] border border-primary/10 rounded-full -rotate-12 pointer-events-none"></div>
               </div>
-              <div className="absolute -bottom-10 -right-10 bg-white text-primary p-10 rounded-3xl shadow-2xl hidden md:block max-w-xs border border-primary/5">
+              <div className="absolute -bottom-10 -right-10 bg-primary text-white p-10 rounded-3xl shadow-2xl hidden md:block max-w-xs border border-white/10">
                 <p className="font-bold text-xl leading-snug italic">
                   "Progress isn't found in random effort. It's found in structured consistency."
                 </p>
