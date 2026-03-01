@@ -182,7 +182,7 @@ export default function Programs() {
                         : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
                     }`}
                   >
-                    {freq}
+                    {freq === "All" ? freq : `${freq} Per Week`}
                   </button>
                 ))}
               </div>
