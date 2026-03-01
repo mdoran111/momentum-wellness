@@ -122,8 +122,8 @@ export default function Home() {
       {/* A) Hero Section */}
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
         {/* Background Logo watermark */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20 pointer-events-none overflow-hidden translate-y-2">
-          <img src={logo} alt="" className="w-[110%] max-w-none grayscale invert" />
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20 pointer-events-none overflow-hidden translate-y-4">
+          <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
         </div>
         
         <div className="container relative z-10 mx-auto px-4 text-center">
@@ -133,7 +133,7 @@ export default function Home() {
           <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 animate-in slide-in-from-bottom-8 duration-700 delay-150">
             Expertly designed training plans for those who value structure, science-based progression, and real-world results.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in slide-in-from-bottom-8 duration-700 delay-300">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in slide-in-from-bottom-8 duration-700 delay-300 relative z-10">
             <Link href="/programs" className="w-full sm:w-auto">
               <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] font-bold border-none" data-testid="button-hero-start">
                 Unlock Full Access — $14.99/mo
