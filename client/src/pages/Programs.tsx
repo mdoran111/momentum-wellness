@@ -7,6 +7,7 @@ import { Link, useLocation } from "wouter";
 import programGym from '../assets/images/program-gym.jpg';
 import programMinimal from '../assets/images/program-minimal.jpg';
 import programHome from '../assets/images/program-home-outdoor.jpg';
+import logo from '../assets/images/logo.png';
 
 // Mock data for programs
 const PROGRAMS = [
@@ -76,11 +77,18 @@ export default function Programs() {
     <div className="pt-12 pb-24 min-h-screen bg-primary text-white">
       <div className="container mx-auto px-4">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Program Library</h1>
-          <p className="text-xl text-white/80 mb-4">Your membership provides a continuous roadmap for elite performance. Engage with our structured 6-month cycles, delivered in focused monthly phases to ensure total mastery and continuous growth.</p>
-          <div className="inline-block px-4 py-2 bg-white/10 rounded-lg border border-white/20">
-            <p className="text-sm font-medium text-white/90">Note: New phases are unlocked month-by-month as you evolve through your training.</p>
+        <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+          <div className="max-w-3xl">
+            <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Program Library</h1>
+            <p className="text-xl text-white/80 mb-4">Your membership provides a continuous roadmap for elite performance. Engage with our structured 6-month cycles, delivered in focused monthly phases to ensure total mastery and continuous growth.</p>
+            <div className="inline-block px-4 py-2 bg-white/10 rounded-lg border border-white/20">
+              <p className="text-sm font-medium text-white/90">Note: New phases are unlocked month-by-month as you evolve through your training.</p>
+            </div>
+          </div>
+          <div className="shrink-0 pb-2">
+            <div className="w-24 h-24 md:w-32 md:h-32 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center p-4 backdrop-blur-sm transition-all duration-500 hover:bg-white/10 hover:shadow-2xl group">
+              <img src={logo} alt="Momentum Wellness" className="w-full h-auto grayscale invert opacity-50 group-hover:opacity-80 transition-opacity" />
+            </div>
           </div>
         </div>
 
