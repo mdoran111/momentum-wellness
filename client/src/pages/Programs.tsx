@@ -124,20 +124,20 @@ export default function Programs() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-16 space-y-10 p-10 bg-white/[0.02] backdrop-blur-md rounded-[48px] border border-white/5"
+          className="mb-12 p-6 bg-white/[0.02] backdrop-blur-md rounded-[32px] border border-white/5"
         >
-          <div className="space-y-12">
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] w-32 shrink-0">Goal</h3>
-              <div className="flex flex-wrap gap-3">
+          <div className="space-y-4">
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
+              <h3 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] w-24 shrink-0">Goal</h3>
+              <div className="flex flex-wrap gap-2">
                 {GOALS.map(goal => (
                   <button
                     key={goal}
                     onClick={() => setActiveGoal(goal)}
-                    className={`px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
+                    className={`px-4 py-1.5 rounded-full text-[10px] font-bold transition-all duration-300 uppercase tracking-widest ${
                       activeGoal === goal 
-                        ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
-                        : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
+                        ? "bg-white text-primary" 
+                        : "bg-white/5 text-white/50 hover:bg-white/10 hover:text-white"
                     }`}
                   >
                     {goal}
@@ -146,19 +146,17 @@ export default function Programs() {
               </div>
             </div>
 
-            <div className="h-px bg-white/5 w-full"></div>
-
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] w-32 shrink-0">Equipment</h3>
-              <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
+              <h3 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] w-24 shrink-0">Gear</h3>
+              <div className="flex flex-wrap gap-2">
                 {EQUIPMENT.map(eq => (
                   <button
                     key={eq}
                     onClick={() => setActiveEquipment(eq)}
-                    className={`px-6 py-2.5 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
+                    className={`px-4 py-1.5 rounded-full text-[10px] font-bold transition-all duration-300 uppercase tracking-widest ${
                       activeEquipment === eq 
-                        ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
-                        : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
+                        ? "bg-white text-primary" 
+                        : "bg-white/5 text-white/50 hover:bg-white/10 hover:text-white"
                     }`}
                   >
                     {eq}
@@ -167,22 +165,20 @@ export default function Programs() {
               </div>
             </div>
 
-            <div className="h-px bg-white/5 w-full"></div>
-
-            <div className="flex flex-col md:flex-row md:items-center gap-6">
-              <h3 className="text-[10px] font-bold text-white/60 uppercase tracking-[0.2em] w-32 shrink-0">Frequency</h3>
-              <div className="flex flex-wrap gap-3">
+            <div className="flex flex-col md:flex-row md:items-center gap-4">
+              <h3 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] w-24 shrink-0">Workouts</h3>
+              <div className="flex flex-wrap gap-2">
                 {FREQUENCY.map(freq => (
                   <button
                     key={freq}
                     onClick={() => setActiveFrequency(freq)}
-                    className={`px-5 py-2.5 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
+                    className={`px-4 py-1.5 rounded-full text-[10px] font-bold transition-all duration-300 uppercase tracking-widest ${
                       activeFrequency === freq 
-                        ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
-                        : "bg-white/10 text-white/80 hover:bg-white/20 hover:text-white"
+                        ? "bg-white text-primary" 
+                        : "bg-white/5 text-white/50 hover:bg-white/10 hover:text-white"
                     }`}
                   >
-                    {freq === "All" ? freq : `${freq} Per Week`}
+                    {freq === "All" ? freq : `${freq} / week`}
                   </button>
                 ))}
               </div>
