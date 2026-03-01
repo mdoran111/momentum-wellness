@@ -14,8 +14,9 @@ const PROGRAMS = [
     id: 1,
     title: "The Apex Path",
     description: "A comprehensive 6-month journey designed to transform your physical capability and mental focus using a full suite of strength equipment. Build raw power and elite-level conditioning through structured, science-based progression.",
-    goal: "Athletic Power",
+    goal: "Strength",
     equipment: "Full Gym",
+    daysPerWeek: "4x",
     image: programGym,
     details: {
       who: "Lifters with access to a commercial or well-equipped home gym looking for a long-term transformation.",
@@ -28,8 +29,9 @@ const PROGRAMS = [
     id: 2,
     title: "The Versatile Edge",
     description: "Unlock total-body vitality with a 6-month curriculum centered around dumbbells, bands, and kettlebells. This holistic approach blends strength, stability, and endurance for the modern, high-functioning individual.",
-    goal: "Metabolic Conditioning",
+    goal: "Body Recomposition",
     equipment: "Essential Gear",
+    daysPerWeek: "3x",
     image: programMinimal,
     details: {
       who: "Those training with essential weights and tools who want a balanced, high-performance body.",
@@ -42,8 +44,9 @@ const PROGRAMS = [
     id: 3,
     title: "The Foundational Flow",
     description: "Reconnect with your body through a 6-month bodyweight-only series focused on sustainable movement, mobility, and high-intensity conditioning. Find freedom in training anywhere while building a lean, athletic foundation.",
-    goal: "Functional Mobility",
+    goal: "Essentials",
     equipment: "Zero Equipment",
+    daysPerWeek: "2x",
     image: programHome,
     details: {
       who: "Anyone who values the freedom of training anywhere—at home, in the park, or on the road—with zero gear.",
@@ -54,12 +57,14 @@ const PROGRAMS = [
   }
 ];
 
-const GOALS = ["All", "Strength", "Metabolic Conditioning", "Athletic Power", "Functional Mobility"];
+const GOALS = ["All", "Strength", "Body Recomposition", "Essentials"];
 const EQUIPMENT = ["All", "Full Gym", "Essential Gear", "Zero Equipment"];
+const FREQUENCY = ["All", "2x", "3x", "4x"];
 
 export default function Programs() {
   const [activeGoal, setActiveGoal] = useState("All");
   const [activeEquipment, setActiveEquipment] = useState("All");
+  const [activeFrequency, setActiveFrequency] = useState("All");
   const [location] = useLocation();
 
   useEffect(() => {
@@ -69,7 +74,8 @@ export default function Programs() {
   const filteredPrograms = PROGRAMS.filter(p => {
     const matchGoal = activeGoal === "All" || p.goal === activeGoal;
     const matchEq = activeEquipment === "All" || p.equipment === activeEquipment;
-    return matchGoal && matchEq;
+    const matchFreq = activeFrequency === "All" || p.daysPerWeek === activeFrequency;
+    return matchGoal && matchEq && matchFreq;
   });
 
   return (
@@ -118,6 +124,24 @@ export default function Programs() {
                   }`}
                 >
                   {eq}
+                </button>
+              ))}
+            </div>
+          </div>
+          <div>
+            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">Days Per Week</h3>
+            <div className="flex flex-wrap gap-2">
+              {FREQUENCY.map(freq => (
+                <button
+                  key={freq}
+                  onClick={() => setActiveFrequency(freq)}
+                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                    activeFrequency === freq 
+                      ? "bg-white text-primary" 
+                      : "bg-white/10 text-white hover:bg-white/20"
+                  }`}
+                >
+                  {freq}
                 </button>
               ))}
             </div>
