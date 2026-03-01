@@ -138,20 +138,27 @@ export default function About() {
 
       {/* CTA Section */}
       <section className="py-32 bg-primary text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
-        <div className="absolute bottom-0 left-0 w-64 h-64 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
         
         <div className="container relative z-10 mx-auto px-4 text-center max-w-4xl">
-          <h2 className="text-4xl md:text-6xl font-bold font-heading mb-8">Ready to build your momentum?</h2>
-          <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto">Join a community of individuals who value structure, performance, and real progress.</p>
+          <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm font-medium tracking-wider uppercase animate-in fade-in slide-in-from-bottom-4 duration-700">
+            Start Your Transformation
+          </div>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading mb-8 leading-[1.1] tracking-tight">
+            Ready to build your <span className="text-white/60 italic">momentum?</span>
+          </h2>
+          <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
+            Join a community of high-performers who value structure, science-based programming, and measurable evolution.
+          </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="/programs">
-              <Button size="lg" className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none shadow-2xl transition-all hover:scale-105">
+              <Button size="lg" className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold bg-[#e5e7eb] text-primary hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] border-none">
                 Unlock Full Access
               </Button>
             </Link>
-            <Link href="/pricing">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold border-white text-white hover:bg-white/10 transition-all">
+            <Link href="/pricing" onClick={() => window.scrollTo(0, 0)}>
+              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold border-white/20 text-white hover:bg-white/10 hover:border-white transition-all duration-300">
                 View Pricing
               </Button>
             </Link>
