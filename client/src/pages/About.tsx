@@ -145,8 +145,8 @@ export default function About() {
           <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm font-medium tracking-wider uppercase animate-in fade-in slide-in-from-bottom-4 duration-700">
             Start Your Transformation
           </div>
-          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading mb-8 leading-[1.1] tracking-tight">
-            Ready to build your <span className="text-white/60 italic">momentum?</span>
+          <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading mb-8 leading-[1.1] tracking-tight text-white uppercase">
+            Ready to build your MOMENTUM?
           </h2>
           <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto leading-relaxed font-light">
             Join a community of high-performers who value structure, science-based programming, and measurable evolution.
