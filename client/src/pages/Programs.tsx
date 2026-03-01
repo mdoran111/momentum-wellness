@@ -113,7 +113,7 @@ export default function Programs() {
           className="max-w-3xl mb-16"
         >
           <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Program Library</h1>
-          <p className="text-xl text-white/60 mb-6 font-light leading-relaxed">Your membership provides a continuous roadmap for elite performance. Engage with our structured 6-month cycles, delivered in focused monthly phases.</p>
+          <p className="text-xl text-white/60 mb-6 font-light leading-relaxed">Your membership provides a continuous roadmap for elite performance. Engage with our structured 6-month cycles, delivered in focused monthly phases to ensure total mastery and continuous growth.</p>
           <div className="inline-block px-6 py-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
             <p className="text-sm font-medium text-white/80 italic">Note: New phases are unlocked month-by-month as you evolve through your training.</p>
           </div>
@@ -325,4 +325,3 @@ export default function Programs() {
     </div>
   );
 }
-

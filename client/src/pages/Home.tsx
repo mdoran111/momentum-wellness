@@ -64,17 +64,17 @@ const TESTIMONIALS = [
 const FEATURES = [
   {
     title: "Unlimited program access",
-    description: "Your membership unlocks our entire ecosystem. Switch between programs as your goals or environment change.",
+    description: "Your membership unlocks our entire library of elite 6-month programs. Switch between paths as your goals or environment change.",
     details: "Choose from The Apex Path, The Versatile Edge, or The Foundational Flow at any time."
   },
   {
     title: "Monthly phase unlocks",
-    description: "Focus is the key to progress. We deliver your training in structured 30-day blocks to ensure mastery before moving forward.",
+    description: "Focus is the key to progress. We deliver your training in structured monthly phases to ensure total mastery and continuous growth.",
     details: "New training blocks appear in your dashboard every 30 days as you progress through the 6-month cycle."
   },
   {
     title: "App-based coaching cues",
-    description: "Never wonder about form again. Every movement includes high-definition video cues and performance notes.",
+    description: "Never wonder about form again. Every movement includes professional video cues and performance notes optimized for the gym floor.",
     details: "Detailed breakdowns of tempo, setup, and common pitfalls for every single exercise in the library."
   },
   {
@@ -198,7 +198,7 @@ export default function Home() {
                   <span className="text-white/20">Redefined</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-white/50 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-                  Elite training cycles delivered in monthly phases. Build measurable momentum for $14.99/mo.
+                  Elite training cycles delivered in focused monthly phases. Build measurable momentum for $14.99/mo.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Link href="/programs">
@@ -535,7 +535,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">What do I get with the membership?</h3>
-              <p className="text-white/60 font-light leading-relaxed">You get unlimited, instant access to our entire library of 6-month programs. To ensure optimal focus and results, you'll view and follow your training one month at a time.</p>
+              <p className="text-white/60 font-light leading-relaxed">You get unlimited, instant access to our entire library of elite 6-month programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time.</p>
             </div>
             <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">Can beginners do these programs?</h3>
