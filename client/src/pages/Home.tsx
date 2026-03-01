@@ -122,7 +122,7 @@ export default function Home() {
       {/* A) Hero Section */}
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
         {/* Background Logo watermark */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-10 pointer-events-none overflow-hidden translate-y-2">
+        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-15 pointer-events-none overflow-hidden translate-y-2">
           <img src={logo} alt="" className="w-[110%] max-w-none grayscale invert" />
         </div>
         
