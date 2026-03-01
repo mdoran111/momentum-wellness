@@ -68,7 +68,7 @@ export default function Home() {
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowContent(true), 1200);
+    const timer = setTimeout(() => setShowContent(true), 2200);
     return () => clearTimeout(timer);
   }, []);
 
@@ -130,14 +130,14 @@ export default function Home() {
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
         {/* Background Logo watermark with Pop Effect */}
         <motion.div 
-          initial={{ scale: 0.5, opacity: 0, filter: "brightness(2)" }}
+          initial={{ scale: 0.5, opacity: 0, filter: "brightness(4)" }}
           animate={{ 
-            scale: [0.5, 1.1, 1], 
-            opacity: [0, 0.8, 0.2],
-            filter: ["brightness(2)", "brightness(2)", "brightness(1)"]
+            scale: [0.5, 1.2, 1], 
+            opacity: [0, 1, 0.2],
+            filter: ["brightness(4)", "brightness(4)", "brightness(1)"]
           }}
           transition={{ 
-            duration: 1.8, 
+            duration: 2.8, 
             times: [0, 0.6, 1],
             ease: "easeOut" 
           }}
