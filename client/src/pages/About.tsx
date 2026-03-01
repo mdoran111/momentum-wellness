@@ -53,7 +53,7 @@ export default function About() {
             </div>
             
             <div className="space-y-10">
-              <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight">A Blueprint for Total Vitality</h2>
+              <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight">A Synchronized Path to Wellness</h2>
               <div className="space-y-6 text-lg text-primary/70 leading-relaxed">
                 <p>
                   We don't believe in "quick fixes" or random daily workouts. Real transformation requires a roadmap. Our philosophy is centered around structured 6-month cycles, delivered in focused monthly phases. 
@@ -100,7 +100,7 @@ export default function About() {
             {[
               {
                 icon: Target,
-                title: "Intentional Movement",
+                title: "Mindful Athleticism",
                 desc: "Every exercise, set, and rep is selected to build a resilient, capable, and high-functioning body."
               },
               {
