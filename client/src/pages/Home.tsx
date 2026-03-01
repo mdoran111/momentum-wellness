@@ -185,10 +185,6 @@ export default function Home() {
                 transition={{ duration: 1, ease: "easeOut" }}
                 className="max-w-4xl mx-auto"
               >
-                <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-heading text-white mb-8 tracking-tighter italic uppercase leading-[0.9]">
-                  Momentum<br/>
-                  <span className="text-white/20">Wellness</span>
-                </h1>
                 <p className="text-xl md:text-2xl text-white/50 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
                   Elite training cycles delivered in focused monthly phases. Build measurable momentum for $14.99/mo.
                 </p>
