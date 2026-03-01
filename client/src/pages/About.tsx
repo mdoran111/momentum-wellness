@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ShieldCheck, Zap, Target, LayoutGrid } from "lucide-react";
 import aboutHero from '../assets/images/about-hero.jpg';
-import aboutTraining from '../assets/images/about-training.jpg';
+import aboutHolistic from '../assets/images/about-holistic.jpg';
 import logo from '../assets/images/logo.png';
 
 export default function About() {
@@ -43,7 +43,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative">
               <div className="aspect-[4/5] rounded-[40px] overflow-hidden shadow-2xl bg-secondary">
-                <img src={aboutTraining} alt="Focused training" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
+                <img src={aboutHolistic} alt="Holistic training" className="w-full h-full object-cover transition-transform duration-700 hover:scale-105" />
               </div>
               <div className="absolute -bottom-10 -right-10 bg-primary text-white p-10 rounded-3xl shadow-2xl hidden md:block max-w-xs">
                 <p className="font-bold text-xl leading-snug italic">
@@ -53,7 +53,7 @@ export default function About() {
             </div>
             
             <div className="space-y-10">
-              <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight">A Phased Approach to Mastery</h2>
+              <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight">A Blueprint for Total Vitality</h2>
               <div className="space-y-6 text-lg text-primary/70 leading-relaxed">
                 <p>
                   We don't believe in "quick fixes" or random daily workouts. Real transformation requires a roadmap. Our philosophy is centered around structured 6-month cycles, delivered in focused monthly phases. 
@@ -99,9 +99,9 @@ export default function About() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
             {[
               {
-                icon: Zap,
-                title: "Zero Noise",
-                desc: "No unnecessary messaging, no community clutter. Just your training and your results."
+                icon: Target,
+                title: "Intentional Movement",
+                desc: "Every exercise, set, and rep is selected to build a resilient, capable, and high-functioning body."
               },
               {
                 icon: LayoutGrid,
