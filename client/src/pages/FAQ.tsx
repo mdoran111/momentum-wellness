@@ -41,23 +41,10 @@ export default function FAQ() {
 
   return (
     <div className="pt-24 pb-32 min-h-screen bg-primary text-white relative overflow-hidden">
-      {/* Background Logo watermark with Pop Effect */}
-      <motion.div 
-        initial={{ scale: 0.5, opacity: 0, filter: "brightness(4)" }}
-        animate={{ 
-          scale: [0.5, 1.2, 1], 
-          opacity: [0, 1, 0.1],
-          filter: ["brightness(4)", "brightness(4)", "brightness(1)"]
-        }}
-        transition={{ 
-          duration: 2.8, 
-          times: [0, 0.6, 1],
-          ease: "easeOut" 
-        }}
-        className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden translate-y-4"
-      >
+      {/* Background Logo watermark - Static on internal pages */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20 pointer-events-none overflow-hidden translate-y-4">
         <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
-      </motion.div>
+      </div>
 
       <div className="container relative z-10 mx-auto px-4 max-w-3xl">
         <div className="text-center mb-16">
