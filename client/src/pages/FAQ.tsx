@@ -8,7 +8,7 @@ import logo from '../assets/images/logo.png';
 const FAQS = [
   {
     question: "What do I get with the membership?",
-    answer: "You get unlimited, instant access to our entire library of elite 6-month programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time."
+    answer: "You get unlimited, instant access to our entire library of professional 6-month programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time."
   },
   {
     question: "Can beginners do these programs?",
@@ -24,11 +24,11 @@ const FAQS = [
   },
   {
     question: "How do I access the workouts?",
-    answer: "Once you start your membership, you'll get instant access to our high-performance web platform. It is mobile-first and optimized for the gym floor, so you can easily follow your daily phase on your phone."
+    answer: "Once you start your membership, you'll get instant access to our professional web platform. It is mobile-first and optimized for the gym floor, so you can easily follow your daily phase on your phone."
   },
   {
     question: "How are the 6-month cycles structured?",
-    answer: "Each program is a structured 6-month roadmap divided into focused monthly phases. This ensuring you master the specific mechanics and intensity of one block before unlocking the next evolution of your training."
+    answer: "Each program is a structured 6-month roadmap divided into focused monthly phases. This ensures you master the specific mechanics and intensity of one block before unlocking the next evolution of your training."
   }
 ];
 
@@ -72,7 +72,7 @@ export default function FAQ() {
 
         <div className="mt-16 text-center bg-white/5 p-12 rounded-[40px] border border-white/10 backdrop-blur-md">
           <h2 className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-wider italic tracking-tight">Still have questions?</h2>
-          <p className="text-white/50 mb-8 font-light">We're here to ensure your transition to elite training is seamless.</p>
+          <p className="text-white/50 mb-8 font-light">We're here to ensure your transition to professional training is seamless.</p>
           <a href="mailto:support@momentumwellness.com">
             <Button className="rounded-full px-10 h-14 bg-[#e5e7eb] text-primary hover:bg-white transition-all font-bold border-none shadow-xl">
               Contact Support

@@ -44,7 +44,7 @@ export default function About() {
             Training Built<br className="md:hidden" /> For Results.
           </h1>
           <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Momentum Wellness is a commitment to structure, science, and the belief that elite training should be accessible to those who value their time and performance.
+            Momentum Wellness is a commitment to structure, science, and the belief that professional training should be accessible to those who value their time and performance.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
             <Link href="/programs" className="w-full sm:w-auto">
@@ -137,6 +137,7 @@ export default function About() {
             <p className="text-primary/40 max-w-2xl mx-auto text-xl font-light">We've cut the noise to focus on what actually moves the needle.</p>
           </motion.div>
 
+          
           <motion.div 
             initial="hidden"
             whileInView="visible"
@@ -152,7 +153,7 @@ export default function About() {
               },
               {
                 icon: LayoutGrid,
-                title: "Elite Structure",
+                title: "Professional Structure",
                 desc: "Every program is a comprehensive 6-month series designed for long-term development."
               },
               {

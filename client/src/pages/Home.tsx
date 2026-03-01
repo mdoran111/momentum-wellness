@@ -38,7 +38,7 @@ const TESTIMONIALS = [
   {
     name: "Jessica Low",
     role: "Performance Athlete",
-    content: "As a busy professional, I don't have time to plan. Momentum does it for me with elite-level precision. The Apex Path has redefined what I thought was possible for my absolute strength.",
+    content: "As a busy professional, I don't have time to plan. Momentum does it for me with professional precision. The Apex Path has redefined what I thought was possible for my absolute strength.",
     avatar: "JL"
   },
   {
@@ -64,7 +64,7 @@ const TESTIMONIALS = [
 const FEATURES = [
   {
     title: "Unlimited program access",
-    description: "Your membership unlocks our entire library of elite 6-month programs. Switch between paths as your goals or environment change.",
+    description: "Your membership unlocks our entire library of structured 6-month programs. Switch between paths as your goals or environment change.",
     details: "Choose from The Apex Path, The Versatile Edge, or The Foundational Flow at any time."
   },
   {
@@ -186,7 +186,7 @@ export default function Home() {
                 className="max-w-4xl mx-auto"
               >
                 <p className="text-xl md:text-2xl text-white/50 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-                  Elite training cycles delivered in focused monthly phases. Build measurable momentum for $14.99/mo.
+                  Professional training cycles delivered in focused monthly phases. Build measurable momentum for $14.99/mo.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Link href="/programs">
@@ -260,7 +260,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic">Everything You Need To Succeed</motion.h2>
-            <motion.p variants={itemVariants} className="text-white/60 max-w-2xl mx-auto text-lg font-light">Access a continuous evolution of elite training. Our structured 6-month cycles are delivered in focused monthly phases, providing a continuous roadmap for long-term growth and performance.</motion.p>
+            <motion.p variants={itemVariants} className="text-white/60 max-w-2xl mx-auto text-lg font-light">Access a continuous evolution of professional training. Our structured 6-month cycles are delivered in focused monthly phases, providing a continuous roadmap for long-term growth and performance.</motion.p>
           </motion.div>
           
           <motion.div 
@@ -323,7 +323,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary mb-4 italic tracking-tight uppercase">The Evolution</h2>
-            <p className="text-primary/40 max-w-xl mx-auto text-lg font-light leading-relaxed">Three steps to elite performance. One commitment to growth.</p>
+            <p className="text-primary/40 max-w-xl mx-auto text-lg font-light leading-relaxed">Three steps to professional performance. One commitment to growth.</p>
           </motion.div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative max-w-5xl mx-auto">
@@ -523,7 +523,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">What do I get with the membership?</h3>
-              <p className="text-white/60 font-light leading-relaxed">You get unlimited, instant access to our entire library of elite 6-month programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time.</p>
+              <p className="text-white/60 font-light leading-relaxed">You get unlimited, instant access to our entire library of professional 6-month programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time.</p>
             </div>
             <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">Can beginners do these programs?</h3>
