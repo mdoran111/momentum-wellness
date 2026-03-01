@@ -43,15 +43,13 @@ export default function About() {
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <div className="relative group flex items-center justify-center">
-              <div className="aspect-square w-full max-w-md rounded-[40px] overflow-hidden shadow-2xl bg-secondary flex items-center justify-center p-20 transition-all duration-700 hover:shadow-primary/10 border border-primary/5 relative">
-                <div className="relative z-10 w-full animate-in fade-in zoom-in duration-1000">
-                  <img src={logo} alt="Momentum Wellness Logo" className="w-full h-auto opacity-90 transition-transform duration-700 group-hover:scale-110" />
+              <div className="aspect-square w-full max-w-md rounded-[40px] overflow-hidden shadow-2xl bg-secondary flex items-center justify-center p-0 transition-all duration-700 hover:shadow-primary/10 border border-primary/5 relative">
+                <div className="relative z-10 w-full h-full animate-in fade-in zoom-in duration-1000">
+                  <img src={logo} alt="Momentum Wellness Logo" className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-110" />
                 </div>
                 {/* Sophisticated glassmorphism and geometric accents */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-secondary via-secondary/40 to-white/30 opacity-100"></div>
-                <div className="absolute top-0 right-0 w-32 h-32 bg-primary/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-2xl"></div>
-                <div className="absolute bottom-0 left-0 w-32 h-32 bg-primary/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-2xl"></div>
-                <div className="absolute inset-4 border border-primary/5 rounded-[32px] pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-secondary/40 via-transparent to-white/10 opacity-100 pointer-events-none"></div>
+                <div className="absolute inset-0 ring-1 ring-inset ring-primary/5 rounded-[40px] pointer-events-none"></div>
               </div>
             </div>
             
