@@ -2,7 +2,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ShieldCheck, Zap, Target, LayoutGrid } from "lucide-react";
 import aboutHero from '../assets/images/about-hero.jpg';
-import aboutHolistic from '../assets/images/about-holistic.jpg';
+import aboutHolistic from '../assets/images/about-holistic-strength.jpg';
 import brandVibe from '../assets/images/about-brand-vibe.jpg';
 import logo from '../assets/images/logo.png';
 
