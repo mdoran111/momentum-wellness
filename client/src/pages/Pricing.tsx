@@ -1,98 +1,94 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { CheckCircle2, X } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Zap, Award, Clock } from "lucide-react";
 import { Link } from "wouter";
+import logo from '../assets/images/logo.png';
 
 export default function Pricing() {
   return (
-    <div className="pt-16 pb-24 min-h-screen bg-primary text-white">
-      <div className="container mx-auto px-4">
-        <div className="text-center max-w-3xl mx-auto mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Simple, Honest Pricing</h1>
-          <p className="text-xl text-white/80">Everything you need to reach your goals, packaged into one accessible membership.</p>
+    <div className="pt-24 pb-32 min-h-screen bg-primary text-white relative overflow-hidden">
+      {/* Background Logo watermark */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-10 pointer-events-none overflow-hidden -translate-y-[15%]">
+        <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4">
+        <div className="text-center max-w-3xl mx-auto mb-20">
+          <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm font-medium tracking-wider uppercase">
+            Membership
+          </div>
+          <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight">Simple, Elite Access</h1>
+          <p className="text-xl text-white/70 font-light leading-relaxed">High-performance training shouldn't be complicated. One membership, unlimited evolution.</p>
         </div>
 
-        {/* Pricing Card */}
-        <div className="max-w-lg mx-auto mb-20">
-          <Card className="border-white/10 shadow-xl relative overflow-hidden bg-white/5">
-            <div className="absolute top-0 inset-x-0 h-2 bg-white/20"></div>
-            <CardHeader className="text-center pt-10 pb-8 bg-white/10 border-b border-white/10">
-              <CardTitle className="text-2xl font-bold font-heading mb-2 text-white">Momentum Membership</CardTitle>
-              <div className="flex items-baseline justify-center gap-1">
-                <span className="text-5xl font-bold font-heading text-white">$14.99</span>
-                <span className="text-white/60">/mo</span>
+        {/* Main Pricing Card */}
+        <div className="max-w-2xl mx-auto mb-32">
+          <Card className="border-white/10 shadow-[0_0_50px_rgba(0,0,0,0.3)] relative overflow-hidden bg-white/5 backdrop-blur-sm rounded-[40px]">
+            <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
+            <CardHeader className="text-center pt-16 pb-10 border-b border-white/5">
+              <CardTitle className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-widest">Full Access Pass</CardTitle>
+              <div className="flex items-baseline justify-center gap-2">
+                <span className="text-7xl font-bold font-heading text-white">$14.99</span>
+                <span className="text-white/40 text-xl font-light">/month</span>
               </div>
+              <p className="mt-4 text-white/50 text-sm font-medium tracking-wide uppercase">Billed Monthly • Cancel Anytime</p>
             </CardHeader>
-            <CardContent className="p-8">
-              <ul className="space-y-4 mb-8">
+            <CardContent className="p-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
                 {[
-                  "Unlimited access to all 6-month programs",
-                  "Progressive monthly unlocks",
-                  "Step-by-step app access",
-                  "Built-in progression tracking",
-                  "Nutrition guidelines & calculators",
-                  "Cancel anytime with 2 clicks"
+                  "Unlimited Program Access",
+                  "Monthly Phase Unlocks",
+                  "Built-in Progress Tracking",
+                  "Elite Nutrition Guides",
+                  "App-Based Coaching Cues",
+                  "Continuous Updates",
+                  "Zero Contract Policy",
+                  "2-Click Cancellation"
                 ].map((feature, i) => (
-                  <li key={i} className="flex items-start gap-3 text-white">
-                    <CheckCircle2 className="w-5 h-5 text-white shrink-0 mt-0.5" />
-                    <span className="font-medium">{feature}</span>
+                  <li key={i} className="flex items-center gap-3 text-white/90 list-none">
+                    <CheckCircle2 className="w-5 h-5 text-white shrink-0" />
+                    <span className="font-medium text-sm tracking-wide">{feature}</span>
                   </li>
                 ))}
-              </ul>
+              </div>
               
               <Link href="/programs" className="block w-full">
-                <Button className="w-full rounded-full h-14 text-lg font-bold shadow-md bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none">
-                  Unlock Full Access
+                <Button className="w-full rounded-full h-16 text-xl font-bold shadow-2xl bg-[#e5e7eb] text-primary hover:bg-white hover:scale-[1.02] transition-all duration-300 border-none">
+                  Get Started Now
                 </Button>
               </Link>
-              <p className="text-center text-sm text-white/60 mt-4">7-day money-back guarantee.</p>
+              <p className="text-center text-xs text-white/30 mt-6 tracking-widest uppercase font-semibold">7-Day Full Refund Guarantee</p>
             </CardContent>
           </Card>
         </div>
 
-        {/* Comparison Section */}
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-3xl font-bold font-heading text-center text-white mb-12">How it compares</h2>
-          
-          <div className="bg-white/5 rounded-3xl p-8 border border-white/10 shadow-sm overflow-x-auto">
-            <table className="w-full text-left border-collapse min-w-[600px]">
-              <thead>
-                <tr>
-                  <th className="pb-6 text-lg font-bold w-1/3"></th>
-                  <th className="pb-6 text-lg font-bold font-heading text-white w-1/3 bg-white/10 px-4 rounded-t-xl text-center">Momentum Membership</th>
-                  <th className="pb-6 text-lg font-bold font-heading text-white/60 w-1/3 px-4 text-center">1-on-1 Coaching</th>
-                </tr>
-              </thead>
-              <tbody>
-                {[
-                  { label: "Cost", we: "$14.99/mo", they: "$150 - $300+/mo" },
-                  { label: "Expert Programming", we: true, they: true },
-                  { label: "App Access", we: true, they: true },
-                  { label: "Instant Access", we: true, they: false },
-                  { label: "Custom Adjustments", we: false, they: true },
-                  { label: "Weekly Check-ins", we: false, they: true }
-                ].map((row, i) => (
-                  <tr key={i} className="border-t border-white/10">
-                    <td className="py-4 font-medium text-white">{row.label}</td>
-                    <td className="py-4 px-4 bg-white/10 text-center">
-                      {typeof row.we === 'boolean' ? (
-                        row.we ? <CheckCircle2 className="w-5 h-5 text-white mx-auto" /> : <X className="w-5 h-5 text-white/20 mx-auto" />
-                      ) : (
-                        <span className="font-bold text-white">{row.we}</span>
-                      )}
-                    </td>
-                    <td className="py-4 px-4 text-center">
-                      {typeof row.they === 'boolean' ? (
-                        row.they ? <CheckCircle2 className="w-5 h-5 text-white/40 mx-auto" /> : <X className="w-5 h-5 text-white/20 mx-auto" />
-                      ) : (
-                        <span className="text-white/60">{row.they}</span>
-                      )}
-                    </td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+        {/* Value Pillars Section */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+          {[
+            {
+              icon: ShieldCheck,
+              title: "No Hidden Fees",
+              desc: "What you see is what you pay. No initiation costs or surprise charges."
+            },
+            {
+              icon: Zap,
+              title: "Instant Access",
+              desc: "Get immediate entry to the full library and start your momentum today."
+            },
+            {
+              icon: Award,
+              title: "Expert Quality",
+              desc: "Programming built on sports science and years of professional coaching."
+            }
+          ].map((pillar, i) => (
+            <div key={i} className="text-center p-8 rounded-[32px] bg-white/5 border border-white/5 transition-all hover:bg-white/[0.07]">
+              <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center mx-auto mb-6 text-white">
+                <pillar.icon className="w-6 h-6" />
+              </div>
+              <h3 className="text-lg font-bold text-white mb-3 uppercase tracking-wider">{pillar.title}</h3>
+              <p className="text-white/60 text-sm leading-relaxed">{pillar.desc}</p>
+            </div>
+          ))}
         </div>
       </div>
     </div>
