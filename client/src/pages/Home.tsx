@@ -124,6 +124,29 @@ export default function Home() {
     }
   ];
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.1,
+        delayChildren: 0.2
+      }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 30, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.21, 1.11, 0.81, 0.99]
+      }
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* A) Hero Section */}
@@ -176,165 +199,214 @@ export default function Home() {
       </section>
 
       {/* B) Social proof band */}
-      <section className="bg-secondary py-8 border-y">
-        <div className="container mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-center items-center gap-6 md:gap-12 text-sm font-medium text-primary">
-            <div className="flex items-center gap-2">
-              <ShieldCheck className="w-5 h-5" />
-              <span>Structured 6-month series</span>
-            </div>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-primary/30"></div>
-            <div className="flex items-center gap-2">
-              <LayoutGrid className="w-5 h-5" />
-              <span>Progressive monthly unlocks</span>
-            </div>
-            <div className="hidden md:block w-1 h-1 rounded-full bg-primary/30"></div>
-            <div className="flex items-center gap-2">
-              <Calendar className="w-5 h-5" />
-              <span>One focused month at a time</span>
-            </div>
-          </div>
+      <section className="bg-secondary py-12 border-y border-primary/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-primary/[0.02] to-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className="flex flex-col md:flex-row justify-center items-center gap-8 md:gap-16 text-sm font-bold text-primary uppercase tracking-[0.2em]"
+          >
+            <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
+              <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                <ShieldCheck className="w-5 h-5" />
+              </div>
+              <span className="group-hover:translate-x-1 transition-transform duration-500">Structured 6-month series</span>
+            </motion.div>
+            <div className="hidden md:block w-px h-8 bg-primary/10"></div>
+            <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
+              <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                <LayoutGrid className="w-5 h-5" />
+              </div>
+              <span className="group-hover:translate-x-1 transition-transform duration-500">Progressive monthly unlocks</span>
+            </motion.div>
+            <div className="hidden md:block w-px h-8 bg-primary/10"></div>
+            <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
+              <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                <Calendar className="w-5 h-5" />
+              </div>
+              <span className="group-hover:translate-x-1 transition-transform duration-500">One focused month at a time</span>
+            </motion.div>
+          </motion.div>
         </div>
       </section>
 
       {/* C) What you get */}
-      <section id="includes" className="py-24 bg-primary text-white">
+      <section id="includes" className="py-24 bg-primary text-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         <div className="container mx-auto px-4">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">Everything You Need To Succeed</h2>
-            <p className="text-white/80 max-w-2xl mx-auto">Access a continuous evolution of elite training. Our structured 6-month cycles are delivered in focused monthly phases, providing a continuous roadmap for long-term growth and performance.</p>
-          </div>
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-100px" }}
+            variants={containerVariants}
+            className="text-center mb-16"
+          >
+            <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic">Everything You Need To Succeed</motion.h2>
+            <motion.p variants={itemVariants} className="text-white/60 max-w-2xl mx-auto text-lg font-light">Access a continuous evolution of elite training. Our structured 6-month cycles are delivered in focused monthly phases, providing a continuous roadmap for long-term growth and performance.</p>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-50px" }}
+            variants={containerVariants}
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"
+          >
             {FEATURES.map((feature, i) => (
-              <Card 
+              <motion.div 
                 key={i} 
-                className={`bg-white border-none shadow-xl hover:shadow-2xl transition-all duration-300 group cursor-pointer overflow-hidden ${expandedFeature === i ? 'ring-2 ring-primary/10' : ''}`}
-                onClick={() => setExpandedFeature(expandedFeature === i ? null : i)}
+                variants={itemVariants} 
+                whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3 } }}
               >
-                <CardHeader className="pb-4">
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-12 h-12 bg-primary/5 rounded-2xl flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                      <CheckCircle2 className="w-6 h-6 text-primary group-hover:text-white transition-colors duration-300" />
+                <Card 
+                  className={`bg-white/5 backdrop-blur-md border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:bg-white/10 hover:shadow-white/5 transition-all duration-500 group cursor-pointer overflow-hidden rounded-[32px] ${expandedFeature === i ? 'ring-1 ring-white/30' : ''}`}
+                  onClick={() => setExpandedFeature(expandedFeature === i ? null : i)}
+                >
+                  <CardHeader className="pb-4">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-12 h-12 bg-white/10 rounded-2xl flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-500">
+                        <CheckCircle2 className="w-6 h-6 text-white group-hover:text-primary transition-colors duration-500" />
+                      </div>
+                      <ChevronDown className={`w-5 h-5 text-white/20 transition-transform duration-500 ${expandedFeature === i ? 'rotate-180' : ''}`} />
                     </div>
-                    <ChevronDown className={`w-5 h-5 text-primary/30 transition-transform duration-300 ${expandedFeature === i ? 'rotate-180' : ''}`} />
-                  </div>
-                  <CardTitle className="text-xl text-primary font-heading leading-tight">{feature.title}</CardTitle>
-                  <div className={`grid transition-all duration-300 ease-in-out ${expandedFeature === i ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'}`}>
-                    <div className="overflow-hidden">
-                      <p className="text-sm text-primary/70 leading-relaxed border-t border-primary/5 pt-4">
-                        {feature.description}
-                      </p>
+                    <CardTitle className="text-xl text-white font-heading leading-tight tracking-wide">{feature.title}</CardTitle>
+                    <div className={`grid transition-all duration-500 ease-in-out ${expandedFeature === i ? 'grid-rows-[1fr] opacity-100 mt-4' : 'grid-rows-[0fr] opacity-0'}`}>
+                      <div className="overflow-hidden">
+                        <p className="text-sm text-white/60 leading-relaxed border-t border-white/5 pt-4 font-light">
+                          {feature.description}
+                        </p>
+                      </div>
                     </div>
-                  </div>
-                </CardHeader>
-              </Card>
+                  </CardHeader>
+                </Card>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 
       {/* D) How it works */}
-      <section className="py-12 bg-secondary">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-10">
-            <h2 className="text-2xl md:text-3xl font-bold font-heading text-primary mb-2">How It Works</h2>
-          </div>
+      <section className="py-24 bg-secondary relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/[0.03] via-transparent to-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary mb-4 italic tracking-tight uppercase">The Evolution</h2>
+            <p className="text-primary/40 max-w-xl mx-auto text-lg font-light leading-relaxed">Three steps to elite performance. One commitment to growth.</p>
+          </motion.div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 relative max-w-4xl mx-auto">
-            <div className="hidden md:block absolute top-10 left-[15%] right-[15%] h-[1px] bg-primary/10 z-0"></div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative max-w-5xl mx-auto">
+            <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-primary/5 z-0"></div>
             
             {[
-              { step: 1, title: "Unlock Access", desc: "Sign up and get instant access." },
-              { step: 2, title: "Pick a program", desc: "Choose your goal and equipment." },
-              { step: 3, title: "Start training", desc: "Follow workouts and build momentum." }
+              { step: "01", title: "Unlock Access", desc: "Secure your membership and get instant entry to the ecosystem." },
+              { step: "02", title: "Select Cycle", desc: "Choose the 6-month program that matches your equipment and goal." },
+              { step: "03", title: "Build Momentum", desc: "Execute focused monthly phases and track your measurable evolution." }
             ].map((item, i) => (
-              <div key={i} className="relative z-10 flex flex-col items-center text-center">
-                <div className="w-16 h-16 bg-white border-2 border-secondary rounded-full flex items-center justify-center text-xl font-bold font-heading text-primary shadow-sm mb-4">
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="relative z-10 flex flex-col items-center text-center group"
+              >
+                <motion.div 
+                  whileHover={{ scale: 1.1, rotate: 5 }}
+                  className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center text-2xl font-bold font-heading text-primary shadow-[0_10px_30px_rgba(0,0,0,0.05)] mb-8 group-hover:shadow-xl transition-all duration-500 italic"
+                >
                   {item.step}
-                </div>
-                <h3 className="text-lg font-bold mb-1">{item.title}</h3>
-                <p className="text-sm text-muted-foreground">{item.desc}</p>
-              </div>
+                </motion.div>
+                <h3 className="text-xl font-bold mb-3 italic tracking-tight text-primary uppercase">{item.title}</h3>
+                <p className="text-primary/50 text-base font-light leading-relaxed">{item.desc}</p>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
       {/* E) Featured programs */}
-      <section className="py-24 bg-primary text-white">
-        <div className="container mx-auto px-4">
-          <div className="flex justify-between items-end mb-12">
-            <div>
-              <h2 className="text-3xl md:text-4xl font-bold font-heading mb-4 text-white">Featured Programs</h2>
-              <p className="text-white/80 max-w-2xl">A glimpse inside the library. Your membership unlocks them all.</p>
-            </div>
-            <Link href="/programs" className="hidden md:flex items-center text-white font-semibold hover:underline">
-                View All <ArrowRight className="w-4 h-4 ml-1" />
-            </Link>
+      <section className="py-24 bg-primary text-white relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-white/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-12 gap-6">
+            <motion.div
+              initial={{ opacity: 0, x: -20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold font-heading mb-4 text-white italic tracking-tight">The Library</h2>
+              <p className="text-white/50 max-w-xl text-lg font-light leading-relaxed">A glimpse inside the Momentum ecosystem. Your membership unlocks every cycle, past and future.</p>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, x: 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.6 }}
+            >
+              <Link href="/programs" className="hidden md:flex items-center text-white font-bold hover:text-white/70 transition-colors uppercase tracking-widest text-sm group">
+                  View All Programs <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
+              </Link>
+            </motion.div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {/* Card 1: Full Gym */}
-            <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow">
-              <div className="h-48 overflow-hidden relative">
-                <img src={programGym} alt="The Apex Path" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-              </div>
-              <CardHeader>
-                <div className="flex gap-2 mb-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Performance</span>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">Full Gym</span>
-                </div>
-                <CardTitle className="text-white">The Apex Path</CardTitle>
-                <CardDescription className="text-white/70">A comprehensive 6-month journey designed to transform your physical capability and mental focus using a full suite of strength equipment.</CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto pt-4 border-t border-white/10">
-                <Link href="/programs" className="text-sm font-semibold text-white flex items-center w-full justify-between group">
-                    View Current Month <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </CardFooter>
-            </Card>
-
-            {/* Card 2: Minimal Equipment */}
-            <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow">
-              <div className="h-48 overflow-hidden relative">
-                <img src={programMinimal} alt="The Versatile Edge" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-              </div>
-              <CardHeader>
-                <div className="flex gap-2 mb-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Efficiency</span>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">Essential Gear</span>
-                </div>
-                <h3 className="text-xl font-bold font-heading text-white mb-2">The Versatile Edge</h3>
-                <CardDescription className="text-white/70">Unlock total-body vitality with a 6-month curriculum centered around dumbbells, bands, and kettlebells—perfect for the modern, high-functioning individual.</CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto pt-4 border-t border-white/10">
-                <Link href="/programs" className="text-sm font-semibold text-white flex items-center w-full justify-between group">
-                    View Current Month <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </CardFooter>
-            </Card>
-
-            {/* Card 3: At Home */}
-            <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow">
-              <div className="h-48 overflow-hidden relative">
-                <img src={programHome} alt="The Foundational Flow" className="w-full h-full object-cover transition-transform duration-500 hover:scale-105" />
-              </div>
-              <CardHeader>
-                <div className="flex gap-2 mb-2">
-                  <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">Freedom</span>
-                  <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">Zero Equipment</span>
-                </div>
-                <CardTitle className="text-white">The Foundational Flow</CardTitle>
-                <CardDescription className="text-white/70">Reconnect with your body through a 6-month bodyweight-only series focused on sustainable movement, mobility, and high-intensity conditioning.</CardDescription>
-              </CardHeader>
-              <CardFooter className="mt-auto pt-4 border-t border-white/10">
-                <Link href="/programs" className="text-sm font-semibold text-white flex items-center w-full justify-between group">
-                    View Current Month <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </CardFooter>
-            </Card>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+            {[
+              { image: programGym, goal: "Performance", eq: "Full Gym", title: "The Apex Path", desc: "A comprehensive 6-month journey designed to transform your physical capability using a full suite of strength equipment." },
+              { image: programMinimal, goal: "Efficiency", eq: "Essential Gear", title: "The Versatile Edge", desc: "Unlock total-body vitality with a 6-month curriculum centered around dumbbells, bands, and kettlebells." },
+              { image: programHome, goal: "Freedom", eq: "Zero Equipment", title: "The Foundational Flow", desc: "Reconnect with your body through a 6-month bodyweight-only series focused on movement and mobility." }
+            ].map((prog, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.6, delay: i * 0.1 }}
+                whileHover={{ y: -12, transition: { duration: 0.4 } }}
+              >
+                <Card className="overflow-hidden border-white/5 bg-white/[0.03] backdrop-blur-md flex flex-col hover:bg-white/[0.08] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 rounded-[32px] group h-full relative">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
+                  <div className="h-64 overflow-hidden relative">
+                    <img src={prog.image} alt={prog.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                    <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute top-6 left-6 flex gap-2">
+                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary bg-white px-3 py-1.5 rounded-full shadow-xl">{prog.goal}</span>
+                    </div>
+                  </div>
+                  <CardHeader className="flex-1 p-8 relative">
+                    <div className="absolute top-0 left-8 w-12 h-px bg-white/20 transform -translate-y-px group-hover:w-20 group-hover:bg-white/40 transition-all duration-500"></div>
+                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-3 group-hover:text-white/60 transition-colors">{prog.eq}</p>
+                    <h3 className="text-2xl font-bold font-heading text-white mb-4 italic tracking-tight">{prog.title}</h3>
+                    <CardDescription className="text-white/40 text-base leading-relaxed font-light line-clamp-3 group-hover:text-white/60 transition-colors">{prog.desc}</CardDescription>
+                  </CardHeader>
+                  <CardFooter className="p-8 pt-0 mt-auto">
+                    <Link href="/programs" className="text-xs font-bold text-white uppercase tracking-widest flex items-center w-full justify-between group/link">
+                        <span className="relative overflow-hidden py-1">
+                          Explore Cycle
+                          <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/link:w-full"></span>
+                        </span>
+                        <motion.div
+                          animate={{ x: [0, 5, 0] }}
+                          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
+                        >
+                          <ArrowRight className="w-4 h-4" />
+                        </motion.div>
+                    </Link>
+                  </CardFooter>
+                </Card>
+              </motion.div>
+            ))}
           </div>
+        </div>
+      </section>
           
           <div className="mt-8 text-center md:hidden">
             <Link href="/programs">
@@ -451,15 +523,24 @@ export default function Home() {
       </section>
 
       {/* H) Final CTA */}
-      <section className="py-24 bg-primary text-white border-t border-white/10">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Start today. Build momentum.</h2>
-          <p className="text-xl text-white/70 mb-10">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
-          <Link href="/programs">
-            <Button size="lg" className="rounded-full text-base px-10 h-14 font-bold shadow-lg hover:shadow-xl transition-all bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none" data-testid="button-final-cta">
-              Get Started Today
-            </Button>
-          </Link>
+      <section className="py-32 bg-primary text-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
+        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/[0.02] rounded-full blur-[100px]"></div>
+        <div className="container relative z-10 mx-auto px-4 text-center max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+          >
+            <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-8 italic tracking-tighter uppercase">Start today.<br/>Build momentum.</h2>
+            <p className="text-xl md:text-2xl text-white/50 mb-12 font-light leading-relaxed max-w-2xl mx-auto">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
+            <Link href="/programs">
+              <Button size="lg" className="rounded-full text-lg px-12 h-16 font-bold shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 bg-[#e5e7eb] text-primary hover:bg-white border-none" data-testid="button-final-cta">
+                Get Started Today
+              </Button>
+            </Link>
+          </motion.div>
         </div>
       </section>
     </div>

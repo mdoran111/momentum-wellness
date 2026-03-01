@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ShieldCheck, Zap, Target, LayoutGrid } from "lucide-react";
@@ -7,6 +8,23 @@ import brandVibe from '../assets/images/about-brand-vibe.jpg';
 import logo from '../assets/images/logo.png';
 
 export default function About() {
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.6, ease: "easeOut" }
+    }
+  };
+
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Matching Home Layout */}
@@ -16,88 +34,116 @@ export default function About() {
           <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
         </div>
         
-        <div className="container relative z-10 mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 animate-in slide-in-from-bottom-8 duration-700">
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+          className="container relative z-10 mx-auto px-4 text-center"
+        >
+          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 italic tracking-tight">
             Training Built<br className="md:hidden" /> For Results.
           </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 animate-in slide-in-from-bottom-8 duration-700 delay-150">
+          <p className="text-lg md:text-xl text-white/60 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
             Momentum Wellness is a commitment to structure, science, and the belief that elite training should be accessible to those who value their time and performance.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in slide-in-from-bottom-8 duration-700 delay-300 relative z-10">
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
             <Link href="/programs" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] font-bold border-none">
+              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-[#e5e7eb] text-primary hover:bg-white hover:scale-[1.02] transition-all duration-300 font-bold border-none">
                 Unlock Full Access — $14.99/mo
               </Button>
             </Link>
             <Link href="/pricing" className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white text-white hover:bg-white/10">
+              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/20 text-white hover:bg-white/10 transition-all duration-300">
                 View Pricing
               </Button>
             </Link>
           </div>
-        </div>
+        </motion.div>
       </section>
 
       {/* Philosophy Section with Image */}
-      <section className="py-32 bg-white">
+      <section className="py-32 bg-white relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <div className="relative group flex items-center justify-center">
-              <div className="aspect-square w-full max-w-md rounded-[40px] overflow-hidden shadow-2xl bg-secondary flex items-center justify-center p-0 transition-all duration-700 hover:shadow-primary/10 border border-primary/5 relative">
-                <div className="relative z-10 w-full h-full animate-in fade-in zoom-in duration-1000">
-                  <img src={logo} alt="Momentum Wellness Logo" className="w-full h-full object-cover opacity-90 transition-transform duration-700 group-hover:scale-110" />
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.95 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative group flex items-center justify-center"
+            >
+              <div className="aspect-square w-full max-w-md rounded-[40px] overflow-hidden shadow-2xl bg-secondary flex items-center justify-center p-0 transition-all duration-700 hover:shadow-primary/20 border border-primary/5 relative">
+                <div className="relative z-10 w-full h-full">
+                  <img src={logo} alt="Momentum Wellness Logo" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-110" />
                 </div>
-                {/* Sophisticated glassmorphism and geometric accents */}
                 <div className="absolute inset-0 bg-gradient-to-tr from-secondary/40 via-transparent to-white/10 opacity-100 pointer-events-none"></div>
-                <div className="absolute inset-0 ring-1 ring-inset ring-primary/5 rounded-[40px] pointer-events-none"></div>
               </div>
-            </div>
+            </motion.div>
             
-            <div className="space-y-10">
-              <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight">A Synchronized Path to Wellness</h2>
-              <div className="space-y-6 text-lg text-primary/70 leading-relaxed">
+            <motion.div 
+              initial="hidden"
+              whileInView="visible"
+              viewport={{ once: true }}
+              variants={containerVariants}
+              className="space-y-10"
+            >
+              <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight italic tracking-tight">A Synchronized Path to Wellness</motion.h2>
+              <motion.div variants={itemVariants} className="space-y-6 text-lg text-primary/70 leading-relaxed font-light">
                 <p>
                   We don't believe in "quick fixes" or random daily workouts. Real transformation requires a roadmap. Our philosophy is centered around structured 6-month cycles, delivered in focused monthly phases. 
                 </p>
                 <p>
                   This ensures you master the mechanics, build the necessary capacity, and progress with intent. By focusing on one month at a time, we remove the guesswork and provide a clear path for continuous evolution.
                 </p>
-              </div>
+              </motion.div>
               
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6">
-                <div className="flex gap-5">
-                  <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0">
-                    <ShieldCheck className="w-7 h-7 text-primary" />
+              <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6">
+                <div className="flex gap-5 group">
+                  <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <ShieldCheck className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
                   </div>
                   <div>
                     <h4 className="font-bold text-primary text-lg">Expert Programming</h4>
-                    <p className="text-primary/60">Science-based plans built by professionals.</p>
+                    <p className="text-primary/60 font-light">Science-based plans built by professionals.</p>
                   </div>
                 </div>
-                <div className="flex gap-5">
-                  <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0">
-                    <Target className="w-7 h-7 text-primary" />
+                <div className="flex gap-5 group">
+                  <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-500">
+                    <Target className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
                   </div>
                   <div>
                     <h4 className="font-bold text-primary text-lg">Precision Focus</h4>
-                    <p className="text-primary/60">One month of focused mastery at a time.</p>
+                    <p className="text-primary/60 font-light">One month of focused mastery at a time.</p>
                   </div>
                 </div>
-              </div>
-            </div>
+              </motion.div>
+            </motion.div>
           </div>
         </div>
       </section>
 
       {/* Brand Values / Features */}
-      <section className="py-32 bg-secondary/50">
-        <div className="container mx-auto px-4">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6">The Momentum Standard</h2>
-            <p className="text-primary/60 max-w-2xl mx-auto text-xl">We've cut the noise to focus on what actually moves the needle.</p>
-          </div>
+      <section className="py-32 bg-secondary/30 relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
+        <div className="container mx-auto px-4 relative z-10">
+          <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="text-center mb-24"
+          >
+            <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6 italic tracking-tight">The Momentum Standard</h2>
+            <p className="text-primary/40 max-w-2xl mx-auto text-xl font-light">We've cut the noise to focus on what actually moves the needle.</p>
+          </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
+          <motion.div 
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            variants={containerVariants}
+            className="grid grid-cols-1 md:grid-cols-3 gap-12"
+          >
             {[
               {
                 icon: Target,
@@ -115,15 +161,20 @@ export default function About() {
                 desc: "Intelligent intensity that respects your recovery and ensures you stay in the game."
               }
             ].map((value, i) => (
-              <div key={i} className="bg-white p-10 rounded-[40px] shadow-sm border border-primary/5 hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
-                <div className="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg">
+              <motion.div 
+                key={i} 
+                variants={itemVariants}
+                whileHover={{ y: -10, scale: 1.02, transition: { duration: 0.4 } }}
+                className="bg-white p-12 rounded-[48px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-primary/5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] transition-all duration-500 group"
+              >
+                <div className="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mb-10 shadow-lg group-hover:scale-110 transition-transform duration-500">
                   <value.icon className="w-8 h-8" />
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-4">{value.title}</h3>
-                <p className="text-primary/70 leading-relaxed text-lg">{value.desc}</p>
-              </div>
+                <h3 className="text-2xl font-bold text-primary mb-4 italic tracking-tight">{value.title}</h3>
+                <p className="text-primary/50 leading-relaxed text-lg font-light">{value.desc}</p>
+              </motion.div>
             ))}
-          </div>
+          </motion.div>
         </div>
       </section>
 

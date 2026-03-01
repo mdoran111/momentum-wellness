@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
@@ -79,6 +80,23 @@ export default function Programs() {
     return matchGoal && matchEq && matchFreq;
   });
 
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 }
+    }
+  };
+
+  const itemVariants = {
+    hidden: { y: 20, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: { duration: 0.5, ease: "easeOut" }
+    }
+  };
+
   return (
     <div className="pt-12 pb-24 min-h-screen bg-primary text-white relative overflow-hidden">
       {/* Background Logo watermark - Static on internal pages */}
@@ -88,168 +106,223 @@ export default function Programs() {
 
       <div className="container relative z-10 mx-auto px-4">
         {/* Header */}
-        <div className="max-w-3xl mb-16">
-          <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Program Library</h1>
-          <p className="text-xl text-white/80 mb-4">Your membership provides a continuous roadmap for elite performance. Engage with our structured 6-month cycles, delivered in focused monthly phases to ensure total mastery and continuous growth.</p>
-          <div className="inline-block px-4 py-2 bg-white/10 rounded-lg border border-white/20">
-            <p className="text-sm font-medium text-white/90">Note: New phases are unlocked month-by-month as you evolve through your training.</p>
+        <motion.div 
+          initial={{ opacity: 0, x: -20 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+          className="max-w-3xl mb-16"
+        >
+          <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Program Library</h1>
+          <p className="text-xl text-white/60 mb-6 font-light leading-relaxed">Your membership provides a continuous roadmap for elite performance. Engage with our structured 6-month cycles, delivered in focused monthly phases.</p>
+          <div className="inline-block px-6 py-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
+            <p className="text-sm font-medium text-white/80 italic">Note: New phases are unlocked month-by-month as you evolve through your training.</p>
           </div>
-        </div>
+        </motion.div>
 
         {/* Filters */}
-        <div className="mb-12 space-y-6">
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">Goal</h3>
-            <div className="flex flex-wrap gap-2">
-              {GOALS.map(goal => (
-                <button
-                  key={goal}
-                  onClick={() => setActiveGoal(goal)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    activeGoal === goal 
-                      ? "bg-white text-primary" 
-                      : "bg-white/10 text-white hover:bg-white/20"
-                  }`}
-                >
-                  {goal}
-                </button>
-              ))}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-16 space-y-8 p-8 bg-white/[0.02] backdrop-blur-md rounded-[40px] border border-white/5"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-4">Goal</h3>
+              <div className="flex flex-wrap gap-2">
+                {GOALS.map(goal => (
+                  <button
+                    key={goal}
+                    onClick={() => setActiveGoal(goal)}
+                    className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
+                      activeGoal === goal 
+                        ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
+                        : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    {goal}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-4">Equipment</h3>
+              <div className="flex flex-wrap gap-2">
+                {EQUIPMENT.map(eq => (
+                  <button
+                    key={eq}
+                    onClick={() => setActiveEquipment(eq)}
+                    className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
+                      activeEquipment === eq 
+                        ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
+                        : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    {eq}
+                  </button>
+                ))}
+              </div>
+            </div>
+            <div>
+              <h3 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-4">Frequency</h3>
+              <div className="flex flex-wrap gap-2">
+                {FREQUENCY.map(freq => (
+                  <button
+                    key={freq}
+                    onClick={() => setActiveFrequency(freq)}
+                    className={`px-5 py-2 rounded-full text-xs font-bold transition-all duration-300 uppercase tracking-widest ${
+                      activeFrequency === freq 
+                        ? "bg-white text-primary shadow-[0_0_20px_rgba(255,255,255,0.2)]" 
+                        : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
+                    }`}
+                  >
+                    {freq}
+                  </button>
+                ))}
+              </div>
             </div>
           </div>
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">Equipment</h3>
-            <div className="flex flex-wrap gap-2">
-              {EQUIPMENT.map(eq => (
-                <button
-                  key={eq}
-                  onClick={() => setActiveEquipment(eq)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    activeEquipment === eq 
-                      ? "bg-white text-primary" 
-                      : "bg-white/10 text-white hover:bg-white/20"
-                  }`}
-                >
-                  {eq}
-                </button>
-              ))}
-            </div>
-          </div>
-          <div>
-            <h3 className="text-sm font-semibold text-white uppercase tracking-wider mb-3">Days Per Week</h3>
-            <div className="flex flex-wrap gap-2">
-              {FREQUENCY.map(freq => (
-                <button
-                  key={freq}
-                  onClick={() => setActiveFrequency(freq)}
-                  className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-                    activeFrequency === freq 
-                      ? "bg-white text-primary" 
-                      : "bg-white/10 text-white hover:bg-white/20"
-                  }`}
-                >
-                  {freq}
-                </button>
-              ))}
-            </div>
-          </div>
-        </div>
+        </motion.div>
 
         {/* Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPrograms.length > 0 ? (
-            filteredPrograms.map(program => (
-              <Dialog key={program.id}>
-                <DialogTrigger asChild>
-                  <Card className="overflow-hidden border-white/10 bg-white/5 flex flex-col hover:shadow-lg transition-shadow cursor-pointer group h-full">
-                    <div className="h-48 overflow-hidden relative">
-                      <img src={program.image} alt={program.title} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" />
-                    </div>
-                    <CardHeader className="flex-1">
-                      <div className="flex gap-2 mb-2">
-                        <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">{program.goal}</span>
-                        <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">{program.equipment}</span>
+        <motion.div 
+          variants={containerVariants}
+          initial="hidden"
+          animate="visible"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10"
+        >
+          <AnimatePresence mode="popLayout">
+            {filteredPrograms.length > 0 ? (
+              filteredPrograms.map(program => (
+                <motion.div
+                  key={program.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.9 }}
+                  transition={{ duration: 0.4 }}
+                >
+                  <Dialog>
+                    <DialogTrigger asChild>
+                      <Card className="overflow-hidden border-white/5 bg-white/[0.03] backdrop-blur-sm flex flex-col hover:bg-white/[0.08] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 rounded-[32px] group h-full cursor-pointer relative">
+                        <div className="h-64 overflow-hidden relative">
+                          <img src={program.image} alt={program.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
+                          <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                          <div className="absolute top-6 left-6 flex gap-2">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary bg-white px-3 py-1.5 rounded-full shadow-xl">{program.goal}</span>
+                          </div>
+                        </div>
+                        <CardHeader className="flex-1 p-8 relative">
+                          <div className="absolute top-0 left-8 w-12 h-px bg-white/20 transform -translate-y-px group-hover:w-20 group-hover:bg-white/40 transition-all duration-500"></div>
+                          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/40 mb-3 group-hover:text-white/60 transition-colors">{program.equipment}</p>
+                          <h3 className="text-2xl font-bold font-heading text-white mb-4 italic tracking-tight">{program.title}</h3>
+                          <CardDescription className="text-white/40 text-base leading-relaxed font-light line-clamp-2 group-hover:text-white/60 transition-colors">{program.description}</CardDescription>
+                        </CardHeader>
+                        <CardFooter className="p-8 pt-0 border-t border-white/5">
+                          <span className="text-xs font-bold text-white uppercase tracking-widest flex items-center w-full justify-between group/link">
+                            View Monthly Phase <ArrowRight className="w-4 h-4 transform group-hover:translate-x-3 transition-transform duration-300" />
+                          </span>
+                        </CardFooter>
+                      </Card>
+                    </DialogTrigger>
+                    <DialogContent className="sm:max-w-[700px] bg-primary border-white/10 text-white rounded-[40px] p-0 overflow-hidden backdrop-blur-xl">
+                      <div className="h-64 relative">
+                        <img src={program.image} alt={program.title} className="w-full h-full object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
+                        <div className="absolute bottom-8 left-8">
+                          <div className="flex gap-2 mb-3">
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary bg-white px-3 py-1.5 rounded-full">{program.goal}</span>
+                            <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-white bg-white/10 px-3 py-1.5 rounded-full backdrop-blur-md">{program.equipment}</span>
+                          </div>
+                          <DialogTitle className="text-4xl font-heading text-white italic tracking-tight">{program.title}</DialogTitle>
+                        </div>
                       </div>
-                      <CardTitle className="text-white">{program.title}</CardTitle>
-                      <CardDescription className="line-clamp-2 text-white/70">{program.description}</CardDescription>
-                    </CardHeader>
-                    <CardFooter className="pt-4 border-t border-white/10">
-                      <span className="text-sm font-semibold text-white flex items-center w-full justify-between">
-                        View Current Month <ArrowRight className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" />
-                      </span>
-                    </CardFooter>
-                  </Card>
-                </DialogTrigger>
-                <DialogContent className="sm:max-w-[600px] bg-primary border-white/10 text-white">
-                  <DialogHeader>
-                    <div className="flex gap-2 mb-2 mt-4">
-                      <span className="text-xs font-semibold uppercase tracking-wider text-primary bg-white px-2 py-1 rounded">{program.goal}</span>
-                      <span className="text-xs font-semibold uppercase tracking-wider text-white/60 bg-white/10 px-2 py-1 rounded">{program.equipment}</span>
-                    </div>
-                    <DialogTitle className="text-2xl font-heading text-white">{program.title}</DialogTitle>
-                    <DialogDescription className="text-base pt-2 text-white/80">
-                      {program.description}
-                    </DialogDescription>
-                  </DialogHeader>
-                  
-                  <div className="grid grid-cols-2 gap-4 py-6 border-y border-white/10 my-4">
-                    <div className="flex items-start gap-3">
-                      <Target className="w-5 h-5 text-white mt-0.5" />
-                      <div>
-                        <h4 className="text-sm font-bold text-white">Who it's for</h4>
-                        <p className="text-sm text-white/60">{program.details.who}</p>
+                      <div className="p-10">
+                        <DialogDescription className="text-lg font-light text-white/70 leading-relaxed mb-10">
+                          {program.description}
+                        </DialogDescription>
+                        
+                        <div className="grid grid-cols-2 gap-8 py-10 border-y border-white/5 mb-10">
+                          <div className="flex items-start gap-4 group">
+                            <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-primary transition-all duration-500">
+                              <Target className="w-6 h-6" />
+                            </div>
+                            <div>
+                              <h4 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-1">Focus</h4>
+                              <p className="text-sm text-white/80 font-medium leading-tight">{program.details.who}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-4 group">
+                            <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-primary transition-all duration-500">
+                              <Clock className="w-6 h-6" />
+                            </div>
+                            <div>
+                              <h4 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-1">Duration</h4>
+                              <p className="text-sm text-white/80 font-medium leading-tight">{program.details.time}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-4 group">
+                            <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-primary transition-all duration-500">
+                              <CalendarDays className="w-6 h-6" />
+                            </div>
+                            <div>
+                              <h4 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-1">Frequency</h4>
+                              <p className="text-sm text-white/80 font-medium leading-tight">{program.details.days}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-start gap-4 group">
+                            <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center shrink-0 group-hover:bg-white group-hover:text-primary transition-all duration-500">
+                              <Dumbbell className="w-6 h-6" />
+                            </div>
+                            <div>
+                              <h4 className="text-[10px] font-bold text-white/40 uppercase tracking-[0.2em] mb-1">Outcome</h4>
+                              <p className="text-sm text-white/80 font-medium leading-tight">{program.details.achieve}</p>
+                            </div>
+                          </div>
+                        </div>
+                        
+                        <div className="pt-2">
+                          <a href="https://example.com/checkout" target="_blank" rel="noreferrer" className="block w-full">
+                            <Button className="w-full rounded-full h-16 text-lg font-bold bg-[#e5e7eb] text-primary hover:bg-white hover:scale-[1.02] transition-all duration-300 border-none shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
+                              Unlock Full Access
+                            </Button>
+                          </a>
+                        </div>
                       </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <Clock className="w-5 h-5 text-white mt-0.5" />
-                      <div>
-                        <h4 className="text-sm font-bold text-white">Time per session</h4>
-                        <p className="text-sm text-white/60">{program.details.time}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <CalendarDays className="w-5 h-5 text-white mt-0.5" />
-                      <div>
-                        <h4 className="text-sm font-bold text-white">Days per week</h4>
-                        <p className="text-sm text-white/60">{program.details.days}</p>
-                      </div>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <Dumbbell className="w-5 h-5 text-white mt-0.5" />
-                      <div>
-                        <h4 className="text-sm font-bold text-white">What you'll achieve</h4>
-                        <p className="text-sm text-white/60">{program.details.achieve}</p>
-                      </div>
-                    </div>
-                  </div>
-                  
-                  <div className="pt-2">
-                    <a href="https://example.com/checkout" target="_blank" rel="noreferrer" className="block w-full">
-                      <Button className="w-full rounded-full h-12 text-base font-bold bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] border-none">
-                        Unlock Full Access
-                      </Button>
-                    </a>
-                  </div>
-                </DialogContent>
-              </Dialog>
-            ))
-          ) : (
-            <div className="col-span-full py-12 text-center text-white/60">
-              No programs found matching these filters. Try adjusting your selection.
-            </div>
-          )}
-        </div>
+                    </DialogContent>
+                  </Dialog>
+                </motion.div>
+              ))
+            ) : (
+              <motion.div 
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                className="col-span-full py-24 text-center text-white/30 italic font-light text-xl"
+              >
+                No programs found matching these filters. Try adjusting your selection.
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </motion.div>
 
         {/* Bottom CTA */}
-        <div className="mt-24 p-12 bg-white/10 rounded-3xl text-center text-white border border-white/10">
-          <h2 className="text-3xl font-bold font-heading mb-4">Ready to start training?</h2>
-          <p className="text-white/80 mb-8 max-w-xl mx-auto">Get instant access to all programs above, plus every future program we release, for just $14.99/month.</p>
+        <motion.div 
+          initial={{ opacity: 0, y: 30 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          className="mt-32 p-16 bg-white/[0.02] backdrop-blur-md rounded-[48px] text-center text-white border border-white/5 relative overflow-hidden group"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
+          <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 italic tracking-tight">Ready to start training?</h2>
+          <p className="text-white/50 mb-10 max-w-xl mx-auto text-lg font-light leading-relaxed">Get instant access to all programs above, plus every future program we release, for just $14.99/month.</p>
           <a href="https://example.com/checkout" target="_blank" rel="noreferrer">
-            <Button size="lg" className="rounded-full bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] font-bold px-8 h-12 border-none">
+            <Button size="lg" className="rounded-full bg-[#e5e7eb] text-primary hover:bg-white hover:scale-105 transition-all duration-300 font-bold px-12 h-16 border-none shadow-2xl">
               Unlock Full Access
             </Button>
           </a>
-        </div>
+        </motion.div>
       </div>
     </div>
   );
 }
+
