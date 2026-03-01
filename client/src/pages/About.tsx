@@ -3,6 +3,7 @@ import { Link } from "wouter";
 import { ShieldCheck, Zap, Target, LayoutGrid } from "lucide-react";
 import aboutHero from '../assets/images/about-hero.jpg';
 import aboutHolistic from '../assets/images/about-holistic.jpg';
+import brandVibe from '../assets/images/about-brand-vibe.jpg';
 import logo from '../assets/images/logo.png';
 
 export default function About() {
@@ -128,7 +129,7 @@ export default function About() {
 
       {/* Full-width Image Break */}
       <section className="h-[600px] relative overflow-hidden group">
-        <img src={aboutHero} alt="Premium gym environment" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
+        <img src={brandVibe} alt="Premium gym environment" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
         <div className="absolute inset-0 bg-primary/30 backdrop-blur-[1px]"></div>
         <div className="absolute inset-0 flex items-center justify-center">
           <div className="h-20 w-px bg-white/30"></div>
