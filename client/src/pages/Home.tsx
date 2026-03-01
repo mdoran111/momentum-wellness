@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
 import { CheckCircle2, ArrowRight, ShieldCheck, Dumbbell, Calendar, LayoutGrid, Quote, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
@@ -64,6 +65,12 @@ export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [expandedFeature, setExpandedFeature] = useState<number | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
+  const [showContent, setShowContent] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setShowContent(true), 1200);
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -121,29 +128,43 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* A) Hero Section */}
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
-        {/* Background Logo watermark */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20 pointer-events-none overflow-hidden translate-y-4">
+        {/* Background Logo watermark with Pop Effect */}
+        <motion.div 
+          initial={{ scale: 0.5, opacity: 0 }}
+          animate={{ scale: 1, opacity: 0.2 }}
+          transition={{ duration: 1.5, ease: "easeOut" }}
+          className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden translate-y-4"
+        >
           <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
-        </div>
+        </motion.div>
         
-        <div className="container relative z-10 mx-auto px-4 text-center">
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 animate-in slide-in-from-bottom-8 duration-700">
-            Momentum That<br className="md:hidden" /> Moves With You.
-          </h1>
-          <p className="text-lg md:text-xl text-white/90 max-w-2xl mx-auto mb-10 animate-in slide-in-from-bottom-8 duration-700 delay-150">
-            Expertly designed training plans for those who value structure, science-based progression, and real-world results.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 animate-in slide-in-from-bottom-8 duration-700 delay-300 relative z-10">
-            <Link href="/programs" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-[#e5e7eb] text-primary hover:bg-[#d1d5db] font-bold border-none" data-testid="button-hero-start">
-                Unlock Full Access — $14.99/mo
-              </Button>
-            </Link>
-            <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white text-white hover:bg-white/10" onClick={() => document.getElementById('includes')?.scrollIntoView({ behavior: 'smooth' })}>
-              See What's Included
-            </Button>
-          </div>
-        </div>
+        <AnimatePresence>
+          {showContent && (
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="container relative z-10 mx-auto px-4 text-center"
+            >
+              <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 tracking-tight">
+                Momentum That<br className="md:hidden" /> Moves With You.
+              </h1>
+              <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+                Expertly designed training plans for those who value structure, science-based progression, and real-world results.
+              </p>
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+                <Link href="/programs" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-[#e5e7eb] text-primary hover:bg-white hover:scale-[1.02] transition-all duration-300 font-bold border-none" data-testid="button-hero-start">
+                    Unlock Full Access — $14.99/mo
+                  </Button>
+                </Link>
+                <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/20 text-white hover:bg-white/10 transition-all duration-300" onClick={() => document.getElementById('includes')?.scrollIntoView({ behavior: 'smooth' })}>
+                  See What's Included
+                </Button>
+              </div>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </section>
 
       {/* B) Social proof band */}
