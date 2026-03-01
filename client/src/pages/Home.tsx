@@ -194,8 +194,8 @@ export default function Home() {
                   <span className="text-white/60 text-xs font-bold uppercase tracking-[0.3em]">Momentum Wellness Ecosystem</span>
                 </motion.div>
                 <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold font-heading text-white mb-8 tracking-tighter italic uppercase leading-[0.9]">
-                  Performance <br/>
-                  <span className="text-white/20">Redefined</span>
+                  Momentum<br/>
+                  <span className="text-white/20">Wellness</span>
                 </h1>
                 <p className="text-xl md:text-2xl text-white/50 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
                   Elite training cycles delivered in focused monthly phases. Build measurable momentum for $14.99/mo.
