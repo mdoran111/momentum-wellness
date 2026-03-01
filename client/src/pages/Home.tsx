@@ -330,7 +330,7 @@ export default function Home() {
             <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-primary/5 z-0"></div>
             
             {[
-              { step: "01", title: "Unlock Access", desc: "Secure your membership and get instant entry to the ecosystem." },
+              { step: "01", title: "Unlock Access", desc: "Secure your membership and get instant entry to our training platform." },
               { step: "02", title: "Select Cycle", desc: "Choose the 6-month program that matches your equipment and goal." },
               { step: "03", title: "Build Momentum", desc: "Execute focused monthly phases and track your measurable evolution." }
             ].map((item, i) => (
