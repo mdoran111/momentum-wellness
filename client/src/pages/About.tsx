@@ -94,7 +94,7 @@ export default function About() {
                   We don't believe in "quick fixes" or random daily workouts. Real transformation requires a roadmap. Our philosophy is centered around structured 6-month cycles, delivered in focused monthly phases. 
                 </p>
                 <p>
-                  This ensures you master the mechanics, build the necessary capacity, and progress with intent. By focusing on one month at a time, we remove the guesswork and provide a clear path for continuous evolution.
+                  Our goal is to help you improve your wellness from the inside out, building a foundation of strength that carries into every aspect of your life. By focusing on one month at a time, we remove the guesswork and provide a clear path for continuous evolution.
                 </p>
               </motion.div>
               
