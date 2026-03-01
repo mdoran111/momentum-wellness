@@ -14,7 +14,7 @@ const PROGRAMS = [
     id: 1,
     title: "The Apex Path",
     description: "A comprehensive 6-month journey designed to transform your physical capability and mental focus using a full suite of strength equipment. Build raw power and elite-level conditioning through structured, science-based progression.",
-    goal: "Performance",
+    goal: "Athletic Power",
     equipment: "Full Gym",
     image: programGym,
     details: {
@@ -28,7 +28,7 @@ const PROGRAMS = [
     id: 2,
     title: "The Versatile Edge",
     description: "Unlock total-body vitality with a 6-month curriculum centered around dumbbells, bands, and kettlebells. This holistic approach blends strength, stability, and endurance for the modern, high-functioning individual.",
-    goal: "Fat Loss",
+    goal: "Metabolic Conditioning",
     equipment: "Essential Gear",
     image: programMinimal,
     details: {
@@ -42,7 +42,7 @@ const PROGRAMS = [
     id: 3,
     title: "The Foundational Flow",
     description: "Reconnect with your body through a 6-month bodyweight-only series focused on sustainable movement, mobility, and high-intensity conditioning. Find freedom in training anywhere while building a lean, athletic foundation.",
-    goal: "Performance",
+    goal: "Functional Mobility",
     equipment: "Zero Equipment",
     image: programHome,
     details: {
@@ -54,7 +54,7 @@ const PROGRAMS = [
   }
 ];
 
-const GOALS = ["All", "Strength", "Fat Loss", "Performance"];
+const GOALS = ["All", "Strength", "Metabolic Conditioning", "Athletic Power", "Functional Mobility"];
 const EQUIPMENT = ["All", "Full Gym", "Essential Gear", "Zero Equipment"];
 
 export default function Programs() {
