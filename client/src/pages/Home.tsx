@@ -130,9 +130,17 @@ export default function Home() {
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
         {/* Background Logo watermark with Pop Effect */}
         <motion.div 
-          initial={{ scale: 0.5, opacity: 0 }}
-          animate={{ scale: 1, opacity: 0.2 }}
-          transition={{ duration: 1.5, ease: "easeOut" }}
+          initial={{ scale: 0.5, opacity: 0, filter: "brightness(2)" }}
+          animate={{ 
+            scale: [0.5, 1.1, 1], 
+            opacity: [0, 0.8, 0.2],
+            filter: ["brightness(2)", "brightness(2)", "brightness(1)"]
+          }}
+          transition={{ 
+            duration: 1.8, 
+            times: [0, 0.6, 1],
+            ease: "easeOut" 
+          }}
           className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden translate-y-4"
         >
           <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
