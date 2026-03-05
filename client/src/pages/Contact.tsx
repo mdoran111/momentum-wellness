@@ -36,7 +36,7 @@ export default function Contact() {
               </div>
               <div>
                 <p className="text-sm text-white/60 mb-1">Email us at</p>
-                <p className="font-medium">support@momentumwellness.com</p>
+                <p className="font-medium text-white">info@momentumwellness.health</p>
               </div>
             </div>
           </div>
