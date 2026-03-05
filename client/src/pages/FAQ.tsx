@@ -73,7 +73,7 @@ export default function FAQ() {
         <div className="mt-16 text-center bg-white/5 p-12 rounded-[40px] border border-white/10 backdrop-blur-md">
           <h2 className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-wider italic tracking-tight">Still have questions?</h2>
           <p className="text-white/60 mb-8 font-light">We're here to ensure your transition to professional training is seamless.</p>
-          <a href="mailto:support@momentumwellness.com">
+          <a href="mailto:info@momentumwellness.health">
             <Button className="rounded-full px-10 h-14 bg-[#e5e7eb] text-primary hover:bg-white transition-all font-bold border-none shadow-xl">
               Contact Support
             </Button>
