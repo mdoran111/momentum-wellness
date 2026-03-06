@@ -209,20 +209,7 @@ export default function Programs() {
                     <DialogTrigger asChild>
                       <Card className="overflow-hidden border-white/10 bg-white/[0.03] backdrop-blur-sm flex flex-col hover:bg-white/[0.08] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 rounded-[32px] group h-full cursor-pointer relative">
                         <div className="h-64 overflow-hidden relative">
-                          {program.link ? (
-                            <a 
-                              href={program.link} 
-                              target="_blank" 
-                              rel="noreferrer" 
-                              className="block w-full h-full relative group/imglink"
-                              onClick={(e) => e.stopPropagation()}
-                            >
-                              <img src={program.image} alt={program.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                              <div className="absolute inset-0 bg-primary/20 group-hover/imglink:bg-transparent transition-colors duration-500"></div>
-                            </a>
-                          ) : (
-                            <img src={program.image} alt={program.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                          )}
+                          <img src={program.image} alt={program.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
                           <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
                           <div className="absolute top-6 left-6 flex gap-2">
                             <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary bg-white px-3 py-1.5 rounded-full shadow-xl">{program.goal}</span>
