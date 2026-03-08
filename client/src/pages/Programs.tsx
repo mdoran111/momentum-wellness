@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { ArrowRight, Clock, CalendarDays, Dumbbell, Target } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/dialog";
+import { ArrowRight, Clock, CalendarDays, Dumbbell, Target, X } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import programGym from '../assets/images/program-gym.jpg';
 import programMinimal from '../assets/images/program-minimal.jpg';
@@ -228,8 +228,8 @@ export default function Programs() {
                         </CardFooter>
                       </Card>
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-[700px] bg-primary border-white/10 text-white rounded-[40px] p-0 overflow-hidden backdrop-blur-xl">
-                      <div className="h-64 relative">
+                    <DialogContent className="sm:max-w-[700px] bg-primary border-white/10 text-white rounded-[40px] p-0 overflow-hidden backdrop-blur-xl flex flex-col max-h-[90vh]">
+                      <div className="h-64 relative shrink-0">
                         <img src={program.image} alt={program.title} className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
                         <div className="absolute bottom-8 left-8">
@@ -239,8 +239,15 @@ export default function Programs() {
                           </div>
                           <DialogTitle className="text-4xl font-heading text-white italic tracking-tight">{program.title}</DialogTitle>
                         </div>
+                        <button 
+                          onClick={(e) => { e.preventDefault(); document.querySelector('[data-dialog-close]')?.click(); }}
+                          className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 backdrop-blur-md"
+                          aria-label="Close"
+                        >
+                          <X className="w-5 h-5 text-white" />
+                        </button>
                       </div>
-                      <div className="p-10">
+                      <div className="p-10 overflow-y-auto">
                         <DialogDescription className="text-lg font-light text-white/80 leading-relaxed mb-10">
                           {program.description}
                         </DialogDescription>
@@ -292,6 +299,7 @@ export default function Programs() {
                           </a>
                         </div>
                       </div>
+                      <DialogClose data-dialog-close className="hidden" />
                     </DialogContent>
                   </Dialog>
                 </motion.div>
