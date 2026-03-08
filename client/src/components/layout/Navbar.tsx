@@ -33,6 +33,10 @@ export function Navbar() {
             Programs
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
           </Link>
+          <Link href="/inside-the-app" className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-all duration-300 relative group/nav">
+            Inside The App
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
+          </Link>
           <Link href="/pricing" className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-all duration-300 relative group/nav">
             Pricing
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
@@ -69,6 +73,7 @@ export function Navbar() {
                 <nav className="flex flex-col gap-8 pt-12">
                   <Link href="/about" onClick={() => setOpen(false)} className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-all">About</Link>
                   <Link href="/programs" onClick={() => setOpen(false)} className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-all">Programs</Link>
+                  <Link href="/inside-the-app" onClick={() => setOpen(false)} className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-all">Inside The App</Link>
                   <Link href="/pricing" onClick={() => setOpen(false)} className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-all">Pricing</Link>
                   <Link href="/faq" onClick={() => setOpen(false)} className="text-xs font-bold uppercase tracking-[0.2em] text-white/60 hover:text-white transition-all">FAQ</Link>
                   <div className="pt-8 border-t border-white/5">
