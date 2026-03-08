@@ -26,8 +26,8 @@ export default function Pricing() {
   return (
     <div className="pt-24 pb-32 min-h-screen bg-primary text-white relative overflow-hidden">
       {/* Background Logo watermark */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-10 pointer-events-none overflow-hidden -translate-y-[15%]">
-        <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden -translate-y-[15%]">
+        <img src={logo} alt="" className="w-[120%] max-w-none grayscale opacity-20" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
