@@ -12,6 +12,7 @@ import Pricing from "@/pages/Pricing";
 import FAQ from "@/pages/FAQ";
 import Contact from "@/pages/Contact";
 import Legal from "@/pages/Legal";
+import InsideTheApp from "@/pages/InsideTheApp";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -26,6 +27,7 @@ function Router() {
           <Route path="/pricing" component={Pricing} />
           <Route path="/faq" component={FAQ} />
           <Route path="/contact" component={Contact} />
+          <Route path="/inside-the-app" component={InsideTheApp} />
           <Route path="/legal" component={Legal} />
           <Route component={NotFound} />
         </Switch>
