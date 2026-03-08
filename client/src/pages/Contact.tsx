@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Mail, CheckCircle2 } from "lucide-react";
 import { Link } from "wouter";
+import logo from "../assets/images/logo.png";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -15,8 +16,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="pt-16 pb-24 min-h-screen bg-primary text-white">
-      <div className="container mx-auto px-4 max-w-5xl">
+    <div className="pt-16 pb-24 min-h-screen bg-primary text-white relative overflow-hidden">
+      {/* Background Logo watermark - Static on internal pages */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20 pointer-events-none overflow-hidden translate-y-4">
+        <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
+      </div>
+
+      <div className="container relative z-10 mx-auto px-4 max-w-5xl">
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6">Contact Us</h1>
           <p className="text-xl text-white/80">Have a question about the programs or your membership? We're here to help.</p>
