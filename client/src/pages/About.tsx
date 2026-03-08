@@ -31,7 +31,7 @@ export default function About() {
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[60vh] bg-primary">
         {/* Background Logo watermark - Static on internal pages */}
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <img src={logo} alt="" className="w-[120%] max-w-none grayscale opacity-20" />
+          <img src={logo} alt="" className="w-[140%] h-[140%] max-w-none grayscale opacity-20 object-cover" />
         </div>
         
         <motion.div 
