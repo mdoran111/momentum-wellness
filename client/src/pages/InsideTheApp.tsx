@@ -13,7 +13,7 @@ const FEATURES = [
   {
     icon: Play,
     title: "Video-Guided Workouts",
-    description: "Every exercise includes professional form cues and coaching notes. Watch, learn, execute. No guesswork on technique or intensity."
+    description: "Every exercise includes professional form cues and setup instructions. Watch, learn, execute. No guesswork on technique or intensity."
   },
   {
     icon: Clock,
@@ -27,8 +27,8 @@ const FEATURES = [
   },
   {
     icon: Zap,
-    title: "Real-Time Coaching",
-    description: "Access coaching cues directly in the app. Learn the why behind every movement for long-term mastery and injury prevention."
+    title: "Exercise Form Library",
+    description: "Access detailed form cues directly in the app. Learn the setup and mechanics behind every movement for proper execution and safety."
   },
   {
     icon: Users,
@@ -234,8 +234,8 @@ export default function InsideTheApp() {
               },
               {
                 num: "04",
-                title: "Coaching at Your Fingertips",
-                desc: "Every movement includes form cues, common mistakes, and setup instructions. You learn the why behind every rep you perform."
+                title: "Exercise Form & Mechanics",
+                desc: "Every movement includes form cues, common mistakes, and setup instructions. Learn proper mechanics for every rep you perform."
               }
             ].map((item, i) => (
               <motion.div
