@@ -85,7 +85,7 @@ export default function InsideTheApp() {
       {/* Hero Section */}
       <section className="relative pt-32 pb-24 flex items-center justify-center overflow-hidden bg-primary text-white">
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <img src={logo} alt="" className="w-[140%] h-[140%] max-w-none grayscale opacity-20 object-cover" />
+          <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-20" />
         </div>
 
         <div className="container relative z-10 mx-auto px-4 text-center max-w-4xl">
