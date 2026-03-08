@@ -16,10 +16,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="relative pt-16 pb-24 min-h-screen bg-primary text-white overflow-hidden">
+    <div className="relative pt-16 pb-24 min-h-screen bg-primary text-white overflow-visible">
       {/* Background Logo watermark - Static on internal pages */}
-      <div className="fixed top-0 left-0 right-0 h-[80vh] z-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-20" />
+      <div className="fixed top-0 left-0 right-0 h-screen z-0 flex items-center justify-center pointer-events-none overflow-visible">
+        <img src={logo} alt="" className="w-96 max-w-none grayscale invert opacity-20" />
       </div>
 
       <div className="container relative z-10 mx-auto px-4 max-w-5xl">

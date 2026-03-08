@@ -28,10 +28,10 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Matching Home Layout */}
-      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-visible min-h-[80vh] bg-primary">
         {/* Background Logo watermark - Static on internal pages */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-20" />
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-visible">
+          <img src={logo} alt="" className="w-96 max-w-none grayscale invert opacity-20" />
         </div>
         
         <motion.div 

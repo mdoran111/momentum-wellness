@@ -156,8 +156,8 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* A) Hero Section */}
-      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-visible min-h-[80vh] bg-primary">
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-visible">
           <motion.img 
             initial={{ opacity: 0, scale: 0.8, filter: "brightness(4)" }}
             animate={{ 
@@ -172,7 +172,7 @@ export default function Home() {
             }}
             src={logo} 
             alt="" 
-            className="w-[120%] max-w-none grayscale invert" 
+            className="w-96 max-w-none grayscale invert" 
           />
         </div>
 
