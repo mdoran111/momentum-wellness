@@ -241,10 +241,10 @@ export default function Programs() {
                         </div>
                         <button 
                           onClick={(e) => { e.preventDefault(); document.querySelector('[data-dialog-close]')?.click(); }}
-                          className="absolute top-6 right-6 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 backdrop-blur-md"
+                          className="absolute top-4 right-4 md:top-6 md:right-6 w-12 h-12 md:w-10 md:h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-all duration-300 backdrop-blur-md z-50"
                           aria-label="Close"
                         >
-                          <X className="w-5 h-5 text-white" />
+                          <X className="w-6 h-6 md:w-5 md:h-5 text-white" />
                         </button>
                       </div>
                       <div className="p-10 overflow-y-auto">
@@ -291,12 +291,18 @@ export default function Programs() {
                           </div>
                         </div>
                         
-                        <div className="pt-2">
+                        <div className="pt-4 space-y-3">
                           <a href={program.link || "https://example.com/checkout"} target="_blank" rel="noreferrer" className="block w-full">
                             <Button className="w-full rounded-full h-16 text-lg font-bold bg-[#e5e7eb] text-primary hover:bg-white hover:scale-[1.02] transition-all duration-300 border-none shadow-[0_20px_40px_rgba(0,0,0,0.3)]">
                               Unlock Full Access
                             </Button>
                           </a>
+                          <button 
+                            onClick={() => document.querySelector('[data-dialog-close]')?.click()}
+                            className="w-full rounded-full h-12 font-bold uppercase tracking-widest text-xs bg-white/10 text-white hover:bg-white/20 transition-all duration-300 border border-white/20"
+                          >
+                            Close
+                          </button>
                         </div>
                       </div>
                       <DialogClose data-dialog-close className="hidden" />
