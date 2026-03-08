@@ -36,6 +36,7 @@ const PROGRAMS = [
     equipment: "Essential Gear",
     daysPerWeek: "3x",
     image: programMinimal,
+    link: "https://www.trainerize.me/profile/momentumwellness6/?planGUID=8bb77914b268416bac5814c814ea283d",
     details: {
       who: "Those training with essential weights and tools who want a balanced, high-performance body.",
       time: "45-60 mins",
