@@ -100,9 +100,9 @@ export default function Programs() {
   };
 
   return (
-    <div className="pt-12 pb-24 min-h-screen bg-primary text-white relative overflow-hidden">
+    <div className="relative pt-12 pb-24 min-h-screen bg-primary text-white overflow-hidden">
       {/* Background Logo watermark - Static on internal pages */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+      <div className="fixed top-0 left-0 right-0 h-[80vh] z-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-20" />
       </div>
 
