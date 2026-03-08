@@ -29,11 +29,6 @@ const FEATURES = [
     icon: Zap,
     title: "Exercise Form Library",
     description: "Access detailed form cues directly in the app. Learn the setup and mechanics behind every movement for proper execution and safety."
-  },
-  {
-    icon: Users,
-    title: "Community Access",
-    description: "Connect with other members in the Momentum Wellness community. Share wins, ask questions, and build momentum together."
   }
 ];
 
