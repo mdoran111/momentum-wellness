@@ -2,8 +2,8 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
-import { ArrowRight, Clock, CalendarDays, Dumbbell, Target } from "lucide-react";
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle, DialogTrigger, DialogClose } from "@/components/ui/dialog";
+import { ArrowRight, Clock, CalendarDays, Dumbbell, Target, X } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import programGym from '../assets/images/program-gym.jpg';
 import programMinimal from '../assets/images/program-minimal.jpg';
@@ -228,7 +228,10 @@ export default function Programs() {
                         </CardFooter>
                       </Card>
                     </DialogTrigger>
-                    <DialogContent className="sm:max-w-[700px] bg-primary border-white/10 text-white rounded-[40px] p-0 overflow-hidden backdrop-blur-xl">
+                    <DialogContent className="sm:max-w-[700px] bg-primary border-white/10 text-white rounded-[40px] p-0 overflow-hidden backdrop-blur-xl relative">
+                      <DialogClose className="absolute top-6 right-6 z-50 text-white/60 hover:text-white transition-colors duration-300">
+                        <X className="w-6 h-6" />
+                      </DialogClose>
                       <div className="h-64 relative">
                         <img src={program.image} alt={program.title} className="w-full h-full object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-primary via-primary/20 to-transparent"></div>
