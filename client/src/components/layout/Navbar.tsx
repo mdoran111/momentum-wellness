@@ -24,17 +24,25 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-12">
-          <Link href="/programs" className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
+        <nav className="hidden md:flex gap-8">
+          <Link href="/about" className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
+            About
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
+          </Link>
+          <Link href="/programs" className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
             Programs
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
           </Link>
-          <Link href="/pricing" className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
+          <Link href="/inside-the-app" className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
+            Inside The App
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
+          </Link>
+          <Link href="/pricing" className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
             Pricing
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
           </Link>
-          <Link href="/about" className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
-            About
+          <Link href="/faq" className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
+            FAQ
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
           </Link>
         </nav>
