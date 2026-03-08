@@ -35,18 +35,18 @@ export function Footer() {
         <div>
           <h4 className="font-extrabold mb-4 font-heading uppercase tracking-wider text-sm">Links</h4>
           <ul className="space-y-2 text-sm text-primary font-bold">
-            <li><Link href="/about" className="hover:text-primary transition-colors">About</Link></li>
-            <li><Link href="/programs" className="hover:text-primary transition-colors">Programs</Link></li>
-            <li><Link href="/pricing" className="hover:text-primary transition-colors">Pricing</Link></li>
-            <li><Link href="/faq" className="hover:text-primary transition-colors">FAQ</Link></li>
-            <li><Link href="/contact" className="hover:text-primary transition-colors">Contact</Link></li>
+            <li><Link href="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">About</Link></li>
+            <li><Link href="/programs" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">Programs</Link></li>
+            <li><Link href="/pricing" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">Pricing</Link></li>
+            <li><Link href="/faq" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">FAQ</Link></li>
+            <li><Link href="/contact" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">Contact</Link></li>
           </ul>
         </div>
         <div>
           <h4 className="font-extrabold mb-4 font-heading uppercase tracking-wider text-sm">Legal</h4>
           <ul className="space-y-2 text-sm text-primary font-bold">
-            <li><Link href="/legal" className="hover:text-primary transition-colors">Terms of Service</Link></li>
-            <li><Link href="/legal" className="hover:text-primary transition-colors">Privacy Policy</Link></li>
+            <li><Link href="/legal" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">Terms of Service</Link></li>
+            <li><Link href="/legal" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">Privacy Policy</Link></li>
           </ul>
         </div>
       </div>
