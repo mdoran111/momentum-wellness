@@ -24,19 +24,21 @@ export default function Pricing() {
   };
 
   return (
-    <div className="pt-24 pb-32 min-h-screen bg-primary text-white relative overflow-hidden">
-      {/* Background Logo watermark */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
-        <motion.img 
-          initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-          animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-          src={logo} 
-          alt="" 
-          className="w-[120%] max-w-none grayscale invert" 
-        />
-      </div>
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary text-white">
+        {/* Background Logo watermark */}
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+          <motion.img 
+            initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
+            animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
+            src={logo} 
+            alt="" 
+            className="w-[120%] max-w-none grayscale invert" 
+          />
+        </div>
 
-      <div className="container relative z-10 mx-auto px-4">
+        <div className="container relative z-10 mx-auto px-4">
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -132,7 +134,8 @@ export default function Pricing() {
             </motion.div>
           ))}
         </motion.div>
-      </div>
+        </div>
+      </section>
     </div>
   );
 }
