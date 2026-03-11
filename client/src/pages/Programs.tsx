@@ -102,7 +102,7 @@ export default function Programs() {
   return (
     <div className="pb-24 min-h-screen bg-primary text-white relative overflow-hidden">
       {/* Background Logo watermark - At top of page */}
-      <div className="absolute top-96 left-0 right-0 h-96 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+      <div className="absolute top-0 left-0 right-0 h-96 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <motion.img 
           initial={{ opacity: 0, scale: 0.8, filter: "brightness(4)" }}
           animate={{ 
@@ -121,13 +121,13 @@ export default function Programs() {
         />
       </div>
 
-      <div className="container mx-auto px-4">
+      <div className="container mx-auto px-4 relative">
         {/* Header */}
         <motion.div 
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl mb-16"
+          className="max-w-3xl mb-16 relative z-10"
         >
           <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Program Library</h1>
           <p className="text-xl text-white/80 mb-6 font-light leading-relaxed">Your membership provides a continuous roadmap for professional performance. Engage with our structured 6-month cycles, delivered in focused monthly phases to ensure total mastery and continuous growth.</p>
