@@ -83,7 +83,7 @@ export default function InsideTheApp() {
   return (
     <div className="flex flex-col min-h-screen bg-white text-primary">
       {/* Hero Section */}
-      <section className="relative pt-32 pb-24 flex items-center justify-center overflow-hidden bg-primary text-white">
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary text-white">
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
           <motion.img 
             initial={{ opacity: 0.2 }}
