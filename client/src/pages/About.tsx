@@ -1,13 +1,20 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ShieldCheck, Zap, Target, LayoutGrid } from "lucide-react";
+import { ShieldCheck, Zap, Target, LayoutGrid, ChevronDown } from "lucide-react";
+import { useState, useEffect } from "react";
 import aboutHero from '../assets/images/about-hero.jpg';
 import aboutHolistic from '../assets/images/about-holistic-strength.jpg';
 import brandVibe from '../assets/images/about-brand-vibe.jpg';
 import logo from '../assets/images/logo.png';
 
 export default function About() {
+  const [showContent, setShowContent] = useState(true);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -28,36 +35,60 @@ export default function About() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section - Matching Home Layout */}
-      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[60vh] bg-primary">
-        {/* Background Logo watermark - Static on internal pages */}
-        <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20 pointer-events-none overflow-hidden translate-y-4">
-          <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
+        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+          <motion.img 
+            initial={{ opacity: 0, scale: 0.8, filter: "brightness(4)" }}
+            animate={{ 
+              opacity: [0, 1, 0.2],
+              scale: [0.8, 1.2, 1],
+              filter: ["brightness(4)", "brightness(4)", "brightness(1)"]
+            }}
+            transition={{ 
+              duration: 2.8,
+              times: [0, 0.2, 1],
+              ease: "easeOut"
+            }}
+            src={logo} 
+            alt="" 
+            className="w-[120%] max-w-none grayscale invert" 
+          />
+        </div>
+
+        <div className="container relative z-10 mx-auto px-4 text-center">
+          <motion.div
+            initial={{ opacity: 0, y: 40 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="max-w-4xl mx-auto"
+          >
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 italic tracking-tight">
+              Training Built<br className="md:hidden" /> For Results.
+            </h1>
+            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+              Momentum Wellness is a commitment to structure, science, and the belief that professional training should be accessible to those who value their time and performance.
+            </p>
+            <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
+              <Link href="/programs" className="w-full sm:w-auto">
+                <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-[#e5e7eb] text-primary hover:bg-white hover:scale-[1.02] transition-all duration-300 font-bold border-none">
+                  Unlock Full Access — $14.99/mo
+                </Button>
+              </Link>
+              <Link href="/pricing" className="w-full sm:w-auto">
+                <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/40 text-white hover:bg-white/10 transition-all duration-300">
+                  View Pricing
+                </Button>
+              </Link>
+            </div>
+          </motion.div>
         </div>
         
         <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="container relative z-10 mx-auto px-4 text-center"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/20"
         >
-          <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 italic tracking-tight">
-            Training Built<br className="md:hidden" /> For Results.
-          </h1>
-          <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-            Momentum Wellness is a commitment to structure, science, and the belief that professional training should be accessible to those who value their time and performance.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
-            <Link href="/programs" className="w-full sm:w-auto">
-              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-[#e5e7eb] text-primary hover:bg-white hover:scale-[1.02] transition-all duration-300 font-bold border-none">
-                Unlock Full Access — $14.99/mo
-              </Button>
-            </Link>
-            <Link href="/pricing" className="w-full sm:w-auto">
-              <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/40 text-white hover:bg-white/10 transition-all duration-300">
-                View Pricing
-              </Button>
-            </Link>
-          </div>
+          <ChevronDown className="w-8 h-8" />
         </motion.div>
       </section>
 
