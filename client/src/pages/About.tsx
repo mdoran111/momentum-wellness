@@ -38,17 +38,8 @@ export default function About() {
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
           <motion.img 
-            initial={{ opacity: 0, scale: 0.8, filter: "brightness(4)" }}
-            animate={{ 
-              opacity: [0, 1, 0.2],
-              scale: [0.8, 1.2, 1],
-              filter: ["brightness(4)", "brightness(4)", "brightness(1)"]
-            }}
-            transition={{ 
-              duration: 2.8,
-              times: [0, 0.2, 1],
-              ease: "easeOut"
-            }}
+            initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
+            animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
             src={logo} 
             alt="" 
             className="w-[120%] max-w-none grayscale invert" 
