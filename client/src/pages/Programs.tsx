@@ -104,17 +104,8 @@ export default function Programs() {
       {/* Background Logo watermark - At top of page */}
       <div className="absolute top-8 left-0 right-0 h-96 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <motion.img 
-          initial={{ opacity: 0, scale: 0.8, filter: "brightness(4)" }}
-          animate={{ 
-            opacity: [0, 1, 0.2],
-            scale: [0.8, 1.2, 1],
-            filter: ["brightness(4)", "brightness(4)", "brightness(1)"]
-          }}
-          transition={{ 
-            duration: 2.8,
-            times: [0, 0.2, 1],
-            ease: "easeOut"
-          }}
+          initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
+          animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
           src={logo} 
           alt="" 
           className="w-[120%] max-w-none grayscale invert" 
