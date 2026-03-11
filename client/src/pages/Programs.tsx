@@ -127,7 +127,7 @@ export default function Programs() {
           initial={{ opacity: 0, x: -20 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
-          className="max-w-3xl mb-16"
+          className="max-w-3xl mb-16 relative -z-10"
         >
           <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Program Library</h1>
           <p className="text-xl text-white/80 mb-6 font-light leading-relaxed">Your membership provides a continuous roadmap for professional performance. Engage with our structured 6-month cycles, delivered in focused monthly phases to ensure total mastery and continuous growth.</p>
