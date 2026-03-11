@@ -101,9 +101,24 @@ export default function Programs() {
 
   return (
     <div className="pt-12 pb-24 min-h-screen bg-primary text-white relative overflow-hidden">
-      {/* Background Logo watermark - Static on internal pages */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20 pointer-events-none overflow-hidden -translate-y-[15%]">
-        <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
+      {/* Background Logo watermark - Animated matching home page */}
+      <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <motion.img 
+          initial={{ opacity: 0, scale: 0.8, filter: "brightness(4)" }}
+          animate={{ 
+            opacity: [0, 1, 0.2],
+            scale: [0.8, 1.2, 1],
+            filter: ["brightness(4)", "brightness(4)", "brightness(1)"]
+          }}
+          transition={{ 
+            duration: 2.8,
+            times: [0, 0.2, 1],
+            ease: "easeOut"
+          }}
+          src={logo} 
+          alt="" 
+          className="w-[120%] max-w-none grayscale invert" 
+        />
       </div>
 
       <div className="container relative z-10 mx-auto px-4">
