@@ -40,29 +40,42 @@ export default function FAQ() {
   }, [location]);
 
   return (
-    <div className="pt-24 pb-32 min-h-screen bg-primary text-white relative overflow-hidden">
-      {/* Background Logo watermark - Static on internal pages */}
-      <div className="absolute inset-0 z-0 flex items-center justify-center opacity-20 pointer-events-none overflow-hidden translate-y-4">
-        <img src={logo} alt="" className="w-[120%] max-w-none grayscale invert opacity-30" />
-      </div>
-
-      <div className="container relative z-10 mx-auto px-4 max-w-3xl">
-        <div className="text-center mb-16">
-          <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/10 bg-white/5 text-sm font-medium tracking-wider uppercase">
-            Support
-          </div>
-          <h1 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6 italic tracking-tight">Frequently Asked Questions</h1>
-          <p className="text-xl text-white/60 font-light">Everything you need to know about the Momentum Wellness experience.</p>
+    <div className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary text-white">
+        {/* Background Logo watermark */}
+        <div className="absolute top-40 left-0 right-0 h-[500px] z-0 flex items-center justify-center pointer-events-none overflow-visible">
+          <motion.img 
+            initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
+            animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
+            src={logo} 
+            alt="" 
+            className="w-[120%] max-w-none grayscale invert" 
+          />
         </div>
 
-        <div className="bg-white/5 backdrop-blur-md rounded-[40px] p-6 md:p-12 border border-white/10 shadow-2xl">
+        <div className="container relative z-10 mx-auto px-4 text-center max-w-3xl">
+          <div className="text-center">
+            <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm font-medium tracking-wider uppercase text-white/90">
+              Support
+            </div>
+            <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Frequently Asked Questions</h1>
+            <p className="text-xl text-white/70 font-light leading-relaxed">Everything you need to know about the Momentum Wellness experience.</p>
+          </div>
+        </div>
+      </section>
+
+      <div className="bg-white">
+        <div className="container relative z-10 mx-auto px-4 max-w-3xl py-24">
+
+        <div className="bg-gray-50 rounded-[40px] p-6 md:p-12 border border-gray-200 shadow-md">
           <Accordion type="single" collapsible className="w-full">
             {FAQS.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b-white/10 last:border-0">
-                <AccordionTrigger className="text-left font-bold text-lg hover:text-white py-8 text-white hover:no-underline group italic tracking-tight">
+              <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200 last:border-0">
+                <AccordionTrigger className="text-left font-bold text-lg hover:text-primary py-8 text-primary hover:no-underline group italic tracking-tight">
                   <span className="group-hover:translate-x-1 transition-transform duration-300 uppercase">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-white/80 pb-8 leading-relaxed font-light">
+                <AccordionContent className="text-base text-gray-700 pb-8 leading-relaxed font-light">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -70,15 +83,16 @@ export default function FAQ() {
           </Accordion>
         </div>
 
-        <div className="mt-16 text-center bg-white/5 p-12 rounded-[40px] border border-white/10 backdrop-blur-md">
-          <h2 className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-wider italic tracking-tight">Still have questions?</h2>
-          <p className="text-white/60 mb-8 font-light">We're here to ensure your transition to professional training is seamless.</p>
+        <div className="mt-16 text-center bg-gray-50 p-12 rounded-[40px] border border-gray-200 shadow-md">
+          <h2 className="text-2xl font-bold font-heading mb-4 text-primary uppercase tracking-wider italic tracking-tight">Still have questions?</h2>
+          <p className="text-gray-600 mb-8 font-light">We're here to ensure your transition to professional training is seamless.</p>
           <a href="mailto:info@momentumwellness.health">
             <Button className="rounded-full px-10 h-14 bg-[#e5e7eb] text-primary hover:bg-white transition-all font-bold border-none shadow-xl">
               Contact Support
             </Button>
           </a>
         </div>
+      </div>
       </div>
     </div>
   );
