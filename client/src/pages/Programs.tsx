@@ -141,7 +141,7 @@ export default function Programs() {
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-14 p-8 bg-white/[0.02] backdrop-blur-md rounded-[40px] border border-white/5"
+          className="mb-14 p-8 rounded-[40px] border border-white/5"
         >
           <div className="space-y-6">
             <div className="flex flex-col md:flex-row md:items-center gap-6">
