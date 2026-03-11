@@ -100,7 +100,7 @@ export default function Programs() {
   };
 
   return (
-    <div className="-mt-20 pb-24 min-h-screen bg-primary text-white relative overflow-hidden">
+    <div className="-mt-32 pb-24 min-h-screen bg-primary text-white relative overflow-hidden">
       {/* Background Logo watermark - Animated matching home page */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <motion.img 
