@@ -48,8 +48,8 @@ export default function Pricing() {
           <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm font-medium tracking-wider uppercase text-white/90">
             Membership
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight italic">Simple, Elite Access</h1>
-          <p className="text-xl text-white/70 font-light leading-relaxed">High-performance training shouldn't be complicated. One membership, unlimited evolution.</p>
+          <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight italic">Just $14.99/Month</h1>
+          <p className="text-xl text-white/70 font-light leading-relaxed">Everything you need for complete fitness. No hidden fees, no contracts.</p>
         </motion.div>
 
         {/* Main Pricing Card */}
@@ -62,7 +62,7 @@ export default function Pricing() {
           <Card className="border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.3)] relative overflow-hidden bg-white/5 backdrop-blur-md rounded-[40px] group transition-all duration-500 hover:bg-white/[0.08]">
             <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
             <CardHeader className="text-center pt-16 pb-10 border-b border-white/10">
-              <CardTitle className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-widest italic">Full Access Pass</CardTitle>
+              <CardTitle className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-widest italic">Complete Fitness Membership</CardTitle>
               <div className="flex items-baseline justify-center gap-2">
                 <span className="text-7xl font-bold font-heading text-white">$14.99</span>
                 <span className="text-white/60 text-xl font-light">/month</span>
@@ -72,10 +72,10 @@ export default function Pricing() {
             <CardContent className="p-12">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
                 {[
-                  "Unlimited Program Access",
-                  "Monthly Phase Unlocks",
-                  "App-Based Coaching Cues",
-                  "Continuous Updates"
+                  "Strength Training Workouts",
+                  "Cardio Workouts",
+                  "Daily Habit Tracking",
+                  "Progress Photo Feature"
                 ].map((feature, i) => (
                   <li key={i} className="flex items-center gap-3 text-white list-none group/item">
                     <div className="w-5 h-5 rounded-full bg-white/20 flex items-center justify-center group-hover/item:bg-white group-hover/item:text-primary transition-all duration-300">

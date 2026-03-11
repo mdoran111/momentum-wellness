@@ -8,27 +8,27 @@ import logo from '../assets/images/logo.png';
 const FAQS = [
   {
     question: "What do I get with the membership?",
-    answer: "You get unlimited, instant access to our entire library of professional 6-month programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time."
+    answer: "You get access to our comprehensive fitness app with strength training workouts, cardio sessions, daily habit tracking, and progress photo features. New workouts are added every month to keep you challenged and engaged."
   },
   {
-    question: "Can beginners do these programs?",
-    answer: "Absolutely. We have specific programs designed for all levels, including the Foundational Flow series for those starting their journey. All our programs include scalable options to match your current capability."
+    question: "Can I do these workouts at home?",
+    answer: "Absolutely. Our strength and cardio workouts are designed to work in various settings—whether it's a gym, home, or even outdoors. We provide options so you can adapt workouts to your available space and equipment."
   },
   {
-    question: "Do I need a full gym?",
-    answer: "Not necessarily. We offer three distinct paths: 'The Apex Path' for full gym access, 'The Versatile Edge' for essential gear (dumbbells/kettlebells), and 'The Foundational Flow' for zero equipment training."
+    question: "How often do the workouts change?",
+    answer: "Fresh workouts are delivered every month. This keeps your training fresh, prevents boredom, and ensures continuous progression. You'll always have new challenges to work toward."
   },
   {
     question: "How do I cancel?",
     answer: "You can cancel your membership at any time directly from your account settings with just two clicks. No hidden fees, no contracts, and no lengthy commitments."
   },
   {
-    question: "How do I access the workouts?",
-    answer: "Once you start your membership, you'll get instant access to our professional web platform. It is mobile-first and optimized for the gym floor, so you can easily follow your daily phase on your phone."
+    question: "What's included in the progress photos feature?",
+    answer: "The progress photos feature lets you upload photos each month and compare them side-by-side to visualize your transformation. It's a powerful motivational tool that shows real, tangible results over time."
   },
   {
-    question: "How are the 6-month cycles structured?",
-    answer: "Each program is a structured 6-month roadmap divided into focused monthly phases. This ensures you master the specific mechanics and intensity of one block before unlocking the next evolution of your training."
+    question: "What are the daily habits?",
+    answer: "Daily habits go beyond just workouts. We guide you on nutrition, hydration, sleep, and recovery practices that support your fitness goals. Building these sustainable habits is what creates real, lasting change."
   }
 ];
 

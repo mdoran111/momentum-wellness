@@ -14,78 +14,78 @@ const TESTIMONIALS = [
   {
     name: "Sarah Jenkins",
     role: "Member since 2024",
-    content: "The structure of these programs is exactly what I needed. No more wandering around the gym wondering what to do next. I've seen more progress in 3 months than in 2 years of training on my own.",
+    content: "The app has completely transformed my fitness routine. Every month brings fresh workouts that keep me motivated. I love tracking my progress and actually seeing results through the progress photos feature.",
     avatar: "SJ"
   },
   {
     name: "Marcus Thompson",
     role: "Member since 2025",
-    content: "The 6-month cycles changed everything for me. My big lifts have all increased by at least 20%, and my form has never been better. It's like having a high-end coach for a fraction of the price.",
+    content: "Finally, an app that gives me everything I need in one place. Strength training, cardio, daily habits—it's all organized and changes monthly to keep me challenged and engaged.",
     avatar: "MT"
   },
   {
     name: "Elena Rodriguez",
     role: "Member since 2024",
-    content: "I love the minimal equipment programs. As someone who travels a lot for work, being able to get a structured, professional workout in a hotel gym or even a living room is a game changer.",
+    content: "The daily habits feature has been a game-changer for me. It's not just about the workouts—it's about building sustainable fitness practices. I've never been more consistent with my training.",
     avatar: "ER"
   },
   {
     name: "David Kim",
     role: "Member since 2023",
-    content: "The phased approach is brilliant. It stops me from getting overwhelmed and keeps me focused on mastering one thing at a time. My mobility has improved drastically since starting the Flow series.",
+    content: "The monthly variety keeps things fresh and exciting. I get the strength training I love plus cardio, and the progress photos motivate me to stay on track.",
     avatar: "DK"
   },
   {
     name: "Jessica Low",
-    role: "Performance Athlete",
-    content: "As a busy professional, I don't have time to plan. Momentum does it for me with professional precision. The Apex Path has redefined what I thought was possible for my absolute strength.",
+    role: "Member since 2024",
+    content: "As a busy professional, this app fits perfectly into my life. Everything is planned for me, and it updates monthly so I never get bored. The progress tracking is outstanding.",
     avatar: "JL"
   },
   {
     name: "Ryan Patel",
     role: "Member since 2024",
-    content: "I started with Zero Equipment and just moved to Essential Gear. The transition was seamless. The programs actually build on each other. It's truly a continuous system that evolves with you.",
+    content: "At $14.99 a month, this is an incredible value. I get comprehensive workouts across strength and cardio, plus the daily habits keep me accountable. It's changed how I approach fitness.",
     avatar: "RP"
   },
   {
     name: "Sofia Valenti",
     role: "Fitness Enthusiast",
-    content: "Finally, a subscription that isn't just random workouts. The 6-month cycles give me a real goal to work towards. I've never felt more athletic or more capable in my daily life.",
+    content: "I love how the app combines everything—strength training, cardio, and daily wellness habits. The monthly updates mean I'm constantly learning and pushing myself in new ways.",
     avatar: "SV"
   },
   {
     name: "James Taylor",
-    role: "Amateur Athlete",
-    content: "The science behind the monthly unlocks is clear. You can't rush results, and Momentum respects that. It's the most sustainable progress I've ever made in over a decade of training.",
+    role: "Member since 2024",
+    content: "The comprehensive approach is what sets this apart. Most apps focus on just one thing, but this covers strength, cardio, habits, and progress tracking. It's a complete fitness solution.",
     avatar: "JT"
   }
 ];
 
 const FEATURES = [
   {
-    title: "Unlimited program access",
-    description: "Your membership unlocks our entire library of structured 6-month programs. Switch between paths as your goals or environment change.",
-    details: "Choose from The Apex Path, The Versatile Edge, or The Foundational Flow at any time."
+    title: "Strength training",
+    description: "Build muscle and power with science-backed strength workouts designed to challenge and progress you each month.",
+    details: "Comprehensive programs targeting major muscle groups with progressive overload built in."
   },
   {
-    title: "Monthly phase unlocks",
-    description: "Focus is the key to progress. We deliver your training in structured monthly phases to ensure total mastery and continuous growth.",
-    details: "New training blocks appear in your dashboard every 30 days as you progress through the 6-month cycle."
+    title: "Cardio workouts",
+    description: "Improve cardiovascular health and endurance with varied cardio options that complement your strength training.",
+    details: "From HIIT to steady-state cardio, workouts designed for different fitness levels and preferences."
   },
   {
-    title: "App-based coaching cues",
-    description: "Never wonder about form again. Every movement includes professional video cues and performance notes optimized for the gym floor.",
-    details: "Detailed breakdowns of tempo, setup, and common pitfalls for every single exercise in the library."
+    title: "Daily habits",
+    description: "Build sustainable wellness practices with guided daily habit tracking that goes beyond just workouts.",
+    details: "Nutrition, hydration, sleep, and recovery habits built into your daily routine for holistic fitness."
   },
   {
-    title: "Zero guesswork",
-    description: "Stop wondering what to do. Every session is pre-planned, giving you the mental freedom to just show up and execute.",
-    details: "Warm-ups, working sets, intensity targets, and cool-downs are all handled for you."
+    title: "Progress photos",
+    description: "Track your physical transformation with our simple progress photo feature that shows real results over time.",
+    details: "Organize and compare photos month-to-month to visualize your progress and stay motivated."
   },
   {
-    title: "Fresh content & updates",
-    description: "We regularly refine our existing programs and add new specialized training blocks based on the latest sports science.",
-    details: "Continuous refinements to programming based on member feedback and emerging performance research."
+    title: "Monthly updates",
+    description: "Fresh workouts every month keep you engaged and challenged. No boredom, no plateaus.",
+    details: "New strength and cardio programming delivered each month, automatically updated in your app."
   },
   {
     title: "Cancel anytime",
@@ -186,7 +186,7 @@ export default function Home() {
                 className="max-w-4xl mx-auto"
               >
                 <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
-                  Professional training cycles delivered in focused monthly phases. Build measurable momentum for $14.99/mo.
+                  Strength training, cardio, daily habits, and progress tracking. All in one app. $14.99/mo.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Link href="/programs">
@@ -228,21 +228,21 @@ export default function Home() {
               <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
                 <Dumbbell className="w-5 h-5" />
               </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">Science-Based Programming</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">Comprehensive Fitness App</span>
             </motion.div>
             <div className="hidden md:block w-px h-8 bg-primary/10"></div>
             <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
               <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
                 <LayoutGrid className="w-5 h-5" />
               </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">Progressive monthly unlocks</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">Fresh workouts monthly</span>
             </motion.div>
             <div className="hidden md:block w-px h-8 bg-primary/10"></div>
             <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
               <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
                 <Calendar className="w-5 h-5" />
               </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">One focused month at a time</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">Progress tracking built in</span>
             </motion.div>
           </motion.div>
         </div>
@@ -260,7 +260,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic">Everything You Need To Succeed</motion.h2>
-            <motion.p variants={itemVariants} className="text-white/80 max-w-2xl mx-auto text-lg font-light">Access a continuous evolution of professional training. Our structured 6-month cycles are delivered in focused monthly phases, providing a continuous roadmap for long-term growth and performance.</motion.p>
+            <motion.p variants={itemVariants} className="text-white/80 max-w-2xl mx-auto text-lg font-light">A comprehensive fitness app with strength training, cardio workouts, daily wellness habits, and progress tracking. New workouts every month to keep you challenged and motivated.</motion.p>
           </motion.div>
           
           <motion.div 

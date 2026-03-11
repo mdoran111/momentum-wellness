@@ -57,7 +57,7 @@ export default function About() {
               Training Built<br className="md:hidden" /> For Results.
             </h1>
             <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
-              Momentum Wellness is a commitment to structure, science, and the belief that professional training should be accessible to those who value their time and performance.
+              Momentum Wellness is a commitment to making comprehensive fitness accessible to everyone. We believe that strength training, cardio, daily wellness habits, and progress tracking shouldn't require expensive coaching or complicated systems.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
               <Link href="/programs" className="w-full sm:w-auto">
@@ -110,13 +110,13 @@ export default function About() {
               variants={containerVariants}
               className="space-y-10"
             >
-              <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight italic tracking-tight">A Synchronized Path to Wellness</motion.h2>
+              <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight italic tracking-tight">Strength, Cardio, Habits & Progress</motion.h2>
               <motion.div variants={itemVariants} className="space-y-6 text-lg text-primary/80 leading-relaxed font-light">
                 <p>
-                  We don't believe in "quick fixes" or random daily workouts. Real transformation requires a roadmap. Our philosophy is centered around structured 6-month cycles, delivered in focused monthly phases. 
+                  Real fitness requires more than just workouts. It's a combination of strength training, cardiovascular health, daily wellness habits, and the ability to track your progress over time.
                 </p>
                 <p>
-                  Our goal is to help you improve your wellness from the inside out, building a foundation of strength that carries into every aspect of your life. By focusing on one month at a time, we remove the guesswork and provide a clear path for continuous evolution.
+                  Our app gives you everything you need in one place. Fresh workouts every month keep you engaged, while daily habits and progress photos help you build sustainable fitness practices that actually stick.
                 </p>
               </motion.div>
               
@@ -126,8 +126,8 @@ export default function About() {
                     <ShieldCheck className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary text-lg">Expert Programming</h4>
-                    <p className="text-primary/80 font-light">Science-based plans built by professionals.</p>
+                    <h4 className="font-bold text-primary text-lg">Complete Fitness</h4>
+                    <p className="text-primary/80 font-light">Strength, cardio, habits, and progress in one app.</p>
                   </div>
                 </div>
                 <div className="flex gap-5 group">
@@ -135,8 +135,8 @@ export default function About() {
                     <Target className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary text-lg">Precision Focus</h4>
-                    <p className="text-primary/80 font-light">One month of focused mastery at a time.</p>
+                    <h4 className="font-bold text-primary text-lg">Fresh Monthly Updates</h4>
+                    <p className="text-primary/80 font-light">New workouts every month to keep you challenged.</p>
                   </div>
                 </div>
               </motion.div>

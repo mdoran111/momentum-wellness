@@ -7,46 +7,46 @@ import logo from '../assets/images/logo.png';
 const FEATURES = [
   {
     icon: Calendar,
-    title: "Monthly Phase Unlocks",
-    description: "Your 6-month cycle is structured into focused monthly phases. Each month brings new programming, new mechanics to master, and measurable progression."
+    title: "Monthly Workout Updates",
+    description: "Get fresh workouts every month. Strength training, cardio sessions, and daily habit guidance all update automatically in your app."
   },
   {
     icon: Play,
-    title: "Video-Guided Workouts",
-    description: "Every exercise includes professional form cues and setup instructions. Watch, learn, execute. No guesswork on technique or intensity."
+    title: "Strength & Cardio Workouts",
+    description: "A complete mix of strength training for muscle and power, plus cardio workouts for cardiovascular health and endurance. Everything in one place."
   },
   {
     icon: Clock,
-    title: "Session Planning",
-    description: "Warm-ups, working sets, rest periods, and cool-downs are all laid out. Show up to the gym and train—your day is planned."
+    title: "Daily Habit Tracking",
+    description: "Build sustainable wellness practices with guided daily habit tracking. Track nutrition, hydration, sleep, and recovery alongside your workouts."
   },
   {
     icon: BarChart3,
     title: "Progress Tracking",
-    description: "Log your lifts, track your work capacity, and watch your metrics evolve. Data-driven feedback on every phase of your cycle."
+    description: "See your improvements over time with detailed progress metrics and our progress photo feature that shows real visual transformation."
   },
   {
     icon: Zap,
-    title: "Exercise Form Library",
-    description: "Access detailed form cues directly in the app. Learn the setup and mechanics behind every movement for proper execution and safety."
+    title: "Progress Photos",
+    description: "Organize and compare your photos month-to-month. Visual progress is one of the most motivating ways to see your fitness transformation."
   }
 ];
 
 const SCREENSHOTS = [
   {
-    title: "Your Training Dashboard",
-    description: "See your current month's focus, upcoming workouts, and progress at a glance.",
-    features: ["Current Phase Overview", "Next Workout Preview", "Progress Metrics"]
+    title: "Your Fitness Dashboard",
+    description: "See your current month's workouts, daily habits, and progress at a glance.",
+    features: ["Strength Workouts", "Cardio Sessions", "Daily Habits"]
   },
   {
-    title: "Detailed Workout View",
-    description: "Every session is pre-programmed with exercises, sets, reps, tempo, and rest periods.",
-    features: ["Exercise Library", "Form Videos", "Performance Notes"]
+    title: "Comprehensive Workouts",
+    description: "Each month brings fresh strength training and cardio sessions designed to challenge and progress you.",
+    features: ["Strength Training", "Cardio Options", "Habit Guidance"]
   },
   {
-    title: "Progress & Analytics",
-    description: "Track your performance across your entire 6-month cycle with visual progress tracking.",
-    features: ["Strength Metrics", "Volume Progression", "Phase Analytics"]
+    title: "Progress Tracking",
+    description: "Track your progress with metrics and our powerful progress photo feature that shows real visual transformation.",
+    features: ["Progress Photos", "Fitness Metrics", "Monthly Comparison"]
   }
 ];
 
@@ -103,9 +103,9 @@ export default function InsideTheApp() {
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm font-medium tracking-wider uppercase">
               The App Experience
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Inside Momentum Wellness</h1>
+            <h1 className="text-5xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Inside The App</h1>
             <p className="text-xl text-white/80 font-light leading-relaxed mb-8">
-              Every feature designed to keep you focused, progressing, and accountable. Your 6-month journey starts here.
+              Every feature designed to keep you motivated, progressing, and accountable. Get strength training, cardio, daily habits, and progress tracking all in one place.
             </p>
             <Link href="/programs">
               <button className="px-8 py-4 rounded-full bg-[#e5e7eb] text-primary font-bold hover:bg-white transition-all duration-300 shadow-lg">
