@@ -102,7 +102,7 @@ export default function Programs() {
   return (
     <div className="pb-24 min-h-screen bg-primary text-white relative overflow-hidden">
       {/* Background Logo watermark - At top of page */}
-      <div className="absolute top-8 left-0 right-0 h-96 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+      <div className="absolute top-16 left-0 right-0 h-96 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
         <motion.img 
           initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
           animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
