@@ -28,7 +28,7 @@ export default function Pricing() {
       {/* Hero Section */}
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary text-white">
         {/* Background Logo watermark */}
-        <div className="absolute top-32 left-0 right-0 h-96 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
+        <div className="absolute top-48 left-0 right-0 h-96 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
           <motion.img 
             initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
             animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
