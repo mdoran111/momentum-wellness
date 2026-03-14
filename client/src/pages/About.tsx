@@ -165,13 +165,7 @@ export default function About() {
           </motion.div>
 
           
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"
-          >
+          <div className="flex flex-wrap justify-center gap-6 items-center max-w-6xl mx-auto">
             {[
               {
                 icon: Target,
@@ -206,22 +200,27 @@ export default function About() {
             ].map((value, i) => (
               <motion.div 
                 key={i} 
-                variants={itemVariants}
-                whileHover={{ y: -12, transition: { duration: 0.4 } }}
-                className="group relative"
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.1 }}
+                whileHover={{ scale: 1.08, transition: { duration: 0.3 } }}
+                className="group relative flex-1 min-w-[140px] max-w-[160px]"
               >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative bg-white/[0.08] backdrop-blur-md p-10 rounded-[32px] border border-white/20 hover:border-white/40 transition-all duration-500 h-full flex flex-col">
-                  <div className="w-14 h-14 bg-gradient-to-br from-white/20 to-white/10 text-white rounded-xl flex items-center justify-center mb-8 group-hover:scale-125 transition-transform duration-500">
-                    <value.icon className="w-7 h-7" />
+                <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-8 rounded-[24px] border border-white/20 hover:border-white/40 transition-all duration-500 h-full flex flex-col items-center text-center cursor-pointer">
+                  <div className="w-16 h-16 bg-gradient-to-br from-white/25 to-white/10 text-white rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:from-white/35 group-hover:to-white/15 transition-all duration-500">
+                    <value.icon className="w-8 h-8" />
                   </div>
-                  <h3 className="text-white font-heading font-bold text-2xl mb-2 italic tracking-tight">{value.title}</h3>
-                  <p className="text-white/60 text-sm font-semibold mb-4 uppercase tracking-wider">{value.subtitle}</p>
-                  <p className="text-white/70 leading-relaxed font-light flex-grow">{value.desc}</p>
+                  <h3 className="text-white font-heading font-bold text-lg italic tracking-tight mb-1">{value.title}</h3>
+                  <p className="text-white/70 text-xs font-semibold uppercase tracking-wider">{value.subtitle}</p>
+                  
+                  <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-[24px] border border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                    <p className="text-white text-sm font-light leading-relaxed">{value.desc}</p>
+                  </div>
                 </div>
               </motion.div>
             ))}
-          </motion.div>
+          </div>
         </div>
       </section>
 
