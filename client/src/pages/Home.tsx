@@ -530,8 +530,8 @@ export default function Home() {
               <p className="text-white/80 font-light leading-relaxed">Absolutely. We have specific programs designed for all levels, and all our programs include scalable options to match your current fitness level.</p>
             </div>
             <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
-              <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">How do I cancel?</h3>
-              <p className="text-white/80 font-light leading-relaxed">You can cancel anytime directly from your account settings with just two clicks. No hidden fees or lengthy commitments.</p>
+              <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">Which program should I choose?</h3>
+              <p className="text-white/80 font-light leading-relaxed">The Apex Path is for those with full gym access seeking peak performance. The Versatile Edge uses dumbbells and bands for efficient full-body training. The Foundational Flow requires no equipment and focuses on movement mastery.</p>
             </div>
           </div>
           
