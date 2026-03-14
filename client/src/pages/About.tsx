@@ -110,13 +110,13 @@ export default function About() {
               variants={containerVariants}
               className="space-y-10"
             >
-              <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight italic tracking-tight">Strength, Cardio, Habits & Progress</motion.h2>
+              <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight italic tracking-tight">Continuous Progression, Monthly Unlocks</motion.h2>
               <motion.div variants={itemVariants} className="space-y-6 text-lg text-primary/80 leading-relaxed font-light">
                 <p>
-                  Real fitness requires more than just workouts. It's a combination of strength training, cardiovascular health, daily wellness habits, and the ability to track your progress over time.
+                  Real fitness is a continuous journey, not a fixed timeline. Our app delivers strength training, cardio, daily wellness habits, and progress tracking in a continuous program that evolves with you.
                 </p>
                 <p>
-                  Our app gives you everything you need in one place. Fresh workouts every month keep you engaged, while daily habits and progress photos help you build sustainable fitness practices that actually stick.
+                  Each month brings new phases that unlock based on your progress. This keeps your training fresh and engaging while building sustainable fitness practices that compound over time.
                 </p>
               </motion.div>
               
@@ -135,8 +135,8 @@ export default function About() {
                     <Target className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary text-lg">Fresh Monthly Updates</h4>
-                    <p className="text-primary/80 font-light">New workouts every month to keep you challenged.</p>
+                    <h4 className="font-bold text-primary text-lg">Monthly Phase Unlocks</h4>
+                    <p className="text-primary/80 font-light">New phases unlock monthly for continuous progression.</p>
                   </div>
                 </div>
               </motion.div>

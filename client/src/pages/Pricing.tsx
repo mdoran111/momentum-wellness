@@ -49,7 +49,7 @@ export default function Pricing() {
             Membership
           </div>
           <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight italic">Just $14.99/Month</h1>
-          <p className="text-xl text-white/70 font-light leading-relaxed">Everything you need for complete fitness. No hidden fees, no contracts.</p>
+          <p className="text-xl text-white/70 font-light leading-relaxed">A continuous fitness program with monthly phase unlocks. No hidden fees, no contracts.</p>
         </motion.div>
 
         {/* Main Pricing Card */}

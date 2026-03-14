@@ -15,14 +15,14 @@ const PROGRAMS = [
   {
     id: 1,
     title: "The Apex Path",
-    description: "A comprehensive 6-month journey designed to transform your physical capability and mental focus using a full suite of strength equipment. Build raw power and professional conditioning through structured, science-based progression.",
+    description: "A continuous strength training program designed to transform your physical capability and mental focus using a full suite of strength equipment. Monthly phases unlock new challenges and progressive overload for long-term growth.",
     goal: "Strength",
     equipment: "Full Gym",
     daysPerWeek: "4x",
     image: programGym,
     link: "https://www.trainerize.me/profile/momentumwellness6/?planGUID=8bb77914b268416bac5814c814ea283d",
     details: {
-      who: "Lifters with access to a commercial or well-equipped home gym looking for a long-term transformation.",
+      who: "Lifters with access to a commercial or well-equipped home gym looking for continuous, progressive strength development.",
       time: "60-75 mins",
       days: "4 days/week",
       achieve: "Mastered mechanics and a powerful, resilient physique."
@@ -31,14 +31,14 @@ const PROGRAMS = [
   {
     id: 2,
     title: "The Versatile Edge",
-    description: "Unlock total-body vitality with a 6-month curriculum centered around dumbbells, bands, and kettlebells. This holistic approach blends strength, stability, and endurance for the modern, high-functioning individual.",
+    description: "A continuous program centered around dumbbells, bands, and kettlebells that unlocks new phases monthly. This holistic approach blends strength, stability, and endurance for the modern, high-functioning individual.",
     goal: "Body Recomposition",
     equipment: "Essential Gear",
     daysPerWeek: "3x",
     image: programMinimal,
     link: "https://www.trainerize.me/profile/momentumwellness6/?planGUID=8bb77914b268416bac5814c814ea283d",
     details: {
-      who: "Those training with essential weights and tools who want a balanced, high-performance body.",
+      who: "Those training with essential weights and tools who want a balanced, continuously evolving program.",
       time: "45-60 mins",
       days: "5 days/week",
       achieve: "Total-body lean muscle, improved functional movement, and high-energy conditioning."
@@ -47,7 +47,7 @@ const PROGRAMS = [
   {
     id: 3,
     title: "The Foundational Flow",
-    description: "Reconnect with your body through a 6-month bodyweight-only series focused on sustainable movement, mobility, and high-intensity conditioning. Find freedom in training anywhere while building a lean, athletic foundation.",
+    description: "A continuous bodyweight-only program focused on sustainable movement, mobility, and high-intensity conditioning. Monthly phases keep progression engaging while building a lean, athletic foundation.",
     goal: "Essentials",
     equipment: "Zero Equipment",
     daysPerWeek: "2x",

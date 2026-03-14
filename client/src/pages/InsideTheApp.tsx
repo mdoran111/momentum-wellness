@@ -7,8 +7,8 @@ import logo from '../assets/images/logo.png';
 const FEATURES = [
   {
     icon: Calendar,
-    title: "Monthly Workout Updates",
-    description: "Get fresh workouts every month. Strength training, cardio sessions, and daily habit guidance all update automatically in your app."
+    title: "Monthly Phase Unlocks",
+    description: "New phases unlock every month, automatically delivered to your app. Continuous progression with strength training, cardio, and daily habit guidance."
   },
   {
     icon: Play,

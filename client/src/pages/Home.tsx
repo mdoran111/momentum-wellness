@@ -83,9 +83,9 @@ const FEATURES = [
     details: "Organize and compare photos month-to-month to visualize your progress and stay motivated."
   },
   {
-    title: "Monthly updates",
-    description: "Fresh workouts every month keep you engaged and challenged. No boredom, no plateaus.",
-    details: "New strength and cardio programming delivered each month, automatically updated in your app."
+    title: "Monthly phase unlocks",
+    description: "New phases unlock every month with fresh challenges and progressive programming. Continuous growth without boredom or plateaus.",
+    details: "Monthly updates automatically deliver new strength and cardio phases, building on your progress."
   },
   {
     title: "Cancel anytime",
@@ -260,7 +260,7 @@ export default function Home() {
             className="text-center mb-16"
           >
             <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic">Everything You Need To Succeed</motion.h2>
-            <motion.p variants={itemVariants} className="text-white/80 max-w-2xl mx-auto text-lg font-light">A comprehensive fitness app with strength training, cardio workouts, daily wellness habits, and progress tracking. New workouts every month to keep you challenged and motivated.</motion.p>
+            <motion.p variants={itemVariants} className="text-white/80 max-w-2xl mx-auto text-lg font-light">A continuous fitness program with strength training, cardio, daily wellness habits, and progress tracking. New phases unlock monthly to keep you growing and challenged.</motion.p>
           </motion.div>
           
           <motion.div 

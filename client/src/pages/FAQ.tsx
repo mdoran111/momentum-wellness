@@ -15,8 +15,8 @@ const FAQS = [
     answer: "Absolutely. Our strength and cardio workouts are designed to work in various settings—whether it's a gym, home, or even outdoors. We provide options so you can adapt workouts to your available space and equipment."
   },
   {
-    question: "How often do the workouts change?",
-    answer: "Fresh workouts are delivered every month. This keeps your training fresh, prevents boredom, and ensures continuous progression. You'll always have new challenges to work toward."
+    question: "How is the program structured?",
+    answer: "Momentum Wellness is a continuous fitness program with monthly phase unlocks. Each month brings new programming built on your previous progress. This approach keeps your training engaging while ensuring long-term, sustainable progression."
   },
   {
     question: "How do I cancel?",
