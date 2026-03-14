@@ -145,18 +145,23 @@ export default function About() {
         </div>
       </section>
 
-      {/* Brand Values / Features */}
-      <section className="py-32 bg-secondary/30 relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
+      {/* The Momentum Method */}
+      <section className="py-48 bg-gradient-to-br from-primary via-primary to-primary/95 relative overflow-hidden">
+        <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
+        <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
+        
         <div className="container mx-auto px-4 relative z-10">
           <motion.div 
-            initial={{ opacity: 0, y: 20 }}
+            initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-24"
+            className="text-center mb-32"
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6 italic tracking-tight">Our Why</h2>
-            <p className="text-primary/60 max-w-2xl mx-auto text-xl font-light">We combine strength, cardio, daily habits, and progress tracking to create a well-rounded approach that builds a healthier, more energetic you.</p>
+            <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm font-medium tracking-wider uppercase text-white/90">
+              Our Foundation
+            </div>
+            <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-8 italic tracking-tight uppercase leading-[1.1]">The Momentum Method</h2>
+            <p className="text-white/80 max-w-3xl mx-auto text-xl font-light leading-relaxed">A holistic approach that weaves together four essential pillars—strength, cardio, daily habits, and progress—to create lasting wellness and transform how you feel.</p>
           </motion.div>
 
           
@@ -165,36 +170,49 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-3 gap-12"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           >
             {[
               {
                 icon: Target,
-                title: "Build Real Strength",
+                title: "Strength",
+                subtitle: "Build Real Power",
                 desc: "Strength training increases muscle, bone density, and metabolism. It makes everyday life easier and builds confidence through measurable progress."
               },
               {
                 icon: LayoutGrid,
-                title: "Boost Cardiovascular Health",
+                title: "Cardio",
+                subtitle: "Boost Your Heart",
                 desc: "Cardio strengthens your heart, improves endurance, and increases energy levels. Better cardiovascular fitness means more stamina for life."
               },
               {
                 icon: ShieldCheck,
-                title: "Sustainable Daily Habits",
-                desc: "Lasting change comes from daily practices—nutrition, sleep, hydration, and recovery. These habits compound to create lasting wellness and higher energy throughout your day."
+                title: "Daily Habits",
+                subtitle: "Sustain Your Wellness",
+                desc: "Lasting change comes from daily practices—nutrition, sleep, hydration, and recovery. These habits compound to create lasting wellness."
+              },
+              {
+                icon: Target,
+                title: "Progress",
+                subtitle: "See Your Transformation",
+                desc: "Track your visual transformation with progress photos and metrics. See real results month-to-month and stay motivated for the long journey."
               }
             ].map((value, i) => (
               <motion.div 
                 key={i} 
                 variants={itemVariants}
-                whileHover={{ y: -10, scale: 1.02, transition: { duration: 0.4 } }}
-                className="bg-white p-12 rounded-[48px] shadow-[0_10px_40px_rgba(0,0,0,0.03)] border border-primary/5 hover:shadow-[0_30px_60px_rgba(0,0,0,0.08)] transition-all duration-500 group"
+                whileHover={{ y: -12, transition: { duration: 0.4 } }}
+                className="group relative"
               >
-                <div className="w-16 h-16 bg-primary text-white rounded-2xl flex items-center justify-center mb-10 shadow-lg group-hover:scale-110 transition-transform duration-500">
-                  <value.icon className="w-8 h-8" />
+                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-white/5 rounded-[32px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative bg-white/[0.08] backdrop-blur-md p-10 rounded-[32px] border border-white/20 hover:border-white/40 transition-all duration-500 h-full flex flex-col">
+                  <div className="w-14 h-14 bg-gradient-to-br from-white/20 to-white/10 text-white rounded-xl flex items-center justify-center mb-8 group-hover:scale-125 transition-transform duration-500">
+                    <value.icon className="w-7 h-7" />
+                  </div>
+                  <h3 className="text-white font-heading font-bold text-2xl mb-2 italic tracking-tight">{value.title}</h3>
+                  <p className="text-white/60 text-sm font-semibold mb-4 uppercase tracking-wider">{value.subtitle}</p>
+                  <p className="text-white/70 leading-relaxed font-light flex-grow">{value.desc}</p>
                 </div>
-                <h3 className="text-2xl font-bold text-primary mb-4 italic tracking-tight">{value.title}</h3>
-                <p className="text-primary/60 leading-relaxed text-lg font-light">{value.desc}</p>
               </motion.div>
             ))}
           </motion.div>
