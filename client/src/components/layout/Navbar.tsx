@@ -12,7 +12,7 @@ export function Navbar() {
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-primary/80 backdrop-blur-xl shadow-2xl">
       <div className="container mx-auto px-4 h-20 flex items-center justify-between">
-        <Link href="/" className="flex items-center gap-3 group">
+        <Link href="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 group">
           <motion.div 
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
