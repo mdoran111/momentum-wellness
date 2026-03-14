@@ -331,7 +331,7 @@ export default function Home() {
             
             {[
               { step: "01", title: "Unlock Access", desc: "Secure your membership and get instant entry to our training platform." },
-              { step: "02", title: "Select Cycle", desc: "Choose the 6-month program that matches your equipment and goal." },
+              { step: "02", title: "Select Program", desc: "Choose the continuous program that matches your equipment and goal." },
               { step: "03", title: "Build Momentum", desc: "Execute focused monthly phases and track your measurable evolution." }
             ].map((item, i) => (
               <motion.div 
@@ -385,9 +385,9 @@ export default function Home() {
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {[
-              { image: programGym, goal: "Performance", eq: "Full Gym", title: "The Apex Path", desc: "A comprehensive 6-month journey designed to transform your physical capability using a full suite of strength equipment." },
-              { image: programMinimal, goal: "Efficiency", eq: "Essential Gear", title: "The Versatile Edge", desc: "Unlock total-body vitality with a 6-month curriculum centered around dumbbells, bands, and kettlebells." },
-              { image: programHome, goal: "Freedom", eq: "Zero Equipment", title: "The Foundational Flow", desc: "Reconnect with your body through a 6-month bodyweight-only series focused on movement and mobility." }
+              { image: programGym, goal: "Performance", eq: "Full Gym", title: "The Apex Path", desc: "A comprehensive continuous program designed to transform your physical capability using a full suite of strength equipment." },
+              { image: programMinimal, goal: "Efficiency", eq: "Essential Gear", title: "The Versatile Edge", desc: "Unlock total-body vitality with a continuous program centered around dumbbells, bands, and kettlebells." },
+              { image: programHome, goal: "Freedom", eq: "Zero Equipment", title: "The Foundational Flow", desc: "Reconnect with your body through a continuous bodyweight program focused on movement and mobility." }
             ].map((prog, i) => (
               <motion.div
                 key={i}
@@ -523,7 +523,7 @@ export default function Home() {
           <div className="space-y-6">
             <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">What do I get with the membership?</h3>
-              <p className="text-white/80 font-light leading-relaxed">You get unlimited, instant access to our entire library of professional 6-month programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time.</p>
+              <p className="text-white/80 font-light leading-relaxed">You get unlimited, instant access to our entire library of continuous fitness programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time.</p>
             </div>
             <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">Can beginners do these programs?</h3>

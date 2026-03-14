@@ -221,7 +221,7 @@ export default function InsideTheApp() {
               {
                 num: "01",
                 title: "Phase-Based Programming",
-                desc: "Each 6-month cycle is divided into structured phases. You focus on one goal, one mechanic, one intensity range at a time. No overwhelm, only progress."
+                desc: "Each training program is divided into structured monthly phases. You focus on one goal, one mechanic, one intensity range at a time. No overwhelm, only progress."
               },
               {
                 num: "02",
