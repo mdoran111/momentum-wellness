@@ -12,7 +12,7 @@ export function Footer() {
             <h3 className="font-heading font-extrabold text-xl tracking-tighter">MomentumWellness</h3>
           </div>
           <p className="text-primary font-medium max-w-sm mb-6">
-            Expertly designed 6-month training cycles delivered in focused monthly phases for continuous growth and performance.
+            Expertly designed continuous fitness programs with monthly phase unlocks. Strength training, cardio, daily habits, and progress tracking to transform your health.
           </p>
           <div className="flex gap-4 mb-6">
             <a href="https://instagram.com/momentum_wellness_health" target="_blank" rel="noreferrer" className="w-10 h-10 bg-primary/5 rounded-full flex items-center justify-center hover:bg-primary hover:text-white transition-all text-primary">
