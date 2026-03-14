@@ -155,8 +155,8 @@ export default function About() {
             viewport={{ once: true }}
             className="text-center mb-24"
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6 italic tracking-tight">The Momentum Standard</h2>
-            <p className="text-primary/60 max-w-2xl mx-auto text-xl font-light">We've cut the noise to focus on what actually moves the needle.</p>
+            <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6 italic tracking-tight">Our Why</h2>
+            <p className="text-primary/60 max-w-2xl mx-auto text-xl font-light">We combine strength, cardio, daily habits, and progress tracking to create a well-rounded approach that builds a healthier, more energetic you.</p>
           </motion.div>
 
           
@@ -170,18 +170,18 @@ export default function About() {
             {[
               {
                 icon: Target,
-                title: "Mindful Athleticism",
-                desc: "Every exercise, set, and rep is selected to build a resilient, capable, and high-functioning body."
+                title: "Build Real Strength",
+                desc: "Strength training increases muscle, bone density, and metabolism. It makes everyday life easier and builds confidence through measurable progress."
               },
               {
                 icon: LayoutGrid,
-                title: "Professional Structure",
-                desc: "Every program is a comprehensive 6-month series designed for long-term development."
+                title: "Boost Cardiovascular Health",
+                desc: "Cardio strengthens your heart, improves endurance, and increases energy levels. Better cardiovascular fitness means more stamina for life."
               },
               {
                 icon: ShieldCheck,
-                title: "Sustainable Growth",
-                desc: "Intelligent intensity that respects your recovery and ensures you stay in the game."
+                title: "Sustainable Daily Habits",
+                desc: "Lasting change comes from daily practices—nutrition, sleep, hydration, and recovery. These habits compound to create lasting wellness and higher energy throughout your day."
               }
             ].map((value, i) => (
               <motion.div 
