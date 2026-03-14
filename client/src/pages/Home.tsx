@@ -75,7 +75,7 @@ const FEATURES = [
   {
     title: "Daily habits",
     description: "Build sustainable wellness practices with guided daily habit tracking that goes beyond just workouts.",
-    details: "Nutrition, hydration, sleep, and recovery habits built into your daily routine for holistic fitness."
+    details: "Nutrition, hydration, sleep, and recovery habits built into your daily routine for total wellness and more energy."
   },
   {
     title: "Progress photos",

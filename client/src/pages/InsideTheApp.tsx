@@ -105,7 +105,7 @@ export default function InsideTheApp() {
             </div>
             <h1 className="text-5xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Inside The App</h1>
             <p className="text-xl text-white/80 font-light leading-relaxed mb-8">
-              Every feature designed to keep you motivated, progressing, and accountable. Get strength training, cardio, daily habits, and progress tracking all in one place.
+              A complete wellness experience designed to help you feel better, have more energy, and achieve lasting health. Strength, cardio, daily habits, and progress tracking all in one app.
             </p>
             <Link href="/programs">
               <button className="px-8 py-4 rounded-full bg-[#e5e7eb] text-primary font-bold hover:bg-white transition-all duration-300 shadow-lg">

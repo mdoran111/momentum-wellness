@@ -55,7 +55,7 @@ export default function Pricing() {
             Membership
           </div>
           <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight italic">Just $14.99/Month</h1>
-          <p className="text-xl text-white/70 font-light leading-relaxed">A continuous fitness program with monthly phase unlocks. No hidden fees, no contracts.</p>
+          <p className="text-xl text-white/70 font-light leading-relaxed">A complete wellness program with monthly phase unlocks. Strength, cardio, daily habits, and progress tracking all in one place.</p>
         </motion.div>
 
         {/* Main Pricing Card */}
@@ -68,7 +68,7 @@ export default function Pricing() {
           <Card className="border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.3)] relative overflow-hidden bg-white/5 backdrop-blur-md rounded-[40px] group transition-all duration-500 hover:bg-white/[0.08]">
             <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
             <CardHeader className="text-center pt-16 pb-10 border-b border-white/10">
-              <CardTitle className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-widest italic">Complete Fitness Membership</CardTitle>
+              <CardTitle className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-widest italic">Complete Wellness Membership</CardTitle>
               <div className="flex items-baseline justify-center gap-2">
                 <span className="text-7xl font-bold font-heading text-white">$14.99</span>
                 <span className="text-white/60 text-xl font-light">/month</span>
