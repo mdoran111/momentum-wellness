@@ -2,10 +2,16 @@ import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { CheckCircle2, ShieldCheck, Zap, Award, Clock } from "lucide-react";
-import { Link } from "wouter";
+import { Link, useLocation } from "wouter";
+import { useEffect } from "react";
 import logo from '../assets/images/logo.png';
 
 export default function Pricing() {
+  const [location] = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [location]);
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
