@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ShieldCheck, Zap, Target, LayoutGrid, ChevronDown } from "lucide-react";
+import { ShieldCheck, Zap, Target, LayoutGrid, ChevronDown, Clock } from "lucide-react";
 import { useState, useEffect } from "react";
 import aboutHero from '../assets/images/about-hero.jpg';
 import aboutHolistic from '../assets/images/about-holistic-strength.jpg';
@@ -161,7 +161,7 @@ export default function About() {
               Our Foundation
             </div>
             <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-8 italic tracking-tight uppercase leading-[1.1]">The Momentum Method</h2>
-            <p className="text-white/80 max-w-3xl mx-auto text-xl font-light leading-relaxed">A holistic approach that weaves together four essential pillars—strength, cardio, daily habits, and progress—to create lasting wellness and transform how you feel.</p>
+            <p className="text-white/80 max-w-3xl mx-auto text-xl font-light leading-relaxed">A holistic approach that weaves together five essential pillars—strength, cardio, daily habits, progress, and recovery—to create lasting wellness and transform how you feel.</p>
           </motion.div>
 
           
@@ -170,7 +170,7 @@ export default function About() {
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8"
           >
             {[
               {
@@ -196,6 +196,12 @@ export default function About() {
                 title: "Progress",
                 subtitle: "See Your Transformation",
                 desc: "Track your visual transformation with progress photos and metrics. See real results month-to-month and stay motivated for the long journey."
+              },
+              {
+                icon: Clock,
+                title: "Recovery",
+                subtitle: "Rest & Recharge",
+                desc: "Strategic rest and recovery are where the magic happens. Quality sleep, active recovery, and proper rest periods fuel adaptation and sustainable progress."
               }
             ].map((value, i) => (
               <motion.div 
