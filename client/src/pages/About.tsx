@@ -10,6 +10,7 @@ import logo from '../assets/images/logo.png';
 
 export default function About() {
   const [showContent, setShowContent] = useState(true);
+  const [selectedPillar, setSelectedPillar] = useState<number | null>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -165,7 +166,7 @@ export default function About() {
           </motion.div>
 
           
-          <div className="flex flex-wrap justify-center gap-6 items-center max-w-6xl mx-auto">
+          <div className="flex flex-wrap justify-center gap-6 items-start max-w-6xl mx-auto">
             {[
               {
                 icon: Target,
@@ -204,20 +205,37 @@ export default function About() {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                whileHover={{ scale: 1.08, transition: { duration: 0.3 } }}
-                className="group relative flex-1 min-w-[140px] max-w-[160px]"
+                className="flex flex-col items-center flex-1 min-w-[140px]"
               >
-                <div className="relative bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-md p-8 rounded-[24px] border border-white/20 hover:border-white/40 transition-all duration-500 h-full flex flex-col items-center text-center cursor-pointer">
-                  <div className="w-16 h-16 bg-gradient-to-br from-white/25 to-white/10 text-white rounded-2xl flex items-center justify-center mb-4 group-hover:scale-110 group-hover:from-white/35 group-hover:to-white/15 transition-all duration-500">
-                    <value.icon className="w-8 h-8" />
+                <motion.button
+                  whileHover={{ scale: 1.1 }}
+                  onClick={() => setSelectedPillar(selectedPillar === i ? null : i)}
+                  className={`relative flex-1 w-full rounded-[24px] border transition-all duration-500 flex flex-col items-center justify-center py-8 px-6 text-center cursor-pointer ${
+                    selectedPillar === i 
+                      ? "bg-white/20 border-white/50 shadow-lg" 
+                      : "bg-gradient-to-br from-white/15 to-white/5 border-white/20 hover:border-white/40 hover:bg-white/[0.12]"
+                  }`}
+                >
+                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 transition-all duration-500 ${
+                    selectedPillar === i
+                      ? "bg-gradient-to-br from-white/35 to-white/15"
+                      : "bg-gradient-to-br from-white/25 to-white/10 group-hover:from-white/35 group-hover:to-white/15"
+                  }`}>
+                    <value.icon className="w-8 h-8 text-white" />
                   </div>
-                  <h3 className="text-white font-heading font-bold text-lg italic tracking-tight mb-1">{value.title}</h3>
-                  <p className="text-white/70 text-xs font-semibold uppercase tracking-wider">{value.subtitle}</p>
-                  
-                  <div className="absolute inset-0 bg-white/10 backdrop-blur-md rounded-[24px] border border-white/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center p-6">
+                  <h3 className="text-white font-heading font-bold text-xl italic tracking-tight">{value.title}</h3>
+                </motion.button>
+
+                <motion.div
+                  initial={{ opacity: 0, height: 0 }}
+                  animate={{ opacity: selectedPillar === i ? 1 : 0, height: selectedPillar === i ? "auto" : 0 }}
+                  transition={{ duration: 0.3 }}
+                  className="w-full overflow-hidden"
+                >
+                  <div className="mt-6 p-6 bg-white/10 backdrop-blur-md rounded-[20px] border border-white/20 text-center">
                     <p className="text-white text-sm font-light leading-relaxed">{value.desc}</p>
                   </div>
-                </div>
+                </motion.div>
               </motion.div>
             ))}
           </div>
