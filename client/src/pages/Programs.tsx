@@ -339,7 +339,7 @@ export default function Programs() {
           <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/[0.02] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-1000"></div>
           <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 italic tracking-tight">Ready to start training?</h2>
           <p className="text-white/60 mb-10 max-w-xl mx-auto text-lg font-light leading-relaxed">Get instant access to all programs above, plus every future program we release, for just $14.99/month.</p>
-          <a href="https://www.trainerize.me/profile/momentumwellness6/" target="_blank" rel="noreferrer">
+          <a href="https://www.trainerize.me/profile/momentumwellness6/?planGUID=8bb77914b268416bac5814c814ea283d" target="_blank" rel="noreferrer">
             <Button size="lg" className="rounded-full bg-[#e5e7eb] text-primary hover:bg-white hover:scale-105 transition-all duration-300 font-bold px-12 h-16 border-none shadow-2xl">
               Unlock Full Access
             </Button>
