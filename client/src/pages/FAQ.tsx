@@ -59,8 +59,8 @@ export default function FAQ() {
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm font-medium tracking-wider uppercase text-white/90">
               Support
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Frequently Asked Questions</h1>
-            <p className="text-xl text-white/70 font-light leading-relaxed">Everything you need to know about the Momentum Wellness experience.</p>
+            <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-8 italic tracking-tight">Frequently Asked Questions</h1>
+            <p className="text-xl text-white/70 font-light leading-relaxed max-w-2xl">Everything you need to know about the Momentum Wellness experience.</p>
           </div>
         </div>
       </section>

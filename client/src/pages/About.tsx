@@ -54,10 +54,10 @@ export default function About() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="max-w-4xl mx-auto"
           >
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-6 italic tracking-tight">
+            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold font-heading text-white mb-8 italic tracking-tight">
               Wellness Built<br className="md:hidden" /> For You.
             </h1>
-            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-10 font-light leading-relaxed">
+            <p className="text-lg md:text-xl text-white/70 max-w-2xl mx-auto mb-12 font-light leading-relaxed">
               Momentum Wellness is a commitment to making comprehensive fitness accessible to everyone. We believe that strength training, cardio, daily wellness habits, and progress tracking shouldn't require expensive coaching or complicated systems.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">

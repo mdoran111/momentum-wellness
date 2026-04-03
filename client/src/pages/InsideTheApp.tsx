@@ -103,8 +103,8 @@ export default function InsideTheApp() {
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm font-medium tracking-wider uppercase">
               The App Experience
             </div>
-            <h1 className="text-5xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Inside The App</h1>
-            <p className="text-xl text-white/80 font-light leading-relaxed mb-8">
+            <h1 className="text-5xl md:text-6xl font-bold font-heading text-white mb-8 italic tracking-tight">Inside The App</h1>
+            <p className="text-xl text-white/80 font-light leading-relaxed mb-10 max-w-2xl">
               A complete wellness experience designed to help you feel better, have more energy, and achieve lasting health. Strength, cardio, daily habits, and progress tracking all in one app.
             </p>
             <Link href="/programs">

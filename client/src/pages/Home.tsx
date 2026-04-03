@@ -185,7 +185,7 @@ export default function Home() {
                 transition={{ duration: 1, ease: "easeOut" }}
                 className="max-w-4xl mx-auto"
               >
-                <p className="text-xl md:text-2xl text-white/70 mb-12 max-w-2xl mx-auto font-light leading-relaxed">
+                <p className="text-xl md:text-2xl text-white/70 mb-14 max-w-2xl mx-auto font-light leading-relaxed">
                   Strength training, cardio, daily habits, and progress tracking. All in one app. $14.99/mo.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">

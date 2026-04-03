@@ -120,8 +120,8 @@ export default function Programs() {
           transition={{ duration: 0.8 }}
           className="max-w-3xl mb-16"
         >
-          <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 italic tracking-tight">Program Library</h1>
-          <p className="text-xl text-white/80 mb-6 font-light leading-relaxed">Your membership provides a complete wellness program with monthly phase unlocks. Each month brings new challenges in strength, cardio, daily habits, and progress tracking to ensure continuous growth and holistic health.</p>
+          <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-8 italic tracking-tight">Program Library</h1>
+          <p className="text-xl text-white/80 mb-8 max-w-3xl font-light leading-relaxed">Your membership provides a complete wellness program with monthly phase unlocks. Each month brings new challenges in strength, cardio, daily habits, and progress tracking to ensure continuous growth and holistic health.</p>
           <div className="inline-block px-6 py-3 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10">
             <p className="text-sm font-medium text-white/90 italic">Note: New phases are unlocked month-by-month as you evolve through your training.</p>
           </div>

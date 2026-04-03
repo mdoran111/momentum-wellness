@@ -54,8 +54,8 @@ export default function Pricing() {
           <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm font-medium tracking-wider uppercase text-white/90">
             Membership
           </div>
-          <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-6 tracking-tight italic">Just $14.99/Month</h1>
-          <p className="text-xl text-white/70 font-light leading-relaxed">A complete wellness program with monthly phase unlocks. Strength, cardio, daily habits, and progress tracking all in one place.</p>
+          <h1 className="text-4xl md:text-6xl font-bold font-heading text-white mb-8 tracking-tight italic">Just $14.99/Month</h1>
+          <p className="text-xl text-white/70 font-light leading-relaxed max-w-2xl">A complete wellness program with monthly phase unlocks. Strength, cardio, daily habits, and progress tracking all in one place.</p>
         </motion.div>
 
         {/* Main Pricing Card */}
