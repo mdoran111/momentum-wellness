@@ -11,9 +11,9 @@ export function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 w-full border-b border-white/5 bg-primary/80 backdrop-blur-xl shadow-2xl">
-      <div className="container mx-auto px-4 h-20 flex items-center justify-between gap-6">
-        <Link href="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 group">
-          <motion.div 
+      <div className="container mx-auto px-4 h-20 flex items-center">
+        <Link href="/" onClick={() => window.scrollTo(0, 0)} className="flex items-center gap-3 group shrink-0 mr-auto">
+          <motion.div
             whileHover={{ scale: 1.05 }}
             transition={{ type: "spring", stiffness: 400, damping: 10 }}
             className="flex items-baseline -space-x-px"
@@ -24,7 +24,7 @@ export function Navbar() {
         </Link>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex gap-6 lg:gap-8">
+        <nav className="hidden md:flex gap-6 lg:gap-8 mr-8">
           <Link href="/about" className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
             About
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
