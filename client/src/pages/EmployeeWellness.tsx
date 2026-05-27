@@ -530,6 +530,128 @@ export default function EmployeeWellness() {
         </div>
       </section>
 
+      {/* App Showcase */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#0a0f1d]"></div>
+        <div
+          className="absolute inset-0 opacity-[0.02]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+          }}
+        ></div>
+
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Section Header */}
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+              The Platform
+            </span>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              A Wellness Platform{" "}
+              <span className="italic">Employees</span> Can Actually Use
+            </h2>
+            <p className="text-xl text-white/40 max-w-3xl mx-auto font-light leading-relaxed">
+              Momentum Wellness is powered through a rebranded wellness app that gives employees one place to stay organized, engaged, and accountable.
+            </p>
+          </motion.div>
+
+          {/* Feature Grid */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center mb-24">
+            {/* Left - Features */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="space-y-4">
+                {[
+                  "Follow workouts at home, at the gym, or on the go",
+                  "Track key health and fitness habits",
+                  "Monitor progress and performance over time",
+                  "Stay aware of nutrition goals",
+                  "Build routines with daily structure",
+                  "Stay connected through community-based support",
+                  "Keep wellness visible, practical, and accessible"
+                ].map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.08 }}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-300"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
+                    </div>
+                    <span className="text-white/60 font-light">{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+
+            {/* Right - Featured Phone */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative mx-auto w-[280px]">
+                <div className="rounded-[40px] bg-[#1a1a2e] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
+                  <div className="rounded-[32px] overflow-hidden bg-black relative">
+                    <img src={mwDashboard} alt="App Dashboard" className="w-full" />
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
+                  </div>
+                </div>
+                {/* Caption */}
+                <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                  <span className="text-sm text-white/30 font-light">Stay on top of daily health and fitness</span>
+                </div>
+              </div>
+              {/* Glow */}
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-emerald-500/8 rounded-full blur-[100px] -z-10"></div>
+            </motion.div>
+          </div>
+
+          {/* Phone Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mt-20">
+            {[
+              { img: mwGoals, caption: "Set goals and work toward them" },
+              { img: mwWorkouts, caption: "Follow workouts anywhere" },
+              { img: mwProgress, caption: "Track progress with key stats" }
+            ].map((item, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className="text-center"
+              >
+                <div className="relative mx-auto w-[240px] mb-6">
+                  <div className="rounded-[36px] bg-[#1a1a2e] p-2.5 shadow-2xl border border-white/10 hover:border-white/20 transition-all duration-500">
+                    <div className="rounded-[28px] overflow-hidden bg-black relative">
+                      <img src={item.img} alt={item.caption} className="w-full" />
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-[#1a1a2e] rounded-b-xl"></div>
+                    </div>
+                  </div>
+                </div>
+                <p className="text-white/40 font-light text-sm">{item.caption}</p>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Why Companies Choose Us */}
       <section className="py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/50 to-[#0f172a]"></div>
