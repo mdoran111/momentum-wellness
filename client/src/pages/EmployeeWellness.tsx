@@ -329,6 +329,121 @@ export default function EmployeeWellness() {
         </div>
       </section>
 
+      {/* Values Section */}
+      <section className="py-40 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#0a0f1d]"></div>
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`
+            }}
+          ></div>
+        </div>
+
+        {/* Subtle grain texture */}
+        <div
+          className="absolute inset-0 opacity-[0.015]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+          }}
+        ></div>
+
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-24">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-sm font-bold tracking-[0.3em] uppercase text-white/20 mb-8 block">
+                Our Philosophy
+              </span>
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-10 leading-[1.05] tracking-tight">
+                Built Around{" "}
+                <span className="italic font-serif">People.</span>
+                <br />
+                Designed For{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  Long-Term Impact.
+                </span>
+              </h2>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <p className="text-xl md:text-2xl text-white/40 font-light leading-relaxed mb-6">
+                Great companies are built by people — and when people are supported, the entire organization gets stronger.
+              </p>
+              <p className="text-lg text-white/30 font-light leading-relaxed max-w-3xl mx-auto">
+                Momentum Wellness exists to help employers invest in the health of their teams in a meaningful, structured way. We believe employee wellness should be more than a perk. It should be a system that helps people feel better, move better, eat better, stay accountable, and support one another.
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Five Pillars */}
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="max-w-5xl mx-auto"
+          >
+            <p className="text-center text-sm font-bold tracking-[0.2em] uppercase text-white/20 mb-12">
+              Our approach is rooted in five pillars
+            </p>
+
+            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+              {[
+                { name: "Training", desc: "Structured strength & cardio" },
+                { name: "Nutrition", desc: "Guided eating habits" },
+                { name: "Habits", desc: "Daily consistency building" },
+                { name: "Accountability", desc: "Peer & coach support" },
+                { name: "Community", desc: "Team-driven motivation" }
+              ].map((pillar, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-500 text-center"
+                >
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative">
+                    <span className="text-3xl font-bold text-white/10 group-hover:text-emerald-400/20 transition-colors duration-500 block mb-4">
+                      0{index + 1}
+                    </span>
+                    <h3 className="text-xl font-bold text-white mb-2 tracking-tight">{pillar.name}</h3>
+                    <p className="text-sm text-white/30 font-light">{pillar.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+
+            {/* Closing statement */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.6 }}
+              className="text-center mt-20"
+            >
+              <div className="inline-block px-8 py-4 rounded-full border border-white/10 bg-white/[0.02]">
+                <p className="text-white/40 font-light italic">
+                  This is how wellness becomes part of company culture — not just another program that gets forgotten.
+                </p>
+              </div>
+            </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
       {/* Why Companies Choose Us */}
       <section className="py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/50 to-[#0f172a]"></div>
