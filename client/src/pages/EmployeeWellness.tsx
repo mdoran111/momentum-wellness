@@ -409,7 +409,7 @@ export default function EmployeeWellness() {
         </div>
       </section>
 
-      {/* Values Section */}
+      {/* Our Philosophy + The 5 Pillars */}
       <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0a0f1d]"></div>
         <div className="absolute inset-0">
@@ -437,9 +437,6 @@ export default function EmployeeWellness() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-sm font-bold tracking-[0.3em] uppercase text-white/20 mb-8 block">
-                Our Philosophy
-              </span>
               <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-10 leading-[1.05] tracking-tight">
                 Built Around{" "}
                 <span className="italic font-serif">People.</span>
@@ -466,41 +463,71 @@ export default function EmployeeWellness() {
             </motion.div>
           </div>
 
-          {/* Five Pillars */}
+          {/* The 5 Pillars — detailed cards */}
           <motion.div
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8 }}
-            className="max-w-5xl mx-auto"
+            className="max-w-6xl mx-auto"
           >
             <p className="text-center text-sm font-bold tracking-[0.2em] uppercase text-white/20 mb-12">
               Our approach is rooted in five pillars
             </p>
 
-            <div className="grid grid-cols-1 sm:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
               {[
-                { name: "Training", desc: "Structured strength & cardio" },
-                { name: "Nutrition", desc: "Guided eating habits" },
-                { name: "Habits", desc: "Daily consistency building" },
-                { name: "Accountability", desc: "Peer & coach support" },
-                { name: "Community", desc: "Team-driven motivation" }
+                {
+                  num: "01",
+                  icon: Dumbbell,
+                  title: "Training",
+                  desc: "Structured workout programming helps employees improve strength, mobility, conditioning, and consistency whether they train at home, in a gym, or on the go."
+                },
+                {
+                  num: "02",
+                  icon: Apple,
+                  title: "Nutrition",
+                  desc: "Employees can track nutrition, build awareness, and work toward better daily choices that support weight management, energy, and long-term health."
+                },
+                {
+                  num: "03",
+                  icon: Repeat,
+                  title: "Habits",
+                  desc: "Healthy change happens through repeated behaviors. We help employees build sustainable habits around hydration, movement, sleep, recovery, and routine."
+                },
+                {
+                  num: "04",
+                  icon: Target,
+                  title: "Accountability",
+                  desc: "Weekly structure, check-ins, progress tracking, and app-based follow-through help employees stay engaged and consistent over time."
+                },
+                {
+                  num: "05",
+                  icon: Users,
+                  title: "Community",
+                  desc: "Community-based messaging and shared participation create support, motivation, and a stronger team culture across the company."
+                }
               ].map((pillar, index) => (
                 <motion.div
                   key={index}
-                  initial={{ opacity: 0, y: 20 }}
+                  initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-500 text-center"
+                  className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative">
-                    <span className="text-3xl font-bold text-white/10 group-hover:text-emerald-400/20 transition-colors duration-500 block mb-4">
-                      0{index + 1}
-                    </span>
-                    <h3 className="text-xl font-bold text-white mb-2 tracking-tight">{pillar.name}</h3>
-                    <p className="text-sm text-white/30 font-light">{pillar.desc}</p>
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
+                        <pillar.icon className="w-6 h-6" />
+                      </div>
+                      <span className="text-3xl font-bold text-white/5 group-hover:text-emerald-400/10 transition-colors duration-500">
+                        {pillar.num}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">{pillar.title}</h3>
+                    <p className="text-white/40 font-light leading-relaxed text-sm">{pillar.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -521,88 +548,6 @@ export default function EmployeeWellness() {
               </div>
             </motion.div>
           </motion.div>
-        </div>
-      </section>
-
-      {/* The 5 Pillars */}
-      <section className="py-20 md:py-28 lg:py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/40 to-[#0f172a]"></div>
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            transition={{ duration: 0.8 }}
-            className="text-center mb-20"
-          >
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
-              How It Works
-            </span>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-              The 5 Pillars of <span className="italic">Momentum Wellness</span>
-            </h2>
-            <p className="text-xl text-white/40 max-w-2xl mx-auto font-light leading-relaxed">
-              Our employee wellness programs are built around the core behaviors that create real, lasting change inside a company.
-            </p>
-          </motion.div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
-            {[
-              {
-                num: "01",
-                icon: Dumbbell,
-                title: "Training",
-                desc: "Structured workout programming helps employees improve strength, mobility, conditioning, and consistency whether they train at home, in a gym, or on the go."
-              },
-              {
-                num: "02",
-                icon: Apple,
-                title: "Nutrition",
-                desc: "Employees can track nutrition, build awareness, and work toward better daily choices that support weight management, energy, and long-term health."
-              },
-              {
-                num: "03",
-                icon: Repeat,
-                title: "Habits",
-                desc: "Healthy change happens through repeated behaviors. We help employees build sustainable habits around hydration, movement, sleep, recovery, and routine."
-              },
-              {
-                num: "04",
-                icon: Target,
-                title: "Accountability",
-                desc: "Weekly structure, check-ins, progress tracking, and app-based follow-through help employees stay engaged and consistent over time."
-              },
-              {
-                num: "05",
-                icon: Users,
-                title: "Community",
-                desc: "Community-based messaging and shared participation create support, motivation, and a stronger team culture across the company."
-              }
-            ].map((pillar, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
-              >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                <div className="relative">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
-                      <pillar.icon className="w-6 h-6" />
-                    </div>
-                    <span className="text-3xl font-bold text-white/5 group-hover:text-emerald-400/10 transition-colors duration-500">
-                      {pillar.num}
-                    </span>
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">{pillar.title}</h3>
-                  <p className="text-white/40 font-light leading-relaxed text-sm">{pillar.desc}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
 
