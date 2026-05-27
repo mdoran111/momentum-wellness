@@ -45,6 +45,10 @@ export function Navbar() {
             FAQ
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
           </Link>
+          <a href="https://momentumwellness.health/employee-wellness-programs" target="_blank" rel="noreferrer" className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
+            Employee Wellness
+            <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
+          </a>
         </nav>
 
         <div className="flex items-center gap-6">
@@ -76,6 +80,7 @@ export function Navbar() {
                   <Link href="/about" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">About</Link>
                   <Link href="/inside-the-app" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">Inside The App</Link>
                   <Link href="/faq" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">FAQ</Link>
+                  <a href="https://momentumwellness.health/employee-wellness-programs" target="_blank" rel="noreferrer" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">Employee Wellness</a>
                   <div className="pt-6 border-t border-white/10">
                     <Link href="/programs">
                       <Button onClick={() => setOpen(false)} className="w-full rounded-full h-12 font-bold uppercase tracking-widest text-xs bg-[#e5e7eb] text-primary hover:bg-white border-none shadow-lg">
