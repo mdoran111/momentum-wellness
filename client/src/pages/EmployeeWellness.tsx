@@ -652,6 +652,87 @@ export default function EmployeeWellness() {
         </div>
       </section>
 
+      {/* How It Works */}
+      <section className="py-32 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/30 to-[#0f172a]"></div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-20"
+          >
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+              The Process
+            </span>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              How Our Employee Wellness Program{" "}
+              <span className="italic">Works</span>
+            </h2>
+          </motion.div>
+
+          {/* Timeline / Steps */}
+          <div className="relative max-w-6xl mx-auto">
+            {/* Desktop connecting line */}
+            <div className="hidden lg:block absolute top-[72px] left-[10%] right-[10%] h-[1px] bg-gradient-to-r from-transparent via-emerald-500/30 to-transparent"></div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-4">
+              {[
+                {
+                  num: "01",
+                  title: "Consultation",
+                  desc: "We start by learning about your company, workforce, culture, and goals."
+                },
+                {
+                  num: "02",
+                  title: "Program Setup",
+                  desc: "We build your employee wellness structure inside the Momentum Wellness app."
+                },
+                {
+                  num: "03",
+                  title: "Company Launch",
+                  desc: "Employees are onboarded into the platform and begin using their training, nutrition, habit, and accountability tools."
+                },
+                {
+                  num: "04",
+                  title: "Engagement and Accountability",
+                  desc: "Employees participate through app-based structure, progress tracking, and community-driven support."
+                },
+                {
+                  num: "05",
+                  title: "Ongoing Wellness Support",
+                  desc: "We help your company create momentum through consistent participation, clearer health habits, and a stronger wellness culture."
+                }
+              ].map((step, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.12 }}
+                  className="relative group"
+                >
+                  {/* Step number bubble */}
+                  <div className="flex flex-col items-center text-center">
+                    <div className="relative mb-6">
+                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/20 border border-emerald-500/30 flex items-center justify-center text-emerald-400 font-bold text-xl group-hover:from-emerald-500/30 group-hover:to-teal-500/30 group-hover:border-emerald-400/50 transition-all duration-500">
+                        {step.num}
+                      </div>
+                      {/* Pulse ring on hover */}
+                      <div className="absolute inset-0 rounded-full border border-emerald-400/20 scale-110 opacity-0 group-hover:opacity-100 group-hover:scale-125 transition-all duration-700"></div>
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{step.title}</h3>
+                    <p className="text-white/40 font-light leading-relaxed text-sm">{step.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Companies Choose Us */}
       <section className="py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/50 to-[#0f172a]"></div>
