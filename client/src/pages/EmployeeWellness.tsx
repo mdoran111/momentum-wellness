@@ -258,6 +258,77 @@ export default function EmployeeWellness() {
         </div>
       </section>
 
+      {/* The Problem Section */}
+      <section className="py-32 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/30 to-[#0f172a]"></div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Left side - Headline and text */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+                The Reality
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+                Your Employees Are the{" "}
+                <span className="italic">Engine</span> of Your Company
+              </h2>
+              <p className="text-lg text-white/50 mb-6 font-light leading-relaxed">
+                In every industry, employee health affects performance, morale, consistency, and long-term well-being.
+              </p>
+              <p className="text-base text-white/40 mb-6 font-light leading-relaxed">
+                For physically demanding industries like construction and skilled trades, these challenges can be even more visible. Long days, early starts, jobsite travel, irregular meals, and physical wear and tear make it hard for employees to stay consistent with their health.
+              </p>
+              <p className="text-base text-white/40 font-light leading-relaxed">
+                At Momentum Wellness, we help companies create a stronger culture of health through a system employees can actually use.
+              </p>
+            </motion.div>
+
+            {/* Right side - Challenges grid */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:mt-12"
+            >
+              <p className="text-sm font-bold tracking-[0.15em] uppercase text-white/30 mb-6">
+                Many companies are dealing with the same challenges
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {[
+                  { icon: TrendingUp, text: "Employees struggling with weight gain", rotate: "rotate-0" },
+                  { icon: Activity, text: "Low energy and poor daily habits", rotate: "rotate-0" },
+                  { icon: Users, text: "Limited accountability", rotate: "rotate-0" },
+                  { icon: HeartPulse, text: "Inconsistent exercise and nutrition", rotate: "rotate-0" },
+                  { icon: Clock, text: "High stress and poor recovery", rotate: "rotate-0" },
+                  { icon: MessageSquare, text: "Disconnected teams", rotate: "rotate-0" },
+                  { icon: ShieldCheck, text: "Wellness initiatives that sound good but go unused", rotate: "rotate-0", wide: true }
+                ].map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.08 }}
+                    className={`flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300 ${item.wide ? 'sm:col-span-2' : ''}`}
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/10 to-orange-500/10 flex items-center justify-center shrink-0 text-red-400/80">
+                      <item.icon className="w-5 h-5" />
+                    </div>
+                    <span className="text-white/60 font-light leading-snug pt-1.5">{item.text}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Companies Choose Us */}
       <section className="py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/50 to-[#0f172a]"></div>
