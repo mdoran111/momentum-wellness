@@ -38,7 +38,7 @@ export function Navbar() {
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
           </Link>
           <Link href="/employee-wellness-programs" className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
-            Employee Wellness
+            Employee Wellness Programs
             <span className="absolute -bottom-1 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/nav:w-full"></span>
           </Link>
           <Link href="/pricing" className="text-xs font-bold uppercase tracking-[0.15em] text-white/70 hover:text-white transition-colors duration-300 relative group/nav">
@@ -78,7 +78,7 @@ export function Navbar() {
                   <Link href="/about" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">About</Link>
                   <Link href="/programs" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">Programs</Link>
                   <Link href="/inside-the-app" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">Inside The App</Link>
-                  <Link href="/employee-wellness-programs" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">Employee Wellness</Link>
+                  <Link href="/employee-wellness-programs" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">Employee Wellness Programs</Link>
                   <Link href="/pricing" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">Pricing</Link>
                   <Link href="/faq" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">FAQ</Link>
                   <div className="pt-6 border-t border-white/10">
