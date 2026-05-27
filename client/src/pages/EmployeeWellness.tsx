@@ -176,7 +176,7 @@ export default function EmployeeWellness() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.7, ease: "easeOut" }
+      transition: { duration: 0.7, ease: "easeOut" as const }
     }
   };
 
@@ -237,20 +237,20 @@ export default function EmployeeWellness() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Link href="/contact">
+                <Link href="/contact" className="w-full sm:w-auto">
                   <Button
                     size="lg"
-                    className="rounded-full text-base px-8 h-14 bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 font-bold shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
+                    className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 font-bold shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
                   >
                     Book a Corporate Wellness Consultation
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
-                <Link href="/contact">
+                <Link href="/contact" className="w-full sm:w-auto">
                   <Button
                     size="lg"
                     variant="outline"
-                    className="rounded-full text-base px-8 h-14 border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-bold"
+                    className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-bold"
                   >
                     Contact Our Team
                   </Button>
@@ -339,7 +339,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* The Problem Section */}
-      <section className="py-32 relative">
+      <section className="py-20 md:py-28 lg:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/30 to-[#0f172a]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -410,7 +410,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* Values Section */}
-      <section className="py-40 relative overflow-hidden">
+      <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0a0f1d]"></div>
         <div className="absolute inset-0">
           <div
@@ -525,7 +525,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* The 5 Pillars */}
-      <section className="py-32 relative">
+      <section className="py-20 md:py-28 lg:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/40 to-[#0f172a]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -607,7 +607,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* App Showcase */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-20 md:py-28 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0a0f1d]"></div>
         <div
           className="absolute inset-0 opacity-[0.02]"
@@ -681,15 +681,15 @@ export default function EmployeeWellness() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative mx-auto w-[280px]">
-                <div className="rounded-[40px] bg-[#1a1a2e] p-3 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
-                  <div className="rounded-[32px] overflow-hidden bg-black relative">
+              <div className="relative mx-auto w-full max-w-[280px]">
+                <div className="rounded-[32px] md:rounded-[40px] bg-[#1a1a2e] p-2 md:p-3 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
+                  <div className="rounded-[24px] md:rounded-[32px] overflow-hidden bg-black relative">
                     <img src={mwDashboard} alt="App Dashboard" className="w-full" />
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 md:w-24 h-5 md:h-6 bg-[#1a1a2e] rounded-b-xl md:rounded-b-2xl"></div>
                   </div>
                 </div>
                 {/* Caption */}
-                <div className="absolute -bottom-12 left-1/2 -translate-x-1/2 whitespace-nowrap">
+                <div className="mt-4 text-center">
                   <span className="text-sm text-white/30 font-light">Stay on top of daily health and fitness</span>
                 </div>
               </div>
@@ -713,11 +713,11 @@ export default function EmployeeWellness() {
                 transition={{ delay: index * 0.15 }}
                 className="text-center"
               >
-                <div className="relative mx-auto w-[240px] mb-6">
-                  <div className="rounded-[36px] bg-[#1a1a2e] p-2.5 shadow-2xl border border-white/10 hover:border-white/20 transition-all duration-500">
-                    <div className="rounded-[28px] overflow-hidden bg-black relative">
+                <div className="relative mx-auto w-full max-w-[240px] mb-6">
+                  <div className="rounded-[28px] md:rounded-[36px] bg-[#1a1a2e] p-2 md:p-2.5 shadow-2xl border border-white/10 hover:border-white/20 transition-all duration-500">
+                    <div className="rounded-[20px] md:rounded-[28px] overflow-hidden bg-black relative">
                       <img src={item.img} alt={item.caption} className="w-full" />
-                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-[#1a1a2e] rounded-b-xl"></div>
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-16 md:w-20 h-4 md:h-5 bg-[#1a1a2e] rounded-b-lg md:rounded-b-xl"></div>
                     </div>
                   </div>
                 </div>
@@ -729,7 +729,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* How It Works */}
-      <section className="py-32 relative">
+      <section className="py-20 md:py-28 lg:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/30 to-[#0f172a]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -810,7 +810,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* Built For */}
-      <section className="py-32 relative">
+      <section className="py-20 md:py-28 lg:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -882,7 +882,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* What Companies Can Expect */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-20 md:py-28 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0a0f1d]"></div>
         <div
           className="absolute inset-0 opacity-[0.015]"
@@ -957,7 +957,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-40 relative overflow-hidden">
+      <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#0a0f1d] to-[#0f172a]"></div>
         {/* Large ambient glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[500px] bg-emerald-500/[0.04] rounded-full blur-[120px]"></div>
@@ -996,21 +996,21 @@ export default function EmployeeWellness() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-              <Link href="/contact">
+              <Link href="/contact" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-10 py-7 text-lg font-semibold rounded-full hover:shadow-[0_0_40px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-[1.02]"
+                  className="w-full sm:w-auto bg-gradient-to-r from-emerald-500 to-teal-500 text-white px-10 py-7 text-lg font-semibold rounded-full hover:shadow-[0_0_40px_rgba(16,185,129,0.3)] transition-all duration-300 hover:scale-[1.02]"
                 >
                   Book a Corporate Wellness Consultation
                   <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </Link>
 
-              <a href="mailto:info@momentumwellness.health">
+              <a href="mailto:info@momentumwellness.health" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="border-white/20 text-white px-10 py-7 text-lg font-medium rounded-full hover:bg-white/5 hover:border-white/30 transition-all duration-300"
+                  className="w-full sm:w-auto border-white/20 text-white px-10 py-7 text-lg font-medium rounded-full hover:bg-white/5 hover:border-white/30 transition-all duration-300"
                 >
                   Email Our Team
                 </Button>
@@ -1021,7 +1021,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* Why Companies Choose Us */}
-      <section className="py-32 relative">
+      <section className="py-20 md:py-28 lg:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/50 to-[#0f172a]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1066,7 +1066,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* How It Works */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-20 md:py-28 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0f172a]"></div>
         <div className="absolute inset-0 opacity-20">
           <div
@@ -1146,7 +1146,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* App Features */}
-      <section className="py-32 relative">
+      <section className="py-20 md:py-28 lg:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/30 to-[#0f172a]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1200,11 +1200,11 @@ export default function EmployeeWellness() {
               className="relative"
             >
               <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/10 to-blue-500/10 rounded-[40px] blur-3xl"></div>
-              <div className="relative grid grid-cols-2 gap-4">
-                <img src={mwDashboard} alt="App Dashboard" className="rounded-[24px] shadow-2xl border border-white/5" />
-                <img src={mwGoals} alt="Goals Tracking" className="rounded-[24px] shadow-2xl border border-white/5 mt-10" />
-                <img src={mwWorkouts} alt="Workouts" className="rounded-[24px] shadow-2xl border border-white/5 -mt-10" />
-                <img src={mwProgress} alt="Progress Tracking" className="rounded-[24px] shadow-2xl border border-white/5" />
+              <div className="relative grid grid-cols-2 gap-3 md:gap-4">
+                <img src={mwDashboard} alt="App Dashboard" className="rounded-[16px] md:rounded-[24px] shadow-2xl border border-white/5" />
+                <img src={mwGoals} alt="Goals Tracking" className="rounded-[16px] md:rounded-[24px] shadow-2xl border border-white/5 mt-6 md:mt-10" />
+                <img src={mwWorkouts} alt="Workouts" className="rounded-[16px] md:rounded-[24px] shadow-2xl border border-white/5 -mt-6 md:-mt-10" />
+                <img src={mwProgress} alt="Progress Tracking" className="rounded-[16px] md:rounded-[24px] shadow-2xl border border-white/5" />
               </div>
             </motion.div>
           </div>
@@ -1212,7 +1212,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-20 md:py-28 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0f172a]"></div>
         <div className="absolute inset-0">
           <div
@@ -1268,7 +1268,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* Who It's For */}
-      <section className="py-32 relative">
+      <section className="py-20 md:py-28 lg:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
@@ -1310,7 +1310,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* Feature Checklist */}
-      <section className="py-32 relative overflow-hidden">
+      <section className="py-20 md:py-28 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0f172a]"></div>
         <div className="absolute inset-0 opacity-20">
           <img src={mwSplash} alt="" className="w-full h-full object-cover" />
@@ -1366,7 +1366,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* Final CTA */}
-      <section className="py-40 relative overflow-hidden">
+      <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
         <div className="absolute inset-0">
           <div
@@ -1396,20 +1396,20 @@ export default function EmployeeWellness() {
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-              <Link href="/contact">
+              <Link href="/contact" className="w-full sm:w-auto">
                 <Button
                   size="lg"
-                  className="rounded-full text-lg px-12 h-16 bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 font-bold shadow-[0_0_60px_rgba(255,255,255,0.15)] hover:shadow-[0_0_80px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
+                  className="w-full sm:w-auto rounded-full text-lg px-12 h-16 bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 font-bold shadow-[0_0_60px_rgba(255,255,255,0.15)] hover:shadow-[0_0_80px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
                 >
                   Book a Consultation
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/contact" className="w-full sm:w-auto">
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full text-lg px-12 h-16 border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-bold"
+                  className="w-full sm:w-auto rounded-full text-lg px-12 h-16 border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-bold"
                 >
                   Contact Our Team
                 </Button>
@@ -1443,7 +1443,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* Contact Form Section */}
-      <section className="py-32 relative">
+      <section className="py-20 md:py-28 lg:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/30 to-[#0f172a]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
           <motion.div
@@ -1535,7 +1535,7 @@ export default function EmployeeWellness() {
       </section>
 
       {/* FAQ Section */}
-      <section className="py-32 relative">
+      <section className="py-20 md:py-28 lg:py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
           <motion.div
