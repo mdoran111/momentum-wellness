@@ -13,6 +13,7 @@ import FAQ from "@/pages/FAQ";
 import Contact from "@/pages/Contact";
 import Legal from "@/pages/Legal";
 import InsideTheApp from "@/pages/InsideTheApp";
+import EmployeeWellness from "@/pages/EmployeeWellness";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -29,6 +30,7 @@ function Router() {
           <Route path="/contact" component={Contact} />
           <Route path="/inside-the-app" component={InsideTheApp} />
           <Route path="/legal" component={Legal} />
+          <Route path="/employee-wellness-programs" component={EmployeeWellness} />
           <Route component={NotFound} />
         </Switch>
       </main>
