@@ -103,13 +103,13 @@ export default function EmployeeWellness() {
   return (
     <div className="flex flex-col min-h-screen bg-[#0f172a]">
       {/* Hero Section */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         {/* Background layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
-        <div className="absolute inset-0 opacity-30">
+        <div className="absolute inset-0 opacity-20">
           <img src={mwSplash} alt="" className="w-full h-full object-cover" />
         </div>
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0f172a] via-transparent to-[#0f172a]/80"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-transparent"></div>
 
         {/* Subtle grid pattern */}
         <div
@@ -120,90 +120,141 @@ export default function EmployeeWellness() {
           }}
         ></div>
 
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 40 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
-            className="max-w-5xl"
-          >
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left side - Text */}
             <motion.div
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              className="inline-flex items-center gap-2 mb-10 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
+              initial={{ opacity: 0, x: -40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, ease: "easeOut" }}
             >
-              <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-              <span className="text-sm font-semibold tracking-wider uppercase text-white/80">
-                For Companies With 50+ Employees
-              </span>
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span className="text-sm font-semibold tracking-wider uppercase text-white/80">
+                  Corporate Wellness Solutions
+                </span>
+              </motion.div>
+
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+                Employee Wellness Programs That Build{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  Healthier, Stronger, More Accountable
+                </span>{" "}
+                Teams
+              </h1>
+
+              <p className="text-lg md:text-xl text-white/60 mb-4 font-light leading-relaxed">
+                Momentum Wellness helps companies with 50+ employees improve health, energy, morale, and daily accountability through a modern wellness platform built around training, nutrition, habits, accountability, and community.
+              </p>
+
+              <p className="text-base text-white/40 mb-10 font-light leading-relaxed max-w-xl">
+                Whether your team works in construction, trades, healthcare, logistics, manufacturing, office settings, or other demanding professions, our system helps employees stay engaged, track progress, and build better habits that carry into work and life.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    className="rounded-full text-base px-8 h-14 bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 font-bold shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
+                  >
+                    Book a Corporate Wellness Consultation
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link href="/contact">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="rounded-full text-base px-8 h-14 border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-bold"
+                  >
+                    Contact Our Team
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Trust strip */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                className="flex flex-wrap gap-x-6 gap-y-3"
+              >
+                {[
+                  "Built for companies with 50+ employees",
+                  "App-based and community-driven",
+                  "Structured 6-month wellness programs",
+                  "Designed for real-world participation and accountability"
+                ].map((point, i) => (
+                  <div key={i} className="flex items-center gap-2 text-white/40">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="text-sm font-medium">{point}</span>
+                  </div>
+                ))}
+              </motion.div>
             </motion.div>
 
-            <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold text-white mb-8 leading-[0.95] tracking-tight">
-              Wellness That{" "}
-              <span className="text-transparent bg-clip-text bg-gradient-to-r from-white via-white to-white/60">
-                Works
-              </span>
-              <br />
-              For Your{" "}
-              <span className="italic font-serif">Workforce</span>
-            </h1>
-
-            <p className="text-xl md:text-2xl text-white/50 max-w-2xl mb-14 font-light leading-relaxed">
-              Momentum Wellness partners with organizations to improve employee health, energy, and accountability through structured training, nutrition, and community-based support.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-5">
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  className="rounded-full text-base px-10 h-16 bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 font-bold shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
-                >
-                  Book a Consultation
-                  <ArrowRight className="ml-2 w-5 h-5" />
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button
-                  size="lg"
-                  variant="outline"
-                  className="rounded-full text-base px-10 h-16 border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-bold"
-                >
-                  Contact Our Team
-                </Button>
-              </Link>
-            </div>
-
-            {/* Trusted by strip */}
+            {/* Right side - Phone mockups */}
             <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 1, duration: 1 }}
-              className="mt-20 pt-10 border-t border-white/5"
+              initial={{ opacity: 0, x: 40 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+              className="relative hidden lg:block"
             >
-              <p className="text-sm text-white/30 uppercase tracking-widest font-semibold mb-6">
-                Trusted by forward-thinking companies
-              </p>
-              <div className="flex flex-wrap gap-12 items-center opacity-40">
-                <div className="flex items-center gap-2 text-white/60">
-                  <Building2 className="w-5 h-5" />
-                  <span className="font-semibold">Enterprise Ready</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/60">
-                  <ShieldCheck className="w-5 h-5" />
-                  <span className="font-semibold">HIPAA Compliant</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/60">
-                  <Users className="w-5 h-5" />
-                  <span className="font-semibold">50-5,000+ Employees</span>
-                </div>
-                <div className="flex items-center gap-2 text-white/60">
-                  <Activity className="w-5 h-5" />
-                  <span className="font-semibold">Real-Time Reporting</span>
-                </div>
+              <div className="relative w-full max-w-[500px] mx-auto" style={{ height: '600px' }}>
+                {/* Phone 1 - Back (Goals) */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20, rotate: -6 }}
+                  animate={{ opacity: 1, y: 0, rotate: -6 }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="absolute top-8 left-0 w-[260px]"
+                >
+                  <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
+                    <div className="rounded-[32px] overflow-hidden bg-black">
+                      <img src={mwGoals} alt="Goals Tracking" className="w-full" />
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Phone 2 - Middle (Workouts) */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20, rotate: 6 }}
+                  animate={{ opacity: 1, y: 0, rotate: 6 }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                  className="absolute top-0 right-0 w-[260px]"
+                >
+                  <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
+                    <div className="rounded-[32px] overflow-hidden bg-black">
+                      <img src={mwWorkouts} alt="Workouts" className="w-full" />
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Phone 3 - Front (Dashboard) */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.9 }}
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[280px] z-10"
+                >
+                  <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.5)] border border-white/10">
+                    <div className="rounded-[32px] overflow-hidden bg-black relative">
+                      <img src={mwDashboard} alt="App Dashboard" className="w-full" />
+                      {/* Notch */}
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Glow effect */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px] -z-10"></div>
               </div>
             </motion.div>
-          </motion.div>
+          </div>
         </div>
       </section>
 
