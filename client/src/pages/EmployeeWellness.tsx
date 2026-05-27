@@ -811,6 +811,81 @@ export default function EmployeeWellness() {
         </div>
       </section>
 
+      {/* What Companies Can Expect */}
+      <section className="py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#0a0f1d]"></div>
+        <div
+          className="absolute inset-0 opacity-[0.015]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+          }}
+        ></div>
+        {/* Ambient glow */}
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-emerald-500/[0.03] rounded-full blur-[120px]"></div>
+
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Left - Headline and intro */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+                Outcomes
+              </span>
+              <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.05] tracking-tight">
+                What Companies{" "}
+                <span className="italic">Can Expect</span>
+              </h2>
+              <p className="text-xl text-white/40 font-light leading-relaxed mb-8">
+                Our goal is to help companies create healthier, more engaged teams through better structure and stronger daily behaviors.
+              </p>
+              <div className="p-6 rounded-2xl border border-white/10 bg-white/[0.02]">
+                <p className="text-white/30 font-light italic leading-relaxed">
+                  Results vary based on participation, consistency, and company commitment. We provide structure and support — the outcomes follow from how your team uses the program.
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Right - Outcome cards */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="space-y-4"
+            >
+              {[
+                "Better employee engagement in health and wellness",
+                "Improved consistency with exercise and healthy habits",
+                "Greater nutrition awareness",
+                "Improved energy and daily readiness",
+                "Stronger accountability",
+                "More connected team culture",
+                "Better momentum around health-related goals",
+                "A premium wellness benefit employees can actually use"
+              ].map((outcome, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, x: 20 }}
+                  whileInView={{ opacity: 1, x: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.08 }}
+                  className="flex items-start gap-4 p-5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-300"
+                >
+                  <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500/15 to-teal-500/15 flex items-center justify-center shrink-0 mt-0.5">
+                    <Sparkles className="w-4 h-4 text-emerald-400" />
+                  </div>
+                  <span className="text-white/60 font-light leading-relaxed">{outcome}</span>
+                </motion.div>
+              ))}
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* Why Companies Choose Us */}
       <section className="py-32 relative">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/50 to-[#0f172a]"></div>
