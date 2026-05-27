@@ -901,52 +901,7 @@ export default function EmployeeWellness() {
         </div>
       </section>
 
-      {/* Why Companies Choose Us */}
-      <section className="py-20 md:py-28 lg:py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/50 to-[#0f172a]"></div>
-        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, margin: "-100px" }}
-            className="text-center mb-20"
-          >
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
-              The Business Case
-            </span>
-            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
-              Why Companies <span className="italic">Choose Us</span>
-            </h2>
-            <p className="text-xl text-white/40 max-w-2xl mx-auto font-light leading-relaxed">
-              Organizations see measurable improvements in morale, retention, and performance when they invest in employee wellness the right way.
-            </p>
-          </motion.div>
-
-          <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6"
-          >
-            {BENEFITS.map((benefit, index) => (
-              <motion.div
-                key={index}
-                variants={itemVariants}
-                className="group p-8 rounded-3xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-500 backdrop-blur-sm"
-              >
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center mb-8 text-white/80 group-hover:text-white group-hover:from-white/20 group-hover:to-white/10 transition-all duration-500">
-                  <benefit.icon className="w-7 h-7" />
-                </div>
-                <h3 className="text-xl font-bold text-white mb-4 tracking-tight">{benefit.title}</h3>
-                <p className="text-white/40 font-light leading-relaxed">{benefit.desc}</p>
-              </motion.div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
-      {/* How It Works */}
+      {/* App Features */}
       <section className="py-20 md:py-28 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0f172a]"></div>
         <div className="absolute inset-0 opacity-20">
