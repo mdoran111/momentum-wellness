@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "wouter";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import {
   ArrowRight,
   Building2,
@@ -30,7 +30,8 @@ import {
   Truck,
   Hotel,
   Monitor,
-  MapPin
+  MapPin,
+  ChevronDown
 } from "lucide-react";
 import mwSplash from "@assets/MW1_splash_1779922530400.png";
 import mwDashboard from "@assets/MW2_app_dashboard_1779922530403.png";
@@ -89,6 +90,73 @@ const TRUSTED_AUDIENCES = [
   { icon: UserCog, title: "HR Leaders", desc: "People teams driving engagement" },
   { icon: Award, title: "Benefits Directors", desc: "Optimizing wellness spend" }
 ];
+
+const FAQ_ITEMS = [
+  {
+    q: "What types of companies do you work with?",
+    a: "We work with companies across a variety of industries, especially organizations with 50+ employees that want to improve workforce health, accountability, and engagement."
+  },
+  {
+    q: "Is this only for construction companies?",
+    a: "No. While our approach is especially valuable for physically demanding industries, our programs are designed for all professions, including office-based teams, healthcare organizations, service businesses, and more."
+  },
+  {
+    q: "Do employees need a gym membership?",
+    a: "No. Employees can follow programs at home, in a gym, or on the go depending on the setup and programming structure."
+  },
+  {
+    q: "Can employees track nutrition and habits in the app?",
+    a: "Yes. The app supports nutrition awareness, wellness routines, progress tracking, and habit-based structure."
+  },
+  {
+    q: "Do you offer company-wide wellness programs?",
+    a: "Yes. Momentum Wellness is built to support company-wide employee wellness initiatives with a structured, scalable approach."
+  },
+  {
+    q: "How do we get started?",
+    a: "Book a corporate wellness consultation through the form on this page, and we'll connect with you to discuss your company's needs."
+  }
+];
+
+function FaqItem({ faq, index }: { faq: typeof FAQ_ITEMS[0]; index: number }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true }}
+      transition={{ delay: index * 0.08 }}
+      className="rounded-2xl bg-white/[0.02] border border-white/5 overflow-hidden"
+    >
+      <button
+        onClick={() => setOpen(!open)}
+        className="w-full flex items-center justify-between p-6 text-left hover:bg-white/[0.02] transition-colors duration-300"
+      >
+        <span className="text-white font-medium pr-4">{faq.q}</span>
+        <motion.div
+          animate={{ rotate: open ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+          className="shrink-0"
+        >
+          <ChevronDown className="w-5 h-5 text-emerald-400" />
+        </motion.div>
+      </button>
+      <motion.div
+        initial={false}
+        animate={{
+          height: open ? "auto" : 0,
+          opacity: open ? 1 : 0
+        }}
+        transition={{ duration: 0.3, ease: "easeInOut" }}
+        className="overflow-hidden"
+      >
+        <div className="px-6 pb-6 text-white/50 font-light leading-relaxed">
+          {faq.a}
+        </div>
+      </motion.div>
+    </motion.div>
+  );
+}
 
 export default function EmployeeWellness() {
   useEffect(() => {
@@ -1463,6 +1531,34 @@ export default function EmployeeWellness() {
               </Button>
             </form>
           </motion.div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="py-32 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-4xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+              Common Questions
+            </span>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              Frequently Asked{" "}
+              <span className="italic">Questions</span>
+            </h2>
+          </motion.div>
+
+          <div className="space-y-4">
+            {FAQ_ITEMS.map((faq, index) => (
+              <FaqItem key={index} faq={faq} index={index} />
+            ))}
+          </div>
         </div>
       </section>
     </div>
