@@ -22,7 +22,13 @@ import {
   Dumbbell,
   Apple,
   Repeat,
-  Target
+  Target,
+  Wrench,
+  Factory,
+  Truck,
+  Hotel,
+  Monitor,
+  MapPin
 } from "lucide-react";
 import mwSplash from "@assets/MW1_splash_1779922530400.png";
 import mwDashboard from "@assets/MW2_app_dashboard_1779922530403.png";
@@ -730,6 +736,78 @@ export default function EmployeeWellness() {
               ))}
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* Built For */}
+      <section className="py-32 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+              Who We Serve
+            </span>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              Built for Companies With{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                50+ Employees
+              </span>
+            </h2>
+            <p className="text-xl text-white/40 max-w-3xl mx-auto font-light leading-relaxed">
+              Our employee wellness programs are ideal for organizations that want to improve workforce health, morale, and accountability in a structured, scalable way.
+            </p>
+          </motion.div>
+
+          {/* Industry Grid */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 max-w-5xl mx-auto mb-16">
+            {[
+              { icon: Building2, label: "Construction" },
+              { icon: Wrench, label: "Trades and field service" },
+              { icon: Factory, label: "Manufacturing" },
+              { icon: Truck, label: "Warehousing and logistics" },
+              { icon: HeartPulse, label: "Healthcare" },
+              { icon: Hotel, label: "Hospitality" },
+              { icon: Monitor, label: "Office-based businesses" },
+              { icon: Briefcase, label: "Professional services" },
+              { icon: MapPin, label: "Multi-location businesses" },
+              { icon: TrendingUp, label: "Other growth-focused companies" }
+            ].map((industry, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.06 }}
+                className="flex items-center gap-4 p-5 rounded-xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/20 hover:bg-white/[0.04] transition-all duration-300"
+              >
+                <div className="w-10 h-10 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0 text-emerald-400">
+                  <industry.icon className="w-5 h-5" />
+                </div>
+                <span className="text-white/70 font-light">{industry.label}</span>
+              </motion.div>
+            ))}
+          </div>
+
+          {/* Support paragraph */}
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.4 }}
+            className="text-center max-w-3xl mx-auto"
+          >
+            <div className="inline-block px-8 py-5 rounded-2xl border border-white/10 bg-white/[0.02]">
+              <p className="text-white/40 font-light leading-relaxed">
+                Whether your workforce is physically demanding, desk-based, high-stress, or spread across multiple roles, Momentum Wellness helps create a practical wellness system your team can use in real life.
+              </p>
+            </div>
+          </motion.div>
         </div>
       </section>
 
