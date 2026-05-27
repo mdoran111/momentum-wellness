@@ -1,5 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
 import { Link } from "wouter";
 import { useEffect } from "react";
 import {
@@ -1368,6 +1370,98 @@ export default function EmployeeWellness() {
                 <span className="text-sm">Custom proposal</span>
               </div>
             </motion.div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Form Section */}
+      <section className="py-32 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/30 to-[#0f172a]"></div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+              Get In Touch
+            </span>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              Book a Corporate Wellness{" "}
+              <span className="italic">Consultation</span>
+            </h2>
+            <p className="text-xl text-white/40 max-w-2xl mx-auto font-light leading-relaxed">
+              Tell us a little about your company, and we’ll follow up to discuss your goals, employee count, and how Momentum Wellness can support your team.
+            </p>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-white/[0.02] rounded-3xl border border-white/10 p-8 md:p-12"
+          >
+            <form className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="firstName" className="text-sm font-semibold text-white">First Name</label>
+                  <Input id="firstName" required placeholder="John" className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-xl" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="lastName" className="text-sm font-semibold text-white">Last Name</label>
+                  <Input id="lastName" required placeholder="Doe" className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-xl" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="company" className="text-sm font-semibold text-white">Company Name</label>
+                  <Input id="company" required placeholder="Acme Corp" className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-xl" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="workEmail" className="text-sm font-semibold text-white">Work Email</label>
+                  <Input id="workEmail" type="email" required placeholder="john@company.com" className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-xl" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="phone" className="text-sm font-semibold text-white">Phone Number</label>
+                  <Input id="phone" type="tel" placeholder="(555) 123-4567" className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-xl" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="employeeCount" className="text-sm font-semibold text-white">Number of Employees</label>
+                  <Input id="employeeCount" placeholder="50+" className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-xl" />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div className="space-y-2">
+                  <label htmlFor="industry" className="text-sm font-semibold text-white">Industry</label>
+                  <Input id="industry" placeholder="Construction, Healthcare, etc." className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-xl" />
+                </div>
+                <div className="space-y-2">
+                  <label htmlFor="lookingFor" className="text-sm font-semibold text-white">What are you looking for?</label>
+                  <Input id="lookingFor" placeholder="Employee wellness program, team training, etc." className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-xl" />
+                </div>
+              </div>
+
+              <div className="space-y-2">
+                <label htmlFor="message" className="text-sm font-semibold text-white">Message</label>
+                <Textarea id="message" placeholder="Tell us more about your company and wellness goals..." className="min-h-[140px] bg-white/5 border-white/10 text-white placeholder:text-white/30 rounded-xl" />
+              </div>
+
+              <Button
+                type="submit"
+                className="w-full h-14 text-lg font-semibold rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-[0_0_40px_rgba(16,185,129,0.3)] transition-all duration-300"
+              >
+                Book Consultation
+                <ArrowRight className="w-5 h-5 ml-2" />
+              </Button>
+            </form>
           </motion.div>
         </div>
       </section>
