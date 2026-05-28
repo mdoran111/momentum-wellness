@@ -361,7 +361,7 @@ export default function EmployeeWellness() {
                     <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/10 to-orange-500/10 flex items-center justify-center shrink-0 text-red-400/80">
                       <item.icon className="w-5 h-5" />
                     </div>
-                    <span className="text-white/60 font-light leading-snug pt-1.5">{item.text}</span>
+                    <span className="text-white font-light leading-snug pt-1.5">{item.text}</span>
                   </motion.div>
                 ))}
               </div>
