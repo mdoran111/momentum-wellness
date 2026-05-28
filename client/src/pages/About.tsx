@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import { ShieldCheck, Zap, Target, LayoutGrid, ChevronDown, Clock } from "lucide-react";
+import { ShieldCheck, Zap, Target, LayoutGrid, ChevronDown, Clock, Dumbbell, Apple, Repeat, Users } from "lucide-react";
 import { useState, useEffect } from "react";
 import aboutHero from '../assets/images/about-hero.jpg';
 import aboutHolistic from '../assets/images/about-holistic-strength.jpg';
@@ -82,6 +82,123 @@ export default function About() {
         >
           <ChevronDown className="w-8 h-8" />
         </motion.div>
+      </section>
+
+      {/* Built Around People - from Employee Wellness */}
+      <section className="py-20 md:py-28 lg:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/40 to-[#0f172a]"></div>
+        <div
+          className="absolute inset-0"
+          style={{
+            backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`
+          }}
+        ></div>
+        <div
+          className="absolute inset-0 opacity-[0.015]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+          }}
+        ></div>
+
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-24">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-10 leading-[1.05] tracking-tight">
+                Built Around{" "}
+                <span className="italic font-serif">People.</span>
+                <br />
+                Designed For{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  Long-Term Impact.
+                </span>
+              </h2>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <p className="text-xl md:text-2xl text-white font-light leading-relaxed mb-6">
+                Great companies are built by people — and when people are supported, the entire organization gets stronger.
+              </p>
+              <p className="text-lg text-white font-light leading-relaxed max-w-3xl mx-auto">
+                Momentum Wellness exists to help employers invest in the health of their teams in a meaningful, structured way. We believe employee wellness should be more than a perk. It should be a system that helps people feel better, move better, eat better, stay accountable, and support one another.
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="max-w-6xl mx-auto"
+          >
+            <p className="text-center text-sm font-bold tracking-[0.2em] uppercase text-white mb-12">
+              Our approach is rooted in five pillars
+            </p>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+              {[
+                {
+                  num: "01",
+                  icon: Dumbbell,
+                  title: "Training",
+                  desc: "Structured workout programming helps employees improve strength, mobility, conditioning, and consistency whether they train at home, in a gym, or on the go."
+                },
+                {
+                  num: "02",
+                  icon: Apple,
+                  title: "Nutrition",
+                  desc: "Employees can track nutrition, build awareness, and work toward better daily choices that support weight management, energy, and long-term health."
+                },
+                {
+                  num: "03",
+                  icon: Repeat,
+                  title: "Habits",
+                  desc: "Healthy change happens through repeated behaviors. We help employees build sustainable habits around hydration, movement, sleep, recovery, and routine."
+                },
+                {
+                  num: "04",
+                  icon: Target,
+                  title: "Accountability",
+                  desc: "Weekly structure, check-ins, progress tracking, and app-based follow-through help employees stay engaged and consistent over time."
+                },
+                {
+                  num: "05",
+                  icon: Users,
+                  title: "Community",
+                  desc: "Community-based messaging and shared participation create support, motivation, and a stronger team culture across the company."
+                }
+              ].map((pillar, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-[24px] p-6 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500"
+                >
+                  <div className="flex items-center justify-between mb-5">
+                    <span className="text-[10px] font-bold tracking-[0.2em] text-white/20 uppercase">{pillar.num}</span>
+                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white group-hover:bg-white/10 transition-all duration-500">
+                      <pillar.icon className="w-5 h-5" />
+                    </div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{pillar.title}</h3>
+                  <p className="text-sm text-white font-light leading-relaxed">{pillar.desc}</p>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+        </div>
       </section>
 
       {/* Philosophy Section with Image */}
