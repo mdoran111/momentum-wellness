@@ -920,91 +920,72 @@ export default function Home() {
           {/* Contact Section */}
           <div className="max-w-4xl mx-auto">
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
-              className="text-center mb-12"
+              className="text-center mb-16"
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+              <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
+                Get In Touch
+              </span>
+              <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
                 Have Questions?{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-                  Let's Talk.
-                </span>
+                <span className="italic">Let's Talk.</span>
               </h2>
-              <p className="text-lg text-white/70 font-light leading-relaxed max-w-2xl mx-auto">
-                Reach out and our team will get back to you within 24–48 hours. We're here to help you get started.
+              <p className="text-xl text-white max-w-2xl mx-auto font-light leading-relaxed">
+                Reach out and our team will get back to you within 24-48 hours. We're here to help you get started.
               </p>
             </motion.div>
 
             <motion.div
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
+              viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-white/[0.02] rounded-3xl border border-white/5 overflow-hidden"
+              className="bg-white/[0.02] rounded-3xl border border-white/5 p-8 md:p-12"
             >
-              <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
-                <div className="md:col-span-2 bg-white/[0.02] p-10 text-white flex flex-col border-r border-white/5">
-                  <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
-                  <p className="text-white/70 mb-12">
-                    Whether you have a question about programs, pricing, or just want to learn more, we're happy to help.
-                  </p>
-                  <div className="mt-auto">
-                    <div className="flex items-center gap-4">
-                      <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center">
-                        <MessageSquare className="w-5 h-5 text-emerald-400" />
-                      </div>
-                      <div>
-                        <p className="text-sm text-white/60 mb-1">Email us at</p>
-                        <p className="font-medium text-white">info@momentumwellness.health</p>
-                      </div>
-                    </div>
+              <div className="space-y-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  <div className="space-y-2">
+                    <label className="text-sm font-semibold text-white">Name</label>
+                    <input
+                      type="text"
+                      placeholder="Your name"
+                      className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors"
+                    />
+                  </div>
+                  <div className="space-y-2">
+                    <label className="text-sm font-semibold text-white">Email</label>
+                    <input
+                      type="email"
+                      placeholder="your@email.com"
+                      className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors"
+                    />
                   </div>
                 </div>
-                <div className="md:col-span-3 p-10">
-                  <div className="space-y-6">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <label className="text-sm font-semibold text-white mb-2 block">Name</label>
-                        <input
-                          type="text"
-                          placeholder="Your name"
-                          className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors"
-                        />
-                      </div>
-                      <div>
-                        <label className="text-sm font-semibold text-white mb-2 block">Email</label>
-                        <input
-                          type="email"
-                          placeholder="your@email.com"
-                          className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors"
-                        />
-                      </div>
-                    </div>
-                    <div>
-                      <label className="text-sm font-semibold text-white mb-2 block">Subject</label>
-                      <input
-                        type="text"
-                        placeholder="How can we help?"
-                        className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm font-semibold text-white mb-2 block">Message</label>
-                      <textarea
-                        placeholder="Write your message here..."
-                        rows={4}
-                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors resize-none"
-                      ></textarea>
-                    </div>
-                    <Link href="/contact">
-                      <Button className="w-full rounded-full h-12 text-base font-bold bg-white text-[#0f172a] hover:bg-white/90 border-none">
-                        Send Message
-                      </Button>
-                    </Link>
-                  </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-white">Subject</label>
+                  <input
+                    type="text"
+                    placeholder="How can we help?"
+                    className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors"
+                  />
                 </div>
+                <div className="space-y-2">
+                  <label className="text-sm font-semibold text-white">Message</label>
+                  <textarea
+                    placeholder="Write your message here..."
+                    rows={4}
+                    className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors resize-none"
+                  ></textarea>
+                </div>
+                <Link href="/contact">
+                  <Button className="w-full h-14 text-lg font-semibold rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-[0_0_40px_rgba(16,185,129,0.3)] transition-all duration-300">
+                    Send Message
+                    <ArrowRight className="w-5 h-5 ml-2" />
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           </div>

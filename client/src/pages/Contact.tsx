@@ -105,38 +105,44 @@ export default function Contact() {
         </div>
       </section>
 
-      {/* Contact Form */}
-      <section className="py-24 bg-[#0f172a]">
-        <div className="container mx-auto px-4 max-w-5xl">
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-12 bg-white/[0.02] rounded-3xl border border-white/5 overflow-hidden">
-          {/* Contact Info */}
-          <div className="md:col-span-2 bg-white/[0.02] p-10 text-white flex flex-col border-r border-white/5">
-            <h2 className="text-2xl font-bold font-heading mb-6">Get in Touch</h2>
-            <p className="text-white/70 mb-12">
-              Fill out the form and our team will get back to you within 24-48 hours.
+      {/* Contact Form Section */}
+      <section className="py-24 md:py-28 lg:py-32 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/30 to-[#0f172a]"></div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="text-center mb-16"
+          >
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
+              Get In Touch
+            </span>
+            <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
+              Send Us a{" "}
+              <span className="italic">Message</span>
+            </h2>
+            <p className="text-xl text-white max-w-2xl mx-auto font-light leading-relaxed">
+              Have a question about programs, pricing, or your membership? Fill out the form below and we'll get back to you within 24-48 hours.
             </p>
+          </motion.div>
 
-            <div className="flex items-center gap-4 mt-auto">
-              <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center">
-                <Mail className="w-5 h-5 text-white" />
-              </div>
-              <div>
-                <p className="text-sm text-white/60 mb-1">Email us at</p>
-                <p className="font-medium text-white">info@momentumwellness.health</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Form */}
-          <div className="md:col-span-3 p-10">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+            className="bg-white/[0.02] rounded-3xl border border-white/5 p-8 md:p-12"
+          >
             {submitted ? (
-              <div className="h-full flex flex-col items-center justify-center text-center py-12 animate-in fade-in zoom-in duration-500">
-                <div className="w-20 h-20 bg-white/5 rounded-full flex items-center justify-center mb-6">
-                  <CheckCircle2 className="w-10 h-10 text-white" />
+              <div className="flex flex-col items-center justify-center text-center py-12 animate-in fade-in zoom-in duration-500">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-emerald-500/20 to-teal-500/20 flex items-center justify-center mb-6">
+                  <CheckCircle2 className="w-8 h-8 text-emerald-400" />
                 </div>
-                <h3 className="text-2xl font-bold font-heading text-white mb-2">Message Sent!</h3>
-                <p className="text-white/70 mb-8">Thanks for reaching out. We'll be in touch shortly.</p>
-                <Button onClick={() => setSubmitted(false)} variant="outline" className="rounded-full text-white border-white/20 hover:bg-white/10">
+                <h3 className="text-2xl font-bold text-white mb-2 tracking-tight">Message Sent!</h3>
+                <p className="text-white/70 mb-8 font-light">Thanks for reaching out. We'll be in touch shortly.</p>
+                <Button onClick={() => setSubmitted(false)} variant="outline" className="rounded-full text-white border-white/20 hover:bg-white/10 h-12 px-8">
                   Send another message
                 </Button>
               </div>
@@ -145,31 +151,34 @@ export default function Contact() {
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div className="space-y-2">
                     <label htmlFor="name" className="text-sm font-semibold text-white">Name</label>
-                    <Input id="name" required placeholder="John Doe" className="bg-white/5 border-white/10 text-white placeholder:text-white/30" />
+                    <Input id="name" required placeholder="John Doe" className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-xl" />
                   </div>
                   <div className="space-y-2">
                     <label htmlFor="email" className="text-sm font-semibold text-white">Email</label>
-                    <Input id="email" type="email" required placeholder="john@example.com" className="bg-white/5 border-white/10 text-white placeholder:text-white/30" />
+                    <Input id="email" type="email" required placeholder="john@example.com" className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-xl" />
                   </div>
                 </div>
 
                 <div className="space-y-2">
                   <label htmlFor="subject" className="text-sm font-semibold text-white">Subject</label>
-                  <Input id="subject" required placeholder="How can we help?" className="bg-white/5 border-white/10 text-white placeholder:text-white/30" />
+                  <Input id="subject" required placeholder="How can we help?" className="bg-white/5 border-white/10 text-white placeholder:text-white/30 h-12 rounded-xl" />
                 </div>
 
                 <div className="space-y-2">
                   <label htmlFor="message" className="text-sm font-semibold text-white">Message</label>
-                  <Textarea id="message" required placeholder="Write your message here..." className="min-h-[150px] bg-white/5 border-white/10 text-white placeholder:text-white/30" />
+                  <Textarea id="message" required placeholder="Write your message here..." className="min-h-[140px] bg-white/5 border-white/10 text-white placeholder:text-white/30 rounded-xl" />
                 </div>
 
-                <Button type="submit" className="w-full rounded-full h-12 text-base font-bold bg-white text-[#0f172a] hover:bg-white/90 border-none">
+                <Button
+                  type="submit"
+                  className="w-full h-14 text-lg font-semibold rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white hover:shadow-[0_0_40px_rgba(16,185,129,0.3)] transition-all duration-300"
+                >
                   Send Message
+                  <ArrowRight className="w-5 h-5 ml-2" />
                 </Button>
               </form>
             )}
-          </div>
-        </div>
+          </motion.div>
         </div>
       </section>
     </div>
