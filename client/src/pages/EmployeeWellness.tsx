@@ -189,11 +189,11 @@ export default function EmployeeWellness() {
                 Teams
               </h1>
 
-              <p className="text-lg md:text-xl text-white/60 mb-4 font-light leading-relaxed">
+              <p className="text-lg md:text-xl text-white mb-4 font-light leading-relaxed">
                 Momentum Wellness helps companies with 50+ employees improve health, energy, morale, and daily accountability through a modern wellness platform built around training, nutrition, habits, accountability, and community.
               </p>
 
-              <p className="text-base text-white/40 mb-10 font-light leading-relaxed max-w-xl">
+              <p className="text-base text-white mb-10 font-light leading-relaxed max-w-xl">
                 Whether your team works in construction, trades, healthcare, logistics, manufacturing, office settings, or other demanding professions, our system helps employees stay engaged, track progress, and build better habits that carry into work and life.
               </p>
 
