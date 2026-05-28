@@ -36,7 +36,7 @@ export function Footer() {
           <h4 className="font-extrabold mb-4 font-heading uppercase tracking-wider text-sm">Links</h4>
           <ul className="space-y-2 text-sm text-primary font-bold">
             <li><Link href="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">About</Link></li>
-            <li><Link href="/programs" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">Programs</Link></li>
+            <li><Link href="/programs" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">The Platform</Link></li>
             <li><Link href="/employee-wellness-programs" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">Employee Wellness Programs</Link></li>
             <li><Link href="/pricing" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">Pricing</Link></li>
             <li><Link href="/faq" onClick={() => window.scrollTo(0, 0)} className="hover:text-primary transition-colors">FAQ</Link></li>
