@@ -795,17 +795,13 @@ export default function Home() {
         </div>
       </section>
 
-      {/* 8. Strong CTA Section */}
+      {/* CTA Section */}
       <section className="py-24 md:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0a0f1d]"></div>
         <div className="absolute inset-0">
-          <div
-            className="absolute inset-0 opacity-40"
-            style={{
-              backgroundImage: `radial-gradient(circle at 50% 50%, rgba(16,185,129,0.08) 0%, transparent 50%)`
-            }}
-          ></div>
+          <div className="absolute inset-0 opacity-40" style={{backgroundImage: `radial-gradient(circle at 50% 50%, rgba(16,185,129,0.08) 0%, transparent 50%)`}}></div>
         </div>
+        <div className="absolute inset-0 opacity-[0.015]" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}}></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -821,25 +817,25 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-              Stop overthinking your training. Get the structure, accountability, and support you need for $14.99/mo.
+              Get the structure, accountability, and support you need to transform your fitness, nutrition, and daily habits.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/programs">
+              <Link href="/contact">
                 <Button
                   size="lg"
                   className="rounded-full text-lg px-12 h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
                 >
-                  Get Started Now
+                  Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Link href="/pricing">
+              <Link href="/contact">
                 <Button
                   size="lg"
                   variant="outline"
                   className="rounded-full text-lg px-12 h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
                 >
-                  View Pricing
+                  Contact Momentum Wellness
                 </Button>
               </Link>
             </div>

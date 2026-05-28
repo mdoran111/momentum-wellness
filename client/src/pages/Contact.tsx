@@ -68,15 +68,15 @@ export default function Contact() {
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
-                <Link href="/faq" className="w-full sm:w-auto">
+                <Link href="/programs" className="w-full sm:w-auto">
                   <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-white text-[#0f172a] hover:bg-white/90 hover:scale-[1.02] transition-all duration-300 font-bold shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)]">
-                    Visit FAQ
+                    Get Started
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
-                <Link href="/programs" className="w-full sm:w-auto">
+                <Link href="/faq" className="w-full sm:w-auto">
                   <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-bold">
-                    Explore Programs
+                    Visit FAQ
                   </Button>
                 </Link>
               </div>
