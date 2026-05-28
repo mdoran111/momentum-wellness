@@ -415,10 +415,10 @@ export default function EmployeeWellness() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <p className="text-xl md:text-2xl text-white/40 font-light leading-relaxed mb-6">
+              <p className="text-xl md:text-2xl text-white font-light leading-relaxed mb-6">
                 Great companies are built by people — and when people are supported, the entire organization gets stronger.
               </p>
-              <p className="text-lg text-white/30 font-light leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg text-white font-light leading-relaxed max-w-3xl mx-auto">
                 Momentum Wellness exists to help employers invest in the health of their teams in a meaningful, structured way. We believe employee wellness should be more than a perk. It should be a system that helps people feel better, move better, eat better, stay accountable, and support one another.
               </p>
             </motion.div>
