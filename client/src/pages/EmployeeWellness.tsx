@@ -488,7 +488,7 @@ export default function EmployeeWellness() {
                       </span>
                     </div>
                     <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">{pillar.title}</h3>
-                    <p className="text-white/40 font-light leading-relaxed text-sm">{pillar.desc}</p>
+                    <p className="text-white font-light leading-relaxed text-sm">{pillar.desc}</p>
                   </div>
                 </motion.div>
               ))}
