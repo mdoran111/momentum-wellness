@@ -318,13 +318,13 @@ export default function EmployeeWellness() {
                 Your Employees Are the{" "}
                 <span className="italic">Engine</span> of Your Company
               </h2>
-              <p className="text-lg text-white/50 mb-6 font-light leading-relaxed">
+              <p className="text-lg text-white mb-6 font-light leading-relaxed">
                 In every industry, employee health affects performance, morale, consistency, and long-term well-being.
               </p>
-              <p className="text-base text-white/40 mb-6 font-light leading-relaxed">
+              <p className="text-base text-white mb-6 font-light leading-relaxed">
                 For physically demanding industries like construction and skilled trades, these challenges can be even more visible. Long days, early starts, jobsite travel, irregular meals, and physical wear and tear make it hard for employees to stay consistent with their health.
               </p>
-              <p className="text-base text-white/40 font-light leading-relaxed">
+              <p className="text-base text-white font-light leading-relaxed">
                 At Momentum Wellness, we help companies create a stronger culture of health through a system employees can actually use.
               </p>
             </motion.div>
