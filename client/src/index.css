@@ -28,76 +28,50 @@
   --color-input: hsl(var(--input));
   --color-ring: hsl(var(--ring));
 
+  /* Momentum Wellness Premium Design System */
+  --color-navy: #0f172a;
+  --color-navy-deep: #0a0f1d;
+  --color-navy-charcoal: #1e293b;
+  --color-emerald: #10b981;
+  --color-teal: #14b8a6;
+
   --font-sans: 'Inter', sans-serif;
   --font-heading: 'Montserrat', sans-serif;
 }
 
 :root {
   --radius: 0.5rem;
-  
-  /* Momentum Wellness Brand Colors: Navy Blue & White */
-  /* Navy Blue: #0B1F3B -> HSL: 215 69% 14% */
-  /* White: #FFFFFF -> HSL: 0 0% 100% */
-  
-  --background: 0 0% 100%;
-  --foreground: 215 69% 14%;
-  
-  --card: 0 0% 100%;
-  --card-foreground: 215 69% 14%;
-  
-  --popover: 0 0% 100%;
-  --popover-foreground: 215 69% 14%;
-  
-  /* Primary is Navy */
-  --primary: 215 69% 14%;
+
+  /* Momentum Wellness Premium Dark Navy Theme */
+  --background: 222 47% 11%;
+  --foreground: 0 0% 100%;
+
+  --card: 222 47% 11%;
+  --card-foreground: 0 0% 100%;
+
+  --popover: 222 47% 11%;
+  --popover-foreground: 0 0% 100%;
+
+  /* Primary: deep navy */
+  --primary: 222 47% 11%;
   --primary-foreground: 0 0% 100%;
-  
-  /* Secondary is a light blue/gray for subtle backgrounds */
-  --secondary: 215 20% 96%;
-  --secondary-foreground: 215 69% 14%;
-  
-  --muted: 215 20% 96%;
-  --muted-foreground: 215 20% 40%;
-  
-  --accent: 215 20% 96%;
-  --accent-foreground: 215 69% 14%;
-  
+
+  /* Secondary: charcoal for subtle dark sections */
+  --secondary: 217 33% 17%;
+  --secondary-foreground: 0 0% 100%;
+
+  --muted: 217 33% 17%;
+  --muted-foreground: 215 20% 65%;
+
+  --accent: 160 84% 39%;
+  --accent-foreground: 0 0% 100%;
+
   --destructive: 0 84% 60%;
   --destructive-foreground: 0 0% 100%;
 
-  --border: 215 20% 90%;
-  --input: 215 20% 90%;
-  --ring: 215 69% 14%;
-}
-
-.dark {
-  --background: 215 69% 10%;
-  --foreground: 0 0% 100%;
-  
-  --card: 215 69% 12%;
-  --card-foreground: 0 0% 100%;
-  
-  --popover: 215 69% 12%;
-  --popover-foreground: 0 0% 100%;
-  
-  --primary: 0 0% 100%;
-  --primary-foreground: 215 69% 14%;
-  
-  --secondary: 215 30% 20%;
-  --secondary-foreground: 0 0% 100%;
-  
-  --muted: 215 30% 20%;
-  --muted-foreground: 215 20% 70%;
-  
-  --accent: 215 30% 20%;
-  --accent-foreground: 0 0% 100%;
-  
-  --destructive: 0 62% 30%;
-  --destructive-foreground: 0 0% 100%;
-  
-  --border: 215 30% 20%;
-  --input: 215 30% 20%;
-  --ring: 215 20% 80%;
+  --border: 0 0% 100% / 0.05;
+  --input: 0 0% 100% / 0.05;
+  --ring: 160 84% 39%;
 }
 
 @layer base {
@@ -105,7 +79,7 @@
     @apply border-border;
   }
   body {
-    @apply font-sans antialiased bg-background text-foreground;
+    @apply font-sans antialiased bg-[#0f172a] text-white;
   }
   /* Sophisticated Noise Texture Overlay */
   body::before {
@@ -115,8 +89,8 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
-    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.015;
     pointer-events: none;
     z-index: 9999;
   }
@@ -124,3 +98,31 @@
     @apply font-heading tracking-tight;
   }
 }
+
+/* ============================================
+   MOMENTUM WELLNESS PREMIUM DESIGN SYSTEM
+   ============================================
+
+   Design tokens for reference:
+   - Deep Navy:        #0f172a
+   - Darker Navy:      #0a0f1d
+   - Charcoal:         #1e293b
+   - White:            #ffffff
+   - Emerald Accent:   #10b981
+   - Teal Accent:      #14b8a6
+   - Muted Text:       rgba(255,255,255,0.60)
+   - Glass Card:       rgba(255,255,255,0.02) + border rgba(255,255,255,0.05)
+   - Card Hover:       rgba(255,255,255,0.04) + border rgba(255,255,255,0.10)
+   - Section Padding:  py-20 md:py-28 lg:py-32
+   - Container:        max-w-6xl / max-w-7xl mx-auto px-4 sm:px-6 lg:px-8
+   - Border Radius:    24px (cards) / 40px (hero/CTA) / 16px (inputs)
+   - Headline:         text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-[1.05] tracking-tight
+   - Body:             text-lg text-white font-light leading-relaxed
+   - Label:            text-sm font-bold tracking-[0.2em] uppercase text-white
+   - Primary Button:   rounded-full bg-white text-[#0f172a] font-bold
+   - Secondary Btn:    rounded-full border border-white/20 text-white font-bold
+   - Emerald Button:   rounded-full bg-gradient-to-r from-emerald-500 to-teal-500 text-white
+   - Noise Overlay:    data URI SVG noise at 0.015 opacity
+   - Emerald Glow:     radial-gradient with bg-emerald-500/10 blur-[100px]
+   - Grid Pattern:     60px linear-gradient lines at 0.03 opacity
+

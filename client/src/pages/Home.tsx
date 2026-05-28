@@ -157,25 +157,13 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* A) Hero Section */}
-      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <motion.img 
-            initial={{ opacity: 0, scale: 0.8, filter: "brightness(4)" }}
-            animate={{ 
-              opacity: [0, 1, 0.2],
-              scale: [0.8, 1.2, 1],
-              filter: ["brightness(4)", "brightness(4)", "brightness(1)"]
-            }}
-            transition={{ 
-              duration: 2.8,
-              times: [0, 0.2, 1],
-              ease: "easeOut"
-            }}
-            src={logo} 
-            alt="" 
-            className="w-[120%] max-w-none grayscale invert" 
-          />
-        </div>
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-[#0f172a]">
+        {/* Dark navy gradient overlay */}
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
+        {/* Emerald glow */}
+        <div className="absolute inset-0" style={{backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`}}></div>
+        {/* Noise texture */}
+        <div className="absolute inset-0 opacity-[0.015]" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}}></div>
 
         <div className="container relative z-10 mx-auto px-4 text-center">
           <AnimatePresence>
@@ -191,7 +179,7 @@ export default function Home() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-6 justify-center">
                   <Link href="/programs">
-                    <Button size="lg" className="rounded-full text-lg px-12 h-16 font-bold shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 bg-[#e5e7eb] text-primary hover:bg-white border-none" data-testid="button-get-started-hero">
+                    <Button size="lg" className="rounded-full text-lg px-12 h-16 font-bold shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 bg-white text-[#0f172a] hover:bg-white/90 border-none" data-testid="button-get-started-hero">
                       Explore Programs
                     </Button>
                   </Link>
@@ -441,7 +429,7 @@ export default function Home() {
             <div className="text-6xl font-bold font-heading mb-4 italic">$14.99<span className="text-2xl text-white/80 font-normal">/month</span></div>
             <p className="text-xl text-white/90 mb-8 font-light uppercase tracking-widest">Unlimited programs • Cancel anytime</p>
             <Link href="/programs">
-              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-12 h-14 bg-[#e5e7eb] text-primary hover:bg-white font-bold border-none shadow-2xl" data-testid="button-pricing-teaser">
+              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-12 h-14 bg-white text-[#0f172a] hover:bg-white/90 font-bold border-none shadow-2xl" data-testid="button-pricing-teaser">
                 Unlock Full Access
               </Button>
             </Link>
@@ -553,7 +541,7 @@ export default function Home() {
             <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-8 italic tracking-tighter uppercase leading-[0.9]">Start today.<br/>Build momentum.</h2>
             <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
             <Link href="/programs">
-              <Button size="lg" className="rounded-full text-lg px-12 h-16 font-bold shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 bg-[#e5e7eb] text-primary hover:bg-white border-none" data-testid="button-final-cta">
+              <Button size="lg" className="rounded-full text-lg px-12 h-16 font-bold shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 bg-white text-[#0f172a] hover:bg-white/90 border-none" data-testid="button-final-cta">
                 Get Started Today
               </Button>
             </Link>

@@ -5,18 +5,7 @@ import mwDashboard from '@assets/MW2_app_dashboard_1779922530403.png';
 
 export default function Programs() {
   return (
-    <div className="min-h-screen bg-primary text-white relative overflow-hidden">
-      {/* Background Logo watermark */}
-      <div className="absolute top-16 left-0 right-0 h-[500px] z-0 flex items-center justify-center pointer-events-none overflow-visible">
-        <motion.img
-          initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-          animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-          src={logo}
-          alt=""
-          className="w-[120%] max-w-none grayscale invert"
-        />
-      </div>
-
+    <div className="min-h-screen bg-[#0f172a] text-white relative overflow-hidden">
       {/* The Platform */}
       <section className="relative z-10 py-16 min-h-screen flex flex-col justify-center">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>

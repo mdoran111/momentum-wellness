@@ -83,16 +83,10 @@ export default function InsideTheApp() {
   return (
     <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary text-white">
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <motion.img
-            initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-            animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-            src={logo}
-            alt=""
-            className="w-[120%] max-w-none grayscale invert"
-          />
-        </div>
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-[#0f172a] text-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
+        <div className="absolute inset-0" style={{backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`}}></div>
+        <div className="absolute inset-0 opacity-[0.015]" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}}></div>
 
         <div className="container relative z-10 mx-auto px-4 text-center max-w-4xl">
           <motion.div
@@ -108,7 +102,7 @@ export default function InsideTheApp() {
               A complete wellness experience designed to help you feel better, have more energy, and achieve lasting health. Strength, cardio, daily habits, and progress tracking all in one app.
             </p>
             <Link href="/programs">
-              <button className="px-8 py-4 rounded-full bg-[#e5e7eb] text-primary font-bold hover:bg-white transition-all duration-300 shadow-lg">
+              <button className="px-8 py-4 rounded-full bg-white text-[#0f172a] font-bold hover:bg-white/90 transition-all duration-300 shadow-lg">
                 Start Your Program
               </button>
             </Link>
@@ -273,7 +267,7 @@ export default function InsideTheApp() {
               Join thousands of members using Momentum Wellness to achieve their strongest physique and highest performance.
             </p>
             <Link href="/programs">
-              <button className="px-10 py-4 rounded-full bg-[#e5e7eb] text-primary font-bold hover:bg-white transition-all duration-300 shadow-lg hover:scale-105 inline-flex items-center gap-3">
+              <button className="px-10 py-4 rounded-full bg-white text-[#0f172a] font-bold hover:bg-white/90 transition-all duration-300 shadow-lg hover:scale-105 inline-flex items-center gap-3">
                 Explore Programs <ArrowRight className="w-5 h-5" />
               </button>
             </Link>

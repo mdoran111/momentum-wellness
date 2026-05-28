@@ -77,7 +77,7 @@ export default function Contact() {
                   <Textarea id="message" required placeholder="Write your message here..." className="min-h-[150px] bg-white/5 border-white/10 text-white placeholder:text-white/30" />
                 </div>
 
-                <Button type="submit" className="w-full rounded-full h-12 text-base font-bold bg-[#e5e7eb] text-primary hover:bg-white border-none">
+                <Button type="submit" className="w-full rounded-full h-12 text-base font-bold bg-white text-[#0f172a] hover:bg-white/90 border-none">
                   Send Message
                 </Button>
               </form>

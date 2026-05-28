@@ -35,17 +35,11 @@ export default function About() {
 
   return (
     <div className="flex flex-col min-h-screen">
-      {/* Hero Section - Matching Home Layout */}
-      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary">
-        <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <motion.img 
-            initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-            animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-            src={logo} 
-            alt="" 
-            className="w-[120%] max-w-none grayscale invert" 
-          />
-        </div>
+      {/* Hero Section */}
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-[#0f172a]">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
+        <div className="absolute inset-0" style={{backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`}}></div>
+        <div className="absolute inset-0 opacity-[0.015]" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}}></div>
 
         <div className="container relative z-10 mx-auto px-4 text-center">
           <motion.div
@@ -62,7 +56,7 @@ export default function About() {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 relative z-10">
               <Link href="/programs" className="w-full sm:w-auto">
-                <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-[#e5e7eb] text-primary hover:bg-white hover:scale-[1.02] transition-all duration-300 font-bold border-none">
+                <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-white text-[#0f172a] hover:bg-white/90 hover:scale-[1.02] transition-all duration-300 font-bold border-none">
                   Unlock Full Access — $14.99/mo
                 </Button>
               </Link>
@@ -264,7 +258,7 @@ export default function About() {
       </section>
 
       {/* The Momentum Method */}
-      <section className="py-48 bg-gradient-to-br from-primary via-primary to-primary/95 relative overflow-hidden">
+      <section className="py-48 bg-[#0f172a] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
         
@@ -385,7 +379,7 @@ export default function About() {
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
             <Link href="/programs">
-              <Button size="lg" className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold bg-[#e5e7eb] text-primary hover:bg-white hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] border-none">
+              <Button size="lg" className="w-full sm:w-auto rounded-full px-12 h-16 text-lg font-bold bg-white text-[#0f172a] hover:bg-white/90 hover:scale-105 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.1)] border-none">
                 Unlock Full Access
               </Button>
             </Link>

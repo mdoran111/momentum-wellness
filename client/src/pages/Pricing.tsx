@@ -32,17 +32,10 @@ export default function Pricing() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
-      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary text-white">
-        {/* Background Logo watermark */}
-        <div className="absolute top-40 left-0 right-0 h-[500px] z-0 flex items-center justify-center pointer-events-none overflow-visible">
-          <motion.img 
-            initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-            animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-            src={logo} 
-            alt="" 
-            className="w-[120%] max-w-none grayscale invert" 
-          />
-        </div>
+      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-[#0f172a] text-white">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
+        <div className="absolute inset-0" style={{backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`}}></div>
+        <div className="absolute inset-0 opacity-[0.015]" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}}></div>
 
         <div className="container relative z-10 mx-auto px-4">
         <motion.div 
@@ -93,7 +86,7 @@ export default function Pricing() {
               </div>
               
               <Link href="/programs" className="block w-full">
-                <Button className="w-full rounded-full h-16 text-xl font-bold shadow-2xl bg-[#e5e7eb] text-primary hover:bg-white hover:scale-[1.02] transition-all duration-300 border-none">
+                <Button className="w-full rounded-full h-16 text-xl font-bold shadow-2xl bg-white text-[#0f172a] hover:bg-white/90 hover:scale-[1.02] transition-all duration-300 border-none">
                   Get Started Now
                 </Button>
               </Link>
