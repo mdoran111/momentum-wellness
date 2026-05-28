@@ -231,7 +231,7 @@ export default function EmployeeWellness() {
                   "Structured 6-month wellness programs",
                   "Designed for real-world participation and accountability"
                 ].map((point, i) => (
-                  <div key={i} className="flex items-center gap-2 text-white/40">
+                  <div key={i} className="flex items-center gap-2 text-white">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
                     <span className="text-sm font-medium">{point}</span>
                   </div>
