@@ -24,12 +24,12 @@ const FEATURES = [
   {
     icon: BarChart3,
     title: "Progress Tracking",
-    description: "See your improvements over time with detailed progress metrics and our progress photo feature that shows real visual transformation."
+    description: "See your improvements over time with detailed progress metrics and our progress photo feature that shows visual change over time."
   },
   {
     icon: Zap,
     title: "Progress Photos",
-    description: "Organize and compare your photos month-to-month. Visual progress is one of the most motivating ways to see your fitness transformation."
+    description: "Organize and compare your photos month-to-month. Visual progress is one of the most motivating ways to see your wellness progress."
   }
 ];
 
@@ -131,10 +131,10 @@ export default function InsideTheApp() {
               </h1>
 
               <p className="text-lg md:text-xl text-white mb-4 font-light leading-relaxed max-w-3xl mx-auto">
-                A complete wellness experience designed to help you feel better, have more energy, and achieve lasting health.
+                A complete wellness experience designed to help you build structure, improve energy, and support lasting health.
               </p>
               <p className="text-base text-white mb-10 font-light leading-relaxed max-w-2xl mx-auto">
-                Strength, cardio, daily habits, and progress tracking all in one beautifully designed app.
+                Training, cardio, daily habits, and progress tracking all in one structured app.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -185,7 +185,7 @@ export default function InsideTheApp() {
             className="text-center mb-16 max-w-3xl mx-auto"
           >
             <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6 italic tracking-tight">What You Get Inside</h2>
-            <p className="text-lg text-white/60 font-light leading-relaxed">Every feature is built to remove friction and maximize results. From planning to execution to progress tracking.</p>
+            <p className="text-lg text-white/60 font-light leading-relaxed">Every feature is built to reduce friction and support consistency. From planning to execution to progress tracking.</p>
           </motion.div>
 
           <motion.div
@@ -226,7 +226,7 @@ export default function InsideTheApp() {
             className="text-center mb-16 max-w-3xl mx-auto"
           >
             <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6 italic tracking-tight">Your Training Workflow</h2>
-            <p className="text-lg text-white/60 font-light leading-relaxed">From phase selection to daily execution, every step is intuitive and designed for the gym floor.</p>
+            <p className="text-lg text-white/60 font-light leading-relaxed">From phase selection to daily execution, every step is intuitive and designed for real-world use.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -272,7 +272,7 @@ export default function InsideTheApp() {
             className="text-center mb-16"
           >
             <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6 italic tracking-tight">Built for Progressive Overload</h2>
-            <p className="text-lg text-white/60 font-light leading-relaxed">Every week, every month builds on the last. Your progression is scientifically structured to maximize results.</p>
+            <p className="text-lg text-white/60 font-light leading-relaxed">Every week, every month builds on the last. Your progression is structured to support steady improvement over time.</p>
           </motion.div>
 
           <div className="space-y-8">
@@ -341,7 +341,7 @@ export default function InsideTheApp() {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-              Join thousands of members using Momentum Wellness to build their strongest physique and highest performance.
+              Join thousands of members using Momentum Wellness to build strength, consistency, and long-term wellness.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">

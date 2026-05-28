@@ -74,7 +74,7 @@ export default function Programs() {
               >
                 {[
                   "Follow workouts anywhere",
-                  "Track key health & fitness habits",
+                  "Track key health and wellness habits",
                   "Monitor progress over time",
                   "App-based and community-driven"
                 ].map((point, i) => (
@@ -202,7 +202,7 @@ export default function Programs() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-xl md:text-2xl text-white font-light leading-relaxed max-w-3xl mx-auto">
-                Every program in the Momentum Wellness app is built around the same core system that produces lasting transformation.
+                Every program in the Momentum Wellness app is built around the same core system that produces lasting progress.
               </p>
             </motion.div>
           </div>
@@ -297,7 +297,7 @@ export default function Programs() {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-              Get a structured wellness plan built around training, nutrition, habits, and accountability — all in one app.
+              Get a structured wellness plan built around training, nutrition, habits, accountability, and community — all in one app.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">

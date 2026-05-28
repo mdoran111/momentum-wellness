@@ -78,15 +78,15 @@ export default function About() {
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
                 Our Mission Is Simple. Make{" "}
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-                  Wellness Work For Everyone
+                  Wellness Work For Real People
                 </span>
               </h1>
 
               <p className="text-lg md:text-xl text-white mb-4 font-light leading-relaxed max-w-3xl mx-auto">
-                Momentum Wellness is a commitment to making comprehensive fitness accessible to everyone. We believe that strength training, cardio, daily wellness habits, and progress tracking shouldn't require expensive coaching or complicated systems.
+                Momentum Wellness is a commitment to making comprehensive wellness accessible. We believe that structured training, cardio, daily wellness habits, and progress tracking should not require expensive coaching or complicated systems.
               </p>
               <p className="text-base text-white mb-10 font-light leading-relaxed max-w-2xl mx-auto">
-                Whether you're just starting out or looking to level up, our system gives you the plan, the tools, and the support to stay consistent and see real results.
+                Whether you are just starting out or looking to level up, our system gives you the plan, the tools, and the support to stay consistent and build real progress.
               </p>
 
               <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
@@ -180,7 +180,7 @@ export default function About() {
                 Great companies are built by people — and when people are supported, the entire organization gets stronger.
               </p>
               <p className="text-lg text-white font-light leading-relaxed max-w-3xl mx-auto">
-                Momentum Wellness exists to help employers invest in the health of their teams in a meaningful, structured way. We believe employee wellness should be more than a perk. It should be a system that helps people feel better, move better, eat better, stay accountable, and support one another.
+                Momentum Wellness exists to help people invest in their health in a meaningful, structured way. We believe wellness should be more than a perk. It should be a system that helps people move better, build awareness, stay accountable, and support one another.
               </p>
             </motion.div>
           </div>
@@ -298,8 +298,8 @@ export default function About() {
                     <ShieldCheck className="w-6 h-6" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-white text-lg">Complete Fitness</h4>
-                    <p className="text-white/70 font-light text-sm">Strength, cardio, habits, and progress in one app.</p>
+                    <h4 className="font-bold text-white text-lg">Complete System</h4>
+                    <p className="text-white/70 font-light text-sm">Training, cardio, habits, and progress in one app.</p>
                   </div>
                 </div>
                 <div className="flex gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300 group">
@@ -333,7 +333,7 @@ export default function About() {
               Our Foundation
             </div>
             <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-8 italic tracking-tight uppercase leading-[1.1]">The Momentum Method</h2>
-            <p className="text-white/80 max-w-3xl mx-auto text-xl font-light leading-relaxed">A holistic approach that weaves together five essential pillars—strength, cardio, daily habits, progress, and recovery—to create lasting wellness and transform how you feel.</p>
+            <p className="text-white/80 max-w-3xl mx-auto text-xl font-light leading-relaxed">A holistic approach that weaves together five essential pillars—training, cardio, daily habits, progress, and recovery—to create lasting wellness and improve how you feel.</p>
           </motion.div>
 
           
@@ -341,33 +341,33 @@ export default function About() {
             {[
               {
                 icon: Target,
-                title: "Strength",
+                title: "Training",
                 subtitle: "Build Real Power",
-                desc: "Strength training increases muscle, bone density, and metabolism. It makes everyday life easier and builds confidence through measurable progress."
+                desc: "Structured training improves strength, mobility, and conditioning. It builds consistency and confidence through measurable progress over time."
               },
               {
                 icon: LayoutGrid,
                 title: "Cardio",
-                subtitle: "Boost Your Heart",
-                desc: "Cardio strengthens your heart, improves endurance, and increases energy levels. Better cardiovascular fitness means more stamina for life."
+                subtitle: "Improve Endurance",
+                desc: "Cardio strengthens your heart, improves endurance, and supports energy levels. Better cardiovascular fitness means more stamina for daily life."
               },
               {
                 icon: ShieldCheck,
                 title: "Daily Habits",
                 subtitle: "Sustain Your Wellness",
-                desc: "Lasting change comes from daily practices—nutrition, sleep, hydration, and recovery. These habits compound to create lasting wellness."
+                desc: "Lasting change comes from daily practices—nutrition awareness, sleep, hydration, and recovery. These habits compound to create lasting wellness."
               },
               {
                 icon: Target,
                 title: "Progress",
-                subtitle: "See Your Transformation",
-                desc: "Track your visual transformation with progress photos and metrics. See real results month-to-month and stay motivated for the long journey."
+                subtitle: "Track Your Improvement",
+                desc: "Track your visual progress with photos and metrics. See your improvement month-to-month and stay motivated for the long journey."
               },
               {
                 icon: Clock,
                 title: "Recovery",
                 subtitle: "Rest & Recharge",
-                desc: "Strategic rest and recovery are where the magic happens. Quality sleep, active recovery, and proper rest periods fuel adaptation and sustainable progress."
+                desc: "Strategic rest and recovery support adaptation and sustainable progress. Quality sleep, active recovery, and proper rest periods help your body respond to training."
               }
             ].map((value, i) => (
               <motion.div 
@@ -444,7 +444,7 @@ export default function About() {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-              Join a community of high-performers who value structure, science-based programming, and measurable progress.
+              Join a community that values structure, consistency, and measurable progress.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">

@@ -36,7 +36,7 @@ const TESTIMONIALS = [
   {
     name: "Sarah Jenkins",
     role: "Member since 2024",
-    content: "The app has completely transformed my fitness routine. Every month brings fresh workouts that keep me motivated. I love tracking my progress and actually seeing results through the progress photos feature.",
+    content: "The app has helped me restructure my fitness routine. Every month brings fresh workouts that keep me motivated. I love tracking my progress and seeing steady progress through the progress photos feature.",
     avatar: "SJ"
   },
   {
@@ -48,25 +48,25 @@ const TESTIMONIALS = [
   {
     name: "Elena Rodriguez",
     role: "Member since 2024",
-    content: "The daily habits feature has been a game-changer for me. It's not just about the workouts—it's about building sustainable fitness practices. I've never been more consistent with my training.",
+    content: "The daily habits feature has been a valuable addition for me. It's not just about the workouts—it's about building sustainable fitness practices. I've never been more consistent with my training.",
     avatar: "ER"
   },
   {
     name: "David Kim",
     role: "Member since 2023",
-    content: "The monthly variety keeps things fresh and exciting. I get the strength training I love plus cardio, and the progress photos motivate me to stay on track.",
+    content: "The monthly variety keeps things fresh and engaging. I get the strength training I want plus cardio, and the progress photos help me stay on track.",
     avatar: "DK"
   },
   {
     name: "Jessica Low",
     role: "Member since 2024",
-    content: "As a busy professional, this app fits perfectly into my life. Everything is planned for me, and it updates monthly so I never get bored. The progress tracking is outstanding.",
+    content: "As a busy professional, this app fits perfectly into my life. Everything is planned for me, and it updates monthly so I never get bored. The progress tracking is well-organized and clear.",
     avatar: "JL"
   },
   {
     name: "Ryan Patel",
     role: "Member since 2024",
-    content: "At $14.99 a month, this is an incredible value. I get comprehensive workouts across strength and cardio, plus the daily habits keep me accountable. It's changed how I approach fitness.",
+    content: "At $14.99 a month, this is strong value. I get comprehensive workouts across strength and cardio, plus the daily habits keep me accountable. It has changed how I approach fitness.",
     avatar: "RP"
   },
   {
@@ -78,7 +78,7 @@ const TESTIMONIALS = [
   {
     name: "James Taylor",
     role: "Member since 2024",
-    content: "The comprehensive approach is what sets this apart. Most apps focus on just one thing, but this covers strength, cardio, habits, and progress tracking. It's a complete fitness solution.",
+    content: "The comprehensive approach is what sets this apart. Most apps focus on just one thing, but this covers strength, cardio, habits, and progress tracking. It is a complete wellness system.",
     avatar: "JT"
   }
 ];
@@ -236,7 +236,7 @@ export default function Home() {
                 Momentum Wellness helps you improve fitness, nutrition, daily habits, and long-term wellness through a structured, app-based program built around training, accountability, and community.
               </p>
               <p className="text-base text-white mb-10 font-light leading-relaxed max-w-xl">
-                Whether you're just starting out or looking to level up, our system gives you the plan, the tools, and the support to stay consistent and see real results.
+                Whether you're just starting out or looking to level up, our system gives you the plan, the tools, and the support to stay consistent and build progress.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 mb-12">
@@ -245,7 +245,7 @@ export default function Home() {
                     size="lg"
                     className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 font-bold shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
                   >
-                    Start Your Transformation
+                    Get Started
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
@@ -374,7 +374,7 @@ export default function Home() {
                 You don't need another generic workout app. You need a system that combines training, nutrition guidance, habit tracking, and community support—designed to keep you engaged month after month.
               </p>
               <p className="text-base text-white font-light leading-relaxed">
-                At Momentum Wellness, we built exactly that. A program that evolves with you, keeps you accountable, and delivers results you can see and feel.
+                At Momentum Wellness, we built exactly that. A program that evolves with you, keeps you accountable, and helps you build progress you can see and feel.
               </p>
             </motion.div>
 
@@ -556,7 +556,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <p className="text-xl md:text-2xl text-white font-light leading-relaxed max-w-3xl mx-auto">
-                Lasting transformation doesn't come from one thing. It comes from a system that addresses every dimension of wellness.
+                Lasting progress doesn't come from one thing. It comes from a system that addresses every dimension of wellness.
               </p>
             </motion.div>
           </div>
@@ -605,7 +605,7 @@ export default function Home() {
           >
             <div className="inline-block px-8 py-4 rounded-full border border-white/10 bg-white/[0.02]">
               <p className="text-white font-light text-sm">
-                These five pillars work together to create a system that produces lasting change—not just short-term motivation.
+                These five pillars work together to create a system that produces lasting progress—not just short-term motivation.
               </p>
             </div>
           </motion.div>
@@ -823,7 +823,7 @@ export default function Home() {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-              Get the structure, accountability, and support you need to transform your fitness, nutrition, and daily habits.
+              Get the structure, accountability, and support you need to build lasting progress in fitness, nutrition, and daily habits.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">

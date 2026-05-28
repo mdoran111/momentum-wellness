@@ -8,7 +8,7 @@ import { ArrowRight, CheckCircle2 } from "lucide-react";
 const FAQS = [
   {
     question: "What do I get with the membership?",
-    answer: "You get access to our comprehensive fitness app with strength training workouts, cardio sessions, daily habit tracking, and progress photo features. New workouts are added every month to keep you challenged and engaged."
+    answer: "You get access to our comprehensive wellness app with strength training workouts, cardio sessions, daily habit tracking, and progress photo features. New programming is added every month to keep you engaged and progressing."
   },
   {
     question: "Can I do these workouts at home?",
@@ -24,11 +24,11 @@ const FAQS = [
   },
   {
     question: "What's included in the progress photos feature?",
-    answer: "The progress photos feature lets you upload photos each month and compare them side-by-side to visualize your transformation. It's a powerful motivational tool that shows real, tangible results over time."
+    answer: "The progress photos feature lets you upload photos each month and compare them side-by-side to track your progress. It is a useful motivational tool that shows tangible change over time."
   },
   {
     question: "What are the daily habits?",
-    answer: "Daily habits go beyond just workouts. We guide you on nutrition, hydration, sleep, and recovery practices that support your fitness goals. Building these sustainable habits is what creates real, lasting change."
+    answer: "Daily habits go beyond just workouts. We guide you on nutrition awareness, hydration, sleep, and recovery practices that support your wellness goals. Building these sustainable habits is what creates real, lasting change."
   }
 ];
 
@@ -167,7 +167,7 @@ export default function FAQ() {
               </span>
             </h2>
             <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
-              We're here to ensure your transition to professional training is seamless. Reach out and we'll get back to you within 24-48 hours.
+              We are here to help. Reach out and we will get back to you within 24-48 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
