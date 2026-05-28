@@ -29,7 +29,7 @@ export default function About() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" as const }
     }
   };
 
@@ -145,31 +145,31 @@ export default function About() {
                   num: "01",
                   icon: Dumbbell,
                   title: "Training",
-                  desc: "Structured workout programming helps employees improve strength, mobility, conditioning, and consistency whether they train at home, in a gym, or on the go."
+                  desc: "Structured workout programming helps you improve strength, mobility, conditioning, and consistency whether you train at home, in a gym, or on the go."
                 },
                 {
                   num: "02",
                   icon: Apple,
                   title: "Nutrition",
-                  desc: "Employees can track nutrition, build awareness, and work toward better daily choices that support weight management, energy, and long-term health."
+                  desc: "Track nutrition, build awareness, and work toward better daily choices that support weight management, energy, and long-term health."
                 },
                 {
                   num: "03",
                   icon: Repeat,
                   title: "Habits",
-                  desc: "Healthy change happens through repeated behaviors. We help employees build sustainable habits around hydration, movement, sleep, recovery, and routine."
+                  desc: "Healthy change happens through repeated behaviors. Build sustainable habits around hydration, movement, sleep, recovery, and routine."
                 },
                 {
                   num: "04",
                   icon: Target,
                   title: "Accountability",
-                  desc: "Weekly structure, check-ins, progress tracking, and app-based follow-through help employees stay engaged and consistent over time."
+                  desc: "Weekly structure, check-ins, progress tracking, and app-based follow-through help you stay engaged and consistent over time."
                 },
                 {
                   num: "05",
                   icon: Users,
                   title: "Community",
-                  desc: "Community-based messaging and shared participation create support, motivation, and a stronger team culture across the company."
+                  desc: "Community-based messaging and shared participation create support, motivation, and a stronger culture around your wellness journey."
                 }
               ].map((pillar, index) => (
                 <motion.div

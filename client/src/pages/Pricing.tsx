@@ -1,10 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { motion } from "framer-motion";
 import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
-import { CheckCircle2, ShieldCheck, Zap, Award, Clock } from "lucide-react";
+import { CheckCircle2, ShieldCheck, Zap, Award, Dumbbell, Apple, Repeat, Target, Users } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useEffect } from "react";
-import logo from '../assets/images/logo.png';
 
 export default function Pricing() {
   const [location] = useLocation();
@@ -25,7 +24,7 @@ export default function Pricing() {
     visible: {
       y: 0,
       opacity: 1,
-      transition: { duration: 0.6, ease: "easeOut" }
+      transition: { duration: 0.6, ease: "easeOut" as const }
     }
   };
 
@@ -94,8 +93,50 @@ export default function Pricing() {
           </Card>
         </motion.div>
 
+        {/* Five Pillars Included */}
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={containerVariants}
+          className="max-w-6xl mx-auto mb-24"
+        >
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 tracking-tight">
+              Everything Is Built on the{" "}
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                Five Pillars
+              </span>
+            </h2>
+            <p className="text-lg text-white/60 font-light max-w-2xl mx-auto">
+              Every feature in your membership connects back to the same core system.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+            {[
+              { icon: Dumbbell, title: "Training", desc: "Strength & cardio programs" },
+              { icon: Apple, title: "Nutrition", desc: "Daily awareness & tracking" },
+              { icon: Repeat, title: "Habits", desc: "Sleep, hydration, recovery" },
+              { icon: Target, title: "Accountability", desc: "Check-ins & progress logs" },
+              { icon: Users, title: "Community", desc: "Support & motivation" }
+            ].map((pillar, i) => (
+              <motion.div
+                key={i}
+                variants={itemVariants}
+                className="group p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 text-center"
+              >
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 mx-auto mb-4 group-hover:text-emerald-300 transition-colors duration-300">
+                  <pillar.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-lg font-bold text-white mb-1">{pillar.title}</h3>
+                <p className="text-sm text-white/50 font-light">{pillar.desc}</p>
+              </motion.div>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Value Pillars Section */}
-        <motion.div 
+        <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
