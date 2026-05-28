@@ -1,22 +1,107 @@
 import { motion } from "framer-motion";
-import { CheckCircle2, Dumbbell, Apple, Repeat, Target, Users } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Link } from "wouter";
+import { CheckCircle2, Dumbbell, Apple, Repeat, Target, Users, ArrowRight } from "lucide-react";
 import mwDashboard from '@assets/MW2_app_dashboard_1779922530403.png';
+import { useEffect } from "react";
 
 export default function Programs() {
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
+
   return (
     <div className="min-h-screen bg-[#0f172a] text-white relative overflow-hidden">
-      {/* The Platform */}
-      <section className="relative z-10 py-16 min-h-screen flex flex-col justify-center">
+      {/* Hero Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+        <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
+        <div className="absolute inset-0" style={{backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`}}></div>
+        <div className="absolute inset-0 opacity-[0.015]" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}}></div>
+
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="max-w-4xl mx-auto text-center">
+            <motion.div
+              initial={{ opacity: 0, y: 40 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 1, ease: "easeOut" as const }}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span className="text-sm font-semibold tracking-wider uppercase text-white">
+                  The Platform
+                </span>
+              </motion.div>
+
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+                Your Wellness Program,{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  All in One Place
+                </span>
+              </h1>
+
+              <p className="text-lg md:text-xl text-white mb-4 font-light leading-relaxed max-w-3xl mx-auto">
+                Momentum Wellness is powered through a modern wellness app that gives you one place to stay organized, engaged, and accountable.
+              </p>
+              <p className="text-base text-white mb-10 font-light leading-relaxed max-w-2xl mx-auto">
+                Follow structured workouts, track daily habits, monitor progress, and stay connected with your community.
+              </p>
+
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
+                <Link href="/pricing" className="w-full sm:w-auto">
+                  <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-white text-[#0f172a] hover:bg-white/90 hover:scale-[1.02] transition-all duration-300 font-bold shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)]">
+                    Start Your Program
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link href="/inside-the-app" className="w-full sm:w-auto">
+                  <Button size="lg" variant="outline" className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-bold">
+                    Explore the App
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Trust strip */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3"
+              >
+                {[
+                  "Follow workouts anywhere",
+                  "Track key health & fitness habits",
+                  "Monitor progress over time",
+                  "App-based and community-driven"
+                ].map((point, i) => (
+                  <div key={i} className="flex items-center gap-2 text-white">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="text-sm font-medium">{point}</span>
+                  </div>
+                ))}
+              </motion.div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* The Platform Features */}
+      <section className="relative z-10 py-24 flex flex-col justify-center">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
         <div className="container relative z-10 mx-auto px-4">
           <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic uppercase">The Platform</h2>
-              <p className="text-white/60 text-lg font-light leading-relaxed max-w-2xl mx-auto">Momentum Wellness is powered through a modern wellness app that gives you one place to stay organized, engaged, and accountable.</p>
+              <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic uppercase">What the App Gives You</h2>
+              <p className="text-white/60 text-lg font-light leading-relaxed max-w-2xl mx-auto">Seven core features that keep your wellness organized, visible, and practical.</p>
             </motion.div>
           </div>
 
