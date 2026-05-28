@@ -1,15 +1,36 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from "@/components/ui/card";
-import { CheckCircle2, ArrowRight, ShieldCheck, Dumbbell, Calendar, LayoutGrid, Quote, ChevronLeft, ChevronRight, ChevronDown } from "lucide-react";
-import heroBg from '../assets/images/hero-bg.png';
-import programHome from '../assets/images/program-home-outdoor.jpg';
-import programMinimal from '../assets/images/program-minimal.jpg';
-import programGym from '../assets/images/program-gym.jpg';
-import logo from '../assets/images/logo.png';
-import mwDashboard from '@assets/MW2_app_dashboard_1779922530403.png';
 import { Link } from "wouter";
+import {
+  ArrowRight,
+  CheckCircle2,
+  Dumbbell,
+  Apple,
+  Repeat,
+  Target,
+  Users,
+  ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  Quote,
+  TrendingUp,
+  Activity,
+  Clock,
+  MessageSquare,
+  ShieldCheck,
+  Calendar,
+  HeartPulse,
+  BarChart3,
+  Zap,
+  Star,
+  Sparkles
+} from "lucide-react";
+import mwSplash from "@assets/MW1_splash_1779922530400.png";
+import mwDashboard from "@assets/MW2_app_dashboard_1779922530403.png";
+import mwGoals from "@assets/MW3_goals_1779922530404.png";
+import mwWorkouts from "@assets/MW4_workouts_1779922530404.png";
+import mwProgress from "@assets/MW5_progress_1779922530404.png";
 
 const TESTIMONIALS = [
   {
@@ -62,47 +83,73 @@ const TESTIMONIALS = [
   }
 ];
 
-const FEATURES = [
+const PILLARS = [
   {
-    title: "Strength training",
-    description: "Build muscle and power with science-backed strength workouts designed to challenge and progress you each month.",
-    details: "Comprehensive programs targeting major muscle groups with progressive overload built in."
+    num: "01",
+    icon: Dumbbell,
+    title: "Training",
+    desc: "Structured workout programming helps you improve strength, mobility, conditioning, and consistency—whether you train at home, in a gym, or on the go."
   },
   {
-    title: "Cardio workouts",
-    description: "Improve cardiovascular health and endurance with varied cardio options that complement your strength training.",
-    details: "From HIIT to steady-state cardio, workouts designed for different fitness levels and preferences."
+    num: "02",
+    icon: Apple,
+    title: "Nutrition",
+    desc: "Track nutrition, build awareness, and work toward better daily choices that support weight management, energy, and long-term health."
   },
   {
-    title: "Daily habits",
-    description: "Build sustainable wellness practices with guided daily habit tracking that goes beyond just workouts.",
-    details: "Nutrition, hydration, sleep, and recovery habits built into your daily routine for total wellness and more energy."
+    num: "03",
+    icon: Repeat,
+    title: "Habits",
+    desc: "Healthy change happens through repeated behaviors. Build sustainable habits around hydration, movement, sleep, recovery, and routine."
   },
   {
-    title: "Progress photos",
-    description: "Track your physical transformation with our simple progress photo feature that shows real results over time.",
-    details: "Organize and compare photos month-to-month to visualize your progress and stay motivated."
+    num: "04",
+    icon: Target,
+    title: "Accountability",
+    desc: "Weekly structure, check-ins, progress tracking, and app-based follow-through help you stay engaged and consistent over time."
   },
   {
-    title: "Monthly phase unlocks",
-    description: "New phases unlock every month with fresh challenges and progressive programming. Continuous growth without boredom or plateaus.",
-    details: "Monthly updates automatically deliver new strength and cardio phases, building on your progress."
+    num: "05",
+    icon: Users,
+    title: "Community",
+    desc: "Community-based messaging and shared participation create support, motivation, and a stronger culture around your wellness journey."
+  }
+];
+
+const CHALLENGES = [
+  { icon: TrendingUp, text: "Struggling to stay consistent with fitness" },
+  { icon: Activity, text: "Low energy and poor daily habits" },
+  { icon: Clock, text: "No clear plan or structured program" },
+  { icon: HeartPulse, text: "Inconsistent nutrition and meal choices" },
+  { icon: MessageSquare, text: "Working out alone with no support" },
+  { icon: ShieldCheck, text: "Fitness apps that are overwhelming or unused", wide: true }
+];
+
+const WHO_FOR = [
+  {
+    icon: Zap,
+    title: "Busy Professionals",
+    desc: "You want results without spending hours planning. Structured programs that fit your schedule."
   },
   {
-    title: "Cancel anytime",
-    description: "No contracts, no hidden fees. You have full control over your membership and can cancel whenever you choose.",
-    details: "Manage your subscription with a single click. No phone calls, no hassle, no questions asked."
+    icon: Star,
+    title: "Fitness Enthusiasts",
+    desc: "You want progressive, challenging programming that evolves monthly and keeps you engaged."
+  },
+  {
+    icon: HeartPulse,
+    title: "Health-Focused Beginners",
+    desc: "You want a clear starting point with guidance on training, nutrition, and building habits."
   }
 ];
 
 export default function Home() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0);
-  const [expandedFeature, setExpandedFeature] = useState<number | null>(null);
   const [isAnimating, setIsAnimating] = useState(false);
   const [showContent, setShowContent] = useState(false);
 
   useEffect(() => {
-    const timer = setTimeout(() => setShowContent(true), 2200);
+    const timer = setTimeout(() => setShowContent(true), 300);
     return () => clearTimeout(timer);
   }, []);
 
@@ -131,70 +178,168 @@ export default function Home() {
     }, 300);
   };
 
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2
-      }
-    }
-  };
-
-  const itemVariants = {
-    hidden: { y: 30, opacity: 0 },
-    visible: {
-      y: 0,
-      opacity: 1,
-      transition: {
-        duration: 0.8,
-        ease: [0.21, 1.11, 0.81, 0.99]
-      }
-    }
-  };
-
   return (
-    <div className="flex flex-col min-h-screen">
-      {/* A) Hero Section */}
-      <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-[#0f172a]">
-        {/* Dark navy gradient overlay */}
+    <div className="flex flex-col min-h-screen bg-[#0f172a]">
+      {/* 1. Premium Hero Section */}
+      <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
+        {/* Background layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
-        {/* Emerald glow */}
-        <div className="absolute inset-0" style={{backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`}}></div>
-        {/* Noise texture */}
-        <div className="absolute inset-0 opacity-[0.015]" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}}></div>
-
-        <div className="container relative z-10 mx-auto px-4 text-center">
-          <AnimatePresence>
-            {showContent && (
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: "easeOut" }}
-                className="max-w-4xl mx-auto"
-              >
-                <p className="text-xl md:text-2xl text-white/70 mb-14 max-w-2xl mx-auto font-light leading-relaxed">
-                  Strength training, cardio, daily habits, and progress tracking. All in one app. $14.99/mo.
-                </p>
-                <div className="flex flex-col sm:flex-row gap-6 justify-center">
-                  <Link href="/programs">
-                    <Button size="lg" className="rounded-full text-lg px-12 h-16 font-bold shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 bg-white text-[#0f172a] hover:bg-white/90 border-none" data-testid="button-get-started-hero">
-                      Explore Programs
-                    </Button>
-                  </Link>
-                  <Link href="/about">
-                    <Button size="lg" variant="outline" className="rounded-full text-lg px-12 h-16 font-bold border-white/40 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300" data-testid="button-about-hero">
-                      Our Philosophy
-                    </Button>
-                  </Link>
-                </div>
-              </motion.div>
-            )}
-          </AnimatePresence>
+        <div className="absolute inset-0 opacity-15">
+          <img src={mwSplash} alt="" className="w-full h-full object-cover" />
         </div>
-        
-        <motion.div 
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-transparent"></div>
+        {/* Subtle grid */}
+        <div
+          className="absolute inset-0 opacity-[0.03]"
+          style={{
+            backgroundImage: `linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)`,
+            backgroundSize: '60px 60px'
+          }}
+        ></div>
+        {/* Noise texture */}
+        <div
+          className="absolute inset-0 opacity-[0.015]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+          }}
+        ></div>
+
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            {/* Left — Text */}
+            <motion.div
+              initial={{ opacity: 0, x: -40 }}
+              animate={showContent ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 1, ease: "easeOut" }}
+            >
+              <motion.div
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={showContent ? { opacity: 1, scale: 1 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 }}
+                className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
+              >
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span className="text-sm font-semibold tracking-wider uppercase text-white">
+                  App-Based Wellness Programs
+                </span>
+              </motion.div>
+
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+                Build a Healthier,{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  Stronger, More Accountable
+                </span>{" "}
+                You
+              </h1>
+
+              <p className="text-lg md:text-xl text-white mb-4 font-light leading-relaxed">
+                Momentum Wellness helps you improve fitness, nutrition, daily habits, and long-term wellness through a structured, app-based program built around training, accountability, and community.
+              </p>
+              <p className="text-base text-white mb-10 font-light leading-relaxed max-w-xl">
+                Whether you're just starting out or looking to level up, our system gives you the plan, the tools, and the support to stay consistent and see real results.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-4 mb-12">
+                <Link href="/programs" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 font-bold shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
+                  >
+                    Start Your Transformation
+                    <ArrowRight className="ml-2 w-5 h-5" />
+                  </Button>
+                </Link>
+                <Link href="/about" className="w-full sm:w-auto">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-bold"
+                  >
+                    Learn More
+                  </Button>
+                </Link>
+              </div>
+
+              {/* Trust strip */}
+              <motion.div
+                initial={{ opacity: 0 }}
+                animate={showContent ? { opacity: 1 } : {}}
+                transition={{ delay: 0.8, duration: 0.8 }}
+                className="flex flex-wrap gap-x-6 gap-y-3"
+              >
+                {[
+                  "Structured monthly programming",
+                  "App-based and community-driven",
+                  "Strength, cardio, and daily habits",
+                  "Results-focused, not generic"
+                ].map((point, i) => (
+                  <div key={i} className="flex items-center gap-2 text-white">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
+                    <span className="text-sm font-medium">{point}</span>
+                  </div>
+                ))}
+              </motion.div>
+            </motion.div>
+
+            {/* Right — Phone mockups */}
+            <motion.div
+              initial={{ opacity: 0, x: 40 }}
+              animate={showContent ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+              className="relative hidden lg:block"
+            >
+              <div className="relative w-full max-w-[500px] mx-auto" style={{ height: '600px' }}>
+                {/* Phone 1 — Back (Goals) */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20, rotate: -6 }}
+                  animate={showContent ? { opacity: 1, y: 0, rotate: -6 } : {}}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="absolute top-8 left-0 w-[260px]"
+                >
+                  <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
+                    <div className="rounded-[32px] overflow-hidden bg-black">
+                      <img src={mwGoals} alt="Goals Tracking" className="w-full" />
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Phone 2 — Middle (Workouts) */}
+                <motion.div
+                  initial={{ opacity: 0, y: 20, rotate: 6 }}
+                  animate={showContent ? { opacity: 1, y: 0, rotate: 6 } : {}}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                  className="absolute top-0 right-0 w-[260px]"
+                >
+                  <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
+                    <div className="rounded-[32px] overflow-hidden bg-black">
+                      <img src={mwWorkouts} alt="Workouts" className="w-full" />
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Phone 3 — Front (Dashboard) */}
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={showContent ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.8, delay: 0.9 }}
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[280px] z-10"
+                >
+                  <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.5)] border border-white/10">
+                    <div className="rounded-[32px] overflow-hidden bg-black relative">
+                      <img src={mwDashboard} alt="App Dashboard" className="w-full" />
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
+                    </div>
+                  </div>
+                </motion.div>
+
+                {/* Glow */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px] -z-10"></div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+
+        <motion.div
           animate={{ y: [0, 10, 0] }}
           transition={{ duration: 2, repeat: Infinity }}
           className="absolute bottom-10 left-1/2 -translate-x-1/2 text-white/20"
@@ -203,152 +348,271 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* B) Trust Bar */}
-      <section className="py-16 bg-[#0a0f1d] border-b border-white/5">
-        <div className="container mx-auto px-4">
-          <motion.div
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-            variants={containerVariants}
-            className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 opacity-60"
-          >
-            <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
-              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all duration-500 text-white">
-                <Dumbbell className="w-5 h-5" />
-              </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs text-white/70">Comprehensive Fitness App</span>
+      {/* 2. Value Proposition — The Problem */}
+      <section className="py-20 md:py-28 lg:py-32 relative">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/30 to-[#0f172a]"></div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+            {/* Left — Headline */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
+                The Reality
+              </span>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+                Most Fitness Plans{" "}
+                <span className="italic">Don't Stick.</span>
+              </h2>
+              <p className="text-lg text-white mb-6 font-light leading-relaxed">
+                You start with motivation, but without structure, accountability, and a clear plan, it's easy to fall off track.
+              </p>
+              <p className="text-base text-white mb-6 font-light leading-relaxed">
+                You don't need another generic workout app. You need a system that combines training, nutrition guidance, habit tracking, and community support—designed to keep you engaged month after month.
+              </p>
+              <p className="text-base text-white font-light leading-relaxed">
+                At Momentum Wellness, we built exactly that. A program that evolves with you, keeps you accountable, and delivers results you can see and feel.
+              </p>
             </motion.div>
-            <div className="hidden md:block w-px h-8 bg-white/10"></div>
-            <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
-              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all duration-500 text-white">
-                <LayoutGrid className="w-5 h-5" />
-              </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs text-white/70">Fresh workouts monthly</span>
-            </motion.div>
-            <div className="hidden md:block w-px h-8 bg-white/10"></div>
-            <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
-              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all duration-500 text-white">
-                <Calendar className="w-5 h-5" />
-              </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs text-white/70">Progress tracking built in</span>
-            </motion.div>
-          </motion.div>
-        </div>
-      </section>
 
-      {/* C) What you get */}
-      <section id="includes" className="py-24 bg-primary text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-        <div className="container mx-auto px-4">
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-100px" }}
-            variants={containerVariants}
-            className="text-center mb-16"
-          >
-            <motion.h2 variants={itemVariants} className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic">Everything You Need To Succeed</motion.h2>
-            <motion.p variants={itemVariants} className="text-white/80 max-w-2xl mx-auto text-lg font-light">A continuous fitness program with strength training, cardio, daily wellness habits, and progress tracking. New phases unlock monthly to keep you growing and challenged.</motion.p>
-          </motion.div>
-          
-          <motion.div 
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true, margin: "-50px" }}
-            variants={containerVariants}
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 text-left"
-          >
-            {FEATURES.map((feature, i) => (
-              <motion.div 
-                key={i} 
-                variants={itemVariants} 
-                whileHover={{ y: -8, scale: 1.02, transition: { duration: 0.3 } }}
-              >
-                <Card 
-                  className={`bg-white/5 backdrop-blur-md border-white/10 shadow-[0_20px_50px_rgba(0,0,0,0.3)] hover:bg-white/10 hover:shadow-white/5 transition-all duration-500 group cursor-pointer overflow-hidden rounded-[32px] ${expandedFeature === i ? 'ring-1 ring-white/30' : ''}`}
-                  onClick={() => setExpandedFeature(expandedFeature === i ? null : i)}
-                >
-                  <CardHeader className="pb-4">
-                    <div className="flex items-center justify-between mb-4">
-                      <div className="w-12 h-12 rounded-2xl bg-white/10 flex items-center justify-center group-hover:bg-white group-hover:text-primary transition-all duration-500">
-                        <CheckCircle2 className="w-6 h-6" />
-                      </div>
+            {/* Right — Challenges grid */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="lg:mt-12"
+            >
+              <p className="text-sm font-bold tracking-[0.15em] uppercase text-white mb-6">
+                Sound familiar?
+              </p>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {CHALLENGES.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, y: 20 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.08 }}
+                    className={`flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300 ${item.wide ? 'sm:col-span-2' : ''}`}
+                  >
+                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/10 to-orange-500/10 flex items-center justify-center shrink-0 text-red-400/80">
+                      <item.icon className="w-5 h-5" />
                     </div>
-                    <CardTitle className="text-xl font-bold font-heading text-white italic tracking-tight uppercase">{feature.title}</CardTitle>
-                    <CardDescription className="text-white/60 text-sm leading-relaxed font-light mt-2 group-hover:text-white/80 transition-colors">
-                      {feature.description}
-                    </CardDescription>
-                  </CardHeader>
-                  <AnimatePresence>
-                    {expandedFeature === i && (
-                      <motion.div
-                        initial={{ height: 0, opacity: 0 }}
-                        animate={{ height: "auto", opacity: 1 }}
-                        exit={{ height: 0, opacity: 0 }}
-                        className="overflow-hidden"
-                      >
-                        <CardContent className="pb-8 pt-0 text-xs text-white/50 font-medium leading-relaxed uppercase tracking-widest border-t border-white/5 mt-4">
-                          <p className="mt-4">{feature.details}</p>
-                        </CardContent>
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </Card>
-              </motion.div>
-            ))}
-          </motion.div>
+                    <span className="text-white font-light leading-snug pt-1.5">{item.text}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
-      {/* D) How it works */}
-      <section className="py-24 bg-[#0a0f1d] relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/[0.03] via-transparent to-transparent"></div>
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-3xl md:text-5xl font-bold font-heading text-white mb-4 italic tracking-tight uppercase">The Evolution</h2>
-            <p className="text-white/60 max-w-xl mx-auto text-lg font-light leading-relaxed">Three steps to professional performance. One commitment to growth.</p>
-          </motion.div>
+      {/* 3. Program Overview — What You Get */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#0a0f1d]"></div>
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`
+            }}
+          ></div>
+        </div>
+        <div
+          className="absolute inset-0 opacity-[0.015]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+          }}
+        ></div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative max-w-5xl mx-auto">
-            <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-white/5 z-0"></div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-10 leading-[1.05] tracking-tight">
+                Everything You Need{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  To Succeed.
+                </span>
+              </h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <p className="text-xl md:text-2xl text-white font-light leading-relaxed mb-6">
+                A complete wellness system in one app. Not just workouts—training, nutrition, habits, and progress tracking that work together.
+              </p>
+              <p className="text-lg text-white font-light leading-relaxed max-w-3xl mx-auto">
+                New phases unlock monthly so you never plateau. The program adapts and progresses with you, keeping your fitness journey fresh and challenging.
+              </p>
+            </motion.div>
+          </div>
 
+          {/* Feature cards */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
             {[
-              { step: "01", title: "Unlock Access", desc: "Secure your membership and get instant entry to our training platform." },
-              { step: "02", title: "Select Program", desc: "Choose the continuous program that matches your equipment and goal." },
-              { step: "03", title: "Build Momentum", desc: "Execute focused monthly phases and track your measurable evolution." }
-            ].map((item, i) => (
+              {
+                icon: Dumbbell,
+                title: "Strength Training",
+                desc: "Science-backed programs targeting major muscle groups with progressive overload built into every phase."
+              },
+              {
+                icon: Activity,
+                title: "Cardio Workouts",
+                desc: "From HIIT to steady-state, varied cardio options designed to complement your strength training."
+              },
+              {
+                icon: Calendar,
+                title: "Monthly Phase Unlocks",
+                desc: "Fresh challenges and progressive programming delivered automatically each month."
+              },
+              {
+                icon: HeartPulse,
+                title: "Daily Habits",
+                desc: "Guided tracking for nutrition, hydration, sleep, and recovery habits beyond just workouts."
+              },
+              {
+                icon: BarChart3,
+                title: "Progress Tracking",
+                desc: "Monitor performance, visual progress photos, and milestone achievements over time."
+              },
+              {
+                icon: Sparkles,
+                title: "Cancel Anytime",
+                desc: "No contracts, no hidden fees. Full control over your membership with a single click."
+              }
+            ].map((feature, index) => (
               <motion.div
-                key={i}
-                initial={{ opacity: 0, scale: 0.9 }}
-                whileInView={{ opacity: 1, scale: 1 }}
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
-                transition={{ delay: i * 0.2 }}
-                className="relative z-10 flex flex-col items-center text-center group"
+                transition={{ delay: index * 0.08 }}
+                className="group p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
               >
-                <motion.div
-                  whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-24 h-24 bg-[#1e293b] rounded-3xl flex items-center justify-center text-2xl font-bold font-heading text-white shadow-[0_10px_30px_rgba(0,0,0,0.3)] mb-8 group-hover:shadow-white/10 transition-all duration-500 italic border border-white/5"
-                >
-                  {item.step}
-                </motion.div>
-                <h3 className="text-xl font-bold mb-3 italic tracking-tight text-white uppercase">{item.title}</h3>
-                <p className="text-white/60 text-base font-light leading-relaxed">{item.desc}</p>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:text-emerald-300 transition-colors duration-300">
+                    <feature.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{feature.title}</h3>
+                  <p className="text-white font-light leading-relaxed text-sm">{feature.desc}</p>
+                </div>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* E) The Platform */}
-      <section className="py-24 bg-primary text-white relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-white/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
-        <div className="container relative z-10 mx-auto px-4">
+      {/* 4. Five Pillars */}
+      <section className="py-24 md:py-32 lg:py-40 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#0a0f1d]"></div>
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`
+            }}
+          ></div>
+        </div>
+        <div
+          className="absolute inset-0 opacity-[0.015]"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
+          }}
+        ></div>
+
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="max-w-4xl mx-auto text-center mb-20">
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-10 leading-[1.05] tracking-tight">
+                Built on{" "}
+                <span className="italic font-serif">Five Pillars.</span>
+              </h2>
+            </motion.div>
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-100px" }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <p className="text-xl md:text-2xl text-white font-light leading-relaxed max-w-3xl mx-auto">
+                Lasting transformation doesn't come from one thing. It comes from a system that addresses every dimension of wellness.
+              </p>
+            </motion.div>
+          </div>
+
+          <motion.div
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.8 }}
+            className="max-w-6xl mx-auto"
+          >
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5">
+              {PILLARS.map((pillar, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ delay: index * 0.1 }}
+                  className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
+                >
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
+                        <pillar.icon className="w-6 h-6" />
+                      </div>
+                      <span className="text-3xl font-bold text-white/5 group-hover:text-emerald-400/10 transition-colors duration-500">
+                        {pillar.num}
+                      </span>
+                    </div>
+                    <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">{pillar.title}</h3>
+                    <p className="text-white font-light leading-relaxed text-sm">{pillar.desc}</p>
+                  </div>
+                </motion.div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.6 }}
+            className="text-center mt-20"
+          >
+            <div className="inline-block px-8 py-4 rounded-full border border-white/10 bg-white/[0.02]">
+              <p className="text-white font-light text-sm">
+                These five pillars work together to create a system that produces lasting change—not just short-term motivation.
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* 5. App Preview — The Platform */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -356,13 +620,20 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic uppercase">The Platform</h2>
-              <p className="text-white/60 text-lg font-light leading-relaxed max-w-2xl mx-auto">Momentum Wellness is powered through a modern wellness app that gives you one place to stay organized, engaged, and accountable.</p>
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-[1.05] tracking-tight">
+                Your Wellness,{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  In One App.
+                </span>
+              </h2>
+              <p className="text-lg text-white/70 font-light leading-relaxed max-w-2xl mx-auto">
+                Momentum Wellness is powered through a modern wellness app that gives you one place to stay organized, engaged, and accountable.
+              </p>
             </motion.div>
           </div>
-          
+
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
-            {/* Left - Features */}
+            {/* Left — Features list */}
             <motion.div
               initial={{ opacity: 0, x: -30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -372,11 +643,11 @@ export default function Home() {
               <div className="space-y-4">
                 {[
                   "Follow workouts at home, at the gym, or on the go",
-                  "Track key health and fitness habits",
+                  "Track key health and fitness habits daily",
                   "Monitor progress and performance over time",
-                  "Stay aware of nutrition goals",
-                  "Build routines with daily structure",
-                  "Stay connected through community-based support",
+                  "Stay aware of nutrition goals and choices",
+                  "Build routines with structured daily guidance",
+                  "Stay connected through community support",
                   "Keep wellness visible, practical, and accessible"
                 ].map((feature, index) => (
                   <motion.div
@@ -388,7 +659,7 @@ export default function Home() {
                     className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300"
                   >
                     <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="w-4 h-4 text-white" />
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                     </div>
                     <span className="text-white font-light">{feature}</span>
                   </motion.div>
@@ -396,7 +667,7 @@ export default function Home() {
               </div>
             </motion.div>
 
-            {/* Right - Phone Preview */}
+            {/* Right — Phone preview */}
             <motion.div
               initial={{ opacity: 0, x: 30 }}
               whileInView={{ opacity: 1, x: 0 }}
@@ -404,148 +675,337 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="relative"
             >
-              <div className="relative mx-auto w-full max-w-[280px]">
-                <div className="rounded-[32px] md:rounded-[40px] bg-[#1a1a2e] p-2 md:p-3 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
-                  <div className="rounded-[24px] md:rounded-[32px] overflow-hidden bg-black relative">
+              <div className="relative mx-auto w-full max-w-[300px]">
+                <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
+                  <div className="rounded-[32px] overflow-hidden bg-black relative">
                     <img src={mwDashboard} alt="App Dashboard" className="w-full" />
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 md:w-24 h-5 md:h-6 bg-[#1a1a2e] rounded-b-xl md:rounded-b-2xl"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
                   </div>
                 </div>
                 <div className="mt-4 text-center">
                   <span className="text-sm text-white/60 font-light">Stay on top of daily health and fitness</span>
                 </div>
               </div>
-              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-white/5 rounded-full blur-[100px] -z-10"></div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-emerald-500/10 rounded-full blur-[100px] -z-10"></div>
             </motion.div>
           </div>
         </div>
       </section>
 
-      {/* F) Pricing teaser */}
-      <section className="py-24 bg-primary text-white">
-        <div className="container mx-auto px-4 text-center max-w-3xl">
-          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-8 uppercase italic tracking-tight">Simple, Transparent Pricing</h2>
-          <div className="bg-white/10 rounded-3xl p-8 md:p-12 backdrop-blur-md border border-white/20">
-            <div className="text-6xl font-bold font-heading mb-4 italic">$14.99<span className="text-2xl text-white/80 font-normal">/month</span></div>
-            <p className="text-xl text-white/90 mb-8 font-light uppercase tracking-widest">Unlimited programs • Cancel anytime</p>
-            <Link href="/programs">
-              <Button size="lg" className="w-full sm:w-auto rounded-full text-base px-12 h-14 bg-white text-[#0f172a] hover:bg-white/90 font-bold border-none shadow-2xl" data-testid="button-pricing-teaser">
-                Unlock Full Access
-              </Button>
-            </Link>
-          </div>
+      {/* 6. Who It's For */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#0a0f1d]"></div>
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 opacity-30"
+            style={{
+              backgroundImage: `radial-gradient(circle at 50% 50%, rgba(16,185,129,0.05) 0%, transparent 50%)`
+            }}
+          ></div>
         </div>
-      </section>
-
-      {/* Testimonials Section */}
-      <section className="py-24 bg-[#0a0f1d]">
-        <div className="container mx-auto px-4 max-w-4xl text-center">
-          <Quote className="w-12 h-12 text-white/20 mx-auto mb-8" />
-          <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-12 uppercase italic tracking-tight">Member Success Stories</h2>
-
-          <div className="relative bg-white/[0.03] p-8 md:p-16 rounded-[40px] border border-white/5 min-h-[400px] flex flex-col justify-center overflow-hidden backdrop-blur-sm">
-            <div className={`transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-              <p className="text-xl md:text-2xl text-white font-medium leading-relaxed italic mb-8">
-                "{TESTIMONIALS[currentTestimonial].content}"
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-[1.05] tracking-tight">
+                Who Is This{" "}
+                <span className="italic">For?</span>
+              </h2>
+              <p className="text-lg text-white/70 font-light leading-relaxed max-w-2xl mx-auto">
+                Momentum Wellness is designed for anyone serious about building a healthier, stronger, more consistent lifestyle.
               </p>
-              <div className="flex flex-col items-center">
-                <div className="w-12 h-12 bg-white/10 text-white rounded-full flex items-center justify-center font-bold mb-3 shadow-lg border border-white/5">
-                  {TESTIMONIALS[currentTestimonial].avatar}
+            </motion.div>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+            {WHO_FOR.map((persona, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.15 }}
+                className="group p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 text-center"
+              >
+                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 mx-auto mb-6 group-hover:text-emerald-300 transition-colors duration-300">
+                  <persona.icon className="w-8 h-8" />
                 </div>
-                <h4 className="font-bold text-lg text-white">{TESTIMONIALS[currentTestimonial].name}</h4>
-                <p className="text-sm text-white/60 font-medium">{TESTIMONIALS[currentTestimonial].role}</p>
-              </div>
-            </div>
-
-            {/* Navigation Buttons */}
-            <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-8">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={handlePrev}
-                className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white transition-all h-12 w-12 text-white"
-              >
-                <ChevronLeft className="w-6 h-6" />
-              </Button>
-            </div>
-            <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-8">
-              <Button
-                variant="outline"
-                size="icon"
-                onClick={handleNext}
-                className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white transition-all h-12 w-12 text-white"
-              >
-                <ChevronRight className="w-6 h-6" />
-              </Button>
-            </div>
-
-            {/* Pagination Dots */}
-            <div className="flex justify-center gap-2 mt-8 md:absolute md:bottom-8 md:left-0 md:right-0">
-              {TESTIMONIALS.map((_, i) => (
-                <button
-                  key={i}
-                  onClick={() => setCurrentTestimonial(i)}
-                  className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    currentTestimonial === i ? "w-8 bg-white" : "bg-white/20"
-                  }`}
-                />
-              ))}
-            </div>
+                <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{persona.title}</h3>
+                <p className="text-white font-light leading-relaxed text-sm">{persona.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* G) FAQ Preview */}
-      <section className="py-24 bg-[#0f172a]">
-        <div className="container mx-auto px-4 max-w-4xl">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 uppercase italic tracking-tight">Frequently Asked Questions</h2>
+      {/* 7. How It Works */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-16">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-[1.05] tracking-tight">
+                How It{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  Works.
+                </span>
+              </h2>
+              <p className="text-lg text-white/70 font-light leading-relaxed max-w-xl mx-auto">
+                Three simple steps. One commitment to growth.
+              </p>
+            </motion.div>
           </div>
 
-          <div className="space-y-6">
-            <div className="p-8 rounded-[32px] bg-white/[0.02] text-white border border-white/5 shadow-lg">
-              <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">What do I get with the membership?</h3>
-              <p className="text-white/80 font-light leading-relaxed">You get unlimited, instant access to our entire library of continuous fitness programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time.</p>
-            </div>
-            <div className="p-8 rounded-[32px] bg-white/[0.02] text-white border border-white/5 shadow-lg">
-              <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">Can beginners do these programs?</h3>
-              <p className="text-white/80 font-light leading-relaxed">Absolutely. We have specific programs designed for all levels, and all our programs include scalable options to match your current fitness level.</p>
-            </div>
-            <div className="p-8 rounded-[32px] bg-white/[0.02] text-white border border-white/5 shadow-lg">
-              <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">Which program should I choose?</h3>
-              <p className="text-white/80 font-light leading-relaxed">The Apex Path is for those with full gym access seeking peak performance. The Versatile Edge uses dumbbells and bands for efficient full-body training. The Foundational Flow requires no equipment and focuses on movement mastery.</p>
-            </div>
-          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative max-w-5xl mx-auto">
+            <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent z-0"></div>
 
-          <div className="mt-12 text-center">
-            <Link href="/faq">
-              <span className="text-white font-bold uppercase tracking-widest text-sm hover:underline inline-flex items-center cursor-pointer group">
-                Read all FAQs <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
-              </span>
-            </Link>
+            {[
+              { step: "01", title: "Sign Up", desc: "Choose your membership and get instant access to the full platform." },
+              { step: "02", title: "Pick Your Program", desc: "Select the training path that matches your goals and equipment." },
+              { step: "03", title: "Build Momentum", desc: "Follow your monthly phases, track progress, and stay consistent." }
+            ].map((item, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, scale: 0.9 }}
+                whileInView={{ opacity: 1, scale: 1 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="relative z-10 flex flex-col items-center text-center group"
+              >
+                <motion.div
+                  whileHover={{ scale: 1.1 }}
+                  className="w-24 h-24 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-3xl flex items-center justify-center text-2xl font-bold text-emerald-400 shadow-[0_10px_30px_rgba(0,0,0,0.3)] mb-8 border border-emerald-500/20 group-hover:border-emerald-500/40 transition-all duration-500"
+                >
+                  {item.step}
+                </motion.div>
+                <h3 className="text-xl font-bold mb-3 text-white tracking-tight">{item.title}</h3>
+                <p className="text-white/60 text-base font-light leading-relaxed">{item.desc}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* H) Final CTA */}
-      <section className="py-32 bg-primary text-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
-        <div className="absolute -bottom-24 -left-24 w-96 h-96 bg-white/[0.02] rounded-full blur-[100px]"></div>
-        <div className="container relative z-10 mx-auto px-4 text-center max-w-4xl">
+      {/* 8. Strong CTA Section */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-[#0a0f1d]"></div>
+        <div className="absolute inset-0">
+          <div
+            className="absolute inset-0 opacity-40"
+            style={{
+              backgroundImage: `radial-gradient(circle at 50% 50%, rgba(16,185,129,0.08) 0%, transparent 50%)`
+            }}
+          ></div>
+        </div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-8 italic tracking-tighter uppercase leading-[0.9]">Start today.<br/>Build momentum.</h2>
-            <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">Stop overthinking your training. Get the structure you need for $14.99/mo.</p>
-            <Link href="/programs">
-              <Button size="lg" className="rounded-full text-lg px-12 h-16 font-bold shadow-[0_20px_50px_rgba(255,255,255,0.1)] hover:shadow-[0_20px_60px_rgba(255,255,255,0.2)] hover:scale-105 transition-all duration-300 bg-white text-[#0f172a] hover:bg-white/90 border-none" data-testid="button-final-cta">
-                Get Started Today
-              </Button>
-            </Link>
+            <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
+              Start Today.
+              <br />
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                Build Momentum.
+              </span>
+            </h2>
+            <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
+              Stop overthinking your training. Get the structure, accountability, and support you need for $14.99/mo.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link href="/programs">
+                <Button
+                  size="lg"
+                  className="rounded-full text-lg px-12 h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
+                >
+                  Get Started Now
+                  <ArrowRight className="ml-2 w-5 h-5" />
+                </Button>
+              </Link>
+              <Link href="/pricing">
+                <Button
+                  size="lg"
+                  variant="outline"
+                  className="rounded-full text-lg px-12 h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
+                >
+                  View Pricing
+                </Button>
+              </Link>
+            </div>
           </motion.div>
+        </div>
+      </section>
+
+      {/* 9. Testimonials + Contact */}
+      <section className="py-24 md:py-32 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Testimonials */}
+          <div className="max-w-4xl mx-auto text-center mb-24">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <Quote className="w-12 h-12 text-emerald-400/30 mx-auto mb-8" />
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-12 tracking-tight">
+                What Members{" "}
+                <span className="italic">Say.</span>
+              </h2>
+            </motion.div>
+
+            <div className="relative bg-white/[0.02] p-8 md:p-16 rounded-[40px] border border-white/5 min-h-[400px] flex flex-col justify-center overflow-hidden backdrop-blur-sm">
+              <div className={`transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
+                <p className="text-xl md:text-2xl text-white font-medium leading-relaxed italic mb-8">
+                  "{TESTIMONIALS[currentTestimonial].content}"
+                </p>
+                <div className="flex flex-col items-center">
+                  <div className="w-12 h-12 bg-gradient-to-br from-emerald-500/20 to-teal-500/20 text-emerald-400 rounded-full flex items-center justify-center font-bold mb-3 shadow-lg border border-emerald-500/20">
+                    {TESTIMONIALS[currentTestimonial].avatar}
+                  </div>
+                  <h4 className="font-bold text-lg text-white">{TESTIMONIALS[currentTestimonial].name}</h4>
+                  <p className="text-sm text-white/60 font-medium">{TESTIMONIALS[currentTestimonial].role}</p>
+                </div>
+              </div>
+
+              <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-8">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handlePrev}
+                  className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white transition-all h-12 w-12 text-white"
+                >
+                  <ChevronLeft className="w-6 h-6" />
+                </Button>
+              </div>
+              <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-8">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  onClick={handleNext}
+                  className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white transition-all h-12 w-12 text-white"
+                >
+                  <ChevronRight className="w-6 h-6" />
+                </Button>
+              </div>
+
+              <div className="flex justify-center gap-2 mt-8 md:absolute md:bottom-8 md:left-0 md:right-0">
+                {TESTIMONIALS.map((_, i) => (
+                  <button
+                    key={i}
+                    onClick={() => setCurrentTestimonial(i)}
+                    className={`w-2 h-2 rounded-full transition-all duration-300 ${
+                      currentTestimonial === i ? "w-8 bg-emerald-400" : "bg-white/20"
+                    }`}
+                  />
+                ))}
+              </div>
+            </div>
+          </div>
+
+          {/* Contact Section */}
+          <div className="max-w-4xl mx-auto">
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="text-center mb-12"
+            >
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 tracking-tight">
+                Have Questions?{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  Let's Talk.
+                </span>
+              </h2>
+              <p className="text-lg text-white/70 font-light leading-relaxed max-w-2xl mx-auto">
+                Reach out and our team will get back to you within 24–48 hours. We're here to help you get started.
+              </p>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white/[0.02] rounded-3xl border border-white/5 overflow-hidden"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-5 gap-0">
+                <div className="md:col-span-2 bg-white/[0.02] p-10 text-white flex flex-col border-r border-white/5">
+                  <h3 className="text-2xl font-bold mb-6">Get in Touch</h3>
+                  <p className="text-white/70 mb-12">
+                    Whether you have a question about programs, pricing, or just want to learn more, we're happy to help.
+                  </p>
+                  <div className="mt-auto">
+                    <div className="flex items-center gap-4">
+                      <div className="w-12 h-12 bg-white/5 rounded-full flex items-center justify-center">
+                        <MessageSquare className="w-5 h-5 text-emerald-400" />
+                      </div>
+                      <div>
+                        <p className="text-sm text-white/60 mb-1">Email us at</p>
+                        <p className="font-medium text-white">info@momentumwellness.health</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div className="md:col-span-3 p-10">
+                  <div className="space-y-6">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="text-sm font-semibold text-white mb-2 block">Name</label>
+                        <input
+                          type="text"
+                          placeholder="Your name"
+                          className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label className="text-sm font-semibold text-white mb-2 block">Email</label>
+                        <input
+                          type="email"
+                          placeholder="your@email.com"
+                          className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors"
+                        />
+                      </div>
+                    </div>
+                    <div>
+                      <label className="text-sm font-semibold text-white mb-2 block">Subject</label>
+                      <input
+                        type="text"
+                        placeholder="How can we help?"
+                        className="w-full h-12 px-4 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors"
+                      />
+                    </div>
+                    <div>
+                      <label className="text-sm font-semibold text-white mb-2 block">Message</label>
+                      <textarea
+                        placeholder="Write your message here..."
+                        rows={4}
+                        className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder:text-white/30 focus:outline-none focus:border-emerald-500/50 transition-colors resize-none"
+                      ></textarea>
+                    </div>
+                    <Link href="/contact">
+                      <Button className="w-full rounded-full h-12 text-base font-bold bg-white text-[#0f172a] hover:bg-white/90 border-none">
+                        Send Message
+                      </Button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
     </div>
