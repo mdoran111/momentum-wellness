@@ -3,71 +3,7 @@ import { CheckCircle2 } from "lucide-react";
 import logo from '../assets/images/logo.png';
 import mwDashboard from '@assets/MW2_app_dashboard_1779922530403.png';
 
-// Mock data for programs
-const PROGRAMS = [
-  {
-    id: 1,
-    title: "The Apex Path",
-    description: "A continuous strength training program designed to transform your physical capability and mental focus using a full suite of strength equipment. Monthly phases unlock new challenges and progressive overload for long-term growth.",
-    goal: "Strength",
-    equipment: "Full Gym",
-    daysPerWeek: "4x",
-    image: programGym,
-    link: "https://www.trainerize.me/profile/momentumwellness6/?planGUID=8bb77914b268416bac5814c814ea283d",
-    details: {
-      who: "Lifters with access to a commercial or well-equipped home gym looking for continuous, progressive strength development.",
-      time: "60-75 mins",
-      days: "4 days/week",
-      achieve: "Mastered mechanics and a powerful, resilient physique."
-    }
-  },
-  {
-    id: 2,
-    title: "The Versatile Edge",
-    description: "A continuous program centered around dumbbells, bands, and kettlebells that unlocks new phases monthly. This holistic approach blends strength, stability, and endurance for the modern, high-functioning individual.",
-    goal: "Body Recomposition",
-    equipment: "Essential Gear",
-    daysPerWeek: "3x",
-    image: programMinimal,
-    link: "https://www.trainerize.me/profile/momentumwellness6/?planGUID=8bb77914b268416bac5814c814ea283d",
-    details: {
-      who: "Those training with essential weights and tools who want a balanced, continuously evolving program.",
-      time: "45-60 mins",
-      days: "5 days/week",
-      achieve: "Total-body lean muscle, improved functional movement, and high-energy conditioning."
-    }
-  },
-  {
-    id: 3,
-    title: "The Foundational Flow",
-    description: "A continuous bodyweight-only program focused on sustainable movement, mobility, and high-intensity conditioning. Monthly phases keep progression engaging while building a lean, athletic foundation.",
-    goal: "Essentials",
-    equipment: "Zero Equipment",
-    daysPerWeek: "2x",
-    image: programHome,
-    details: {
-      who: "Anyone who values the freedom of training anywhere—at home, in the park, or on the road—with zero gear.",
-      time: "30-45 mins",
-      days: "3-5 days/week",
-      achieve: "Lean athletic build, enhanced mobility, and the ability to train anywhere with intensity."
-    }
-  }
-];
-
-const GOALS = ["All", "Strength", "Body Recomposition", "Essentials"];
-const EQUIPMENT = ["All", "Full Gym", "Essential Gear", "Zero Equipment"];
-const FREQUENCY = ["All", "2x", "3x", "4x"];
-
 export default function Programs() {
-  const [activeGoal, setActiveGoal] = useState("All");
-  const [activeEquipment, setActiveEquipment] = useState("All");
-  const [activeFrequency, setActiveFrequency] = useState("All");
-  const [location] = useLocation();
-
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [location]);
-
   return (
     <div className="min-h-screen bg-primary text-white relative overflow-hidden">
       {/* Background Logo watermark */}
