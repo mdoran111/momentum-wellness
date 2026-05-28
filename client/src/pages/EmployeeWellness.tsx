@@ -111,7 +111,7 @@ function FaqItem({ faq, index }: { faq: typeof FAQ_ITEMS[0]; index: number }) {
         transition={{ duration: 0.3, ease: "easeInOut" }}
         className="overflow-hidden"
       >
-        <div className="px-6 pb-6 text-white/50 font-light leading-relaxed">
+        <div className="px-6 pb-6 text-white font-light leading-relaxed">
           {faq.a}
         </div>
       </motion.div>
@@ -176,7 +176,7 @@ export default function EmployeeWellness() {
                 className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                <span className="text-sm font-semibold tracking-wider uppercase text-white/80">
+                <span className="text-sm font-semibold tracking-wider uppercase text-white">
                   Corporate Wellness Solutions
                 </span>
               </motion.div>
@@ -503,7 +503,7 @@ export default function EmployeeWellness() {
               className="text-center mt-20"
             >
               <div className="inline-block px-8 py-4 rounded-full border border-white/10 bg-white/[0.02]">
-                <p className="text-white/40 font-light italic">
+                <p className="text-white font-light italic">
                   This is how wellness becomes part of company culture — not just another program that gets forgotten.
                 </p>
               </div>
@@ -538,7 +538,7 @@ export default function EmployeeWellness() {
               A Wellness Platform{" "}
               <span className="italic">Employees</span> Can Actually Use
             </h2>
-            <p className="text-xl text-white/40 max-w-3xl mx-auto font-light leading-relaxed">
+            <p className="text-xl text-white max-w-3xl mx-auto font-light leading-relaxed">
               Momentum Wellness is powered through a rebranded wellness app that gives employees one place to stay organized, engaged, and accountable.
             </p>
           </motion.div>
@@ -573,7 +573,7 @@ export default function EmployeeWellness() {
                     <div className="w-8 h-8 rounded-lg bg-emerald-500/10 flex items-center justify-center shrink-0">
                       <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                     </div>
-                    <span className="text-white/60 font-light">{feature}</span>
+                    <span className="text-white font-light">{feature}</span>
                   </motion.div>
                 ))}
               </div>
@@ -596,7 +596,7 @@ export default function EmployeeWellness() {
                 </div>
                 {/* Caption */}
                 <div className="mt-4 text-center">
-                  <span className="text-sm text-white/30 font-light">Stay on top of daily health and fitness</span>
+                  <span className="text-sm text-white font-light">Stay on top of daily health and fitness</span>
                 </div>
               </div>
               {/* Glow */}
@@ -627,7 +627,7 @@ export default function EmployeeWellness() {
                     </div>
                   </div>
                 </div>
-                <p className="text-white/40 font-light text-sm">{item.caption}</p>
+                <p className="text-white font-light text-sm">{item.caption}</p>
               </motion.div>
             ))}
           </div>
@@ -706,7 +706,7 @@ export default function EmployeeWellness() {
                     </div>
 
                     <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{step.title}</h3>
-                    <p className="text-white/40 font-light leading-relaxed text-sm">{step.desc}</p>
+                    <p className="text-white font-light leading-relaxed text-sm">{step.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -743,11 +743,11 @@ export default function EmployeeWellness() {
                 What Companies{" "}
                 <span className="italic">Can Expect</span>
               </h2>
-              <p className="text-xl text-white/40 font-light leading-relaxed mb-8">
+              <p className="text-xl text-white font-light leading-relaxed mb-8">
                 Our goal is to help companies create healthier, more engaged teams through better structure and stronger daily behaviors.
               </p>
               <div className="p-6 rounded-2xl border border-white/10 bg-white/[0.02]">
-                <p className="text-white/30 font-light italic leading-relaxed">
+                <p className="text-white font-light italic leading-relaxed">
                   Results vary based on participation, consistency, and company commitment. We provide structure and support — the outcomes follow from how your team uses the program.
                 </p>
               </div>
@@ -782,7 +782,7 @@ export default function EmployeeWellness() {
                   <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-emerald-500/15 to-teal-500/15 flex items-center justify-center shrink-0 mt-0.5">
                     <Sparkles className="w-4 h-4 text-emerald-400" />
                   </div>
-                  <span className="text-white/60 font-light leading-relaxed">{outcome}</span>
+                  <span className="text-white font-light leading-relaxed">{outcome}</span>
                 </motion.div>
               ))}
             </motion.div>
@@ -806,7 +806,7 @@ export default function EmployeeWellness() {
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
               Built For <span className="italic">Teams</span>
             </h2>
-            <p className="text-xl text-white/40 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-xl text-white max-w-2xl mx-auto font-light leading-relaxed">
               Everything your employees need to stay consistent, connected, and progressing.
             </p>
           </motion.div>
@@ -827,12 +827,12 @@ export default function EmployeeWellness() {
                   transition={{ delay: index * 0.1 }}
                   className="flex gap-6 group"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center shrink-0 text-white/60 group-hover:text-white group-hover:from-white/20 group-hover:to-white/10 transition-all duration-500">
+                  <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-white/10 to-white/5 flex items-center justify-center shrink-0 text-white group-hover:text-white group-hover:from-white/20 group-hover:to-white/10 transition-all duration-500">
                     <feature.icon className="w-7 h-7" />
                   </div>
                   <div>
                     <h3 className="text-xl font-bold text-white mb-2 tracking-tight">{feature.title}</h3>
-                    <p className="text-white/40 font-light leading-relaxed">{feature.desc}</p>
+                    <p className="text-white font-light leading-relaxed">{feature.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -904,7 +904,7 @@ export default function EmployeeWellness() {
                   <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0 mt-0.5">
                     <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                   </div>
-                  <span className="text-lg text-white/70 font-light">{item}</span>
+                  <span className="text-lg text-white font-light">{item}</span>
                 </motion.div>
               ))}
             </div>
@@ -930,7 +930,7 @@ export default function EmployeeWellness() {
               Book a Corporate Wellness{" "}
               <span className="italic">Consultation</span>
             </h2>
-            <p className="text-xl text-white/40 max-w-2xl mx-auto font-light leading-relaxed">
+            <p className="text-xl text-white max-w-2xl mx-auto font-light leading-relaxed">
               Tell us a little about your company, and we’ll follow up to discuss your goals, employee count, and how Momentum Wellness can support your team.
             </p>
           </motion.div>
