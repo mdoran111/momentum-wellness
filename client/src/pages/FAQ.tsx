@@ -40,17 +40,17 @@ export default function FAQ() {
   }, [location]);
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <div className="flex flex-col min-h-screen bg-[#0f172a]">
       {/* Hero Section */}
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary text-white">
         {/* Background Logo watermark */}
         <div className="absolute top-40 left-0 right-0 h-[500px] z-0 flex items-center justify-center pointer-events-none overflow-visible">
-          <motion.img 
+          <motion.img
             initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
             animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-            src={logo} 
-            alt="" 
-            className="w-[120%] max-w-none grayscale invert" 
+            src={logo}
+            alt=""
+            className="w-[120%] max-w-none grayscale invert"
           />
         </div>
 
@@ -65,17 +65,17 @@ export default function FAQ() {
         </div>
       </section>
 
-      <div className="bg-white">
+      <div className="bg-[#0f172a]">
         <div className="container relative z-10 mx-auto px-4 max-w-3xl py-24">
 
-        <div className="bg-gray-50 rounded-[40px] p-6 md:p-12 border border-gray-200 shadow-md">
+        <div className="bg-white/[0.02] rounded-[40px] p-6 md:p-12 border border-white/5 shadow-md">
           <Accordion type="single" collapsible className="w-full">
             {FAQS.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-gray-200 last:border-0">
-                <AccordionTrigger className="text-left font-bold text-lg hover:text-primary py-8 text-primary hover:no-underline group italic tracking-tight">
+              <AccordionItem key={index} value={`item-${index}`} className="border-b border-white/5 last:border-0">
+                <AccordionTrigger className="text-left font-bold text-lg hover:text-white py-8 text-white hover:no-underline group italic tracking-tight">
                   <span className="group-hover:translate-x-1 transition-transform duration-300 uppercase">{faq.question}</span>
                 </AccordionTrigger>
-                <AccordionContent className="text-base text-gray-700 pb-8 leading-relaxed font-light">
+                <AccordionContent className="text-base text-white/70 pb-8 leading-relaxed font-light">
                   {faq.answer}
                 </AccordionContent>
               </AccordionItem>
@@ -83,9 +83,9 @@ export default function FAQ() {
           </Accordion>
         </div>
 
-        <div className="mt-16 text-center bg-gray-50 p-12 rounded-[40px] border border-gray-200 shadow-md">
-          <h2 className="text-2xl font-bold font-heading mb-4 text-primary uppercase tracking-wider italic tracking-tight">Still have questions?</h2>
-          <p className="text-gray-600 mb-8 font-light">We're here to ensure your transition to professional training is seamless.</p>
+        <div className="mt-16 text-center bg-white/[0.02] p-12 rounded-[40px] border border-white/5 shadow-md">
+          <h2 className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-wider italic tracking-tight">Still have questions?</h2>
+          <p className="text-white/60 mb-8 font-light">We're here to ensure your transition to professional training is seamless.</p>
           <a href="mailto:info@momentumwellness.health">
             <Button className="rounded-full px-10 h-14 bg-[#e5e7eb] text-primary hover:bg-white transition-all font-bold border-none shadow-xl">
               Contact Support

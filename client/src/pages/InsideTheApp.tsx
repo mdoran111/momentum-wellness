@@ -81,16 +81,16 @@ export default function InsideTheApp() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-white text-primary">
+    <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
       {/* Hero Section */}
       <section className="relative pt-24 pb-32 flex items-center justify-center overflow-hidden min-h-[80vh] bg-primary text-white">
         <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none overflow-hidden">
-          <motion.img 
+          <motion.img
             initial={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
             animate={{ opacity: 0.2, scale: 1, filter: "brightness(1)" }}
-            src={logo} 
-            alt="" 
-            className="w-[120%] max-w-none grayscale invert" 
+            src={logo}
+            alt=""
+            className="w-[120%] max-w-none grayscale invert"
           />
         </div>
 
@@ -100,7 +100,7 @@ export default function InsideTheApp() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm font-medium tracking-wider uppercase">
+            <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm font-medium tracking-wider uppercase text-white/90">
               The App Experience
             </div>
             <h1 className="text-5xl md:text-6xl font-bold font-heading text-white mb-8 italic tracking-tight">Inside The App</h1>
@@ -117,7 +117,7 @@ export default function InsideTheApp() {
       </section>
 
       {/* Features Grid */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#0f172a]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -125,8 +125,8 @@ export default function InsideTheApp() {
             viewport={{ once: true }}
             className="text-center mb-16 max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6 italic tracking-tight">What You Get Inside</h2>
-            <p className="text-lg text-primary/60 font-light leading-relaxed">Every feature is built to remove friction and maximize results. From planning to execution to progress tracking.</p>
+            <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6 italic tracking-tight">What You Get Inside</h2>
+            <p className="text-lg text-white/60 font-light leading-relaxed">Every feature is built to remove friction and maximize results. From planning to execution to progress tracking.</p>
           </motion.div>
 
           <motion.div
@@ -143,13 +143,13 @@ export default function InsideTheApp() {
                   key={i}
                   variants={itemVariants}
                   whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                  className="p-8 rounded-[32px] bg-primary/[0.03] border border-primary/10 hover:bg-primary/5 hover:border-primary/20 transition-all duration-500 group"
+                  className="p-8 rounded-[32px] bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 group"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                    <Icon className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/15 transition-all duration-500">
+                    <Icon className="w-7 h-7 text-white group-hover:text-white transition-colors" />
                   </div>
-                  <h3 className="text-xl font-bold font-heading text-primary mb-3 italic tracking-tight">{feature.title}</h3>
-                  <p className="text-primary/60 text-sm leading-relaxed font-light">{feature.description}</p>
+                  <h3 className="text-xl font-bold font-heading text-white mb-3 italic tracking-tight">{feature.title}</h3>
+                  <p className="text-white/60 text-sm leading-relaxed font-light">{feature.description}</p>
                 </motion.div>
               );
             })}
@@ -158,7 +158,7 @@ export default function InsideTheApp() {
       </section>
 
       {/* App Experience Showcase */}
-      <section className="py-24 bg-primary/5">
+      <section className="py-24 bg-[#0a0f1d]">
         <div className="container mx-auto px-4">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -166,8 +166,8 @@ export default function InsideTheApp() {
             viewport={{ once: true }}
             className="text-center mb-16 max-w-3xl mx-auto"
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6 italic tracking-tight">Your Training Workflow</h2>
-            <p className="text-lg text-primary/60 font-light leading-relaxed">From phase selection to daily execution, every step is intuitive and designed for the gym floor.</p>
+            <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6 italic tracking-tight">Your Training Workflow</h2>
+            <p className="text-lg text-white/60 font-light leading-relaxed">From phase selection to daily execution, every step is intuitive and designed for the gym floor.</p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
@@ -180,18 +180,18 @@ export default function InsideTheApp() {
                 transition={{ delay: i * 0.2 }}
                 className="group"
               >
-                <div className="mb-6 rounded-[32px] overflow-hidden bg-gradient-to-br from-primary to-primary/80 p-1 shadow-lg hover:shadow-2xl transition-all duration-500">
-                  <div className="bg-white/95 rounded-[28px] p-10 min-h-[400px] flex flex-col items-center justify-center text-center">
-                    <div className="w-16 h-16 rounded-2xl bg-primary/10 flex items-center justify-center mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-primary/20"></div>
+                <div className="mb-6 rounded-[32px] overflow-hidden bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-1 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/5">
+                  <div className="bg-[#0a0f1d]/90 rounded-[28px] p-10 min-h-[400px] flex flex-col items-center justify-center text-center">
+                    <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-white/5"></div>
                     </div>
-                    <h3 className="text-2xl font-bold text-primary mb-4 italic font-heading">{screenshot.title}</h3>
-                    <p className="text-sm text-primary/70 leading-relaxed mb-6 font-light">{screenshot.description}</p>
+                    <h3 className="text-2xl font-bold text-white mb-4 italic font-heading">{screenshot.title}</h3>
+                    <p className="text-sm text-white/70 leading-relaxed mb-6 font-light">{screenshot.description}</p>
                     <div className="w-full space-y-2">
                       {screenshot.features.map((feature, j) => (
                         <div key={j} className="flex items-center gap-2 justify-center">
-                          <CheckCircle2 className="w-4 h-4 text-primary/60" />
-                          <span className="text-xs font-medium text-primary/70 uppercase tracking-wider">{feature}</span>
+                          <CheckCircle2 className="w-4 h-4 text-white/60" />
+                          <span className="text-xs font-medium text-white/70 uppercase tracking-wider">{feature}</span>
                         </div>
                       ))}
                     </div>
@@ -204,7 +204,7 @@ export default function InsideTheApp() {
       </section>
 
       {/* Core Features Section */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#0f172a]">
         <div className="container mx-auto px-4 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -212,8 +212,8 @@ export default function InsideTheApp() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-heading text-primary mb-6 italic tracking-tight">Built for Progressive Overload</h2>
-            <p className="text-lg text-primary/60 font-light leading-relaxed">Every week, every month builds on the last. Your progression is scientifically structured to maximize results.</p>
+            <h2 className="text-4xl md:text-5xl font-bold font-heading text-white mb-6 italic tracking-tight">Built for Progressive Overload</h2>
+            <p className="text-lg text-white/60 font-light leading-relaxed">Every week, every month builds on the last. Your progression is scientifically structured to maximize results.</p>
           </motion.div>
 
           <div className="space-y-8">
@@ -247,12 +247,12 @@ export default function InsideTheApp() {
                 transition={{ delay: i * 0.1 }}
                 className="flex gap-8 items-start group"
               >
-                <div className="w-20 h-20 rounded-2xl bg-primary/10 flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                  <span className="text-3xl font-bold font-heading text-primary group-hover:text-white transition-colors italic">{item.num}</span>
+                <div className="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/15 transition-all duration-500">
+                  <span className="text-3xl font-bold font-heading text-white group-hover:text-white transition-colors italic">{item.num}</span>
                 </div>
                 <div>
-                  <h3 className="text-2xl font-bold font-heading text-primary mb-3 italic tracking-tight">{item.title}</h3>
-                  <p className="text-primary/70 font-light leading-relaxed text-lg">{item.desc}</p>
+                  <h3 className="text-2xl font-bold font-heading text-white mb-3 italic tracking-tight">{item.title}</h3>
+                  <p className="text-white/70 font-light leading-relaxed text-lg">{item.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -261,14 +261,14 @@ export default function InsideTheApp() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 bg-primary text-white">
+      <section className="py-24 bg-[#0a0f1d] text-white">
         <div className="container mx-auto px-4 text-center max-w-3xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 italic tracking-tight">Ready to Experience It?</h2>
+            <h2 className="text-4xl md:text-5xl font-bold font-heading mb-6 italic tracking-tight text-white">Ready to Experience It?</h2>
             <p className="text-xl text-white/80 font-light leading-relaxed mb-10">
               Join thousands of members using Momentum Wellness to achieve their strongest physique and highest performance.
             </p>

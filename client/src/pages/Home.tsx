@@ -216,34 +216,34 @@ export default function Home() {
       </section>
 
       {/* B) Trust Bar */}
-      <section className="py-16 bg-white border-b border-primary/5">
+      <section className="py-16 bg-[#0a0f1d] border-b border-white/5">
         <div className="container mx-auto px-4">
-          <motion.div 
+          <motion.div
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
             variants={containerVariants}
-            className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 grayscale opacity-40"
+            className="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-24 opacity-60"
           >
             <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
-              <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
+              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all duration-500 text-white">
                 <Dumbbell className="w-5 h-5" />
               </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">Comprehensive Fitness App</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs text-white/70">Comprehensive Fitness App</span>
             </motion.div>
-            <div className="hidden md:block w-px h-8 bg-primary/10"></div>
+            <div className="hidden md:block w-px h-8 bg-white/10"></div>
             <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
-              <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
+              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all duration-500 text-white">
                 <LayoutGrid className="w-5 h-5" />
               </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">Fresh workouts monthly</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs text-white/70">Fresh workouts monthly</span>
             </motion.div>
-            <div className="hidden md:block w-px h-8 bg-primary/10"></div>
+            <div className="hidden md:block w-px h-8 bg-white/10"></div>
             <motion.div variants={itemVariants} className="flex items-center gap-3 group cursor-default">
-              <div className="w-10 h-10 rounded-xl bg-primary/5 flex items-center justify-center group-hover:bg-primary group-hover:text-white transition-all duration-500">
+              <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-white/10 transition-all duration-500 text-white">
                 <Calendar className="w-5 h-5" />
               </div>
-              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs">Progress tracking built in</span>
+              <span className="group-hover:translate-x-1 transition-transform duration-500 font-bold uppercase tracking-widest text-xs text-white/70">Progress tracking built in</span>
             </motion.div>
           </motion.div>
         </div>
@@ -314,43 +314,43 @@ export default function Home() {
       </section>
 
       {/* D) How it works */}
-      <section className="py-24 bg-secondary relative overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary/[0.03] via-transparent to-transparent"></div>
+      <section className="py-24 bg-[#0a0f1d] relative overflow-hidden">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-white/[0.03] via-transparent to-transparent"></div>
         <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-3xl md:text-5xl font-bold font-heading text-primary mb-4 italic tracking-tight uppercase">The Evolution</h2>
-            <p className="text-primary/60 max-w-xl mx-auto text-lg font-light leading-relaxed">Three steps to professional performance. One commitment to growth.</p>
+            <h2 className="text-3xl md:text-5xl font-bold font-heading text-white mb-4 italic tracking-tight uppercase">The Evolution</h2>
+            <p className="text-white/60 max-w-xl mx-auto text-lg font-light leading-relaxed">Three steps to professional performance. One commitment to growth.</p>
           </motion.div>
-          
+
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative max-w-5xl mx-auto">
-            <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-primary/5 z-0"></div>
-            
+            <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-white/5 z-0"></div>
+
             {[
               { step: "01", title: "Unlock Access", desc: "Secure your membership and get instant entry to our training platform." },
               { step: "02", title: "Select Program", desc: "Choose the continuous program that matches your equipment and goal." },
               { step: "03", title: "Build Momentum", desc: "Execute focused monthly phases and track your measurable evolution." }
             ].map((item, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.2 }}
                 className="relative z-10 flex flex-col items-center text-center group"
               >
-                <motion.div 
+                <motion.div
                   whileHover={{ scale: 1.1, rotate: 5 }}
-                  className="w-24 h-24 bg-white rounded-3xl flex items-center justify-center text-2xl font-bold font-heading text-primary shadow-[0_10px_30px_rgba(0,0,0,0.05)] mb-8 group-hover:shadow-xl transition-all duration-500 italic"
+                  className="w-24 h-24 bg-[#1e293b] rounded-3xl flex items-center justify-center text-2xl font-bold font-heading text-white shadow-[0_10px_30px_rgba(0,0,0,0.3)] mb-8 group-hover:shadow-white/10 transition-all duration-500 italic border border-white/5"
                 >
                   {item.step}
                 </motion.div>
-                <h3 className="text-xl font-bold mb-3 italic tracking-tight text-primary uppercase">{item.title}</h3>
-                <p className="text-primary/60 text-base font-light leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl font-bold mb-3 italic tracking-tight text-white uppercase">{item.title}</h3>
+                <p className="text-white/60 text-base font-light leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -450,42 +450,42 @@ export default function Home() {
       </section>
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-secondary">
+      <section className="py-24 bg-[#0a0f1d]">
         <div className="container mx-auto px-4 max-w-4xl text-center">
-          <Quote className="w-12 h-12 text-primary/20 mx-auto mb-8" />
-          <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-12 uppercase italic tracking-tight">Member Success Stories</h2>
-          
-          <div className="relative bg-white p-8 md:p-16 rounded-[40px] shadow-xl border border-primary/5 min-h-[400px] flex flex-col justify-center overflow-hidden">
+          <Quote className="w-12 h-12 text-white/20 mx-auto mb-8" />
+          <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-12 uppercase italic tracking-tight">Member Success Stories</h2>
+
+          <div className="relative bg-white/[0.03] p-8 md:p-16 rounded-[40px] border border-white/5 min-h-[400px] flex flex-col justify-center overflow-hidden backdrop-blur-sm">
             <div className={`transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-              <p className="text-xl md:text-2xl text-primary font-medium leading-relaxed italic mb-8">
+              <p className="text-xl md:text-2xl text-white font-medium leading-relaxed italic mb-8">
                 "{TESTIMONIALS[currentTestimonial].content}"
               </p>
               <div className="flex flex-col items-center">
-                <div className="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold mb-3 shadow-lg">
+                <div className="w-12 h-12 bg-white/10 text-white rounded-full flex items-center justify-center font-bold mb-3 shadow-lg border border-white/5">
                   {TESTIMONIALS[currentTestimonial].avatar}
                 </div>
-                <h4 className="font-bold text-lg text-primary">{TESTIMONIALS[currentTestimonial].name}</h4>
-                <p className="text-sm text-primary/60 font-medium">{TESTIMONIALS[currentTestimonial].role}</p>
+                <h4 className="font-bold text-lg text-white">{TESTIMONIALS[currentTestimonial].name}</h4>
+                <p className="text-sm text-white/60 font-medium">{TESTIMONIALS[currentTestimonial].role}</p>
               </div>
             </div>
 
             {/* Navigation Buttons */}
             <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-8">
-              <Button 
-                variant="outline" 
-                size="icon" 
+              <Button
+                variant="outline"
+                size="icon"
                 onClick={handlePrev}
-                className="rounded-full bg-white border-primary/10 shadow-lg hover:bg-primary hover:text-white transition-all h-12 w-12"
+                className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white transition-all h-12 w-12 text-white"
               >
                 <ChevronLeft className="w-6 h-6" />
               </Button>
             </div>
             <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-8">
-              <Button 
-                variant="outline" 
-                size="icon" 
+              <Button
+                variant="outline"
+                size="icon"
                 onClick={handleNext}
-                className="rounded-full bg-white border-primary/10 shadow-lg hover:bg-primary hover:text-white transition-all h-12 w-12"
+                className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white transition-all h-12 w-12 text-white"
               >
                 <ChevronRight className="w-6 h-6" />
               </Button>
@@ -498,7 +498,7 @@ export default function Home() {
                   key={i}
                   onClick={() => setCurrentTestimonial(i)}
                   className={`w-2 h-2 rounded-full transition-all duration-300 ${
-                    currentTestimonial === i ? "w-8 bg-primary" : "bg-primary/20"
+                    currentTestimonial === i ? "w-8 bg-white" : "bg-white/20"
                   }`}
                 />
               ))}
@@ -508,30 +508,30 @@ export default function Home() {
       </section>
 
       {/* G) FAQ Preview */}
-      <section className="py-24 bg-white">
+      <section className="py-24 bg-[#0f172a]">
         <div className="container mx-auto px-4 max-w-4xl">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold font-heading text-primary mb-4 uppercase italic tracking-tight">Frequently Asked Questions</h2>
+            <h2 className="text-3xl md:text-4xl font-bold font-heading text-white mb-4 uppercase italic tracking-tight">Frequently Asked Questions</h2>
           </div>
-          
+
           <div className="space-y-6">
-            <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
+            <div className="p-8 rounded-[32px] bg-white/[0.02] text-white border border-white/5 shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">What do I get with the membership?</h3>
               <p className="text-white/80 font-light leading-relaxed">You get unlimited, instant access to our entire library of continuous fitness programs. To ensure total focus and mastery, your training is delivered and followed phase by phase, one month at a time.</p>
             </div>
-            <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
+            <div className="p-8 rounded-[32px] bg-white/[0.02] text-white border border-white/5 shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">Can beginners do these programs?</h3>
               <p className="text-white/80 font-light leading-relaxed">Absolutely. We have specific programs designed for all levels, and all our programs include scalable options to match your current fitness level.</p>
             </div>
-            <div className="p-8 rounded-[32px] bg-primary text-white border-none shadow-lg">
+            <div className="p-8 rounded-[32px] bg-white/[0.02] text-white border border-white/5 shadow-lg">
               <h3 className="text-lg font-bold font-heading mb-2 uppercase italic tracking-tight">Which program should I choose?</h3>
               <p className="text-white/80 font-light leading-relaxed">The Apex Path is for those with full gym access seeking peak performance. The Versatile Edge uses dumbbells and bands for efficient full-body training. The Foundational Flow requires no equipment and focuses on movement mastery.</p>
             </div>
           </div>
-          
+
           <div className="mt-12 text-center">
             <Link href="/faq">
-              <span className="text-primary font-bold uppercase tracking-widest text-sm hover:underline inline-flex items-center cursor-pointer group">
+              <span className="text-white font-bold uppercase tracking-widest text-sm hover:underline inline-flex items-center cursor-pointer group">
                 Read all FAQs <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform" />
               </span>
             </Link>
