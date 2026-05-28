@@ -311,7 +311,7 @@ export default function EmployeeWellness() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+              <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
                 The Reality
               </span>
               <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
@@ -337,7 +337,7 @@ export default function EmployeeWellness() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:mt-12"
             >
-              <p className="text-sm font-bold tracking-[0.15em] uppercase text-white/30 mb-6">
+              <p className="text-sm font-bold tracking-[0.15em] uppercase text-white mb-6">
                 Many companies are dealing with the same challenges
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -432,7 +432,7 @@ export default function EmployeeWellness() {
             transition={{ duration: 0.8 }}
             className="max-w-6xl mx-auto"
           >
-            <p className="text-center text-sm font-bold tracking-[0.2em] uppercase text-white/20 mb-12">
+            <p className="text-center text-sm font-bold tracking-[0.2em] uppercase text-white mb-12">
               Our approach is rooted in five pillars
             </p>
 
@@ -531,7 +531,7 @@ export default function EmployeeWellness() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
               The Platform
             </span>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
@@ -645,7 +645,7 @@ export default function EmployeeWellness() {
             transition={{ duration: 0.8 }}
             className="text-center mb-20"
           >
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
               The Process
             </span>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
@@ -736,7 +736,7 @@ export default function EmployeeWellness() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+              <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
                 Outcomes
               </span>
               <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-8 leading-[1.05] tracking-tight">
@@ -800,7 +800,7 @@ export default function EmployeeWellness() {
             viewport={{ once: true, margin: "-100px" }}
             className="text-center mb-24"
           >
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
               The Platform
             </span>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
@@ -872,7 +872,7 @@ export default function EmployeeWellness() {
               viewport={{ once: true, margin: "-100px" }}
               className="text-center mb-20"
             >
-              <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+              <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
                 What You Get
               </span>
               <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
@@ -923,7 +923,7 @@ export default function EmployeeWellness() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
               Get In Touch
             </span>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
@@ -1015,7 +1015,7 @@ export default function EmployeeWellness() {
             transition={{ duration: 0.8 }}
             className="text-center mb-16"
           >
-            <span className="text-sm font-bold tracking-[0.2em] uppercase text-emerald-400 mb-4 block">
+            <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
               Common Questions
             </span>
             <h2 className="text-4xl md:text-6xl font-bold text-white mb-6 tracking-tight">
