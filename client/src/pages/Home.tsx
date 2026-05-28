@@ -399,8 +399,8 @@ export default function Home() {
                     transition={{ delay: index * 0.08 }}
                     className={`flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300 ${item.wide ? 'sm:col-span-2' : ''}`}
                   >
-                    <div className="w-10 h-10 rounded-xl bg-gradient-to-br from-red-500/10 to-orange-500/10 flex items-center justify-center shrink-0 text-red-400/80">
-                      <item.icon className="w-5 h-5" />
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/10 to-orange-500/10 flex items-center justify-center shrink-0 text-red-400/80">
+                      <item.icon className="w-6 h-6" />
                     </div>
                     <span className="text-white font-light leading-snug pt-1.5">{item.text}</span>
                   </motion.div>
@@ -499,12 +499,15 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="group p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
+                className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
               >
                 <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:text-emerald-300 transition-colors duration-300">
-                    <feature.icon className="w-6 h-6" />
+                  <div className="flex items-center justify-between mb-6">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
+                      <feature.icon className="w-6 h-6" />
+                    </div>
+                    <span className="text-3xl font-bold text-white/5 group-hover:text-emerald-400/10 transition-colors duration-500">{String(index + 1).padStart(2, '0')}</span>
                   </div>
                   <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{feature.title}</h3>
                   <p className="text-white font-light leading-relaxed text-sm">{feature.desc}</p>
@@ -729,13 +732,16 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                className="group p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 text-center"
+                className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 text-center"
               >
-                <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 mx-auto mb-6 group-hover:text-emerald-300 transition-colors duration-300">
-                  <persona.icon className="w-8 h-8" />
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="relative">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 mx-auto mb-6 group-hover:text-emerald-300 transition-colors duration-300">
+                    <persona.icon className="w-6 h-6" />
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{persona.title}</h3>
+                  <p className="text-white font-light leading-relaxed text-sm">{persona.desc}</p>
                 </div>
-                <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{persona.title}</h3>
-                <p className="text-white font-light leading-relaxed text-sm">{persona.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -862,7 +868,7 @@ export default function Home() {
               </h2>
             </motion.div>
 
-            <div className="relative bg-white/[0.02] p-8 md:p-16 rounded-[40px] border border-white/5 min-h-[400px] flex flex-col justify-center overflow-hidden backdrop-blur-sm">
+            <div className="relative bg-white/[0.02] p-8 md:p-16 rounded-3xl border border-white/5 min-h-[400px] flex flex-col justify-center overflow-hidden backdrop-blur-sm">
               <div className={`transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
                 <p className="text-xl md:text-2xl text-white font-medium leading-relaxed italic mb-8">
                   "{TESTIMONIALS[currentTestimonial].content}"

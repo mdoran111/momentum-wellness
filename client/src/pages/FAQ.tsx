@@ -128,7 +128,7 @@ export default function FAQ() {
       <div className="bg-[#0f172a]">
         <div className="container relative z-10 mx-auto px-4 max-w-3xl py-24">
 
-        <div className="bg-white/[0.02] rounded-[40px] p-6 md:p-12 border border-white/5 shadow-md">
+        <div className="bg-white/[0.02] rounded-3xl p-6 md:p-12 border border-white/5 shadow-md">
           <Accordion type="single" collapsible className="w-full">
             {FAQS.map((faq, index) => (
               <AccordionItem key={index} value={`item-${index}`} className="border-b border-white/5 last:border-0">

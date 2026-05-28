@@ -125,7 +125,7 @@ export default function Pricing() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="max-w-2xl mx-auto mb-32"
         >
-          <Card className="border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.3)] relative overflow-hidden bg-white/5 backdrop-blur-md rounded-[40px] group transition-all duration-500 hover:bg-white/[0.08]">
+          <Card className="border-white/20 shadow-[0_0_50px_rgba(0,0,0,0.3)] relative overflow-hidden bg-white/5 backdrop-blur-md rounded-3xl group transition-all duration-500 hover:bg-white/[0.08]">
             <div className="absolute top-0 inset-x-0 h-1.5 bg-gradient-to-r from-transparent via-white/40 to-transparent"></div>
             <CardHeader className="text-center pt-16 pb-10 border-b border-white/10">
               <CardTitle className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-widest italic">Complete Wellness Membership</CardTitle>
@@ -232,13 +232,16 @@ export default function Pricing() {
               key={i} 
               variants={itemVariants}
               whileHover={{ y: -10, transition: { duration: 0.4 } }}
-              className="text-center p-10 rounded-[40px] bg-white/5 border border-white/10 transition-all hover:bg-white/[0.08] backdrop-blur-sm group"
+              className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 text-center"
             >
-              <div className="w-14 h-14 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-8 text-white group-hover:scale-110 group-hover:bg-white group-hover:text-primary transition-all duration-500">
-                <pillar.icon className="w-7 h-7" />
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="relative">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center mx-auto mb-6 text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
+                  <pillar.icon className="w-6 h-6" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{pillar.title}</h3>
+                <p className="text-white/60 text-sm leading-relaxed font-light">{pillar.desc}</p>
               </div>
-              <h3 className="text-lg font-bold text-white mb-4 uppercase tracking-widest italic">{pillar.title}</h3>
-              <p className="text-white/60 text-sm leading-relaxed font-light">{pillar.desc}</p>
             </motion.div>
           ))}
         </motion.div>

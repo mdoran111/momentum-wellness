@@ -752,7 +752,7 @@ export default function EmployeeWellness() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
-            className="bg-white/[0.02] rounded-3xl border border-white/10 p-8 md:p-12"
+            className="bg-white/[0.02] rounded-3xl border border-white/5 p-8 md:p-12"
           >
             <form className="space-y-6">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

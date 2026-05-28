@@ -202,12 +202,12 @@ export default function InsideTheApp() {
                   key={i}
                   variants={itemVariants}
                   whileHover={{ y: -8, transition: { duration: 0.3 } }}
-                  className="p-8 rounded-[32px] bg-white/[0.02] border border-white/5 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 group"
+                  className="p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 group"
                 >
-                  <div className="w-14 h-14 rounded-2xl bg-white/10 flex items-center justify-center mb-6 group-hover:bg-white/15 transition-all duration-500">
-                    <Icon className="w-7 h-7 text-white group-hover:text-white transition-colors" />
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center mb-6 text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
+                    <Icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold font-heading text-white mb-3 italic tracking-tight">{feature.title}</h3>
+                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{feature.title}</h3>
                   <p className="text-white/60 text-sm leading-relaxed font-light">{feature.description}</p>
                 </motion.div>
               );
@@ -239,7 +239,7 @@ export default function InsideTheApp() {
                 transition={{ delay: i * 0.2 }}
                 className="group"
               >
-                <div className="mb-6 rounded-[32px] overflow-hidden bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-1 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/5">
+                <div className="mb-6 rounded-3xl overflow-hidden bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-1 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/5">
                   <div className="bg-[#0a0f1d]/90 rounded-[28px] p-10 min-h-[400px] flex flex-col items-center justify-center text-center">
                     <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
                       <div className="w-12 h-12 rounded-xl bg-white/5"></div>
@@ -306,7 +306,7 @@ export default function InsideTheApp() {
                 transition={{ delay: i * 0.1 }}
                 className="flex gap-8 items-start group"
               >
-                <div className="w-20 h-20 rounded-2xl bg-white/10 flex items-center justify-center shrink-0 group-hover:bg-white/15 transition-all duration-500">
+                <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center shrink-0 text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
                   <span className="text-3xl font-bold font-heading text-white group-hover:text-white transition-colors italic">{item.num}</span>
                 </div>
                 <div>

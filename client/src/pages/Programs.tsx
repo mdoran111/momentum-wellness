@@ -127,10 +127,10 @@ export default function Programs() {
                     initial={{ opacity: 0, x: -20 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 0.3 + index * 0.08 }}
-                    className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300"
+                    className="flex items-center gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300"
                   >
-                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
-                      <CheckCircle2 className="w-4 h-4 text-white" />
+                    <div className="w-6 h-6 rounded-full bg-emerald-500/20 flex items-center justify-center shrink-0">
+                      <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                     </div>
                     <span className="text-white font-light">{feature}</span>
                   </motion.div>
@@ -146,8 +146,8 @@ export default function Programs() {
               className="relative"
             >
               <div className="relative mx-auto w-full max-w-[280px]">
-                <div className="rounded-[32px] md:rounded-[40px] bg-[#1a1a2e] p-2 md:p-3 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
-                  <div className="rounded-[24px] md:rounded-[32px] overflow-hidden bg-black relative">
+                <div className="rounded-3xl bg-[#1a1a2e] p-2 md:p-3 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
+                  <div className="rounded-2xl overflow-hidden bg-black relative">
                     <img src={mwDashboard} alt="App Dashboard" className="w-full" />
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 md:w-24 h-5 md:h-6 bg-[#1a1a2e] rounded-b-xl md:rounded-b-2xl"></div>
                   </div>

@@ -235,16 +235,19 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group bg-white/[0.02] backdrop-blur-sm border border-white/5 rounded-[24px] p-6 hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500"
+                  className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
                 >
-                  <div className="flex items-center justify-between mb-5">
-                    <span className="text-[10px] font-bold tracking-[0.2em] text-white/20 uppercase">{pillar.num}</span>
-                    <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-white group-hover:bg-white/10 transition-all duration-500">
-                      <pillar.icon className="w-5 h-5" />
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="relative">
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
+                        <pillar.icon className="w-6 h-6" />
+                      </div>
+                      <span className="text-3xl font-bold text-white/5 group-hover:text-emerald-400/10 transition-colors duration-500">{pillar.num}</span>
                     </div>
+                    <h3 className="text-2xl font-bold text-white mb-3 tracking-tight">{pillar.title}</h3>
+                    <p className="text-white font-light leading-relaxed text-sm">{pillar.desc}</p>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{pillar.title}</h3>
-                  <p className="text-sm text-white font-light leading-relaxed">{pillar.desc}</p>
                 </motion.div>
               ))}
             </div>
@@ -264,7 +267,7 @@ export default function About() {
               transition={{ duration: 0.8 }}
               className="relative group flex items-center justify-center"
             >
-              <div className="aspect-square w-full max-w-md rounded-[40px] overflow-hidden shadow-2xl bg-[#1e293b] flex items-center justify-center p-0 transition-all duration-700 hover:shadow-emerald-500/10 border border-white/5 relative">
+              <div className="aspect-square w-full max-w-md rounded-3xl overflow-hidden shadow-2xl bg-[#1e293b] flex items-center justify-center p-0 transition-all duration-700 hover:shadow-emerald-500/10 border border-white/5 relative">
                 <div className="relative z-10 w-full h-full">
                   <img src={logo} alt="Momentum Wellness Logo" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-110" />
                 </div>
@@ -289,23 +292,23 @@ export default function About() {
                 </p>
               </motion.div>
 
-              <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6">
-                <div className="flex gap-5 group">
-                  <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-all duration-500">
-                    <ShieldCheck className="w-7 h-7 text-white group-hover:text-white transition-colors" />
+              <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-5 pt-6">
+                <div className="flex gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300 group">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center shrink-0 text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
+                    <ShieldCheck className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="font-bold text-white text-lg">Complete Fitness</h4>
-                    <p className="text-white/80 font-light">Strength, cardio, habits, and progress in one app.</p>
+                    <p className="text-white/70 font-light text-sm">Strength, cardio, habits, and progress in one app.</p>
                   </div>
                 </div>
-                <div className="flex gap-5 group">
-                  <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-all duration-500">
-                    <Target className="w-7 h-7 text-white group-hover:text-white transition-colors" />
+                <div className="flex gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300 group">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center shrink-0 text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
+                    <Target className="w-6 h-6" />
                   </div>
                   <div>
                     <h4 className="font-bold text-white text-lg">Monthly Phase Unlocks</h4>
-                    <p className="text-white/80 font-light">New phases unlock monthly for continuous progression.</p>
+                    <p className="text-white/70 font-light text-sm">New phases unlock monthly for continuous progression.</p>
                   </div>
                 </div>
               </motion.div>
@@ -376,22 +379,22 @@ export default function About() {
                 className="flex flex-col items-center flex-1 min-w-[140px]"
               >
                 <motion.button
-                  whileHover={{ scale: 1.1 }}
+                  whileHover={{ scale: 1.05 }}
                   onClick={() => setSelectedPillar(selectedPillar === i ? null : i)}
-                  className={`relative flex-1 w-full rounded-[24px] border transition-all duration-500 flex flex-col items-center justify-center py-8 px-6 text-center cursor-pointer ${
-                    selectedPillar === i 
-                      ? "bg-white/20 border-white/50 shadow-lg" 
-                      : "bg-gradient-to-br from-white/15 to-white/5 border-white/20 hover:border-white/40 hover:bg-white/[0.12]"
+                  className={`relative flex-1 w-full rounded-2xl border transition-all duration-500 flex flex-col items-center justify-center py-8 px-6 text-center cursor-pointer ${
+                    selectedPillar === i
+                      ? "bg-white/[0.04] border-emerald-500/30"
+                      : "bg-white/[0.02] border-white/5 hover:border-white/10 hover:bg-white/[0.04]"
                   }`}
                 >
-                  <div className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 transition-all duration-500 ${
+                  <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-4 transition-all duration-500 ${
                     selectedPillar === i
-                      ? "bg-gradient-to-br from-white/35 to-white/15"
-                      : "bg-gradient-to-br from-white/25 to-white/10 group-hover:from-white/35 group-hover:to-white/15"
+                      ? "bg-gradient-to-br from-emerald-500/20 to-teal-500/20"
+                      : "bg-gradient-to-br from-emerald-500/10 to-teal-500/10"
                   }`}>
-                    <value.icon className="w-8 h-8 text-white" />
+                    <value.icon className={`w-6 h-6 transition-colors duration-500 ${selectedPillar === i ? "text-emerald-400" : "text-emerald-400/60"}`} />
                   </div>
-                  <h3 className="text-white font-heading font-bold text-xl italic tracking-tight">{value.title}</h3>
+                  <h3 className="text-white font-bold text-lg tracking-tight">{value.title}</h3>
                 </motion.button>
 
                 <motion.div
@@ -400,8 +403,8 @@ export default function About() {
                   transition={{ duration: 0.3 }}
                   className="w-full overflow-hidden"
                 >
-                  <div className="mt-6 p-6 bg-white/10 backdrop-blur-md rounded-[20px] border border-white/20 text-center">
-                    <p className="text-white text-sm font-light leading-relaxed">{value.desc}</p>
+                  <div className="mt-4 p-5 bg-white/[0.02] border border-white/5 rounded-2xl text-center">
+                    <p className="text-white/70 text-sm font-light leading-relaxed">{value.desc}</p>
                   </div>
                 </motion.div>
               </motion.div>
