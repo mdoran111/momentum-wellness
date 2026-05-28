@@ -8,6 +8,7 @@ import programHome from '../assets/images/program-home-outdoor.jpg';
 import programMinimal from '../assets/images/program-minimal.jpg';
 import programGym from '../assets/images/program-gym.jpg';
 import logo from '../assets/images/logo.png';
+import mwDashboard from '@assets/MW2_app_dashboard_1779922530403.png';
 import { Link } from "wouter";
 
 const TESTIMONIALS = [
@@ -356,85 +357,78 @@ export default function Home() {
         </div>
       </section>
 
-      {/* E) Featured programs */}
+      {/* E) The Platform */}
       <section className="py-24 bg-primary text-white relative overflow-hidden">
         <div className="absolute top-0 right-0 w-1/3 h-1/3 bg-white/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/2"></div>
         <div className="container relative z-10 mx-auto px-4">
-          <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+          <div className="text-center mb-16">
             <motion.div
-              initial={{ opacity: 0, x: -20 }}
-              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="max-w-2xl text-center md:text-left"
             >
-              <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic uppercase">Select Your Path</h2>
-              <p className="text-white/60 text-lg font-light leading-relaxed">Structured cycles designed for measurable results. Select the roadmap that matches your environment.</p>
-            </motion.div>
-            <motion.div
-              initial={{ opacity: 0, x: 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.6 }}
-            >
-              <Link href="/programs" className="hidden md:flex items-center text-white font-bold hover:text-white/70 transition-colors uppercase tracking-widest text-sm group">
-                  View All Programs <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-2 transition-transform" />
-              </Link>
+              <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4 text-white tracking-tight italic uppercase">The Platform</h2>
+              <p className="text-white/60 text-lg font-light leading-relaxed max-w-2xl mx-auto">Momentum Wellness is powered through a modern wellness app that gives you one place to stay organized, engaged, and accountable.</p>
             </motion.div>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
-            {[
-              { image: programGym, goal: "Performance", eq: "Full Gym", title: "The Apex Path", desc: "A comprehensive continuous program designed to transform your physical capability using a full suite of strength equipment." },
-              { image: programMinimal, goal: "Efficiency", eq: "Essential Gear", title: "The Versatile Edge", desc: "Unlock total-body vitality with a continuous program centered around dumbbells, bands, and kettlebells." },
-              { image: programHome, goal: "Freedom", eq: "Zero Equipment", title: "The Foundational Flow", desc: "Reconnect with your body through a continuous bodyweight program focused on movement and mobility." }
-            ].map((prog, i) => (
-              <motion.div
-                key={i}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: i * 0.1 }}
-                whileHover={{ y: -12, transition: { duration: 0.4 } }}
-              >
-                <Card className="overflow-hidden border-white/5 bg-white/[0.03] backdrop-blur-md flex flex-col hover:bg-white/[0.08] hover:shadow-[0_20px_50px_rgba(0,0,0,0.5)] transition-all duration-500 rounded-[32px] group h-full relative">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -translate-y-1/2 translate-x-1/2 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-                  <div className="h-64 overflow-hidden relative">
-                    <img src={prog.image} alt={prog.title} className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110" />
-                    <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-primary/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                    <div className="absolute top-6 left-6 flex gap-2">
-                      <span className="text-[10px] font-bold uppercase tracking-[0.2em] text-primary bg-white px-3 py-1.5 rounded-full shadow-xl">{prog.goal}</span>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center max-w-6xl mx-auto">
+            {/* Left - Features */}
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+            >
+              <div className="space-y-4">
+                {[
+                  "Follow workouts at home, at the gym, or on the go",
+                  "Track key health and fitness habits",
+                  "Monitor progress and performance over time",
+                  "Stay aware of nutrition goals",
+                  "Build routines with daily structure",
+                  "Stay connected through community-based support",
+                  "Keep wellness visible, practical, and accessible"
+                ].map((feature, index) => (
+                  <motion.div
+                    key={index}
+                    initial={{ opacity: 0, x: -20 }}
+                    whileInView={{ opacity: 1, x: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.08 }}
+                    className="flex items-center gap-4 p-4 rounded-xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300"
+                  >
+                    <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center shrink-0">
+                      <CheckCircle2 className="w-4 h-4 text-white" />
                     </div>
-                  </div>
-                  <CardHeader className="flex-1 p-8 relative">
-                    <div className="absolute top-0 left-8 w-12 h-px bg-white/20 transform -translate-y-px group-hover:w-20 group-hover:bg-white/40 transition-all duration-500"></div>
-                    <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-white/60 mb-3 group-hover:text-white/80 transition-colors">{prog.eq}</p>
-                    <h3 className="text-2xl font-bold font-heading text-white mb-4 italic tracking-tight">{prog.title}</h3>
-                    <CardDescription className="text-white/60 text-base leading-relaxed font-light line-clamp-3 group-hover:text-white/80 transition-colors">{prog.desc}</CardDescription>
-                  </CardHeader>
-                  <CardFooter className="p-8 pt-0 mt-auto">
-                    <Link href="/programs" className="text-xs font-bold text-white uppercase tracking-widest flex items-center w-full justify-between group/link">
-                        <span className="relative overflow-hidden py-1">
-                          Explore Cycle
-                          <span className="absolute bottom-0 left-0 w-0 h-px bg-white transition-all duration-300 group-hover/link:w-full"></span>
-                        </span>
-                        <motion.div
-                          animate={{ x: [0, 5, 0] }}
-                          transition={{ duration: 1.5, repeat: Infinity, ease: "easeInOut" }}
-                        >
-                          <ArrowRight className="w-4 h-4" />
-                        </motion.div>
-                    </Link>
-                  </CardFooter>
-                </Card>
-              </motion.div>
-            ))}
-          </div>
+                    <span className="text-white font-light">{feature}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </motion.div>
 
-          <div className="mt-12 text-center md:hidden">
-            <Link href="/programs">
-              <Button variant="outline" className="w-full text-white border-white hover:bg-white/10">View All Programs</Button>
-            </Link>
+            {/* Right - Phone Preview */}
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="relative"
+            >
+              <div className="relative mx-auto w-full max-w-[280px]">
+                <div className="rounded-[32px] md:rounded-[40px] bg-[#1a1a2e] p-2 md:p-3 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
+                  <div className="rounded-[24px] md:rounded-[32px] overflow-hidden bg-black relative">
+                    <img src={mwDashboard} alt="App Dashboard" className="w-full" />
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 md:w-24 h-5 md:h-6 bg-[#1a1a2e] rounded-b-xl md:rounded-b-2xl"></div>
+                  </div>
+                </div>
+                <div className="mt-4 text-center">
+                  <span className="text-sm text-white/60 font-light">Stay on top of daily health and fitness</span>
+                </div>
+              </div>
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[350px] h-[350px] bg-white/5 rounded-full blur-[100px] -z-10"></div>
+            </motion.div>
           </div>
         </div>
       </section>
