@@ -86,7 +86,7 @@ export default function About() {
 
       {/* Built Around People - from Employee Wellness */}
       <section className="py-20 md:py-28 lg:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/40 to-[#0f172a]"></div>
+        <div className="absolute inset-0 bg-[#0a0f1d]"></div>
         <div
           className="absolute inset-0"
           style={{
@@ -202,34 +202,34 @@ export default function About() {
       </section>
 
       {/* Philosophy Section with Image */}
-      <section className="py-32 bg-white relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-primary/5 to-transparent"></div>
+      <section className="py-32 bg-[#0a0f1d] relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, scale: 0.95 }}
               whileInView={{ opacity: 1, scale: 1 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
               className="relative group flex items-center justify-center"
             >
-              <div className="aspect-square w-full max-w-md rounded-[40px] overflow-hidden shadow-2xl bg-secondary flex items-center justify-center p-0 transition-all duration-700 hover:shadow-primary/20 border border-primary/5 relative">
+              <div className="aspect-square w-full max-w-md rounded-[40px] overflow-hidden shadow-2xl bg-[#1e293b] flex items-center justify-center p-0 transition-all duration-700 hover:shadow-emerald-500/10 border border-white/5 relative">
                 <div className="relative z-10 w-full h-full">
                   <img src={logo} alt="Momentum Wellness Logo" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-110" />
                 </div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-secondary/40 via-transparent to-white/10 opacity-100 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-[#1e293b]/40 via-transparent to-white/5 opacity-100 pointer-events-none"></div>
               </div>
             </motion.div>
-            
-            <motion.div 
+
+            <motion.div
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true }}
               variants={containerVariants}
               className="space-y-10"
             >
-              <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold font-heading text-primary leading-tight italic tracking-tight">Continuous Progression, Monthly Unlocks</motion.h2>
-              <motion.div variants={itemVariants} className="space-y-6 text-lg text-primary/80 leading-relaxed font-light">
+              <motion.h2 variants={itemVariants} className="text-4xl md:text-5xl font-bold font-heading text-white leading-tight italic tracking-tight">Continuous Progression, Monthly Unlocks</motion.h2>
+              <motion.div variants={itemVariants} className="space-y-6 text-lg text-white/80 leading-relaxed font-light">
                 <p>
                   Real fitness is a continuous journey, not a fixed timeline. Our app delivers strength training, cardio, daily wellness habits, and progress tracking in a continuous program that evolves with you.
                 </p>
@@ -237,24 +237,24 @@ export default function About() {
                   Each month brings new phases that unlock based on your progress. This keeps your training fresh and engaging while building sustainable fitness practices that compound over time.
                 </p>
               </motion.div>
-              
+
               <motion.div variants={itemVariants} className="grid grid-cols-1 sm:grid-cols-2 gap-8 pt-6">
                 <div className="flex gap-5 group">
-                  <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                    <ShieldCheck className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-all duration-500">
+                    <ShieldCheck className="w-7 h-7 text-white group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary text-lg">Complete Fitness</h4>
-                    <p className="text-primary/80 font-light">Strength, cardio, habits, and progress in one app.</p>
+                    <h4 className="font-bold text-white text-lg">Complete Fitness</h4>
+                    <p className="text-white/80 font-light">Strength, cardio, habits, and progress in one app.</p>
                   </div>
                 </div>
                 <div className="flex gap-5 group">
-                  <div className="w-14 h-14 bg-primary/5 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-primary group-hover:text-white transition-all duration-500">
-                    <Target className="w-7 h-7 text-primary group-hover:text-white transition-colors" />
+                  <div className="w-14 h-14 bg-white/5 rounded-2xl flex items-center justify-center shrink-0 group-hover:bg-white/10 transition-all duration-500">
+                    <Target className="w-7 h-7 text-white group-hover:text-white transition-colors" />
                   </div>
                   <div>
-                    <h4 className="font-bold text-primary text-lg">Monthly Phase Unlocks</h4>
-                    <p className="text-primary/80 font-light">New phases unlock monthly for continuous progression.</p>
+                    <h4 className="font-bold text-white text-lg">Monthly Phase Unlocks</h4>
+                    <p className="text-white/80 font-light">New phases unlock monthly for continuous progression.</p>
                   </div>
                 </div>
               </motion.div>
