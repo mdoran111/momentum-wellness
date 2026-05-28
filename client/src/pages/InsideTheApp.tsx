@@ -3,7 +3,9 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Calendar, Zap, BarChart3, Play, Users, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link, useLocation } from "wouter";
-import logo from '../assets/images/logo.png';
+import mwDashboard from "@assets/MW2_app_dashboard_1779922530403.png";
+import mwWorkouts from "@assets/MW4_workouts_1779922530404.png";
+import mwProgress from "@assets/MW5_progress_1779922530404.png";
 
 const FEATURES = [
   {
@@ -35,19 +37,22 @@ const FEATURES = [
 
 const SCREENSHOTS = [
   {
-    title: "Your Fitness Dashboard",
+    image: mwDashboard,
+    title: "Your Wellness Dashboard",
     description: "See your current month's workouts, daily habits, and progress at a glance.",
     features: ["Strength Workouts", "Cardio Sessions", "Daily Habits"]
   },
   {
+    image: mwWorkouts,
     title: "Comprehensive Workouts",
     description: "Each month brings fresh strength training and cardio sessions designed to challenge and progress you.",
     features: ["Strength Training", "Cardio Options", "Habit Guidance"]
   },
   {
+    image: mwProgress,
     title: "Progress Tracking",
-    description: "Track your progress with metrics and our powerful progress photo feature that shows real visual transformation.",
-    features: ["Progress Photos", "Fitness Metrics", "Monthly Comparison"]
+    description: "Track your progress with metrics and our progress photo feature that shows visual change over time.",
+    features: ["Progress Photos", "Wellness Metrics", "Monthly Comparison"]
   }
 ];
 
@@ -87,7 +92,7 @@ export default function InsideTheApp() {
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
         <div className="absolute inset-0 opacity-20">
-          <img src={logo} alt="" className="w-full h-full object-cover opacity-10" />
+          <img src={mwDashboard} alt="" className="w-full h-full object-cover opacity-10" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-transparent"></div>
         <div
@@ -239,20 +244,23 @@ export default function InsideTheApp() {
                 transition={{ delay: i * 0.2 }}
                 className="group"
               >
-                <div className="mb-6 rounded-3xl overflow-hidden bg-gradient-to-br from-[#1e293b] to-[#0f172a] p-1 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/5">
-                  <div className="bg-[#0a0f1d]/90 rounded-[28px] p-10 min-h-[400px] flex flex-col items-center justify-center text-center">
-                    <div className="w-16 h-16 rounded-2xl bg-white/10 flex items-center justify-center mb-6">
-                      <div className="w-12 h-12 rounded-xl bg-white/5"></div>
+                <div className="mb-6 rounded-3xl overflow-hidden p-1 shadow-lg hover:shadow-2xl transition-all duration-500 border border-white/5">
+                  <div className="bg-[#1a1a2e] rounded-[28px] p-3 flex flex-col items-center justify-center text-center">
+                    <div className="rounded-[24px] overflow-hidden bg-black relative w-full max-w-[260px] mx-auto">
+                      <img src={screenshot.image} alt={screenshot.title} className="w-full" />
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-[#1a1a2e] rounded-b-xl"></div>
                     </div>
-                    <h3 className="text-2xl font-bold text-white mb-4 italic font-heading">{screenshot.title}</h3>
-                    <p className="text-sm text-white/70 leading-relaxed mb-6 font-light">{screenshot.description}</p>
-                    <div className="w-full space-y-2">
-                      {screenshot.features.map((feature, j) => (
-                        <div key={j} className="flex items-center gap-2 justify-center">
-                          <CheckCircle2 className="w-4 h-4 text-white/60" />
-                          <span className="text-xs font-medium text-white/70 uppercase tracking-wider">{feature}</span>
-                        </div>
-                      ))}
+                    <div className="mt-6">
+                      <h3 className="text-2xl font-bold text-white mb-4 italic font-heading">{screenshot.title}</h3>
+                      <p className="text-sm text-white/70 leading-relaxed mb-6 font-light">{screenshot.description}</p>
+                      <div className="w-full space-y-2">
+                        {screenshot.features.map((feature, j) => (
+                          <div key={j} className="flex items-center gap-2 justify-center">
+                            <CheckCircle2 className="w-4 h-4 text-white/60" />
+                            <span className="text-xs font-medium text-white/70 uppercase tracking-wider">{feature}</span>
+                          </div>
+                        ))}
+                      </div>
                     </div>
                   </div>
                 </div>

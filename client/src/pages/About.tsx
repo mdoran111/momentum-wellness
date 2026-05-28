@@ -3,10 +3,12 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ShieldCheck, Zap, Target, LayoutGrid, ChevronDown, Clock, Dumbbell, Apple, Repeat, Users, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useState, useEffect } from "react";
-import aboutHero from '../assets/images/about-hero.jpg';
-import aboutHolistic from '../assets/images/about-holistic-strength.jpg';
-import brandVibe from '../assets/images/about-brand-vibe.jpg';
 import logo from '../assets/images/logo.png';
+import mwSplash from "@assets/MW1_splash_1779922530400.png";
+import mwDashboard from "@assets/MW2_app_dashboard_1779922530403.png";
+import mwGoals from "@assets/MW3_goals_1779922530404.png";
+import mwWorkouts from "@assets/MW4_workouts_1779922530404.png";
+import mwProgress from "@assets/MW5_progress_1779922530404.png";
 
 export default function About() {
   const [showContent, setShowContent] = useState(true);
@@ -255,23 +257,60 @@ export default function About() {
         </div>
       </section>
 
-      {/* Philosophy Section with Image */}
+      {/* Philosophy Section with App Mockups */}
       <section className="py-32 bg-[#0a0f1d] relative overflow-hidden">
         <div className="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent"></div>
         <div className="container mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
             <motion.div
-              initial={{ opacity: 0, scale: 0.95 }}
-              whileInView={{ opacity: 1, scale: 1 }}
+              initial={{ opacity: 0, x: 40 }}
+              whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
-              className="relative group flex items-center justify-center"
+              className="relative hidden lg:block"
             >
-              <div className="aspect-square w-full max-w-md rounded-3xl overflow-hidden shadow-2xl bg-[#1e293b] flex items-center justify-center p-0 transition-all duration-700 hover:shadow-emerald-500/10 border border-white/5 relative">
-                <div className="relative z-10 w-full h-full">
-                  <img src={logo} alt="Momentum Wellness Logo" className="w-full h-full object-cover opacity-90 transition-transform duration-1000 group-hover:scale-110" />
-                </div>
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#1e293b]/40 via-transparent to-white/5 opacity-100 pointer-events-none"></div>
+              <div className="relative w-full max-w-[500px] mx-auto" style={{ height: '600px' }}>
+                <motion.div
+                  initial={{ opacity: 0, y: 20, rotate: -6 }}
+                  whileInView={{ opacity: 1, y: 0, rotate: -6 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.5 }}
+                  className="absolute top-8 left-0 w-[260px]"
+                >
+                  <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
+                    <div className="rounded-[32px] overflow-hidden bg-black">
+                      <img src={mwGoals} alt="Goals Tracking" className="w-full" />
+                    </div>
+                  </div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 20, rotate: 6 }}
+                  whileInView={{ opacity: 1, y: 0, rotate: 6 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.7 }}
+                  className="absolute top-0 right-0 w-[260px]"
+                >
+                  <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
+                    <div className="rounded-[32px] overflow-hidden bg-black">
+                      <img src={mwWorkouts} alt="Workouts" className="w-full" />
+                    </div>
+                  </div>
+                </motion.div>
+                <motion.div
+                  initial={{ opacity: 0, y: 30 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.8, delay: 0.9 }}
+                  className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[280px] z-10"
+                >
+                  <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.5)] border border-white/10">
+                    <div className="rounded-[32px] overflow-hidden bg-black relative">
+                      <img src={mwDashboard} alt="App Dashboard" className="w-full" />
+                      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
+                    </div>
+                  </div>
+                </motion.div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] bg-emerald-500/10 rounded-full blur-[100px] -z-10"></div>
               </div>
             </motion.div>
 
@@ -413,12 +452,28 @@ export default function About() {
         </div>
       </section>
 
-      {/* Full-width Image Break */}
+      {/* Full-width App Break */}
       <section className="h-[600px] relative overflow-hidden group">
-        <img src={brandVibe} alt="Premium gym environment" className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" />
-        <div className="absolute inset-0 bg-primary/30 backdrop-blur-[1px]"></div>
+        <div className="absolute inset-0 bg-[#0a0f1d]"></div>
+        <div className="absolute inset-0 opacity-20">
+          <img src={mwSplash} alt="" className="w-full h-full object-cover" />
+        </div>
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/90 via-[#0f172a]/80 to-[#0f172a]/90"></div>
         <div className="absolute inset-0 flex items-center justify-center">
-          <div className="h-20 w-px bg-white/30"></div>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="relative w-[220px]"
+          >
+            <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.5)] border border-white/10">
+              <div className="rounded-[32px] overflow-hidden bg-black relative">
+                <img src={mwProgress} alt="Progress Tracking" className="w-full" />
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
+              </div>
+            </div>
+          </motion.div>
         </div>
       </section>
 

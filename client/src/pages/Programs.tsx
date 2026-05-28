@@ -146,10 +146,10 @@ export default function Programs() {
               className="relative"
             >
               <div className="relative mx-auto w-full max-w-[280px]">
-                <div className="rounded-3xl bg-[#1a1a2e] p-2 md:p-3 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
-                  <div className="rounded-2xl overflow-hidden bg-black relative">
+                <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
+                  <div className="rounded-[32px] overflow-hidden bg-black relative">
                     <img src={mwDashboard} alt="App Dashboard" className="w-full" />
-                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 md:w-24 h-5 md:h-6 bg-[#1a1a2e] rounded-b-xl md:rounded-b-2xl"></div>
+                    <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
                   </div>
                 </div>
                 <div className="mt-4 text-center">
