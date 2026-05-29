@@ -149,6 +149,15 @@ export default function FAQ() {
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
+                <Link href="/programs">
+                  <Button
+                    size="lg"
+                    variant="outline"
+                    className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
+                  >
+                    View Programs
+                  </Button>
+                </Link>
               </div>
             </motion.div>
           </div>

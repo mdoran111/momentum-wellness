@@ -261,7 +261,7 @@ export default function Home() {
                         <p className="text-sm text-white/60 font-light">App-based fitness & nutrition coaching starting at $14.99/month</p>
                       </div>
                       <div className="flex items-center gap-2 text-emerald-400 font-semibold text-sm shrink-0">
-                        <span>Explore Programs</span>
+                        <span>Explore Individual Programs</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
@@ -281,7 +281,7 @@ export default function Home() {
                         <p className="text-sm text-white/60 font-light">Employee wellness programs for teams of 50+</p>
                       </div>
                       <div className="flex items-center gap-2 text-blue-400 font-semibold text-sm shrink-0">
-                        <span>Learn More</span>
+                        <span>View Employee Wellness Programs</span>
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
                       </div>
                     </div>
@@ -856,22 +856,22 @@ export default function Home() {
               Get the structure, accountability, and support you need to build lasting progress in fitness, nutrition, and daily habits.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/contact">
+              <Link href="/programs">
                 <Button
                   size="lg"
                   className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
                 >
-                  Get Started
+                  Explore Individual Programs
                   <ArrowRight className="ml-2 w-5 h-5" />
                 </Button>
               </Link>
-              <Link href="/contact">
+              <Link href="/employee-wellness-programs">
                 <Button
                   size="lg"
                   variant="outline"
                   className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
                 >
-                  Contact Momentum Wellness
+                  View Employee Wellness Programs
                 </Button>
               </Link>
             </div>

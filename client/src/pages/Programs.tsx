@@ -418,7 +418,7 @@ export default function Programs() {
                     size="lg"
                     className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
                   >
-                    Get Started
+                    Start Your Program
                     <ArrowRight className="ml-2 w-5 h-5" />
                   </Button>
                 </Link>
