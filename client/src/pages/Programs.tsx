@@ -194,12 +194,8 @@ export default function Programs() {
       </div>
 
         {/* 2. What You Get */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0f1d]"></div>
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 opacity-30" style={{backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`}}></div>
-          </div>
-          <div className="absolute inset-0 opacity-[0.015]" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}}></div>
+        <section className="py-24 md:py-32 relative overflow-hidden bg-[#f8fafc]">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
 
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-3xl mx-auto">
@@ -209,13 +205,13 @@ export default function Programs() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 leading-[1.05] tracking-tight">
                   What You{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  <span className="text-emerald-600">
                     Get
                   </span>
                 </h2>
-                <p className="text-lg text-white font-light leading-relaxed">
+                <p className="text-lg text-gray-700 font-light leading-relaxed">
                   Six core components designed to keep your fitness, nutrition, and habits organized and on track.
                 </p>
               </motion.div>
@@ -229,15 +225,15 @@ export default function Programs() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08 }}
-                  className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
+                  className="group relative p-8 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-emerald-300 hover:shadow-lg transition-all duration-500"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:text-emerald-300 transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center text-emerald-600 mb-6 group-hover:text-emerald-700 transition-colors duration-300">
                       <feature.icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{feature.title}</h3>
-                    <p className="text-white font-light leading-relaxed text-sm">{feature.desc}</p>
+                    <h3 className="text-xl font-bold text-[#0f172a] mb-3 tracking-tight">{feature.title}</h3>
+                    <p className="text-gray-600 font-light leading-relaxed text-sm">{feature.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -246,8 +242,8 @@ export default function Programs() {
         </section>
 
         {/* 3. Who It's For */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
+        <section className="py-24 md:py-32 relative overflow-hidden bg-[#f8fafc]">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-3xl mx-auto">
               <motion.div
@@ -256,11 +252,11 @@ export default function Programs() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 leading-[1.05] tracking-tight">
                   Who This Is{" "}
                   <span className="italic">For</span>
                 </h2>
-                <p className="text-lg text-white font-light leading-relaxed">
+                <p className="text-lg text-gray-700 font-light leading-relaxed">
                   Whether you are starting fresh or refining your routine, this program is built for you.
                 </p>
               </motion.div>
@@ -274,16 +270,16 @@ export default function Programs() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08 }}
-                  className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
+                  className="group relative p-6 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-emerald-300 hover:shadow-lg transition-all duration-500"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 shrink-0 mt-0.5 group-hover:text-emerald-300 transition-colors duration-300">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center text-emerald-600 shrink-0 mt-0.5 group-hover:text-emerald-700 transition-colors duration-300">
                       <item.icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white mb-1">{item.title}</h3>
-                      <p className="text-white font-light leading-relaxed text-sm">{item.desc}</p>
+                      <h3 className="text-lg font-bold text-[#0f172a] mb-1">{item.title}</h3>
+                      <p className="text-gray-600 font-light leading-relaxed text-sm">{item.desc}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -293,11 +289,8 @@ export default function Programs() {
         </section>
 
         {/* 4. How It Works */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0f1d]"></div>
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 opacity-30" style={{backgroundImage: `radial-gradient(circle at 50% 50%, rgba(16,185,129,0.05) 0%, transparent 50%)`}}></div>
-          </div>
+        <section className="py-24 md:py-32 relative overflow-hidden bg-[#f8fafc]">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-3xl mx-auto">
               <motion.div
@@ -306,20 +299,20 @@ export default function Programs() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 leading-[1.05] tracking-tight">
                   How It{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  <span className="text-emerald-600">
                     Works
                   </span>
                 </h2>
-                <p className="text-lg text-white font-light leading-relaxed">
+                <p className="text-lg text-gray-700 font-light leading-relaxed">
                   Four simple steps from signup to consistency.
                 </p>
               </motion.div>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 relative max-w-5xl mx-auto">
-              <div className="hidden lg:block absolute top-12 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent z-0"></div>
+              <div className="hidden lg:block absolute top-12 left-[12%] right-[12%] h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent z-0"></div>
 
               {STEPS.map((item, i) => (
                 <motion.div
@@ -330,11 +323,11 @@ export default function Programs() {
                   transition={{ delay: i * 0.15 }}
                   className="relative z-10 flex flex-col items-center text-center"
                 >
-                  <div className="w-20 h-20 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-2xl flex items-center justify-center text-xl font-bold text-emerald-400 shadow-[0_10px_30px_rgba(0,0,0,0.3)] mb-6 border border-emerald-500/20">
+                  <div className="w-20 h-20 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-2xl flex items-center justify-center text-xl font-bold text-emerald-600 shadow-[0_10px_30px_rgba(0,0,0,0.1)] mb-6 border border-emerald-200">
                     {item.step}
                   </div>
-                  <h3 className="text-xl font-bold mb-2 text-white tracking-tight">{item.title}</h3>
-                  <p className="text-white/60 text-sm font-light leading-relaxed">{item.desc}</p>
+                  <h3 className="text-xl font-bold mb-2 text-[#0f172a] tracking-tight">{item.title}</h3>
+                  <p className="text-gray-600 text-sm font-light leading-relaxed">{item.desc}</p>
                 </motion.div>
               ))}
             </div>

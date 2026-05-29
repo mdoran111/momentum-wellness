@@ -154,11 +154,8 @@ export default function InsideTheApp() {
       </div>
 
         {/* 2. App Screenshots */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0f1d]"></div>
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 opacity-30" style={{backgroundImage: `radial-gradient(circle at 50% 50%, rgba(16,185,129,0.05) 0%, transparent 50%)`}}></div>
-          </div>
+        <section className="py-24 md:py-32 relative overflow-hidden bg-[#f8fafc]">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-3xl mx-auto">
               <motion.div
@@ -167,13 +164,13 @@ export default function InsideTheApp() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 leading-[1.05] tracking-tight">
                   See It{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  <span className="text-emerald-600">
                     In Action
                   </span>
                 </h2>
-                <p className="text-lg text-white font-light leading-relaxed">
+                <p className="text-lg text-gray-700 font-light leading-relaxed">
                   Real screenshots from the Momentum Wellness app.
                 </p>
               </motion.div>
@@ -189,15 +186,15 @@ export default function InsideTheApp() {
                   transition={{ delay: index * 0.1 }}
                   className="group"
                 >
-                  <div className="relative rounded-[32px] bg-[#1a1a2e] p-2 shadow-[0_20px_60px_rgba(0,0,0,0.5)] border border-white/10 hover:border-emerald-500/30 transition-all duration-500">
+                  <div className="relative rounded-[32px] bg-[#1a1a2e] p-2 shadow-[0_20px_60px_rgba(0,0,0,0.3)] border border-gray-300 hover:border-emerald-400 transition-all duration-500">
                     <div className="rounded-[24px] overflow-hidden bg-black relative">
                       <img src={item.img} alt={`Momentum Wellness app ${item.title.toLowerCase()} screen`} className="w-full" />
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-20 h-5 bg-[#1a1a2e] rounded-b-xl"></div>
                     </div>
                   </div>
                   <div className="text-center mt-4">
-                    <h3 className="text-white font-bold text-sm">{item.title}</h3>
-                    <p className="text-white/60 text-sm font-light">{item.desc}</p>
+                    <h3 className="text-[#0f172a] font-bold text-sm">{item.title}</h3>
+                    <p className="text-gray-600 text-sm font-light">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
@@ -206,8 +203,8 @@ export default function InsideTheApp() {
         </section>
 
         {/* 3. App Features */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
+        <section className="py-24 md:py-32 relative overflow-hidden bg-[#f8fafc]">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-3xl mx-auto">
               <motion.div
@@ -216,11 +213,11 @@ export default function InsideTheApp() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 leading-[1.05] tracking-tight">
                   Core{" "}
                   <span className="italic">Features</span>
                 </h2>
-                <p className="text-lg text-white font-light leading-relaxed">
+                <p className="text-lg text-gray-700 font-light leading-relaxed">
                   Six tools. One focus: keeping you consistent.
                 </p>
               </motion.div>
@@ -234,16 +231,16 @@ export default function InsideTheApp() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.08 }}
-                  className="group relative p-6 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
+                  className="group relative p-6 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-emerald-300 hover:shadow-lg transition-all duration-500"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 shrink-0 group-hover:text-emerald-300 transition-colors duration-300">
+                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center text-emerald-600 shrink-0 group-hover:text-emerald-700 transition-colors duration-300">
                       <feature.icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <h3 className="text-lg font-bold text-white mb-1">{feature.title}</h3>
-                      <p className="text-white font-light leading-relaxed text-sm">{feature.desc}</p>
+                      <h3 className="text-lg font-bold text-[#0f172a] mb-1">{feature.title}</h3>
+                      <p className="text-gray-600 font-light leading-relaxed text-sm">{feature.desc}</p>
                     </div>
                   </div>
                 </motion.div>
@@ -253,11 +250,8 @@ export default function InsideTheApp() {
         </section>
 
         {/* 4. Why It Works */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0f1d]"></div>
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 opacity-30" style={{backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`}}></div>
-          </div>
+        <section className="py-24 md:py-32 relative overflow-hidden bg-[#f8fafc]">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <motion.div
@@ -267,9 +261,9 @@ export default function InsideTheApp() {
                 transition={{ duration: 0.8 }}
                 className="text-center mb-12"
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 leading-[1.05] tracking-tight">
                   Why It{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  <span className="text-emerald-600">
                     Works
                   </span>
                 </h2>
@@ -280,9 +274,9 @@ export default function InsideTheApp() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8, delay: 0.2 }}
-                className="bg-white/[0.02] rounded-3xl border border-white/5 p-8 md:p-12"
+                className="bg-white rounded-3xl border border-gray-200 shadow-sm p-8 md:p-12"
               >
-                <p className="text-xl md:text-2xl text-white font-light leading-relaxed text-center">
+                <p className="text-xl md:text-2xl text-gray-700 font-light leading-relaxed text-center">
                   The app keeps everything organized in one place so you know what to do, can track what matters, and stay consistent over time.
                 </p>
                 <div className="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-6">
@@ -292,11 +286,11 @@ export default function InsideTheApp() {
                     { label: "One Community", desc: "Coaches and members keep you accountable." }
                   ].map((item, i) => (
                     <div key={i} className="text-center">
-                      <div className="w-10 h-10 rounded-full bg-emerald-500/10 flex items-center justify-center mx-auto mb-3">
-                        <CheckCircle2 className="w-5 h-5 text-emerald-400" />
+                      <div className="w-10 h-10 rounded-full bg-emerald-100 flex items-center justify-center mx-auto mb-3">
+                        <CheckCircle2 className="w-5 h-5 text-emerald-600" />
                       </div>
-                      <h4 className="text-white font-bold text-sm mb-1">{item.label}</h4>
-                      <p className="text-white/60 text-sm font-light">{item.desc}</p>
+                      <h4 className="text-[#0f172a] font-bold text-sm mb-1">{item.label}</h4>
+                      <p className="text-gray-600 text-sm font-light">{item.desc}</p>
                     </div>
                   ))}
                 </div>

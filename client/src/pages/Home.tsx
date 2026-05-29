@@ -401,8 +401,8 @@ export default function Home() {
       </div>
 
       {/* 2. Value Proposition — The Problem */}
-      <section className="py-20 md:py-28 lg:py-32 relative">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/30 to-[#0f172a]"></div>
+      <section className="py-20 md:py-28 lg:py-32 relative bg-[#f8fafc]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
             {/* Left — Headline */}
@@ -412,20 +412,20 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <span className="text-sm font-bold tracking-[0.2em] uppercase text-white mb-4 block">
+              <span className="text-sm font-bold tracking-[0.2em] uppercase text-gray-500 mb-4 block">
                 The Reality
               </span>
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-[1.1] tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-8 leading-[1.1] tracking-tight">
                 Most Fitness Plans{" "}
                 <span className="italic">Don't Stick.</span>
               </h2>
-              <p className="text-lg text-white mb-6 font-light leading-relaxed">
+              <p className="text-lg text-gray-700 mb-6 font-light leading-relaxed">
                 You start with motivation, but without structure, accountability, and a clear plan, it's easy to fall off track.
               </p>
-              <p className="text-base text-white mb-6 font-light leading-relaxed">
+              <p className="text-base text-gray-600 mb-6 font-light leading-relaxed">
                 You don't need another generic workout app. You need a system that combines training, nutrition guidance, habit tracking, and community support—designed to keep you engaged month after month.
               </p>
-              <p className="text-base text-white font-light leading-relaxed">
+              <p className="text-base text-gray-600 font-light leading-relaxed">
                 At Momentum Wellness, we built exactly that. A program that evolves with you, keeps you accountable, and helps you build progress you can see and feel.
               </p>
             </motion.div>
@@ -438,7 +438,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="lg:mt-12"
             >
-              <p className="text-sm font-bold tracking-[0.15em] uppercase text-white mb-6">
+              <p className="text-sm font-bold tracking-[0.15em] uppercase text-gray-500 mb-6">
                 Sound familiar?
               </p>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -449,12 +449,12 @@ export default function Home() {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.08 }}
-                    className={`flex items-start gap-4 p-5 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-white/10 hover:bg-white/[0.04] transition-all duration-300 ${item.wide ? 'sm:col-span-2' : ''}`}
+                    className={`flex items-start gap-4 p-5 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-gray-300 hover:shadow-md transition-all duration-300 ${item.wide ? 'sm:col-span-2' : ''}`}
                   >
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-red-500/10 to-orange-500/10 flex items-center justify-center shrink-0 text-red-400/80">
+                    <div className="w-12 h-12 rounded-xl bg-red-50 flex items-center justify-center shrink-0 text-red-500">
                       <item.icon className="w-6 h-6" />
                     </div>
-                    <span className="text-white font-light leading-snug pt-1.5">{item.text}</span>
+                    <span className="text-gray-700 font-light leading-snug pt-1.5">{item.text}</span>
                   </motion.div>
                 ))}
               </div>
@@ -464,22 +464,8 @@ export default function Home() {
       </section>
 
       {/* 3. Program Overview — What You Get */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#0a0f1d]"></div>
-        <div className="absolute inset-0">
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`
-            }}
-          ></div>
-        </div>
-        <div
-          className="absolute inset-0 opacity-[0.015]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`
-          }}
-        ></div>
+      <section className="py-24 md:py-32 relative overflow-hidden bg-[#f8fafc]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
 
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-4xl mx-auto text-center mb-20">
@@ -489,9 +475,9 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-10 leading-[1.05] tracking-tight">
+              <h2 className="text-4xl md:text-6xl lg:text-7xl font-bold text-[#0f172a] mb-10 leading-[1.05] tracking-tight">
                 Everything You Need{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                <span className="text-emerald-600">
                   To Succeed.
                 </span>
               </h2>
@@ -502,10 +488,10 @@ export default function Home() {
               viewport={{ once: true, margin: "-100px" }}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <p className="text-xl md:text-2xl text-white font-light leading-relaxed mb-6">
+              <p className="text-xl md:text-2xl text-gray-700 font-light leading-relaxed mb-6">
                 A complete wellness system in one app. Not just workouts—training, nutrition, habits, and progress tracking that work together.
               </p>
-              <p className="text-lg text-white font-light leading-relaxed max-w-3xl mx-auto">
+              <p className="text-lg text-gray-600 font-light leading-relaxed max-w-3xl mx-auto">
                 New phases unlock monthly so you never plateau. The program adapts and progresses with you, keeping your fitness journey fresh and challenging.
               </p>
             </motion.div>
@@ -551,18 +537,18 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.08 }}
-                className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
+                className="group relative p-8 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-emerald-300 hover:shadow-lg transition-all duration-500"
               >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
                   <div className="flex items-center justify-between mb-6">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 group-hover:text-emerald-300 transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center text-emerald-600 group-hover:text-emerald-700 transition-colors duration-300">
                       <feature.icon className="w-6 h-6" />
                     </div>
-                    <span className="text-3xl font-bold text-white/5 group-hover:text-emerald-400/10 transition-colors duration-500">{String(index + 1).padStart(2, '0')}</span>
+                    <span className="text-3xl font-bold text-gray-100 group-hover:text-emerald-100 transition-colors duration-500">{String(index + 1).padStart(2, '0')}</span>
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{feature.title}</h3>
-                  <p className="text-white font-light leading-relaxed text-sm">{feature.desc}</p>
+                  <h3 className="text-xl font-bold text-[#0f172a] mb-3 tracking-tight">{feature.title}</h3>
+                  <p className="text-gray-600 font-light leading-relaxed text-sm">{feature.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -748,16 +734,8 @@ export default function Home() {
       </section>
 
       {/* 6. Who It's For */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-[#0a0f1d]"></div>
-        <div className="absolute inset-0">
-          <div
-            className="absolute inset-0 opacity-30"
-            style={{
-              backgroundImage: `radial-gradient(circle at 50% 50%, rgba(16,185,129,0.05) 0%, transparent 50%)`
-            }}
-          ></div>
-        </div>
+      <section className="py-24 md:py-32 relative overflow-hidden bg-[#f8fafc]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.div
@@ -766,11 +744,11 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-[1.05] tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-4 leading-[1.05] tracking-tight">
                 Who Is This{" "}
                 <span className="italic">For?</span>
               </h2>
-              <p className="text-lg text-white/70 font-light leading-relaxed max-w-2xl mx-auto">
+              <p className="text-lg text-gray-600 font-light leading-relaxed max-w-2xl mx-auto">
                 Momentum Wellness is designed for anyone serious about building a healthier, stronger, more consistent lifestyle.
               </p>
             </motion.div>
@@ -784,15 +762,15 @@ export default function Home() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500 text-center"
+                className="group relative p-8 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-emerald-300 hover:shadow-lg transition-all duration-500 text-center"
               >
-                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                 <div className="relative">
-                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 mx-auto mb-6 group-hover:text-emerald-300 transition-colors duration-300">
+                  <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center text-emerald-600 mx-auto mb-6 group-hover:text-emerald-700 transition-colors duration-300">
                     <persona.icon className="w-6 h-6" />
                   </div>
-                  <h3 className="text-xl font-bold text-white mb-3 tracking-tight">{persona.title}</h3>
-                  <p className="text-white font-light leading-relaxed text-sm">{persona.desc}</p>
+                  <h3 className="text-xl font-bold text-[#0f172a] mb-3 tracking-tight">{persona.title}</h3>
+                  <p className="text-gray-600 font-light leading-relaxed text-sm">{persona.desc}</p>
                 </div>
               </motion.div>
             ))}
@@ -801,8 +779,8 @@ export default function Home() {
       </section>
 
       {/* 7. How It Works */}
-      <section className="py-24 md:py-32 relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
+      <section className="py-24 md:py-32 relative overflow-hidden bg-[#f8fafc]">
+        <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
         <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
             <motion.div
@@ -811,20 +789,20 @@ export default function Home() {
               viewport={{ once: true }}
               transition={{ duration: 0.8 }}
             >
-              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-[1.05] tracking-tight">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-4 leading-[1.05] tracking-tight">
                 How It{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                <span className="text-emerald-600">
                   Works.
                 </span>
               </h2>
-              <p className="text-lg text-white/70 font-light leading-relaxed max-w-xl mx-auto">
+              <p className="text-lg text-gray-600 font-light leading-relaxed max-w-xl mx-auto">
                 Three simple steps. One commitment to growth.
               </p>
             </motion.div>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative max-w-5xl mx-auto">
-            <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-white/10 to-transparent z-0"></div>
+            <div className="hidden md:block absolute top-12 left-[15%] right-[15%] h-px bg-gradient-to-r from-transparent via-gray-300 to-transparent z-0"></div>
 
             {[
               { step: "01", title: "Sign Up", desc: "Choose your membership and get instant access to the full platform." },
@@ -841,12 +819,12 @@ export default function Home() {
               >
                 <motion.div
                   whileHover={{ scale: 1.1 }}
-                  className="w-24 h-24 bg-gradient-to-br from-emerald-500/10 to-teal-500/10 rounded-3xl flex items-center justify-center text-2xl font-bold text-emerald-400 shadow-[0_10px_30px_rgba(0,0,0,0.3)] mb-8 border border-emerald-500/20 group-hover:border-emerald-500/40 transition-all duration-500"
+                  className="w-24 h-24 bg-gradient-to-br from-emerald-100 to-teal-100 rounded-3xl flex items-center justify-center text-2xl font-bold text-emerald-600 shadow-[0_10px_30px_rgba(0,0,0,0.1)] mb-8 border border-emerald-200 group-hover:border-emerald-400 transition-all duration-500"
                 >
                   {item.step}
                 </motion.div>
-                <h3 className="text-xl font-bold mb-3 text-white tracking-tight">{item.title}</h3>
-                <p className="text-white/60 text-base font-light leading-relaxed">{item.desc}</p>
+                <h3 className="text-xl font-bold mb-3 text-[#0f172a] tracking-tight">{item.title}</h3>
+                <p className="text-gray-600 text-base font-light leading-relaxed">{item.desc}</p>
               </motion.div>
             ))}
           </div>

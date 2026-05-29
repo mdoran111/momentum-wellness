@@ -127,11 +127,8 @@ export default function About() {
       </div>
 
         {/* 2. Our Philosophy */}
-        <section className="relative py-24 md:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0f1d]"></div>
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 opacity-30" style={{backgroundImage: `radial-gradient(circle at 50% 50%, rgba(16,185,129,0.05) 0%, transparent 50%)`}}></div>
-          </div>
+        <section className="relative py-24 md:py-32 overflow-hidden bg-[#f8fafc]">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="max-w-4xl mx-auto">
               <motion.div
@@ -140,11 +137,11 @@ export default function About() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-8 leading-[1.05] tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-8 leading-[1.05] tracking-tight">
                   Our{" "}
                   <span className="italic">Philosophy</span>
                 </h2>
-                <p className="text-xl md:text-2xl text-white font-light leading-relaxed">
+                <p className="text-xl md:text-2xl text-gray-700 font-light leading-relaxed">
                   Long-term wellness is built through consistent training, better nutrition, daily habits, accountability, and community. When these pieces work together, progress becomes automatic. Not overnight. But over time.
                 </p>
               </motion.div>
@@ -153,9 +150,8 @@ export default function About() {
         </section>
 
         {/* 3. What Makes Momentum Different */}
-        <section className="relative py-24 md:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-[#0f172a]"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a] via-[#1e293b]/20 to-[#0f172a]"></div>
+        <section className="relative py-24 md:py-32 overflow-hidden bg-[#f8fafc]">
+          <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
           <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16 max-w-3xl mx-auto">
               <motion.div
@@ -164,9 +160,9 @@ export default function About() {
                 viewport={{ once: true, margin: "-100px" }}
                 transition={{ duration: 0.8 }}
               >
-                <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
+                <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 leading-[1.05] tracking-tight">
                   What Makes Momentum{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
+                  <span className="text-emerald-600">
                     Different
                   </span>
                 </h2>
@@ -181,15 +177,15 @@ export default function About() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: index * 0.1 }}
-                  className="group relative p-8 rounded-2xl bg-white/[0.02] border border-white/5 hover:border-emerald-500/30 hover:bg-white/[0.04] transition-all duration-500"
+                  className="group relative p-8 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-emerald-300 hover:shadow-lg transition-all duration-500"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="relative">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 mb-6 group-hover:text-emerald-300 transition-colors duration-300">
+                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center text-emerald-600 mb-6 group-hover:text-emerald-700 transition-colors duration-300">
                       <item.icon className="w-6 h-6" />
                     </div>
-                    <h3 className="text-xl font-bold text-white mb-3">{item.title}</h3>
-                    <p className="text-white font-light leading-relaxed text-sm">{item.desc}</p>
+                    <h3 className="text-xl font-bold text-[#0f172a] mb-3">{item.title}</h3>
+                    <p className="text-gray-600 font-light leading-relaxed text-sm">{item.desc}</p>
                   </div>
                 </motion.div>
               ))}
