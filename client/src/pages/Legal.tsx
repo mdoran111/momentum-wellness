@@ -1,6 +1,7 @@
 import { motion } from "framer-motion";
 import { CheckCircle2 } from "lucide-react";
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
 
 export default function Legal() {
   useEffect(() => {
@@ -8,7 +9,13 @@ export default function Legal() {
   }, []);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
+    <>
+      <SEO
+        title="Legal Information | Momentum Wellness"
+        description="Terms of Service, Privacy Policy, and legal information for Momentum Wellness. Transparency and trust are core to how we operate."
+        keywords="terms of service, privacy policy, legal, wellness terms, subscription terms"
+      />
+      <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
       {/* Hero Section */}
       <section className="relative min-h-[60vh] flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
@@ -102,5 +109,6 @@ export default function Legal() {
       </div>
       </section>
     </div>
+    </>
   );
 }

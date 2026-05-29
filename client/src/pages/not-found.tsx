@@ -2,10 +2,17 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft } from "lucide-react";
+import SEO from "@/components/SEO";
 
 export default function NotFound() {
   return (
-    <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
+    <>
+      <SEO
+        title="Page Not Found | Momentum Wellness"
+        description="The page you are looking for doesn't exist. Return to Momentum Wellness for online fitness coaching, nutrition guidance, and wellness programs."
+        keywords="momentum wellness, fitness coaching, nutrition coaching, wellness programs"
+      />
+      <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
@@ -67,5 +74,6 @@ export default function NotFound() {
         </div>
       </section>
     </div>
+    </>
   );
 }
