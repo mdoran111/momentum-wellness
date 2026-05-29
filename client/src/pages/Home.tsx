@@ -185,8 +185,8 @@ export default function Home() {
   return (
     <>
       <SEO
-        title="Online Fitness & Wellness Coaching | Momentum Wellness"
-        description="Build a healthier, stronger, more accountable you with Momentum Wellness. Structured online fitness coaching, nutrition coaching, and daily habit tracking in one app."
+        title="Momentum Wellness | App-Based Fitness, Nutrition & Wellness Coaching"
+        description="Momentum Wellness helps individuals and companies build better health through training, nutrition, habits, accountability, and community using a modern wellness app."
         keywords="online fitness coaching, nutrition coaching, wellness coaching, training, nutrition, habits, accountability, community"
       />
       <div className="flex flex-col min-h-screen bg-[#0f172a]">

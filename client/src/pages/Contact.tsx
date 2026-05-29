@@ -22,8 +22,8 @@ export default function Contact() {
   return (
     <>
       <SEO
-        title="Contact | Momentum Wellness"
-        description="Get in touch with Momentum Wellness. Questions about individual programs, employee wellness, or the app? We respond within 24-48 hours."
+        title="Contact Momentum Wellness"
+        description="Contact Momentum Wellness to learn more about individual coaching programs or employee wellness programs for companies."
         keywords="contact Momentum Wellness, fitness coaching support, employee wellness inquiry, wellness program help"
       />
       <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">

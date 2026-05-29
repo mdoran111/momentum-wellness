@@ -55,8 +55,8 @@ export default function FAQ() {
   return (
     <>
       <SEO
-        title="FAQ | Momentum Wellness"
-        description="Answers to common questions about individual programs, employee wellness programs, the app, and how to get started."
+        title="Momentum Wellness FAQ"
+        description="Find answers about Momentum Wellness programs, app-based coaching, nutrition support, habit tracking, accountability, and employee wellness options."
         keywords="wellness FAQ, fitness coaching questions, corporate wellness FAQ, employee wellness FAQ, app questions"
       />
       <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">

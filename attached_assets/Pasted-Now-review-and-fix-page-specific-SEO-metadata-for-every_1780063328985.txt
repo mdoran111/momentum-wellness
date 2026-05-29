@@ -1,0 +1,73 @@
+Now review and fix page-specific SEO metadata for every route.
+
+Make sure each page has:
+- A unique SEO title
+- A unique meta description
+- One clear H1
+- Logical H2 sections
+- Descriptive image alt text
+- No duplicate page titles
+
+Use these suggested SEO titles and meta descriptions:
+
+Homepage title:
+Momentum Wellness | App-Based Fitness, Nutrition & Wellness Coaching
+
+Homepage meta description:
+Momentum Wellness helps individuals and companies build better health through training, nutrition, habits, accountability, and community using a modern wellness app.
+
+Programs title:
+Fitness & Nutrition Programs | Momentum Wellness
+
+Programs meta description:
+Explore app-based fitness and nutrition programs designed to help you build strength, improve habits, track progress, and stay accountable.
+
+Inside the App title:
+Inside the Momentum Wellness App | Training, Nutrition & Habit Tracking
+
+Inside the App meta description:
+See how the Momentum Wellness app helps clients track workouts, nutrition, habits, progress, and accountability in one simple platform.
+
+Pricing title:
+Pricing | Momentum Wellness
+
+Pricing meta description:
+View Momentum Wellness program options for individuals and learn how to get started with app-based training, nutrition, habits, and accountability.
+
+Employee Wellness Programs title:
+Employee Wellness Programs for Companies | Momentum Wellness
+
+Employee Wellness Programs meta description:
+Momentum Wellness helps companies with 50+ employees improve health, energy, accountability, and team culture through app-based employee wellness programs.
+
+About title:
+About Momentum Wellness | Training, Nutrition, Habits & Accountability
+
+About meta description:
+Learn how Momentum Wellness helps individuals and companies build sustainable health through training, nutrition, habits, accountability, and community.
+
+Contact title:
+Contact Momentum Wellness
+
+Contact meta description:
+Contact Momentum Wellness to learn more about individual coaching programs or employee wellness programs for companies.
+
+FAQ title:
+Momentum Wellness FAQ
+
+FAQ meta description:
+Find answers about Momentum Wellness programs, app-based coaching, nutrition support, habit tracking, accountability, and employee wellness options.
+
+Legal title:
+Legal | Momentum Wellness
+
+Legal meta description:
+Review Momentum Wellness legal information, policies, terms, and privacy details.
+
+Important:
+- Make sure the homepage does not use the Employee Wellness Programs title
+- Make sure corporate wellness pricing is not visible in SEO text
+- Do not keyword stuff
+- Keep metadata professional and natural
+
+After updating, summarize what changed.

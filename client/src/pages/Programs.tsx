@@ -84,7 +84,7 @@ export default function Programs() {
     <>
       <SEO
         title="Fitness & Nutrition Programs | Momentum Wellness"
-        description="Structured online fitness coaching, nutrition guidance, habit tracking, and accountability — all in one app. Built for individuals who want consistency and results."
+        description="Explore app-based fitness and nutrition programs designed to help you build strength, improve habits, track progress, and stay accountable."
         keywords="online fitness coaching, nutrition coaching, habit tracking, progress tracking, accountability, fitness app, workout program"
       />
       <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">

@@ -84,8 +84,8 @@ export default function EmployeeWellness() {
   return (
     <>
       <SEO
-        title="Employee Wellness Programs | Corporate Wellness | Momentum Wellness"
-        description="Corporate wellness programs for companies with 50+ employees. Improve health, energy, and accountability through structured training, nutrition, habits, and community support."
+        title="Employee Wellness Programs for Companies | Momentum Wellness"
+        description="Momentum Wellness helps companies with 50+ employees improve health, energy, accountability, and team culture through app-based employee wellness programs."
         keywords="employee wellness programs, corporate wellness, workplace wellness, employee wellness platform, corporate wellness programs, employee health and wellness"
       />
       <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">

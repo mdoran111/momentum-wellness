@@ -33,8 +33,8 @@ export default function Pricing() {
   return (
     <>
       <SEO
-        title="Pricing | Momentum Wellness Coaching"
-        description="Simple pricing for app-based coaching. $14.99/month for training, nutrition, habits, progress tracking, and accountability. No hidden fees, cancel anytime."
+        title="Pricing | Momentum Wellness"
+        description="View Momentum Wellness program options for individuals and learn how to get started with app-based training, nutrition, habits, and accountability."
         keywords="fitness coaching price, nutrition coaching cost, wellness program pricing, app-based coaching, monthly fitness program"
       />
       <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">

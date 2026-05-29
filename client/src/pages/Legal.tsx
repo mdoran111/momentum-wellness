@@ -10,8 +10,8 @@ export default function Legal() {
   return (
     <>
       <SEO
-        title="Legal Information | Momentum Wellness"
-        description="Terms of Service, Privacy Policy, and legal information for Momentum Wellness."
+        title="Legal | Momentum Wellness"
+        description="Review Momentum Wellness legal information, policies, terms, and privacy details."
         keywords="terms of service, privacy policy, legal, wellness terms"
       />
       <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">

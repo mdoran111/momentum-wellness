@@ -46,8 +46,8 @@ export default function InsideTheApp() {
   return (
     <>
       <SEO
-        title="Inside the App | Momentum Wellness"
-        description="Track workouts, nutrition, habits, progress, and accountability — all inside the Momentum Wellness app. A simple, powerful platform for your wellness journey."
+        title="Inside the Momentum Wellness App | Training, Nutrition & Habit Tracking"
+        description="See how the Momentum Wellness app helps clients track workouts, nutrition, habits, progress, and accountability in one simple platform."
         keywords="wellness app, fitness app, workout tracking, nutrition tracking, habit tracking, progress tracking, accountability app"
       />
       <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">

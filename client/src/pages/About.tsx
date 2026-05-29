@@ -62,8 +62,8 @@ export default function About() {
   return (
     <>
       <SEO
-        title="About Us | Momentum Wellness"
-        description="Momentum Wellness helps individuals and companies build sustainable health through structure, accountability, and real-life behavior change."
+        title="About Momentum Wellness | Training, Nutrition, Habits & Accountability"
+        description="Learn how Momentum Wellness helps individuals and companies build sustainable health through training, nutrition, habits, accountability, and community."
         keywords="about Momentum Wellness, wellness coaching philosophy, fitness coaching company, sustainable wellness habits"
       />
       <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
