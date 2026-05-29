@@ -4,6 +4,7 @@ import { Link } from "wouter";
 import { CheckCircle2, Dumbbell, Apple, Repeat, Target, Users, ArrowRight } from "lucide-react";
 import mwDashboard from '@assets/MW2_app_dashboard_1779922530403.png';
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
 
 export default function Programs() {
   useEffect(() => {
@@ -11,7 +12,13 @@ export default function Programs() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-[#0f172a] text-white relative overflow-hidden">
+    <>
+      <SEO
+        title="The Platform | Momentum Wellness"
+        description="Your complete wellness platform with structured workouts, daily habit tracking, and progress monitoring. Online fitness coaching and nutrition coaching in one place."
+        keywords="wellness platform, online fitness coaching app, nutrition coaching app, workout tracking, daily habit tracker"
+      />
+      <div className="min-h-screen bg-[#0f172a] text-white relative overflow-hidden">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
@@ -148,7 +155,7 @@ export default function Programs() {
               <div className="relative mx-auto w-full max-w-[280px]">
                 <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
                   <div className="rounded-[32px] overflow-hidden bg-black relative">
-                    <img src={mwDashboard} alt="App Dashboard" className="w-full" />
+                    <img src={mwDashboard} alt="Momentum Wellness app dashboard displaying wellness program overview" className="w-full" />
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
                   </div>
                 </div>
@@ -323,5 +330,6 @@ export default function Programs() {
         </div>
       </section>
     </div>
+    </>
   );
 }

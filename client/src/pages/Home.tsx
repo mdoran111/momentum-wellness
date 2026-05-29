@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
+import SEO from "@/components/SEO";
 import {
   ArrowRight,
   CheckCircle2,
@@ -179,13 +180,19 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0f172a]">
+    <>
+      <SEO
+        title="Online Fitness & Wellness Coaching | Momentum Wellness"
+        description="Build a healthier, stronger, more accountable you with Momentum Wellness. Structured online fitness coaching, nutrition coaching, and daily habit tracking in one app."
+        keywords="online fitness coaching, nutrition coaching, wellness coaching, training, nutrition, habits, accountability, community"
+      />
+      <div className="flex flex-col min-h-screen bg-[#0f172a]">
       {/* 1. Premium Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         {/* Background layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
         <div className="absolute inset-0 opacity-15">
-          <img src={mwSplash} alt="" className="w-full h-full object-cover" />
+          <img src={mwSplash} alt="Momentum Wellness app splash screen" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-transparent"></div>
         {/* Subtle grid */}
@@ -298,7 +305,7 @@ export default function Home() {
                 >
                   <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
                     <div className="rounded-[32px] overflow-hidden bg-black">
-                      <img src={mwGoals} alt="Goals Tracking" className="w-full" />
+                      <img src={mwGoals} alt="Momentum Wellness app goals tracking screen showing fitness goals" className="w-full" />
                     </div>
                   </div>
                 </motion.div>
@@ -312,7 +319,7 @@ export default function Home() {
                 >
                   <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
                     <div className="rounded-[32px] overflow-hidden bg-black">
-                      <img src={mwWorkouts} alt="Workouts" className="w-full" />
+                      <img src={mwWorkouts} alt="Momentum Wellness app workout library with strength and cardio sessions" className="w-full" />
                     </div>
                   </div>
                 </motion.div>
@@ -326,7 +333,7 @@ export default function Home() {
                 >
                   <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.5)] border border-white/10">
                     <div className="rounded-[32px] overflow-hidden bg-black relative">
-                      <img src={mwDashboard} alt="App Dashboard" className="w-full" />
+                      <img src={mwDashboard} alt="Momentum Wellness app dashboard showing daily wellness overview" className="w-full" />
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
                     </div>
                   </div>
@@ -681,7 +688,7 @@ export default function Home() {
               <div className="relative mx-auto w-full max-w-[300px]">
                 <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.6)] border border-white/10">
                   <div className="rounded-[32px] overflow-hidden bg-black relative">
-                    <img src={mwDashboard} alt="App Dashboard" className="w-full" />
+                    <img src={mwDashboard} alt="Momentum Wellness app dashboard showing daily wellness overview" className="w-full" />
                     <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
                   </div>
                 </div>
@@ -992,5 +999,6 @@ export default function Home() {
         </div>
       </section>
     </div>
+    </>
   );
 }

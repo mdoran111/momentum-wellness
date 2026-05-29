@@ -3,6 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
 import { ShieldCheck, Zap, Target, LayoutGrid, ChevronDown, Clock, Dumbbell, Apple, Repeat, Users, ArrowRight, CheckCircle2 } from "lucide-react";
 import { useState, useEffect } from "react";
+import SEO from "@/components/SEO";
 import logo from '../assets/images/logo.png';
 import mwSplash from "@assets/MW1_splash_1779922530400.png";
 import mwDashboard from "@assets/MW2_app_dashboard_1779922530403.png";
@@ -36,12 +37,18 @@ export default function About() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
+      <SEO
+        title="About Us | Momentum Wellness"
+        description="Momentum Wellness is committed to making comprehensive wellness accessible. Learn about our mission, the Five Pillars, and our approach to online fitness coaching and wellness coaching."
+        keywords="about Momentum Wellness, wellness coaching mission, online fitness coaching company, wellness program philosophy"
+      />
+      <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
         <div className="absolute inset-0 opacity-20">
-          <img src={logo} alt="" className="w-full h-full object-cover opacity-10" />
+          <img src={logo} alt="Momentum Wellness logo watermark" className="w-full h-full object-cover opacity-10" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-transparent"></div>
         <div
@@ -279,7 +286,7 @@ export default function About() {
                 >
                   <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
                     <div className="rounded-[32px] overflow-hidden bg-black">
-                      <img src={mwGoals} alt="Goals Tracking" className="w-full" />
+                      <img src={mwGoals} alt="Momentum Wellness app goals tracking screen" className="w-full" />
                     </div>
                   </div>
                 </motion.div>
@@ -292,7 +299,7 @@ export default function About() {
                 >
                   <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
                     <div className="rounded-[32px] overflow-hidden bg-black">
-                      <img src={mwWorkouts} alt="Workouts" className="w-full" />
+                      <img src={mwWorkouts} alt="Momentum Wellness app workout library" className="w-full" />
                     </div>
                   </div>
                 </motion.div>
@@ -305,7 +312,7 @@ export default function About() {
                 >
                   <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.5)] border border-white/10">
                     <div className="rounded-[32px] overflow-hidden bg-black relative">
-                      <img src={mwDashboard} alt="App Dashboard" className="w-full" />
+                      <img src={mwDashboard} alt="Momentum Wellness app dashboard showing wellness overview" className="w-full" />
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
                     </div>
                   </div>
@@ -455,7 +462,7 @@ export default function About() {
       <section className="h-[400px] md:h-[600px] relative overflow-hidden group">
         <div className="absolute inset-0 bg-[#0a0f1d]"></div>
         <div className="absolute inset-0 opacity-20">
-          <img src={mwSplash} alt="" className="w-full h-full object-cover" />
+          <img src={mwSplash} alt="Momentum Wellness app splash screen" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/90 via-[#0f172a]/80 to-[#0f172a]/90"></div>
         <div className="absolute inset-0 flex items-center justify-center">
@@ -468,7 +475,7 @@ export default function About() {
           >
             <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.5)] border border-white/10">
               <div className="rounded-[32px] overflow-hidden bg-black relative">
-                <img src={mwProgress} alt="Progress Tracking" className="w-full" />
+                <img src={mwProgress} alt="Momentum Wellness app progress tracking screen showing visual progress" className="w-full" />
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
               </div>
             </div>
@@ -524,5 +531,6 @@ export default function About() {
         </div>
       </section>
     </div>
+    </>
   );
 }

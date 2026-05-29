@@ -5,6 +5,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Mail, CheckCircle2, ArrowRight } from "lucide-react";
 import { Link } from "wouter";
 import { motion } from "framer-motion";
+import SEO from "@/components/SEO";
 
 export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
@@ -20,7 +21,13 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
+    <>
+      <SEO
+        title="Contact | Momentum Wellness"
+        description="Get in touch with Momentum Wellness. Questions about our online fitness coaching, nutrition coaching, or employee wellness programs? We respond within 24-48 hours."
+        keywords="contact Momentum Wellness, fitness coaching support, nutrition coaching contact, wellness program help, employee wellness inquiry"
+      />
+      <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
@@ -182,5 +189,6 @@ export default function Contact() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -4,6 +4,7 @@ import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card";
 import { CheckCircle2, ShieldCheck, Zap, Award, Dumbbell, Apple, Repeat, Target, Users, ArrowRight } from "lucide-react";
 import { Link, useLocation } from "wouter";
 import { useEffect } from "react";
+import SEO from "@/components/SEO";
 
 export default function Pricing() {
   const [location] = useLocation();
@@ -29,7 +30,13 @@ export default function Pricing() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen">
+    <>
+      <SEO
+        title="Pricing | Momentum Wellness Membership"
+        description="Complete wellness membership for $14.99/month. Get strength training, cardio workouts, daily habit tracking, and progress photos. No hidden fees, cancel anytime."
+        keywords="wellness membership, fitness coaching cost, nutrition coaching price, workout program pricing, wellness program membership"
+      />
+      <div className="flex flex-col min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
@@ -296,5 +303,6 @@ export default function Pricing() {
         </div>
       </section>
     </div>
+    </>
   );
 }

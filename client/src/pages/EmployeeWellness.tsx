@@ -4,6 +4,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Link } from "wouter";
 import { useEffect, useState } from "react";
+import SEO from "@/components/SEO";
 import {
   ArrowRight,
   Users,
@@ -142,13 +143,19 @@ export default function EmployeeWellness() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0f172a]">
+    <>
+      <SEO
+        title="Employee Wellness Programs | Corporate Wellness | Momentum Wellness"
+        description="Corporate wellness programs for companies with 50+ employees. Improve employee health, energy, and accountability through structured training, nutrition, habits, and community support."
+        keywords="employee wellness programs, corporate wellness, workplace wellness, employee wellness platform, corporate wellness programs, employee health and wellness"
+      />
+      <div className="flex flex-col min-h-screen bg-[#0f172a]">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         {/* Background layers */}
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
         <div className="absolute inset-0 opacity-20">
-          <img src={mwSplash} alt="" className="w-full h-full object-cover" />
+          <img src={mwSplash} alt="Momentum Wellness app splash screen background" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-transparent"></div>
 
@@ -256,7 +263,7 @@ export default function EmployeeWellness() {
                 >
                   <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
                     <div className="rounded-[32px] overflow-hidden bg-black">
-                      <img src={mwGoals} alt="Goals Tracking" className="w-full" />
+                      <img src={mwGoals} alt="Momentum Wellness app goals tracking screen" className="w-full" />
                     </div>
                   </div>
                 </motion.div>
@@ -270,7 +277,7 @@ export default function EmployeeWellness() {
                 >
                   <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-2xl border border-white/10">
                     <div className="rounded-[32px] overflow-hidden bg-black">
-                      <img src={mwWorkouts} alt="Workouts" className="w-full" />
+                      <img src={mwWorkouts} alt="Momentum Wellness app workout library" className="w-full" />
                     </div>
                   </div>
                 </motion.div>
@@ -284,7 +291,7 @@ export default function EmployeeWellness() {
                 >
                   <div className="rounded-[40px] bg-[#1a1a2e] p-2 shadow-[0_25px_80px_rgba(0,0,0,0.5)] border border-white/10">
                     <div className="rounded-[32px] overflow-hidden bg-black relative">
-                      <img src={mwDashboard} alt="App Dashboard" className="w-full" />
+                      <img src={mwDashboard} alt="Momentum Wellness app dashboard" className="w-full" />
                       {/* Notch */}
                       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-24 h-6 bg-[#1a1a2e] rounded-b-2xl"></div>
                     </div>
@@ -672,7 +679,7 @@ export default function EmployeeWellness() {
       <section className="py-20 md:py-28 lg:py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-[#0f172a]"></div>
         <div className="absolute inset-0 opacity-20">
-          <img src={mwSplash} alt="" className="w-full h-full object-cover" />
+          <img src={mwSplash} alt="Momentum Wellness app splash screen background" className="w-full h-full object-cover" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-b from-[#0f172a]/90 via-[#0f172a]/95 to-[#0f172a]"></div>
 
@@ -844,5 +851,6 @@ export default function EmployeeWellness() {
         </div>
       </section>
     </div>
+    </>
   );
 }

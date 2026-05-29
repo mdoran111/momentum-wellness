@@ -4,6 +4,7 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "wouter";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
+import SEO from "@/components/SEO";
 
 const FAQS = [
   {
@@ -40,7 +41,13 @@ export default function FAQ() {
   }, [location]);
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0f172a]">
+    <>
+      <SEO
+        title="FAQ | Momentum Wellness"
+        description="Answers to common questions about Momentum Wellness membership, workouts, nutrition coaching, daily habits, progress tracking, and how to get started."
+        keywords="wellness FAQ, fitness coaching questions, nutrition coaching FAQ, workout program questions, membership FAQ"
+      />
+      <div className="flex flex-col min-h-screen bg-[#0f172a]">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
@@ -192,5 +199,6 @@ export default function FAQ() {
         </div>
       </section>
     </div>
+    </>
   );
 }

@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Calendar, Zap, BarChart3, Play, Users, Clock, ArrowRight, CheckCircle2 } from "lucide-react";
 import { Link, useLocation } from "wouter";
+import SEO from "@/components/SEO";
 import mwDashboard from "@assets/MW2_app_dashboard_1779922530403.png";
 import mwWorkouts from "@assets/MW4_workouts_1779922530404.png";
 import mwProgress from "@assets/MW5_progress_1779922530404.png";
@@ -87,12 +88,18 @@ export default function InsideTheApp() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
+    <>
+      <SEO
+        title="Inside the App | Momentum Wellness"
+        description="Explore the Momentum Wellness app. Monthly phase unlocks, strength and cardio workouts, daily habit tracking, progress photos, and community support."
+        keywords="wellness app, fitness app, workout app, daily habit tracking, progress photos, strength training app, cardio app"
+      />
+      <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center overflow-hidden pt-20">
         <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
         <div className="absolute inset-0 opacity-20">
-          <img src={mwDashboard} alt="" className="w-full h-full object-cover opacity-10" />
+          <img src={mwDashboard} alt="Momentum Wellness app dashboard background" className="w-full h-full object-cover opacity-10" />
         </div>
         <div className="absolute inset-0 bg-gradient-to-r from-[#0f172a] via-[#0f172a]/90 to-transparent"></div>
         <div
@@ -375,5 +382,6 @@ export default function InsideTheApp() {
         </div>
       </section>
     </div>
+    </>
   );
 }
