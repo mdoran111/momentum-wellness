@@ -10,7 +10,11 @@ import {
   Smartphone,
   TrendingUp,
   User,
-  Building2
+  Building2,
+  Dumbbell,
+  Apple,
+  Repeat,
+  Users
 } from "lucide-react";
 
 const DIFFERENTIATORS = [
@@ -100,6 +104,27 @@ export default function About() {
             </div>
           </div>
         </section>
+
+      {/* Trust Bar */}
+      <div className="relative py-6 border-y border-white/5 bg-[#0f172a]/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
+            {[
+              { icon: Smartphone, label: "App-based coaching" },
+              { icon: Dumbbell, label: "Structured training" },
+              { icon: Apple, label: "Nutrition support" },
+              { icon: Repeat, label: "Habit & accountability" },
+              { icon: Users, label: "Community-based support" },
+              { icon: Building2, label: "Built for individuals & companies" }
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2 text-white/50 text-xs font-medium uppercase tracking-wider">
+                <item.icon className="w-3.5 h-3.5 text-emerald-400/50" />
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
         {/* 2. Our Philosophy */}
         <section className="relative py-24 md:py-32 overflow-hidden">

@@ -17,7 +17,9 @@ import {
   Clock,
   UserCheck,
   Play,
-  ChevronDown
+  ChevronDown,
+  Users,
+  Building2
 } from "lucide-react";
 import mwDashboard from "@assets/MW2_app_dashboard_1779922530403.png";
 import mwGoals from "@assets/MW3_goals_1779922530404.png";
@@ -144,10 +146,12 @@ export default function Programs() {
                   className="flex flex-wrap items-center justify-center gap-x-6 gap-y-3"
                 >
                   {[
-                    "Structured monthly programming",
-                    "App-based and community-driven",
-                    "Strength, cardio, and daily habits",
-                    "Results-focused, not generic"
+                    "App-based coaching",
+                    "Structured training programs",
+                    "Nutrition support",
+                    "Habit & accountability tracking",
+                    "Community-based support",
+                    "Designed for sustainable progress"
                   ].map((point, i) => (
                     <div key={i} className="flex items-center gap-2 text-white">
                       <CheckCircle2 className="w-4 h-4 text-emerald-400 shrink-0" />
@@ -167,6 +171,27 @@ export default function Programs() {
             <ChevronDown className="w-8 h-8" />
           </motion.div>
         </section>
+
+      {/* Trust Bar */}
+      <div className="relative py-6 border-y border-white/5 bg-[#0f172a]/50">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
+            {[
+              { icon: Smartphone, label: "App-based coaching" },
+              { icon: Dumbbell, label: "Structured training" },
+              { icon: Apple, label: "Nutrition support" },
+              { icon: Repeat, label: "Habit & accountability" },
+              { icon: Users, label: "Community-based support" },
+              { icon: Building2, label: "Built for individuals & companies" }
+            ].map((item, i) => (
+              <div key={i} className="flex items-center gap-2 text-white/50 text-xs font-medium uppercase tracking-wider">
+                <item.icon className="w-3.5 h-3.5 text-emerald-400/50" />
+                <span>{item.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
 
         {/* 2. What You Get */}
         <section className="py-24 md:py-32 relative overflow-hidden">
