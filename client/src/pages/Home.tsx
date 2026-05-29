@@ -25,7 +25,9 @@ import {
   BarChart3,
   Zap,
   Star,
-  Sparkles
+  Sparkles,
+  Building2,
+  User
 } from "lucide-react";
 import mwSplash from "@assets/MW1_splash_1779922530400.png";
 import mwDashboard from "@assets/MW2_app_dashboard_1779922530403.png";
@@ -227,7 +229,7 @@ export default function Home() {
               >
                 <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                 <span className="text-sm font-semibold tracking-wider uppercase text-white">
-                  App-Based Wellness Programs
+                  Online Fitness & Wellness Coaching
                 </span>
               </motion.div>
 
@@ -239,31 +241,50 @@ export default function Home() {
                 You
               </h1>
 
-              <p className="text-lg md:text-xl text-white mb-4 font-light leading-relaxed">
-                Momentum Wellness helps you improve fitness, nutrition, daily habits, and long-term wellness through a structured, app-based program built around training, accountability, and community.
-              </p>
-              <p className="text-base text-white mb-10 font-light leading-relaxed max-w-xl">
-                Whether you're just starting out or looking to level up, our system gives you the plan, the tools, and the support to stay consistent and build progress.
+              <p className="text-lg md:text-xl text-white mb-10 font-light leading-relaxed max-w-xl">
+                Structured online fitness coaching, nutrition coaching, and wellness coaching — for individuals and companies alike.
               </p>
 
-              <div className="flex flex-col sm:flex-row gap-4 mb-12">
-                <Link href="/programs" className="w-full sm:w-auto">
-                  <Button
-                    size="lg"
-                    className="w-full sm:w-auto rounded-full text-base px-8 h-14 bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 font-bold shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
-                  >
-                    Get Started
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
+              {/* Two Path Cards */}
+              <div className="flex flex-col gap-4 mb-12">
+                {/* Path 1: Individuals */}
+                <Link href="/programs" className="block group">
+                  <div className="relative p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-emerald-500/40 hover:bg-white/[0.05] transition-all duration-500">
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-emerald-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex flex-col sm:flex-row sm:items-center gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-emerald-500/10 to-teal-500/10 flex items-center justify-center text-emerald-400 shrink-0">
+                        <User className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-white mb-1">For Individuals</h3>
+                        <p className="text-sm text-white/60 font-light">App-based fitness & nutrition coaching starting at $14.99/month</p>
+                      </div>
+                      <div className="flex items-center gap-2 text-emerald-400 font-semibold text-sm shrink-0">
+                        <span>Explore Programs</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
+                  </div>
                 </Link>
-                <Link href="/about" className="w-full sm:w-auto">
-                  <Button
-                    size="lg"
-                    variant="outline"
-                    className="w-full sm:w-auto rounded-full text-base px-8 h-14 border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300 font-bold"
-                  >
-                    Learn More
-                  </Button>
+
+                {/* Path 2: Companies */}
+                <Link href="/employee-wellness-programs" className="block group">
+                  <div className="relative p-6 rounded-2xl bg-white/[0.03] border border-white/10 hover:border-blue-500/40 hover:bg-white/[0.05] transition-all duration-500">
+                    <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-blue-500/[0.03] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="relative flex flex-col sm:flex-row sm:items-center gap-4">
+                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-blue-500/10 to-indigo-500/10 flex items-center justify-center text-blue-400 shrink-0">
+                        <Building2 className="w-6 h-6" />
+                      </div>
+                      <div className="flex-1">
+                        <h3 className="text-lg font-bold text-white mb-1">For Companies</h3>
+                        <p className="text-sm text-white/60 font-light">Employee wellness programs for teams of 50+</p>
+                      </div>
+                      <div className="flex items-center gap-2 text-blue-400 font-semibold text-sm shrink-0">
+                        <span>Learn More</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" />
+                      </div>
+                    </div>
+                  </div>
                 </Link>
               </div>
 
