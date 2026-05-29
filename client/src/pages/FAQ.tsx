@@ -125,24 +125,23 @@ export default function FAQ() {
         </div>
       </section>
 
-      <div className="bg-[#0f172a]">
-        <div className="container relative z-10 mx-auto px-4 max-w-3xl py-24">
-
-        <div className="bg-white/[0.02] rounded-3xl p-6 md:p-12 border border-white/5 shadow-md">
-          <Accordion type="single" collapsible className="w-full">
-            {FAQS.map((faq, index) => (
-              <AccordionItem key={index} value={`item-${index}`} className="border-b border-white/5 last:border-0">
-                <AccordionTrigger className="text-left font-bold text-lg hover:text-white py-8 text-white hover:no-underline group italic tracking-tight">
-                  <span className="group-hover:translate-x-1 transition-transform duration-300 uppercase">{faq.question}</span>
-                </AccordionTrigger>
-                <AccordionContent className="text-base text-white/70 pb-8 leading-relaxed font-light">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+      <div className="bg-[#0f172a] py-24">
+        <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 max-w-3xl">
+          <div className="bg-white/[0.02] rounded-3xl p-6 md:p-12 border border-white/5 shadow-md">
+            <Accordion type="single" collapsible className="w-full">
+              {FAQS.map((faq, index) => (
+                <AccordionItem key={index} value={`item-${index}`} className="border-b border-white/5 last:border-0">
+                  <AccordionTrigger className="text-left font-bold text-base md:text-lg hover:text-white py-6 md:py-8 text-white hover:no-underline group italic tracking-tight">
+                    <span className="group-hover:translate-x-1 transition-transform duration-300 uppercase">{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-base text-white/70 pb-8 leading-relaxed font-light">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
         </div>
-      </div>
       </div>
 
       {/* CTA Section */}
@@ -159,21 +158,21 @@ export default function FAQ() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
               Still Have
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
                 Questions?
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
               We are here to help. Reach out and we will get back to you within 24-48 hours.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="rounded-full text-lg px-12 h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
+                  className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
                 >
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -183,7 +182,7 @@ export default function FAQ() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full text-lg px-12 h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
+                  className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
                 >
                   Contact Momentum Wellness
                 </Button>

@@ -130,12 +130,12 @@ export default function Pricing() {
             <CardHeader className="text-center pt-16 pb-10 border-b border-white/10">
               <CardTitle className="text-2xl font-bold font-heading mb-4 text-white uppercase tracking-widest italic">Complete Wellness Membership</CardTitle>
               <div className="flex items-baseline justify-center gap-2">
-                <span className="text-7xl font-bold font-heading text-white">$14.99</span>
+                <span className="text-5xl sm:text-6xl md:text-7xl font-bold font-heading text-white">$14.99</span>
                 <span className="text-white/60 text-xl font-light">/month</span>
               </div>
               <p className="mt-4 text-white/70 text-sm font-medium tracking-wide uppercase">Billed Monthly</p>
             </CardHeader>
-            <CardContent className="p-12">
+            <CardContent className="p-8 md:p-12">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-6 mb-12">
                 {[
                   "Strength Training Workouts",
@@ -262,21 +262,21 @@ export default function Pricing() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
               Ready to Build
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
                 Your Momentum?
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
               Every feature in your membership connects back to the same proven system — training, nutrition, habits, accountability, and community.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="rounded-full text-lg px-12 h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
+                  className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
                 >
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -286,7 +286,7 @@ export default function Pricing() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full text-lg px-12 h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
+                  className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
                 >
                   Contact Momentum Wellness
                 </Button>

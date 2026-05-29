@@ -357,26 +357,25 @@ export default function About() {
       </section>
 
       {/* The Momentum Method */}
-      <section className="py-48 bg-[#0f172a] relative overflow-hidden">
+      <section className="py-24 md:py-48 bg-[#0f172a] relative overflow-hidden">
         <div className="absolute top-0 right-0 w-96 h-96 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2 blur-3xl"></div>
         <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2 blur-3xl"></div>
-        
-        <div className="container mx-auto px-4 relative z-10">
-          <motion.div 
+
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-center mb-32"
+            className="text-center mb-16 md:mb-32"
           >
             <div className="inline-block mb-6 px-4 py-1.5 rounded-full border border-white/20 bg-white/10 text-sm font-medium tracking-wider uppercase text-white/90">
               Our Foundation
             </div>
-            <h2 className="text-5xl md:text-7xl font-bold font-heading text-white mb-8 italic tracking-tight uppercase leading-[1.1]">The Momentum Method</h2>
-            <p className="text-white/80 max-w-3xl mx-auto text-xl font-light leading-relaxed">A holistic approach that weaves together five essential pillars—training, cardio, daily habits, progress, and recovery—to create lasting wellness and improve how you feel.</p>
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold font-heading text-white mb-8 italic tracking-tight uppercase leading-[1.1]">The Momentum Method</h2>
+            <p className="text-white/80 max-w-3xl mx-auto text-lg md:text-xl font-light leading-relaxed">A holistic approach that weaves together five essential pillars—training, cardio, daily habits, progress, and recovery—to create lasting wellness and improve how you feel.</p>
           </motion.div>
 
-          
-          <div className="flex flex-wrap justify-center gap-6 items-start max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
             {[
               {
                 icon: Target,
@@ -409,18 +408,18 @@ export default function About() {
                 desc: "Strategic rest and recovery support adaptation and sustainable progress. Quality sleep, active recovery, and proper rest periods help your body respond to training."
               }
             ].map((value, i) => (
-              <motion.div 
-                key={i} 
+              <motion.div
+                key={i}
                 initial={{ opacity: 0, scale: 0.9 }}
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: i * 0.1 }}
-                className="flex flex-col items-center flex-1 min-w-[140px]"
+                className="flex flex-col items-center"
               >
                 <motion.button
                   whileHover={{ scale: 1.05 }}
                   onClick={() => setSelectedPillar(selectedPillar === i ? null : i)}
-                  className={`relative flex-1 w-full rounded-2xl border transition-all duration-500 flex flex-col items-center justify-center py-8 px-6 text-center cursor-pointer ${
+                  className={`relative w-full rounded-2xl border transition-all duration-500 flex flex-col items-center justify-center py-8 px-6 text-center cursor-pointer ${
                     selectedPillar === i
                       ? "bg-white/[0.04] border-emerald-500/30"
                       : "bg-white/[0.02] border-white/5 hover:border-white/10 hover:bg-white/[0.04]"
@@ -453,7 +452,7 @@ export default function About() {
       </section>
 
       {/* Full-width App Break */}
-      <section className="h-[600px] relative overflow-hidden group">
+      <section className="h-[400px] md:h-[600px] relative overflow-hidden group">
         <div className="absolute inset-0 bg-[#0a0f1d]"></div>
         <div className="absolute inset-0 opacity-20">
           <img src={mwSplash} alt="" className="w-full h-full object-cover" />
@@ -491,21 +490,21 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
               Ready to Build
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
                 Your Momentum?
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
               Join a community that values structure, consistency, and measurable progress.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="rounded-full text-lg px-12 h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
+                  className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
                 >
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -515,7 +514,7 @@ export default function About() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full text-lg px-12 h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
+                  className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
                 >
                   Contact Momentum Wellness
                 </Button>

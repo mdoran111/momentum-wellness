@@ -182,7 +182,7 @@ export default function InsideTheApp() {
 
       {/* Features Grid */}
       <section className="py-24 bg-[#0f172a]">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -223,7 +223,7 @@ export default function InsideTheApp() {
 
       {/* App Experience Showcase */}
       <section className="py-24 bg-[#0a0f1d]">
-        <div className="container mx-auto px-4">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -272,7 +272,7 @@ export default function InsideTheApp() {
 
       {/* Core Features Section */}
       <section className="py-24 bg-[#0f172a]">
-        <div className="container mx-auto px-4 max-w-5xl">
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-5xl">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -341,21 +341,21 @@ export default function InsideTheApp() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
               Ready to Experience
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
                 The Platform?
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
               Join thousands of members using Momentum Wellness to build strength, consistency, and long-term wellness.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="rounded-full text-lg px-12 h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
+                  className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
                 >
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -365,7 +365,7 @@ export default function InsideTheApp() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full text-lg px-12 h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
+                  className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
                 >
                   Contact Momentum Wellness
                 </Button>

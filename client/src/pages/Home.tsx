@@ -815,21 +815,21 @@ export default function Home() {
             viewport={{ once: true }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl md:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
+            <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
               Start Today.
               <br />
               <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
                 Build Momentum.
               </span>
             </h2>
-            <p className="text-xl md:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl lg:text-2xl text-white/70 mb-12 font-light leading-relaxed max-w-2xl mx-auto">
               Get the structure, accountability, and support you need to build lasting progress in fitness, nutrition, and daily habits.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link href="/contact">
                 <Button
                   size="lg"
-                  className="rounded-full text-lg px-12 h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
+                  className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
                 >
                   Get Started
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -839,7 +839,7 @@ export default function Home() {
                 <Button
                   size="lg"
                   variant="outline"
-                  className="rounded-full text-lg px-12 h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
+                  className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold border-white/20 text-white hover:bg-white/5 backdrop-blur-sm transition-all duration-300"
                 >
                   Contact Momentum Wellness
                 </Button>
@@ -868,9 +868,9 @@ export default function Home() {
               </h2>
             </motion.div>
 
-            <div className="relative bg-white/[0.02] p-8 md:p-16 rounded-3xl border border-white/5 min-h-[400px] flex flex-col justify-center overflow-hidden backdrop-blur-sm">
+            <div className="relative bg-white/[0.02] p-6 sm:p-8 md:p-16 rounded-3xl border border-white/5 min-h-[320px] sm:min-h-[400px] flex flex-col justify-center overflow-hidden backdrop-blur-sm">
               <div className={`transition-all duration-500 ease-in-out ${isAnimating ? 'opacity-0 scale-95' : 'opacity-100 scale-100'}`}>
-                <p className="text-xl md:text-2xl text-white font-medium leading-relaxed italic mb-8">
+                <p className="text-base sm:text-xl md:text-2xl text-white font-medium leading-relaxed italic mb-8">
                   "{TESTIMONIALS[currentTestimonial].content}"
                 </p>
                 <div className="flex flex-col items-center">
@@ -882,24 +882,24 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="absolute top-1/2 -translate-y-1/2 left-4 md:left-8">
+              <div className="absolute top-1/2 -translate-y-1/2 left-3 sm:left-4 md:left-8">
                 <Button
                   variant="outline"
                   size="icon"
                   onClick={handlePrev}
-                  className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white transition-all h-12 w-12 text-white"
+                  className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white transition-all h-10 w-10 sm:h-12 sm:w-12 text-white"
                 >
-                  <ChevronLeft className="w-6 h-6" />
+                  <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
                 </Button>
               </div>
-              <div className="absolute top-1/2 -translate-y-1/2 right-4 md:right-8">
+              <div className="absolute top-1/2 -translate-y-1/2 right-3 sm:right-4 md:right-8">
                 <Button
                   variant="outline"
                   size="icon"
                   onClick={handleNext}
-                  className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white transition-all h-12 w-12 text-white"
+                  className="rounded-full bg-white/5 border-white/10 hover:bg-white/10 hover:text-white transition-all h-10 w-10 sm:h-12 sm:w-12 text-white"
                 >
-                  <ChevronRight className="w-6 h-6" />
+                  <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
                 </Button>
               </div>
 
