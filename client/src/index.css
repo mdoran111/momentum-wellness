@@ -99,6 +99,46 @@
   }
 }
 
+@media print {
+  @page {
+    margin: 0.5in;
+  }
+
+  body {
+    background: white !important;
+    color: #0f172a !important;
+  }
+
+  body::before,
+  .admin-no-print {
+    display: none !important;
+  }
+
+  .admin-calculator-shell {
+    min-height: auto !important;
+    background: white !important;
+  }
+
+  .admin-calculator-header {
+    background: white !important;
+    color: #0f172a !important;
+    padding: 0 0 1.5rem !important;
+  }
+
+  .admin-calculator-header p {
+    color: #475569 !important;
+  }
+
+  .admin-print-summary {
+    grid-column: 1 / -1;
+    box-shadow: none !important;
+  }
+
+  .proposal-section {
+    break-inside: avoid;
+  }
+}
+
 /* ============================================
    MOMENTUM WELLNESS PREMIUM DESIGN SYSTEM
    ============================================
@@ -125,4 +165,3 @@
    - Noise Overlay:    data URI SVG noise at 0.015 opacity
    - Emerald Glow:     radial-gradient with bg-emerald-500/10 blur-[100px]
    - Grid Pattern:     60px linear-gradient lines at 0.03 opacity
-
