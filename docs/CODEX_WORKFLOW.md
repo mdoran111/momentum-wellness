@@ -80,7 +80,8 @@ Website changes must preserve these rules:
 
 Current limitations:
 
-- Contact submissions use a configurable Formspree endpoint.
+- Contact submissions use the Formspree endpoint configured in
+  `.env.production`, with local overrides kept in the ignored `.env` file.
 - Internal admin tools are available only during local development.
 - The Express server has no active API routes.
 - The database schema is scaffolded but not used by the website.
