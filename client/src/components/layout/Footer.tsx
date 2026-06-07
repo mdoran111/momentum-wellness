@@ -1,6 +1,7 @@
 import { Link } from "wouter";
-import { Instagram, Twitter, Facebook, Youtube } from "lucide-react";
+import { Instagram } from "lucide-react";
 import logo from "@/assets/images/logo.png";
+import { analyticsEvents, trackEvent } from "@/lib/analytics";
 
 export function Footer() {
   return (
@@ -12,20 +13,18 @@ export function Footer() {
             <h3 className="font-heading font-extrabold text-xl tracking-tighter text-white">MomentumWellness</h3>
           </div>
           <p className="text-white font-medium max-w-sm mb-6">
-            Expertly designed continuous fitness programs with monthly phase unlocks. Strength training, cardio, daily habits, and progress tracking to transform your health.
+            App-based training, nutrition structure, habit tracking, progress
+            tools, and accountability for individuals and companies.
           </p>
           <div className="flex gap-4 mb-6">
-            <a href="https://instagram.com/momentum_wellness_health" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-all text-white">
+            <a
+              href="https://instagram.com/momentum_wellness_health"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="Momentum Wellness on Instagram"
+              className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-all text-white"
+            >
               <Instagram className="w-5 h-5" />
-            </a>
-            <a href="https://twitter.com" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-all text-white">
-              <Twitter className="w-5 h-5" />
-            </a>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-all text-white">
-              <Facebook className="w-5 h-5" />
-            </a>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-10 h-10 bg-white/5 rounded-full flex items-center justify-center hover:bg-white hover:text-primary transition-all text-white">
-              <Youtube className="w-5 h-5" />
             </a>
           </div>
           <p className="text-xs text-white/70 font-semibold italic">
@@ -38,9 +37,35 @@ export function Footer() {
             <li><Link href="/about" onClick={() => window.scrollTo(0, 0)} className="hover:text-white/70 transition-colors">About</Link></li>
             <li><Link href="/programs" onClick={() => window.scrollTo(0, 0)} className="hover:text-white/70 transition-colors">Programs</Link></li>
             <li><Link href="/employee-wellness-programs" onClick={() => window.scrollTo(0, 0)} className="hover:text-white/70 transition-colors">For Companies</Link></li>
-            <li><Link href="/pricing" onClick={() => window.scrollTo(0, 0)} className="hover:text-white/70 transition-colors">Pricing</Link></li>
+            <li>
+              <Link
+                href="/pricing"
+                onClick={() => {
+                  trackEvent(analyticsEvents.viewPricing, {
+                    placement: "footer",
+                  });
+                  window.scrollTo(0, 0);
+                }}
+                className="hover:text-white/70 transition-colors"
+              >
+                Pricing
+              </Link>
+            </li>
             <li><Link href="/faq" onClick={() => window.scrollTo(0, 0)} className="hover:text-white/70 transition-colors">FAQ</Link></li>
-            <li><Link href="/contact" onClick={() => window.scrollTo(0, 0)} className="hover:text-white/70 transition-colors">Contact</Link></li>
+            <li>
+              <Link
+                href="/contact"
+                onClick={() => {
+                  trackEvent(analyticsEvents.contact, {
+                    placement: "footer",
+                  });
+                  window.scrollTo(0, 0);
+                }}
+                className="hover:text-white/70 transition-colors"
+              >
+                Contact
+              </Link>
+            </li>
           </ul>
         </div>
         <div>

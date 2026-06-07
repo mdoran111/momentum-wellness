@@ -1,295 +1,273 @@
-import { useEffect } from "react";
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Link } from "wouter";
-import SEO from "@/components/SEO";
 import {
-  CheckCircle2,
-  ArrowRight,
-  Dumbbell,
   Apple,
-  Repeat,
+  ArrowRight,
   BarChart3,
-  UserCheck,
-  Smartphone,
   Building2,
-  Users
+  Check,
+  Dumbbell,
+  Repeat,
+  Smartphone,
+  UserCheck,
 } from "lucide-react";
+import SEO from "@/components/SEO";
+import { Button } from "@/components/ui/button";
+import { analyticsEvents, trackEvent } from "@/lib/analytics";
 
-const INCLUDED = [
-  { icon: Dumbbell, label: "Training structure", desc: "Monthly strength and cardio programming" },
-  { icon: Apple, label: "Nutrition support", desc: "Macro guidance and daily awareness" },
-  { icon: Repeat, label: "Habit tracking", desc: "Sleep, hydration, movement, recovery" },
-  { icon: BarChart3, label: "Progress tracking", desc: "Metrics, trends, and visual progress" },
-  { icon: UserCheck, label: "Accountability", desc: "Weekly check-ins and structured support" },
-  { icon: Smartphone, label: "App-based access", desc: "Everything in the Momentum Wellness app" }
+const planFeatures = [
+  "Monthly program phases",
+  "Complete app-based program access",
+  "Community and accountability support",
+];
+
+const included = [
+  {
+    icon: Dumbbell,
+    title: "Training structure",
+    description: "Organized strength and cardio programming.",
+  },
+  {
+    icon: Apple,
+    title: "Nutrition support",
+    description: "Practical guidance for better daily choices.",
+  },
+  {
+    icon: Repeat,
+    title: "Habit tracking",
+    description: "Keep important wellness routines visible.",
+  },
+  {
+    icon: BarChart3,
+    title: "Progress tracking",
+    description: "Monitor goals, activity, and visual progress.",
+  },
+  {
+    icon: UserCheck,
+    title: "Accountability",
+    description: "Use check-ins and structure to stay engaged.",
+  },
+  {
+    icon: Smartphone,
+    title: "App-based access",
+    description: "Access your program wherever you are.",
+  },
 ];
 
 export default function Pricing() {
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, []);
-
   return (
     <>
       <SEO
         title="Pricing | Momentum Wellness"
         description="View Momentum Wellness program options for individuals and learn how to get started with app-based training, nutrition, habits, and accountability."
-        keywords="fitness coaching price, nutrition coaching cost, wellness program pricing, app-based coaching, monthly fitness program"
+        keywords="individual fitness program pricing, app-based coaching price, nutrition coaching cost, fitness accountability program"
       />
-      <div className="flex flex-col min-h-screen bg-[#0f172a] text-white">
-        {/* 1. Hero */}
-        <section className="relative min-h-[80vh] flex items-center overflow-hidden pt-20">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a]"></div>
-          <div className="absolute inset-0" style={{backgroundImage: `radial-gradient(circle at 30% 50%, rgba(16,185,129,0.06) 0%, transparent 50%), radial-gradient(circle at 70% 50%, rgba(255,255,255,0.02) 0%, transparent 50%)`}}></div>
-          <div className="absolute inset-0 opacity-[0.015]" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}}></div>
 
-          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 py-16">
-            <div className="max-w-4xl mx-auto text-center">
-              <motion.div
-                initial={{ opacity: 0, y: 40 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 1, ease: "easeOut" as const }}
-              >
-                <motion.div
-                  initial={{ opacity: 0, scale: 0.9 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  transition={{ duration: 0.6, delay: 0.2 }}
-                  className="inline-flex items-center gap-2 mb-8 px-5 py-2.5 rounded-full border border-white/10 bg-white/5 backdrop-blur-md"
-                >
-                  <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
-                  <span className="text-sm font-semibold tracking-wider uppercase text-white">Pricing</span>
-                </motion.div>
+      <main className="min-h-screen overflow-hidden bg-[#0f172a] text-white">
+        <section className="relative flex min-h-[62vh] items-center overflow-hidden px-4 pb-20 pt-32 sm:px-6 lg:px-8">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_30%,rgba(16,185,129,0.16),transparent_36%),linear-gradient(135deg,#0f172a_0%,#172033_55%,#0f172a_100%)]" />
+          <div
+            className="absolute inset-0 opacity-[0.035]"
+            style={{
+              backgroundImage:
+                "linear-gradient(rgba(255,255,255,.2) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.2) 1px, transparent 1px)",
+              backgroundSize: "64px 64px",
+            }}
+          />
 
-                <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-6 leading-[1.05] tracking-tight">
-                  Simple Pricing{" "}
-                  <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-                    for App-Based Coaching
+          <motion.div
+            initial={{ opacity: 0, y: 24 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.65 }}
+            className="container relative z-10 mx-auto max-w-4xl text-center"
+          >
+            <p className="text-sm font-semibold uppercase tracking-[0.24em] text-emerald-400">
+              Individual pricing
+            </p>
+            <h1 className="mt-5 text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+              Simple Pricing for App-Based Coaching
+            </h1>
+            <p className="mx-auto mt-7 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
+              Choose the Momentum Wellness option that gives you the structure,
+              accountability, and support you need to build better health
+              habits.
+            </p>
+          </motion.div>
+        </section>
+
+        <section className="relative px-4 pb-20 sm:px-6 lg:px-8">
+          <div className="container mx-auto">
+            <motion.article
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, amount: 0.2 }}
+              className="mx-auto grid max-w-5xl overflow-hidden rounded-[2rem] border border-white/10 bg-white/[0.05] shadow-2xl shadow-black/30 lg:grid-cols-[0.85fr_1.15fr]"
+            >
+              <div className="border-b border-white/10 bg-emerald-400/[0.06] p-8 sm:p-10 lg:border-b-0 lg:border-r">
+                <span className="text-sm font-semibold uppercase tracking-[0.2em] text-emerald-400">
+                  Complete Wellness Coaching
+                </span>
+                <div className="mt-6 flex items-end gap-2">
+                  <span className="text-5xl font-bold tracking-tight sm:text-6xl">
+                    $150
                   </span>
-                </h1>
-
-                <p className="text-lg md:text-xl text-white font-light leading-relaxed max-w-3xl mx-auto">
-                  Choose the Momentum Wellness option that gives you the structure, accountability, and support you need to build better health habits.
-                </p>
-              </motion.div>
-            </div>
-          </div>
-        </section>
-
-      {/* Trust Bar */}
-      <div className="relative py-6 border-y border-white/5 bg-[#0f172a]/50">
-        <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-x-8 gap-y-2">
-            {[
-              { icon: Smartphone, label: "App-based coaching" },
-              { icon: Dumbbell, label: "Structured training" },
-              { icon: Apple, label: "Nutrition support" },
-              { icon: Repeat, label: "Habit & accountability" },
-              { icon: Users, label: "Community-based support" },
-              { icon: Building2, label: "Built for individuals & companies" }
-            ].map((item, i) => (
-              <div key={i} className="flex items-center gap-2 text-white/50 text-xs font-medium uppercase tracking-wider">
-                <item.icon className="w-3.5 h-3.5 text-emerald-400/50" />
-                <span>{item.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-      </div>
-
-        {/* 2. Pricing Card */}
-        <section className="relative py-24 md:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0f1d]"></div>
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 opacity-30" style={{backgroundImage: `radial-gradient(circle at 50% 50%, rgba(16,185,129,0.05) 0%, transparent 50%)`}}></div>
-          </div>
-          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8 }}
-                className="relative rounded-3xl bg-white/[0.02] border border-white/10 hover:border-emerald-500/30 transition-all duration-500 overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-b from-emerald-500/[0.03] to-transparent"></div>
-                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-emerald-400 via-teal-400 to-emerald-400"></div>
-
-                <div className="relative p-8 md:p-12">
-                  <div className="text-center mb-8">
-                    <span className="text-sm font-semibold tracking-wider uppercase text-white/60 mb-3 block">Individual</span>
-                    <h2 className="text-2xl font-bold text-white mb-4">Complete Wellness Coaching</h2>
-                    <div className="flex items-baseline justify-center gap-2">
-                      <span className="text-6xl md:text-7xl font-bold text-white">$14.99</span>
-                      <span className="text-white/50 text-lg font-light">/month</span>
-                    </div>
-                    <p className="text-white/40 text-sm mt-3 font-light">Billed monthly. Cancel anytime.</p>
-                  </div>
-
-                  <div className="space-y-4 mb-10">
-                    {[
-                      "Monthly phase unlocks",
-                      "Strength & cardio workouts",
-                      "Daily habit tracking",
-                      "Nutrition guidance",
-                      "Progress tracking & photos",
-                      "Community support",
-                      "Weekly accountability check-ins"
-                    ].map((item, i) => (
-                      <div key={i} className="flex items-center gap-3">
-                        <div className="w-5 h-5 rounded-full bg-emerald-500/10 flex items-center justify-center shrink-0">
-                          <CheckCircle2 className="w-3.5 h-3.5 text-emerald-400" />
-                        </div>
-                        <span className="text-white/90 font-light text-sm">{item}</span>
-                      </div>
-                    ))}
-                  </div>
-
-                  <Link href="/contact" className="block w-full">
-                    <Button className="w-full rounded-full h-14 text-base font-bold bg-white text-[#0f172a] hover:bg-white/90 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)]">
-                      Get Started
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
-                  </Link>
-
-                  <div className="mt-6 text-center">
-                    <p className="text-xs text-white/40 font-light">No hidden fees. No contracts. Full access.</p>
-                  </div>
+                  <span className="pb-2 text-slate-400">/month</span>
                 </div>
-              </motion.div>
-            </div>
+                <p className="mt-3 text-sm text-slate-400">
+                  Billed monthly. Cancel anytime.
+                </p>
+
+                <div className="mt-8 rounded-2xl border border-white/10 bg-slate-950/40 p-5">
+                  <p className="text-sm font-semibold text-white">
+                    Best for
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">
+                    Individuals who want a clear fitness and nutrition
+                    structure with habit tracking, progress tools, and ongoing
+                    accountability.
+                  </p>
+                </div>
+              </div>
+
+              <div className="p-8 sm:p-10">
+                <h2 className="text-2xl font-bold">What the program includes</h2>
+                <ul className="mt-7 grid gap-4 sm:grid-cols-2">
+                  {planFeatures.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex items-start gap-3 text-sm leading-6 text-slate-200"
+                    >
+                      <span className="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-emerald-400/15 text-emerald-400">
+                        <Check className="h-3.5 w-3.5" />
+                      </span>
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+
+                <Button
+                  asChild
+                  size="lg"
+                  className="mt-9 min-h-14 w-full rounded-full border-0 bg-emerald-500 px-8 text-base font-semibold text-white hover:bg-emerald-400"
+                >
+                  <Link
+                    href="/contact"
+                    onClick={() =>
+                      trackEvent(analyticsEvents.startProgram, {
+                        placement: "pricing_card",
+                      })
+                    }
+                  >
+                    Start Your Program
+                    <ArrowRight />
+                  </Link>
+                </Button>
+              </div>
+            </motion.article>
           </div>
         </section>
 
-        {/* 3. What's Included */}
-        <section className="relative py-24 md:py-32 overflow-hidden bg-[#f8fafc]">
-          <div className="absolute inset-0 bg-gradient-to-b from-[#f8fafc] via-[#eef2f6] to-[#f8fafc]"></div>
-          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-16 max-w-3xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8 }}
-              >
-                <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] mb-6 leading-[1.05] tracking-tight">
-                  What's{" "}
-                  <span className="italic">Included</span>
-                </h2>
-                <p className="text-lg text-gray-700 font-light leading-relaxed">
-                  Six core components. One simple membership.
-                </p>
-              </motion.div>
+        <section className="bg-slate-100 px-4 py-20 text-slate-950 sm:px-6 lg:px-8">
+          <div className="container mx-auto">
+            <div className="mx-auto max-w-2xl text-center">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-700">
+                One membership
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                What&apos;s Included
+              </h2>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
-              {INCLUDED.map((item, index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, y: 30 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.08 }}
-                  className="group p-6 rounded-2xl bg-white border border-gray-200 shadow-sm hover:border-emerald-300 hover:shadow-lg transition-all duration-500"
+            <div className="mx-auto mt-12 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {included.map(({ icon: Icon, title, description }) => (
+                <article
+                  key={title}
+                  className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
                 >
-                  <div className="absolute inset-0 rounded-2xl bg-gradient-to-b from-emerald-50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                  <div className="relative flex items-start gap-4">
-                    <div className="w-10 h-10 rounded-lg bg-gradient-to-br from-emerald-100 to-teal-100 flex items-center justify-center text-emerald-600 shrink-0 group-hover:text-emerald-700 transition-colors duration-300">
-                      <item.icon className="w-5 h-5" />
-                    </div>
-                    <div>
-                      <h3 className="text-lg font-bold text-[#0f172a] mb-1">{item.label}</h3>
-                      <p className="text-gray-600 font-light leading-relaxed text-sm">{item.desc}</p>
-                    </div>
+                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
+                    <Icon className="h-5 w-5" />
                   </div>
-                </motion.div>
+                  <div>
+                    <h3 className="text-lg font-bold">{title}</h3>
+                    <p className="mt-2 text-sm leading-6 text-slate-600">
+                      {description}
+                    </p>
+                  </div>
+                </article>
               ))}
             </div>
           </div>
         </section>
 
-        {/* 4. Corporate Wellness Note */}
-        <section className="relative py-24 md:py-32 overflow-hidden">
-          <div className="absolute inset-0 bg-[#0a0f1d]"></div>
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 opacity-20" style={{backgroundImage: `radial-gradient(circle at 30% 50%, rgba(59,130,246,0.08) 0%, transparent 50%)`}}></div>
-          </div>
-          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="max-w-4xl mx-auto">
-              <motion.div
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.8 }}
-                className="relative rounded-3xl bg-white/[0.02] border border-white/10 hover:border-blue-500/30 hover:bg-white/[0.04] transition-all duration-500 overflow-hidden"
-              >
-                <div className="absolute inset-0 bg-gradient-to-b from-blue-500/[0.03] to-transparent"></div>
-                <div className="absolute top-0 inset-x-0 h-1 bg-gradient-to-r from-blue-400 via-blue-500 to-blue-400"></div>
-
-                <div className="relative p-8 md:p-12 text-center">
-                  <div className="w-12 h-12 rounded-xl bg-blue-500/10 flex items-center justify-center mx-auto mb-6 text-blue-400">
-                    <Building2 className="w-6 h-6" />
-                  </div>
-                  <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-[1.05] tracking-tight">
-                    Looking for{" "}
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-blue-500">
-                      Employee Wellness Programs?
-                    </span>
-                  </h2>
-                  <p className="text-lg text-white font-light leading-relaxed max-w-2xl mx-auto mb-8">
-                    Momentum Wellness also partners with companies with 50+ employees to provide app-based employee wellness programs built around training, nutrition, habits, accountability, and community.
-                  </p>
-                  <Link href="/employee-wellness-programs">
-                    <Button
-                      size="lg"
-                      className="w-full sm:w-auto rounded-full text-base px-8 h-14 font-bold bg-white text-[#0f172a] hover:bg-white/90 hover:scale-[1.02] transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)]"
-                    >
-                      Book a Corporate Wellness Consultation
-                      <ArrowRight className="ml-2 w-5 h-5" />
-                    </Button>
+        <section className="px-4 py-20 sm:px-6 lg:px-8">
+          <div className="container mx-auto">
+            <div className="mx-auto grid max-w-5xl gap-8 rounded-[2rem] border border-white/10 bg-white/[0.05] p-8 sm:p-12 lg:grid-cols-[auto_1fr] lg:items-center">
+              <div className="flex h-14 w-14 items-center justify-center rounded-2xl bg-blue-400/10 text-blue-400">
+                <Building2 className="h-7 w-7" />
+              </div>
+              <div>
+                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
+                  Looking for Employee Wellness Programs?
+                </h2>
+                <p className="mt-5 max-w-3xl text-lg leading-8 text-slate-300">
+                  Momentum Wellness also partners with companies with 50+
+                  employees to provide app-based employee wellness programs
+                  built around training, nutrition, habits, accountability,
+                  and community.
+                </p>
+                <Button
+                  asChild
+                  variant="outline"
+                  size="lg"
+                  className="mt-7 min-h-14 rounded-full border-white/25 bg-transparent px-7 text-base font-semibold text-white hover:bg-white/10"
+                >
+                  <Link
+                    href="/employee-wellness-programs"
+                    onClick={() =>
+                      trackEvent(analyticsEvents.bookCorporateConsultation, {
+                        placement: "pricing_corporate_note",
+                      })
+                    }
+                  >
+                    Book a Corporate Wellness Consultation
+                    <ArrowRight />
                   </Link>
-                </div>
-              </motion.div>
+                </Button>
+              </div>
             </div>
           </div>
         </section>
 
-        {/* 5. Final CTA */}
-        <section className="py-24 md:py-32 relative overflow-hidden">
-          <div className="absolute inset-0 bg-[#0f172a]"></div>
-          <div className="absolute inset-0">
-            <div className="absolute inset-0 opacity-40" style={{backgroundImage: `radial-gradient(circle at 50% 50%, rgba(16,185,129,0.08) 0%, transparent 50%)`}}></div>
-          </div>
-          <div className="absolute inset-0 opacity-[0.015]" style={{backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`}}></div>
-
-          <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.8 }}
+        <section className="border-t border-white/10 bg-slate-950 px-4 py-20 sm:px-6 lg:px-8">
+          <div className="container mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
+              Ready to Get Started?
+            </h2>
+            <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-400">
+              Tell us what kind of structure and support you are looking for,
+              and we will help you take the next step.
+            </p>
+            <Button
+              asChild
+              size="lg"
+              className="mt-8 min-h-14 rounded-full border-0 bg-emerald-500 px-8 text-base font-semibold text-white hover:bg-emerald-400"
             >
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-bold text-white mb-8 tracking-tight leading-[1.05]">
-                Ready to{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-emerald-400 to-teal-400">
-                  Get Started?
-                </span>
-              </h2>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Link href="/contact">
-                  <Button
-                    size="lg"
-                    className="w-full sm:w-auto rounded-full text-lg px-8 sm:px-12 h-14 sm:h-16 font-bold bg-white text-[#0f172a] hover:bg-white/90 transition-all duration-300 shadow-[0_0_40px_rgba(255,255,255,0.15)] hover:shadow-[0_0_60px_rgba(255,255,255,0.25)] hover:scale-[1.02]"
-                  >
-                    Get Started
-                    <ArrowRight className="ml-2 w-5 h-5" />
-                  </Button>
-                </Link>
-              </div>
-            </motion.div>
+              <Link
+                href="/contact"
+                onClick={() =>
+                  trackEvent(analyticsEvents.contact, {
+                    placement: "pricing_final_cta",
+                  })
+                }
+              >
+                Contact Momentum Wellness
+                <ArrowRight />
+              </Link>
+            </Button>
           </div>
         </section>
-      </div>
+
+      </main>
     </>
   );
 }
