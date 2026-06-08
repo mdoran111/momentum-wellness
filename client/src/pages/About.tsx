@@ -1,12 +1,17 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
+  Apple,
   ArrowRight,
   Building2,
+  Dumbbell,
   ListChecks,
+  Repeat,
   Smartphone,
+  Target,
   TrendingUp,
   User,
+  Users,
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
@@ -29,6 +34,34 @@ const principles = [
     title: "Sustainable change",
     description:
       "The focus is consistent behavior that can work in everyday life.",
+  },
+];
+
+const pillars = [
+  {
+    icon: Dumbbell,
+    title: "Training",
+    description: "Structured workouts built to support consistent progress.",
+  },
+  {
+    icon: Apple,
+    title: "Nutrition",
+    description: "Practical guidance for better everyday choices.",
+  },
+  {
+    icon: Repeat,
+    title: "Habits",
+    description: "Simple routines that make wellness more sustainable.",
+  },
+  {
+    icon: Target,
+    title: "Accountability",
+    description: "Progress tracking and support that keep you engaged.",
+  },
+  {
+    icon: Users,
+    title: "Community",
+    description: "Shared encouragement for individuals and teams.",
   },
 ];
 
@@ -102,6 +135,34 @@ export default function About() {
                   </article>
                 ))}
               </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="px-4 py-20 sm:px-6 lg:px-8">
+          <div className="container mx-auto">
+            <div className="max-w-2xl">
+              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-400">
+                A complete approach
+              </p>
+              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
+                The Five Pillars
+              </h2>
+            </div>
+
+            <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+              {pillars.map(({ icon: Icon, title, description }) => (
+                <article
+                  key={title}
+                  className="rounded-2xl border border-white/10 bg-white/[0.04] p-6"
+                >
+                  <Icon className="h-7 w-7 text-emerald-400" />
+                  <h3 className="mt-5 text-lg font-bold">{title}</h3>
+                  <p className="mt-2 text-sm leading-6 text-slate-400">
+                    {description}
+                  </p>
+                </article>
+              ))}
             </div>
           </div>
         </section>
