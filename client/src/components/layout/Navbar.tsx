@@ -6,6 +6,9 @@ import { useState } from "react";
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { analyticsEvents, trackEvent } from "@/lib/analytics";
 
+const individualProgramEnrollmentUrl =
+  "https://www.trainerize.me/profile/momentumwellness6/?planGUID=8bb77914b268416bac5814c814ea283d";
+
 export function Navbar() {
   const [open, setOpen] = useState(false);
 
@@ -69,8 +72,10 @@ export function Navbar() {
 
         <div className="flex items-center gap-6">
           <div className="hidden lg:block">
-            <Link
-              href="/programs"
+            <a
+              href={individualProgramEnrollmentUrl}
+              target="_blank"
+              rel="noopener noreferrer"
               onClick={() =>
                 trackEvent(analyticsEvents.startProgram, {
                   placement: "desktop_nav",
@@ -80,7 +85,7 @@ export function Navbar() {
               <Button className="rounded-full px-8 h-11 font-bold uppercase tracking-widest text-xs bg-[#e5e7eb] text-primary hover:bg-white transition-all duration-300 border-none shadow-lg" data-testid="button-start-membership-nav">
                 Start Your Program
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Mobile Navigation */}
@@ -132,7 +137,11 @@ export function Navbar() {
                   </Link>
                   <Link href="/faq" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">FAQ</Link>
                   <div className="pt-6 border-t border-white/10">
-                    <Link href="/programs">
+                    <a
+                      href={individualProgramEnrollmentUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Button
                         onClick={() => {
                           trackEvent(analyticsEvents.startProgram, {
@@ -144,7 +153,7 @@ export function Navbar() {
                       >
                         Start Your Program
                       </Button>
-                    </Link>
+                    </a>
                   </div>
                 </nav>
               </SheetContent>
