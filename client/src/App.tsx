@@ -15,15 +15,17 @@ import Contact from "@/pages/Contact";
 import Legal from "@/pages/Legal";
 import InsideTheApp from "@/pages/InsideTheApp";
 import EmployeeWellness from "@/pages/EmployeeWellness";
+import AdminDashboard from "@/pages/AdminDashboard";
 import CorporateCalculator from "@/pages/CorporateCalculator";
 import ProposalGenerator from "@/pages/ProposalGenerator";
 import LocationFeasibility from "@/pages/LocationFeasibility";
+import OnboardingTracker from "@/pages/OnboardingTracker";
 import NotFound from "@/pages/not-found";
 
 function Router() {
   const [location] = useLocation();
-  const isLocalAdminTool =
-    import.meta.env.DEV && location.startsWith("/admin/");
+  const isAdminTool =
+    location === "/admin" || location.startsWith("/admin/");
 
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "auto" });
@@ -31,25 +33,26 @@ function Router() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      {!isLocalAdminTool && <Navbar />}
+      {!isAdminTool && <Navbar />}
       <main className="flex-1">
         <Switch>
-          {import.meta.env.DEV && (
-            <>
-              <Route
-                path="/admin/corporate-calculator"
-                component={CorporateCalculator}
-              />
-              <Route
-                path="/admin/proposal-generator"
-                component={ProposalGenerator}
-              />
-              <Route
-                path="/admin/location-feasibility"
-                component={LocationFeasibility}
-              />
-            </>
-          )}
+          <Route path="/admin" component={AdminDashboard} />
+          <Route
+            path="/admin/corporate-calculator"
+            component={CorporateCalculator}
+          />
+          <Route
+            path="/admin/proposal-generator"
+            component={ProposalGenerator}
+          />
+          <Route
+            path="/admin/location-feasibility"
+            component={LocationFeasibility}
+          />
+          <Route
+            path="/admin/onboarding-tracker"
+            component={OnboardingTracker}
+          />
           <Route path="/" component={Home} />
           <Route path="/about" component={About} />
           <Route path="/programs" component={Programs} />
@@ -62,7 +65,7 @@ function Router() {
           <Route component={NotFound} />
         </Switch>
       </main>
-      {!isLocalAdminTool && <Footer />}
+      {!isAdminTool && <Footer />}
     </div>
   );
 }
