@@ -8,7 +8,7 @@ and community wellness company serving two customer segments:
 1. Individuals who want training, nutrition structure, habit coaching,
    accountability, progress tracking, and community support.
 2. Companies with 50 or more employees that want programs focused on workforce
-   health, energy, morale, accountability, and community.
+   health, energy, morale, accountability, and culture.
 
 Both offers use the five pillars of Training, Nutrition, Habits,
 Accountability, and Community.
@@ -19,7 +19,7 @@ Accountability, and Community.
 
 The current public offer is a recurring monthly membership:
 
-- Price: `$14.99 per month`
+- Price: `$150 per month`
 - Billing: Monthly
 - Commitment: Cancel anytime
 - Positioning: Complete wellness coaching through the Momentum Wellness app
@@ -88,8 +88,13 @@ Momentum Wellness differentiates through:
 5. Track progress and complete check-ins.
 6. Continue through monthly phases.
 
-The website does not currently implement signup, payment, account provisioning,
-or automated onboarding. Define these workflows before development.
+The website currently links the individual **Start Your Program** CTA to a
+Trainerize enrollment page. Adult Strength is configured at $150 per month with
+Stripe connected inside Trainerize. On the purchase date, the product is
+configured to give the client Full Access with one-way messaging and subscribe
+the client to Adult Strength. The full workflow, especially cancellation and
+manual deactivation, must still be tested before being described as completely
+automated.
 
 ### Corporate Journey
 
@@ -121,11 +126,32 @@ Future systems may measure, where lawful and appropriate:
 Do not collect sensitive health data without a defined need, consent model,
 retention policy, security plan, and legal review.
 
-## Current Website Gaps
+## Client Data Rules
 
-- Contact forms do not transmit or store submissions.
-- No payment or subscription workflow is connected.
+Never hard-code or commit:
+
+- API keys
+- Trainerize, email, or payment credentials
+- Client names
+- Client health information
+- Client progress photos
+- Food logs
+- Medical details
+- Private purchase data
+
+Use environment variables and secure backend patterns for credentials and
+integrations. Store only the minimum data required for an approved workflow.
+
+## Current Systems and Gaps
+
+- The contact form submits to Formspree through an environment-configured
+  endpoint.
+- The individual CTA links to Trainerize. The connected Stripe purchase,
+  same-day Full Access, one-way messaging, and Adult Strength subscription are
+  configured; readiness review, waiver confirmation, exception handling, and
+  cancellation/deactivation remain human-reviewed.
 - No CRM or lead routing is connected.
-- No analytics is configured.
+- A lightweight internal event utility exists, but no third-party analytics
+  provider is configured.
 - No automated onboarding is configured.
 - Corporate pricing and packaging are intentionally undefined.

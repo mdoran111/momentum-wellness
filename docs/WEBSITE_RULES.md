@@ -21,13 +21,17 @@ Use established project patterns before adding libraries or architecture.
 ## Change Safety
 
 1. Work on a feature branch, never directly on `main`.
-2. Inspect the relevant page and shared components before editing.
-3. Keep changes narrowly scoped.
-4. Do not alter pricing, legal language, business claims, or offer scope without
+2. Read `AGENTS.md` and the relevant files in `/docs`.
+3. Inspect the relevant page and shared components before editing.
+4. Explain the plan and keep changes narrowly scoped.
+5. Do not alter pricing, legal language, business claims, or offer scope without
    explicit approval.
-5. Do not add a backend dependency unless the deployment model supports it.
-6. Preserve unrelated user changes.
-7. Run type checking and a production build before considering work complete.
+6. Do not add a backend dependency unless the deployment model supports it.
+7. Preserve unrelated user changes and existing functionality.
+8. Do not redesign the entire site or business system in one task unless
+   explicitly asked.
+9. Run every available build, typecheck, test, or lint command before
+   considering work complete.
 
 ## Visual Rules
 
@@ -55,6 +59,7 @@ Use established project patterns before adding libraries or architecture.
 - Avoid medical diagnosis or treatment language.
 - Do not promise healthcare-cost savings.
 - Avoid overhyped fitness language.
+- Avoid fear-based or shame-based messaging.
 - Qualify outcome statements when participation and consistency affect results.
 
 ## Conversion Rules
@@ -71,8 +76,17 @@ Page responsibilities:
 - `/inside-the-app` is visual and product-focused.
 - `/pricing` focuses only on individual offers.
 - `/contact` supports both individual and corporate inquiries.
-- `/admin/*` tools are development-only and must not be included in production
-  builds or public navigation.
+- `/admin/*` tools are private business tools and must not appear in public
+  navigation or the public sitemap.
+- Production admin access must use server-side password verification through
+  `ADMIN_TOOL_PASSWORD` and a signed HTTP-only session cookie.
+- Admin pages must use `noindex, nofollow, noarchive` metadata and the server
+  must send an `X-Robots-Tag` noindex header.
+- Never expose an admin password through a `VITE_*` environment variable.
+- Shared admin records must use authenticated server APIs and a private
+  database connection configured through `DATABASE_URL`.
+- Never include private record contents in analytics events or routine API
+  response logs.
 
 Approved individual CTAs include:
 
@@ -103,6 +117,36 @@ Before activating a form:
 - Update the privacy policy to reflect actual processing.
 
 Never expose secrets in frontend code or committed files.
+
+Never hard-code:
+
+- API keys
+- Trainerize credentials
+- Email credentials
+- Payment credentials
+- Client names
+- Client health information
+- Client progress photos
+- Food logs
+- Medical details
+- Private purchase data
+
+Use environment variables and secure backend patterns for credentials and
+integrations. Do not store sensitive health information in public code.
+
+## Automation and Trainerize
+
+- Use a human-review-first approach unless an automation is fully tested and
+  approved.
+- Do not assume direct Trainerize API access exists unless the current plan and
+  credentials have been confirmed.
+- Supported implementation paths may include Zapier, a confirmed Trainerize
+  API, confirmed webhooks, Google Sheets, Airtable, Supabase, or a database
+  staging table.
+- Provide internal email notifications or a manual admin-task fallback when
+  automation is incomplete or blocked by plan limitations.
+- Require human approval before irreversible or sensitive actions until the
+  workflow has been tested.
 
 ## Analytics
 
@@ -141,6 +185,9 @@ For website changes, verify at minimum:
 4. Navigation and calls to action
 5. Form success and failure paths when forms change
 6. Browser console and server logs for errors
+7. Corporate pricing is not public
+8. SEO metadata remains unique
+9. No sensitive information or unsupported health claims were added
 
 There is currently no configured lint or test command. Do not claim lint or
 automated tests passed until those tools exist.

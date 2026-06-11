@@ -17,6 +17,7 @@ import {
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { analyticsEvents, trackEvent } from "@/lib/analytics";
+import { individualProgramEnrollmentUrl } from "@/lib/links";
 import mwDashboard from "@assets/MW2_app_dashboard_1779922530403.png";
 import mwGoals from "@assets/MW3_goals_1779922530404.png";
 import mwWorkouts from "@assets/MW4_workouts_1779922530404.png";
@@ -186,8 +187,10 @@ export default function Programs() {
                     size="lg"
                     className="min-h-14 rounded-full border-0 bg-emerald-500 px-7 text-base font-semibold text-white hover:bg-emerald-400"
                   >
-                    <Link
-                      href="/contact"
+                    <a
+                      href={individualProgramEnrollmentUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
                       onClick={() =>
                         trackEvent(analyticsEvents.startProgram, {
                           placement: "programs_hero",
@@ -196,7 +199,7 @@ export default function Programs() {
                     >
                       Start Your Program
                       <ArrowRight />
-                    </Link>
+                    </a>
                   </Button>
                   <Button
                     asChild
@@ -416,17 +419,19 @@ export default function Programs() {
                 size="lg"
                 className="mt-8 min-h-14 rounded-full border-0 bg-emerald-500 px-8 text-base font-semibold text-white hover:bg-emerald-400"
               >
-                <Link
-                  href="/contact"
+                <a
+                  href={individualProgramEnrollmentUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   onClick={() =>
                     trackEvent(analyticsEvents.startProgram, {
                       placement: "programs_final_cta",
                     })
                   }
                 >
-                  Get Started
+                  Start Your Program
                   <ArrowRight />
-                </Link>
+                </a>
               </Button>
             </div>
           </div>

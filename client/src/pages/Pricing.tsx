@@ -1,57 +1,22 @@
 import { motion } from "framer-motion";
 import { Link } from "wouter";
 import {
-  Apple,
   ArrowRight,
-  BarChart3,
   Building2,
   Check,
-  Dumbbell,
-  Repeat,
-  Smartphone,
-  UserCheck,
 } from "lucide-react";
 import SEO from "@/components/SEO";
 import { Button } from "@/components/ui/button";
 import { analyticsEvents, trackEvent } from "@/lib/analytics";
+import { individualProgramEnrollmentUrl } from "@/lib/links";
 
 const planFeatures = [
-  "Monthly program phases",
-  "Complete app-based program access",
-  "Community and accountability support",
-];
-
-const included = [
-  {
-    icon: Dumbbell,
-    title: "Training structure",
-    description: "Organized strength and cardio programming.",
-  },
-  {
-    icon: Apple,
-    title: "Nutrition support",
-    description: "Practical guidance for better daily choices.",
-  },
-  {
-    icon: Repeat,
-    title: "Habit tracking",
-    description: "Keep important wellness routines visible.",
-  },
-  {
-    icon: BarChart3,
-    title: "Progress tracking",
-    description: "Monitor goals, activity, and visual progress.",
-  },
-  {
-    icon: UserCheck,
-    title: "Accountability",
-    description: "Use check-ins and structure to stay engaged.",
-  },
-  {
-    icon: Smartphone,
-    title: "App-based access",
-    description: "Access your program wherever you are.",
-  },
+  "Structured training programs",
+  "Practical nutrition support",
+  "Habit and progress tracking",
+  "Check-ins and accountability",
+  "Community support",
+  "Complete app-based access",
 ];
 
 export default function Pricing() {
@@ -150,8 +115,10 @@ export default function Pricing() {
                   size="lg"
                   className="mt-9 min-h-14 w-full rounded-full border-0 bg-emerald-500 px-8 text-base font-semibold text-white hover:bg-emerald-400"
                 >
-                  <Link
-                    href="/contact"
+                  <a
+                    href={individualProgramEnrollmentUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={() =>
                       trackEvent(analyticsEvents.startProgram, {
                         placement: "pricing_card",
@@ -160,42 +127,10 @@ export default function Pricing() {
                   >
                     Start Your Program
                     <ArrowRight />
-                  </Link>
+                  </a>
                 </Button>
               </div>
             </motion.article>
-          </div>
-        </section>
-
-        <section className="bg-slate-100 px-4 py-20 text-slate-950 sm:px-6 lg:px-8">
-          <div className="container mx-auto">
-            <div className="mx-auto max-w-2xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-[0.22em] text-emerald-700">
-                One membership
-              </p>
-              <h2 className="mt-3 text-3xl font-bold tracking-tight sm:text-4xl">
-                What&apos;s Included
-              </h2>
-            </div>
-
-            <div className="mx-auto mt-12 grid max-w-6xl gap-4 sm:grid-cols-2 lg:grid-cols-3">
-              {included.map(({ icon: Icon, title, description }) => (
-                <article
-                  key={title}
-                  className="flex gap-4 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm"
-                >
-                  <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-emerald-100 text-emerald-700">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg font-bold">{title}</h3>
-                    <p className="mt-2 text-sm leading-6 text-slate-600">
-                      {description}
-                    </p>
-                  </div>
-                </article>
-              ))}
-            </div>
           </div>
         </section>
 
@@ -222,7 +157,7 @@ export default function Pricing() {
                   className="mt-7 min-h-14 rounded-full border-white/25 bg-transparent px-7 text-base font-semibold text-white hover:bg-white/10"
                 >
                   <Link
-                    href="/employee-wellness-programs"
+                    href="/contact?inquiry=corporate"
                     onClick={() =>
                       trackEvent(analyticsEvents.bookCorporateConsultation, {
                         placement: "pricing_corporate_note",

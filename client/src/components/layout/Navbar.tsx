@@ -3,11 +3,16 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Menu } from "lucide-react";
 import { useState } from "react";
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+import {
+  Sheet,
+  SheetContent,
+  SheetDescription,
+  SheetHeader,
+  SheetTitle,
+  SheetTrigger,
+} from "@/components/ui/sheet";
 import { analyticsEvents, trackEvent } from "@/lib/analytics";
-
-const individualProgramEnrollmentUrl =
-  "https://www.trainerize.me/profile/momentumwellness6/?planGUID=8bb77914b268416bac5814c814ea283d";
+import { individualProgramEnrollmentUrl } from "@/lib/links";
 
 export function Navbar() {
   const [open, setOpen] = useState(false);
@@ -106,6 +111,9 @@ export function Navbar() {
                   <SheetTitle className="text-left font-heading font-extrabold text-lg tracking-tighter text-white pb-6 border-b border-white/10 italic">
                     Momentum<span className="text-white/40">Wellness</span>
                   </SheetTitle>
+                  <SheetDescription className="sr-only">
+                    Navigate the Momentum Wellness website.
+                  </SheetDescription>
                 </SheetHeader>
                 <nav className="flex flex-col gap-6 pt-10">
                   <Link href="/about" onClick={() => setOpen(false)} className="text-sm font-bold uppercase tracking-wider text-white/70 hover:text-white transition-colors">About</Link>

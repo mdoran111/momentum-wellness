@@ -1,5 +1,6 @@
 import { useState, type FormEvent } from "react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 import {
   ArrowRight,
   Building2,
@@ -36,6 +37,7 @@ export default function Contact() {
     useState<SubmissionStatus>("idle");
   const [submissionError, setSubmissionError] = useState("");
   const [inquiryType, setInquiryType] = useState(getInitialInquiryType);
+  const [preferredContactMethod, setPreferredContactMethod] = useState("");
 
   const isCorporateInquiry = inquiryType === "Employee Wellness Program";
 
@@ -147,6 +149,7 @@ export default function Contact() {
                       variant="outline"
                       onClick={() => {
                         setInquiryType("Individual Coaching");
+                        setPreferredContactMethod("");
                         setSubmissionStatus("idle");
                       }}
                       className="mt-8 min-h-12 rounded-full border-white/20 px-7 text-white hover:bg-white/10"
@@ -183,7 +186,10 @@ export default function Contact() {
                         id="inquiryType"
                         name="inquiryType"
                         value={inquiryType}
-                        onChange={(event) => setInquiryType(event.target.value)}
+                        onChange={(event) => {
+                          setInquiryType(event.target.value);
+                          setPreferredContactMethod("");
+                        }}
                         className={selectClassName}
                         required
                       >
@@ -310,7 +316,10 @@ export default function Contact() {
                               name="preferredContactMethod"
                               className={selectClassName}
                               required
-                              defaultValue=""
+                              value={preferredContactMethod}
+                              onChange={(event) =>
+                                setPreferredContactMethod(event.target.value)
+                              }
                             >
                               <option value="" disabled>
                                 Select one
@@ -320,6 +329,25 @@ export default function Contact() {
                               <option value="Video Call">Video Call</option>
                             </select>
                           </div>
+                          {preferredContactMethod === "Phone" && (
+                            <div className="space-y-2">
+                              <label
+                                htmlFor="phone"
+                                className="text-sm font-semibold text-white"
+                              >
+                                Phone Number
+                              </label>
+                              <Input
+                                id="phone"
+                                name="phone"
+                                type="tel"
+                                autoComplete="tel"
+                                required
+                                placeholder="(555) 555-5555"
+                                className={fieldClassName}
+                              />
+                            </div>
+                          )}
                         </div>
 
                         <div className="space-y-2">
@@ -364,6 +392,19 @@ export default function Contact() {
                         {submissionError}
                       </p>
                     )}
+
+                    <p className="text-xs leading-5 text-slate-400">
+                      Please do not include medical information or other
+                      sensitive health details. Submissions are processed
+                      through Formspree and handled according to our{" "}
+                      <Link
+                        href="/legal"
+                        className="font-semibold text-emerald-400 underline decoration-emerald-400/40 underline-offset-4 hover:text-emerald-300"
+                      >
+                        privacy information
+                      </Link>
+                      .
+                    </p>
 
                     <Button
                       type="submit"
