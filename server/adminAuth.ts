@@ -1,5 +1,10 @@
 import { createHmac, timingSafeEqual } from "node:crypto";
-import type { Express, Request, Response } from "express";
+import type {
+  Express,
+  NextFunction,
+  Request,
+  Response,
+} from "express";
 
 const cookieName = "momentum_admin_session";
 const sessionDurationMs = 8 * 60 * 60 * 1000;
@@ -113,6 +118,29 @@ function recordFailedAttempt(clientKey: string) {
 
 function setNoStore(response: Response) {
   response.set("Cache-Control", "no-store");
+}
+
+export function requireAdminSession(
+  request: Request,
+  response: Response,
+  next: NextFunction,
+) {
+  setNoStore(response);
+  const config = getAdminConfig();
+
+  if (!config) {
+    return response.status(503).json({
+      message: "Admin access is not configured.",
+    });
+  }
+
+  if (!hasValidSession(request, config.sessionSecret)) {
+    return response.status(401).json({
+      message: "Admin authentication is required.",
+    });
+  }
+
+  next();
 }
 
 function sessionCookieOptions() {
