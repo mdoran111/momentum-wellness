@@ -2,12 +2,14 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { registerAdminAuthRoutes } from "./adminAuth";
+import { registerOnboardingRoutes } from "./onboardingRoutes";
 
 export async function registerRoutes(
   httpServer: Server,
   app: Express
 ): Promise<Server> {
   registerAdminAuthRoutes(app);
+  registerOnboardingRoutes(app);
 
   // put application routes here
   // prefix all routes with /api

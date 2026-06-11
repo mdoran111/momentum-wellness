@@ -1,13 +1,23 @@
-import { useMemo, useState, type FormEvent } from "react";
+import {
+  useEffect,
+  useMemo,
+  useState,
+  type FormEvent,
+} from "react";
+import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import {
   Building2,
   CalendarClock,
   CheckCircle2,
   ClipboardCheck,
+  LoaderCircle,
   Plus,
+  RefreshCw,
+  Save,
   ShieldCheck,
   StickyNote,
   Trash2,
+  UploadCloud,
   User,
 } from "lucide-react";
 import SEO from "@/components/SEO";
@@ -16,34 +26,18 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
-
-type RecordType = "individual" | "company";
-
-type ChecklistItem = {
-  id: string;
-  label: string;
-  completed: boolean;
-  requiresApproval: boolean;
-};
-
-type OnboardingRecord = {
-  id: string;
-  type: RecordType;
-  name: string;
-  contactName: string;
-  email: string;
-  source: string;
-  owner: string;
-  status: string;
-  nextAction: string;
-  nextActionDate: string;
-  notes: string;
-  createdAt: string;
-  updatedAt: string;
-  checklist: ChecklistItem[];
-};
+import type {
+  ChecklistItem,
+  CreateOnboardingRecord,
+  OnboardingRecord,
+  RecordType,
+  UpdateOnboardingRecord,
+} from "@shared/onboarding";
 
 const storageKey = "momentum-onboarding-tracker-v1";
+const recordsQueryKey = ["/api/admin/onboarding-records"] as const;
+
+type LegacyOnboardingRecord = Omit<OnboardingRecord, "revision">;
 
 const individualStatuses = [
   { value: "needs_review", label: "Needs review" },
@@ -106,7 +100,9 @@ function createChecklist(type: RecordType): ChecklistItem[] {
   }));
 }
 
-function isOnboardingRecord(value: unknown): value is OnboardingRecord {
+function isOnboardingRecord(
+  value: unknown,
+): value is LegacyOnboardingRecord {
   if (!value || typeof value !== "object") {
     return false;
   }
@@ -142,7 +138,7 @@ function isOnboardingRecord(value: unknown): value is OnboardingRecord {
   );
 }
 
-function loadRecords(): OnboardingRecord[] {
+function loadRecords(): LegacyOnboardingRecord[] {
   if (typeof window === "undefined") {
     return [];
   }
@@ -163,6 +159,39 @@ function loadRecords(): OnboardingRecord[] {
   } catch {
     return [];
   }
+}
+
+async function requestJson<T>(
+  url: string,
+  options?: RequestInit,
+): Promise<T> {
+  const response = await fetch(url, {
+    ...options,
+    credentials: "include",
+    headers: options?.body
+      ? {
+          "Content-Type": "application/json",
+          ...options.headers,
+        }
+      : options?.headers,
+  });
+  const body = (await response.json().catch(() => null)) as
+    | T
+    | { message?: string }
+    | null;
+
+  if (!response.ok) {
+    const message =
+      body &&
+      typeof body === "object" &&
+      "message" in body &&
+      typeof body.message === "string"
+        ? body.message
+        : "The shared tracker could not complete this request.";
+    throw new Error(message);
+  }
+
+  return body as T;
 }
 
 function getStatusOptions(type: RecordType) {
@@ -190,7 +219,25 @@ function formatDate(value: string) {
 }
 
 export default function OnboardingTracker() {
-  const [records, setRecords] = useState<OnboardingRecord[]>(loadRecords);
+  return (
+    <>
+      <SEO
+        title="Onboarding Tracker | Momentum Wellness"
+        description="Internal Momentum Wellness onboarding workflow tracker."
+        robots="noindex, nofollow, noarchive"
+      />
+
+      <AdminToolGate toolName="Onboarding Tracker">
+        <OnboardingTrackerContent />
+      </AdminToolGate>
+    </>
+  );
+}
+
+function OnboardingTrackerContent() {
+  const queryClient = useQueryClient();
+  const [legacyRecords, setLegacyRecords] =
+    useState<LegacyOnboardingRecord[]>(loadRecords);
   const [recordType, setRecordType] = useState<RecordType>("individual");
   const [name, setName] = useState("");
   const [contactName, setContactName] = useState("");
@@ -201,6 +248,20 @@ export default function OnboardingTracker() {
     null,
   );
   const [formError, setFormError] = useState("");
+  const [recordError, setRecordError] = useState("");
+  const [importMessage, setImportMessage] = useState("");
+
+  const recordsQuery = useQuery<OnboardingRecord[]>({
+    queryKey: recordsQueryKey,
+    queryFn: () =>
+      requestJson<OnboardingRecord[]>("/api/admin/onboarding-records"),
+    staleTime: 0,
+    refetchInterval: (query) =>
+      query.state.status === "error" ? false : 15_000,
+    refetchOnWindowFocus: true,
+  });
+
+  const records = recordsQuery.data ?? [];
 
   const selectedRecord =
     records.find((record) => record.id === selectedRecordId) ?? null;
@@ -226,10 +287,98 @@ export default function OnboardingTracker() {
     };
   }, [records]);
 
-  const persistRecords = (nextRecords: OnboardingRecord[]) => {
-    setRecords(nextRecords);
-    window.localStorage.setItem(storageKey, JSON.stringify(nextRecords));
-  };
+  const createMutation = useMutation({
+    mutationFn: (record: CreateOnboardingRecord) =>
+      requestJson<OnboardingRecord>("/api/admin/onboarding-records", {
+        method: "POST",
+        body: JSON.stringify(record),
+      }),
+    onSuccess: (record) => {
+      queryClient.setQueryData<OnboardingRecord[]>(
+        recordsQueryKey,
+        (current = []) => [record, ...current],
+      );
+      setSelectedRecordId(record.id);
+      setName("");
+      setContactName("");
+      setEmail("");
+      setOwner("");
+      setFormError("");
+    },
+    onError: (error: Error) => {
+      setFormError(error.message);
+    },
+  });
+
+  const updateMutation = useMutation({
+    mutationFn: ({
+      id,
+      record,
+    }: {
+      id: string;
+      record: UpdateOnboardingRecord;
+    }) =>
+      requestJson<OnboardingRecord>(`/api/admin/onboarding-records/${id}`, {
+        method: "PUT",
+        body: JSON.stringify(record),
+      }),
+    onSuccess: (updatedRecord) => {
+      queryClient.setQueryData<OnboardingRecord[]>(
+        recordsQueryKey,
+        (current = []) =>
+          current.map((record) =>
+            record.id === updatedRecord.id ? updatedRecord : record,
+          ),
+      );
+      setRecordError("");
+    },
+    onError: async (error: Error) => {
+      setRecordError(error.message);
+      await queryClient.invalidateQueries({ queryKey: recordsQueryKey });
+    },
+  });
+
+  const deleteMutation = useMutation({
+    mutationFn: (id: string) =>
+      requestJson<void>(`/api/admin/onboarding-records/${id}`, {
+        method: "DELETE",
+      }),
+    onSuccess: (_result, id) => {
+      queryClient.setQueryData<OnboardingRecord[]>(
+        recordsQueryKey,
+        (current = []) => current.filter((record) => record.id !== id),
+      );
+      setSelectedRecordId(null);
+      setRecordError("");
+    },
+    onError: (error: Error) => {
+      setRecordError(error.message);
+    },
+  });
+
+  const importMutation = useMutation({
+    mutationFn: () =>
+      requestJson<{ imported: number; skipped: number }>(
+        "/api/admin/onboarding-records/import",
+        {
+          method: "POST",
+          body: JSON.stringify({ records: legacyRecords }),
+        },
+      ),
+    onSuccess: async ({ imported, skipped }) => {
+      window.localStorage.removeItem(storageKey);
+      setLegacyRecords([]);
+      setImportMessage(
+        `${imported} local record${imported === 1 ? "" : "s"} imported${
+          skipped > 0 ? `; ${skipped} duplicate${skipped === 1 ? "" : "s"} skipped` : ""
+        }.`,
+      );
+      await queryClient.invalidateQueries({ queryKey: recordsQueryKey });
+    },
+    onError: (error: Error) => {
+      setImportMessage(error.message);
+    },
+  });
 
   const handleCreateRecord = (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
@@ -247,9 +396,7 @@ export default function OnboardingTracker() {
       return;
     }
 
-    const timestamp = new Date().toISOString();
-    const newRecord: OnboardingRecord = {
-      id: crypto.randomUUID(),
+    const newRecord: CreateOnboardingRecord = {
       type: recordType,
       name: name.trim(),
       contactName: recordType === "company" ? contactName.trim() : "",
@@ -263,56 +410,35 @@ export default function OnboardingTracker() {
           : "Review inquiry and prepare first follow-up",
       nextActionDate: "",
       notes: "",
-      createdAt: timestamp,
-      updatedAt: timestamp,
       checklist: createChecklist(recordType),
     };
 
-    persistRecords([newRecord, ...records]);
-    setSelectedRecordId(newRecord.id);
-    setName("");
-    setContactName("");
-    setEmail("");
-    setOwner("");
-    setFormError("");
+    createMutation.mutate(newRecord);
   };
 
-  const updateRecord = (
-    recordId: string,
-    update: (record: OnboardingRecord) => OnboardingRecord,
-  ) => {
-    persistRecords(
-      records.map((record) =>
-        record.id === recordId
-          ? { ...update(record), updatedAt: new Date().toISOString() }
-          : record,
-      ),
-    );
+  const updateRecord = (record: OnboardingRecord) => {
+    const { id, createdAt, updatedAt, ...update } = record;
+    void createdAt;
+    void updatedAt;
+    setRecordError("");
+    updateMutation.mutate({ id, record: update });
   };
 
   const deleteRecord = (record: OnboardingRecord) => {
     const confirmed = window.confirm(
-      `Delete the local onboarding record for ${record.name}? This cannot be undone.`,
+      `Delete the shared onboarding record for ${record.name}? This removes it for both partners and cannot be undone.`,
     );
 
     if (!confirmed) {
       return;
     }
 
-    persistRecords(records.filter((item) => item.id !== record.id));
-    setSelectedRecordId(null);
+    setRecordError("");
+    deleteMutation.mutate(record.id);
   };
 
   return (
-    <>
-      <SEO
-        title="Onboarding Tracker | Momentum Wellness"
-        description="Internal Momentum Wellness onboarding workflow tracker."
-        robots="noindex, nofollow, noarchive"
-      />
-
-      <AdminToolGate toolName="Onboarding Tracker">
-        <main className="min-h-screen bg-slate-100 text-slate-950">
+    <main className="min-h-screen bg-slate-100 text-slate-950">
           <header className="bg-[#0f172a] px-4 py-10 text-white sm:px-6 lg:px-8">
             <div className="mx-auto max-w-7xl">
               <div className="flex items-center gap-3 text-emerald-400">
@@ -322,11 +448,11 @@ export default function OnboardingTracker() {
                 </span>
               </div>
               <h1 className="mt-4 text-3xl font-bold sm:text-4xl">
-                Manual Onboarding Tracker
+                Shared Onboarding Tracker
               </h1>
               <p className="mt-3 max-w-3xl leading-7 text-slate-300">
-                Create individual or company records, assign the correct
-                checklist, and track human-reviewed onboarding steps.
+                Keep individual and company follow-up records synchronized
+                across approved Momentum Wellness team members.
               </p>
             </div>
           </header>
@@ -345,11 +471,11 @@ export default function OnboardingTracker() {
               <div className="flex items-start gap-3">
                 <ShieldCheck className="mt-0.5 h-5 w-5 shrink-0" />
                 <p>
-                  This tool stores records only in this browser on this device.
+                  Records are stored in the private shared business database.
                   Do not enter medical information, health histories, progress
                   photos, food logs, payment details, passwords, or other
-                  sensitive information. No emails or Trainerize actions are
-                  sent from this tool.
+                  sensitive information. This tracker does not send emails or
+                  perform Trainerize actions.
                 </p>
               </div>
             </section>
@@ -477,23 +603,94 @@ export default function OnboardingTracker() {
 
                   <Button
                     type="submit"
+                    disabled={
+                      createMutation.isPending || recordsQuery.isError
+                    }
                     className="min-h-12 w-full rounded-full border-0 bg-emerald-600 font-semibold text-white hover:bg-emerald-500"
                   >
-                    Create Checklist
+                    {createMutation.isPending ? (
+                      <>
+                        <LoaderCircle className="h-4 w-4 animate-spin" />
+                        Creating...
+                      </>
+                    ) : (
+                      "Create Checklist"
+                    )}
                   </Button>
                 </form>
               </section>
 
               <div className="space-y-8">
                 <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
-                  <div>
-                    <h2 className="text-xl font-bold">Onboarding Records</h2>
-                    <p className="mt-1 text-sm text-slate-500">
-                      Select a record to update its status and checklist.
-                    </p>
+                  <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-start">
+                    <div>
+                      <h2 className="text-xl font-bold">
+                        Onboarding Records
+                      </h2>
+                      <p className="mt-1 text-sm text-slate-500">
+                        Shared records refresh automatically every 15 seconds.
+                      </p>
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      {legacyRecords.length > 0 && (
+                        <Button
+                          type="button"
+                          variant="outline"
+                          disabled={importMutation.isPending}
+                          onClick={() => importMutation.mutate()}
+                          className="rounded-full"
+                        >
+                          {importMutation.isPending ? (
+                            <LoaderCircle className="h-4 w-4 animate-spin" />
+                          ) : (
+                            <UploadCloud className="h-4 w-4" />
+                          )}
+                          Import {legacyRecords.length} Local
+                        </Button>
+                      )}
+                      <Button
+                        type="button"
+                        variant="outline"
+                        disabled={recordsQuery.isFetching}
+                        onClick={() => void recordsQuery.refetch()}
+                        className="rounded-full"
+                      >
+                        <RefreshCw
+                          className={`h-4 w-4 ${
+                            recordsQuery.isFetching ? "animate-spin" : ""
+                          }`}
+                        />
+                        Refresh
+                      </Button>
+                    </div>
                   </div>
 
-                  {records.length === 0 ? (
+                  {importMessage && (
+                    <p
+                      role="status"
+                      className="mt-5 rounded-xl border border-slate-200 bg-slate-50 px-4 py-3 text-sm text-slate-700"
+                    >
+                      {importMessage}
+                    </p>
+                  )}
+
+                  {recordsQuery.isLoading ? (
+                    <div className="mt-8 flex items-center justify-center gap-3 rounded-2xl bg-slate-50 p-8 text-slate-600">
+                      <LoaderCircle className="h-5 w-5 animate-spin" />
+                      Loading shared records...
+                    </div>
+                  ) : recordsQuery.isError ? (
+                    <div className="mt-8 rounded-2xl border border-red-200 bg-red-50 p-6 text-sm leading-6 text-red-700">
+                      <p className="font-semibold">
+                        Shared records are unavailable.
+                      </p>
+                      <p className="mt-2">
+                        {recordsQuery.error instanceof Error
+                          ? recordsQuery.error.message
+                          : "Check the database configuration and try again."}
+                      </p>
+                    </div>
+                  ) : records.length === 0 ? (
                     <div className="mt-8 rounded-2xl border border-dashed border-slate-300 bg-slate-50 p-8 text-center">
                       <ClipboardCheck className="mx-auto h-8 w-8 text-slate-400" />
                       <p className="mt-4 font-semibold">No records yet</p>
@@ -559,16 +756,17 @@ export default function OnboardingTracker() {
                 {selectedRecord && (
                   <RecordDetail
                     record={selectedRecord}
-                    onUpdate={updateRecord}
+                    onSave={updateRecord}
                     onDelete={deleteRecord}
+                    isSaving={updateMutation.isPending}
+                    isDeleting={deleteMutation.isPending}
+                    error={recordError}
                   />
                 )}
               </div>
             </div>
           </div>
-        </main>
-      </AdminToolGate>
-    </>
+    </main>
   );
 }
 
@@ -591,67 +789,112 @@ function StatusBadge({ label }: { label: string }) {
 
 function RecordDetail({
   record,
-  onUpdate,
+  onSave,
   onDelete,
+  isSaving,
+  isDeleting,
+  error,
 }: {
   record: OnboardingRecord;
-  onUpdate: (
-    recordId: string,
-    update: (record: OnboardingRecord) => OnboardingRecord,
-  ) => void;
+  onSave: (record: OnboardingRecord) => void;
   onDelete: (record: OnboardingRecord) => void;
+  isSaving: boolean;
+  isDeleting: boolean;
+  error: string;
 }) {
-  const completedItems = record.checklist.filter(
+  const [draft, setDraft] = useState(record);
+
+  useEffect(() => {
+    setDraft(record);
+  }, [record.id, record.revision]);
+
+  const completedItems = draft.checklist.filter(
     (item) => item.completed,
   ).length;
   const progress = Math.round(
-    (completedItems / record.checklist.length) * 100,
+    (completedItems / draft.checklist.length) * 100,
   );
+  const hasChanges = JSON.stringify(draft) !== JSON.stringify(record);
+
+  const updateDraft = (
+    update: (current: OnboardingRecord) => OnboardingRecord,
+  ) => {
+    setDraft((current) => update(current));
+  };
 
   return (
     <section className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm sm:p-8">
       <div className="flex flex-col justify-between gap-5 sm:flex-row sm:items-start">
         <div>
           <p className="text-sm font-semibold uppercase tracking-[0.18em] text-emerald-700">
-            {record.type === "individual"
+            {draft.type === "individual"
               ? "Individual onboarding"
               : "Company follow-up"}
           </p>
-          <h2 className="mt-2 text-2xl font-bold">{record.name}</h2>
+          <h2 className="mt-2 text-2xl font-bold">{draft.name}</h2>
           <p className="mt-2 text-sm text-slate-500">
-            {record.contactName && `${record.contactName} · `}
-            {record.email}
+            {draft.contactName && `${draft.contactName} · `}
+            {draft.email}
           </p>
           <p className="mt-1 text-xs text-slate-400">
-            Created {formatDate(record.createdAt)} · Owner: {record.owner}
+            Created {formatDate(draft.createdAt)} · Owner: {draft.owner}
           </p>
         </div>
-        <Button
-          type="button"
-          variant="outline"
-          onClick={() => onDelete(record)}
-          className="min-h-11 rounded-full border-red-200 px-5 text-red-700 hover:bg-red-50"
-        >
-          <Trash2 className="h-4 w-4" />
-          Delete Record
-        </Button>
+        <div className="flex flex-wrap gap-2">
+          <Button
+            type="button"
+            disabled={!hasChanges || isSaving}
+            onClick={() => onSave(draft)}
+            className="min-h-11 rounded-full border-0 bg-emerald-600 px-5 text-white hover:bg-emerald-500"
+          >
+            {isSaving ? (
+              <LoaderCircle className="h-4 w-4 animate-spin" />
+            ) : (
+              <Save className="h-4 w-4" />
+            )}
+            {isSaving ? "Saving..." : "Save Changes"}
+          </Button>
+          <Button
+            type="button"
+            variant="outline"
+            disabled={isDeleting}
+            onClick={() => onDelete(record)}
+            className="min-h-11 rounded-full border-red-200 px-5 text-red-700 hover:bg-red-50"
+          >
+            {isDeleting ? (
+              <LoaderCircle className="h-4 w-4 animate-spin" />
+            ) : (
+              <Trash2 className="h-4 w-4" />
+            )}
+            Delete Record
+          </Button>
+        </div>
       </div>
+
+      {error && (
+        <p
+          role="alert"
+          className="mt-6 rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm leading-6 text-red-700"
+        >
+          {error}
+        </p>
+      )}
 
       <div className="mt-8 grid gap-5 sm:grid-cols-2">
         <div className="space-y-2">
-          <Label htmlFor={`status-${record.id}`}>Workflow Status</Label>
+          <Label htmlFor={`status-${draft.id}`}>Workflow Status</Label>
           <select
-            id={`status-${record.id}`}
-            value={record.status}
+            id={`status-${draft.id}`}
+            value={draft.status}
             onChange={(event) =>
-              onUpdate(record.id, (current) => ({
+              updateDraft((current) => ({
                 ...current,
                 status: event.target.value,
               }))
             }
             className="h-12 w-full rounded-xl border border-slate-300 bg-white px-3 text-sm"
           >
-            {getStatusOptions(record.type).map((status) => (
+            {getStatusOptions(draft.type).map((status) => (
               <option key={status.value} value={status.value}>
                 {status.label}
               </option>
@@ -677,17 +920,17 @@ function RecordDetail({
       <div className="mt-8 grid gap-5 lg:grid-cols-2">
         <div className="space-y-2">
           <Label
-            htmlFor={`next-action-${record.id}`}
+            htmlFor={`next-action-${draft.id}`}
             className="flex items-center gap-2"
           >
             <CalendarClock className="h-4 w-4 text-emerald-700" />
             Next Action
           </Label>
           <Input
-            id={`next-action-${record.id}`}
-            value={record.nextAction}
+            id={`next-action-${draft.id}`}
+            value={draft.nextAction}
             onChange={(event) =>
-              onUpdate(record.id, (current) => ({
+              updateDraft((current) => ({
                 ...current,
                 nextAction: event.target.value,
               }))
@@ -697,15 +940,15 @@ function RecordDetail({
           />
         </div>
         <div className="space-y-2">
-          <Label htmlFor={`next-action-date-${record.id}`}>
+          <Label htmlFor={`next-action-date-${draft.id}`}>
             Target Date
           </Label>
           <Input
-            id={`next-action-date-${record.id}`}
+            id={`next-action-date-${draft.id}`}
             type="date"
-            value={record.nextActionDate}
+            value={draft.nextActionDate}
             onChange={(event) =>
-              onUpdate(record.id, (current) => ({
+              updateDraft((current) => ({
                 ...current,
                 nextActionDate: event.target.value,
               }))
@@ -717,17 +960,17 @@ function RecordDetail({
 
       <div className="mt-8 space-y-2">
         <Label
-          htmlFor={`notes-${record.id}`}
+          htmlFor={`notes-${draft.id}`}
           className="flex items-center gap-2"
         >
           <StickyNote className="h-4 w-4 text-emerald-700" />
           Internal Notes
         </Label>
         <Textarea
-          id={`notes-${record.id}`}
-          value={record.notes}
+          id={`notes-${draft.id}`}
+          value={draft.notes}
           onChange={(event) =>
-            onUpdate(record.id, (current) => ({
+            updateDraft((current) => ({
               ...current,
               notes: event.target.value,
             }))
@@ -737,9 +980,9 @@ function RecordDetail({
           className="resize-y rounded-xl border-slate-300 bg-white"
         />
         <p className="text-xs leading-5 text-slate-500">
-          Changes save automatically in this browser. Use notes for follow-up
-          context, decisions, and workflow blockers, not sensitive client
-          information.
+          Select Save Changes to share updates with your partner. Use notes
+          for follow-up context, decisions, and workflow blockers, not
+          sensitive client information.
         </p>
       </div>
 
@@ -747,12 +990,12 @@ function RecordDetail({
         <div className="flex items-center justify-between gap-4">
           <h3 className="text-lg font-bold">Checklist</h3>
           <p className="text-sm text-slate-500">
-            {completedItems}/{record.checklist.length} complete
+            {completedItems}/{draft.checklist.length} complete
           </p>
         </div>
 
         <div className="mt-4 divide-y divide-slate-200 rounded-2xl border border-slate-200">
-          {record.checklist.map((item) => (
+          {draft.checklist.map((item) => (
             <label
               key={item.id}
               className="flex cursor-pointer items-start gap-4 p-4 hover:bg-slate-50 sm:p-5"
@@ -761,7 +1004,7 @@ function RecordDetail({
                 type="checkbox"
                 checked={item.completed}
                 onChange={(event) =>
-                  onUpdate(record.id, (current) => ({
+                  updateDraft((current) => ({
                     ...current,
                     checklist: current.checklist.map((checklistItem) =>
                       checklistItem.id === item.id
@@ -798,11 +1041,11 @@ function RecordDetail({
       </div>
 
       <p className="mt-6 text-xs leading-5 text-slate-500">
-        Source: {record.source}. Last updated {formatDate(record.updatedAt)}.
-        {record.nextActionDate &&
-          ` Next action target: ${formatDate(record.nextActionDate)}.`}
-        Completing a checklist item records only the local workflow state; it
-        does not send an email, create a Trainerize client, or assign a program.
+        Source: {draft.source}. Last updated {formatDate(draft.updatedAt)}.
+        {draft.nextActionDate &&
+          ` Next action target: ${formatDate(draft.nextActionDate)}.`}
+        Saving a checklist item updates only the shared workflow state; it does
+        not send an email, create a Trainerize client, or assign a program.
       </p>
     </section>
   );
