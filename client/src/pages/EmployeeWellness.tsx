@@ -31,22 +31,22 @@ const challenges = [
   {
     icon: Activity,
     title: "Inconsistent participation",
-    description: "Wellness initiatives can lose momentum without clear structure.",
+    description: "Participation can fade when employees lack a clear next step.",
   },
   {
     icon: HeartPulse,
-    title: "Uneven health habits",
-    description: "Employees have different starting points, routines, and needs.",
+    title: "Different starting points",
+    description: "Employees need practical options for varied routines and experience levels.",
   },
   {
     icon: UserCheck,
     title: "Limited accountability",
-    description: "Good intentions are difficult to sustain without follow-through.",
+    description: "Shared goals need consistent check-ins and visible follow-through.",
   },
   {
     icon: MessageSquare,
     title: "Disconnected teams",
-    description: "Busy and distributed workforces need shared ways to engage.",
+    description: "Busy and distributed teams benefit from a common place to participate.",
   },
 ];
 
@@ -130,12 +130,10 @@ const steps = [
 ];
 
 const outcomes = [
-  "More consistent participation in workforce wellness",
-  "Stronger awareness of training, nutrition, and daily habits",
-  "Clearer accountability through app-based structure",
-  "A more connected and supportive company community",
-  "A wellness benefit designed for different experience levels",
-  "Long-term momentum around workforce health and morale",
+  "More consistent participation in wellness activities",
+  "Greater awareness of training, nutrition, and daily habits",
+  "Clearer accountability through app-based check-ins and tracking",
+  "A stronger sense of connection around shared wellness goals",
 ];
 
 const differentiators = [
@@ -147,15 +145,15 @@ const differentiators = [
   },
   {
     icon: Smartphone,
-    title: "Designed for adoption",
+    title: "Practical across the workforce",
     description:
-      "A focused mobile experience makes participation easier across roles, schedules, and locations.",
+      "The app supports different roles, schedules, locations, and experience levels.",
   },
   {
     icon: Award,
-    title: "Built around real people",
+    title: "Consultation-based setup",
     description:
-      "The experience supports different fitness levels, schedules, locations, and industries.",
+      "Program structure is prepared around company priorities and employee participation.",
   },
   {
     icon: BarChart3,
@@ -199,13 +197,13 @@ export default function EmployeeWellness() {
                   For companies with 50+ employees
                 </div>
                 <h1 className="text-4xl font-bold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl xl:text-7xl">
-                  Employee Wellness Programs That Build Healthier, Stronger
-                  Teams
+                  Employee Wellness Programs Built for Stronger Team Habits
                 </h1>
                 <p className="mt-7 max-w-3xl text-lg leading-8 text-slate-300 sm:text-xl">
-                  Momentum Wellness helps business owners and HR leaders build
-                  workforce health, energy, morale, accountability, and
-                  community through one modern wellness app.
+                  Momentum Wellness gives business owners and HR leaders a
+                  practical way to support workforce health, energy, morale,
+                  accountability, and community through one modern wellness
+                  app.
                 </p>
                 <p className="mt-4 max-w-3xl leading-7 text-slate-400">
                   Designed for teams across offices, healthcare, logistics,
@@ -260,13 +258,13 @@ export default function EmployeeWellness() {
                   Good Intentions Need a System
                 </h2>
                 <p className="mt-5 text-lg leading-8 text-slate-600">
-                  Workforce health influences energy, morale, consistency, and
-                  long-term company culture. Yet many wellness efforts are
-                  difficult for employees to sustain.
+                  Employees may want to improve their routines, but broad
+                  wellness initiatives can be difficult to sustain without
+                  clear direction and follow-through.
                 </p>
                 <p className="mt-4 leading-7 text-slate-600">
-                  Momentum Wellness gives people a clear place to begin and a
-                  shared structure for continuing together.
+                  Momentum Wellness gives teams one shared structure for
+                  participation, progress, and accountability.
                 </p>
               </div>
 
@@ -300,8 +298,8 @@ export default function EmployeeWellness() {
                 Five Pillars Built Around People
               </h2>
               <p className="mt-5 text-lg leading-8 text-slate-400">
-                Supporting people consistently can strengthen company culture,
-                community, and workforce health.
+                Five connected areas give employees practical ways to build
+                healthier habits over time.
               </p>
             </div>
 
@@ -431,8 +429,8 @@ export default function EmployeeWellness() {
                   What Companies Can Expect
                 </h2>
                 <p className="mt-5 text-lg leading-8 text-slate-400">
-                  The program is designed to support healthier routines,
-                  stronger accountability, better morale, and a more connected
+                  The program is designed to support healthier habits, clearer
+                  accountability, and shared participation across the
                   workforce.
                 </p>
                 <p className="mt-5 rounded-2xl border border-white/10 bg-white/[0.04] p-5 text-sm leading-6 text-slate-400">
@@ -492,7 +490,7 @@ export default function EmployeeWellness() {
           <div className="container relative mx-auto">
             <div className="mx-auto max-w-4xl rounded-[2rem] border border-white/10 bg-white/[0.05] px-6 py-14 text-center shadow-2xl sm:px-12">
               <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
-                Build a Healthier Legacy for Your Workforce
+                Build Long-Term Momentum for Your Workforce
               </h2>
               <p className="mx-auto mt-5 max-w-2xl text-lg leading-8 text-slate-300">
                 Tell us about your company, team size, and wellness goals. We

@@ -1,4 +1,5 @@
 import SEO from "@/components/SEO";
+import { Link } from "wouter";
 
 const legalSections = [
   {
@@ -25,8 +26,11 @@ const legalSections = [
   {
     title: "Privacy Policy",
     paragraphs: [
-      "Momentum Wellness may collect information you choose to provide, such as your name, email address, inquiry type, company information, and message details.",
-      "Information is used to respond to inquiries, provide services, support users, and improve the Momentum Wellness experience. Reasonable measures are used to protect information.",
+      "Momentum Wellness collects information you choose to provide through the Contact page, such as your name, email address, inquiry type, phone number when requested, company information, and message details.",
+      "Contact-form submissions are transmitted and processed through Formspree so Momentum Wellness can receive and respond to inquiries. Formspree processes information as a service provider under its own privacy and security practices.",
+      "Information is used to respond to inquiries, discuss requested services, maintain appropriate business records, and support an active client or company relationship. Access should be limited to Momentum Wellness personnel and service providers who need the information for those purposes.",
+      "Inquiry information is retained only as long as reasonably needed for those business purposes or to meet applicable legal obligations. Do not submit medical information or other sensitive health details through the public Contact form.",
+      "You may use the Contact page to ask about Momentum Wellness privacy practices or request access to, correction of, or deletion of information you previously submitted. Requests may be retained when necessary to document the response or meet legal obligations.",
     ],
   },
   {
@@ -64,8 +68,15 @@ export default function Legal() {
         <article className="px-4 py-16 sm:px-6 lg:px-8">
           <div className="container mx-auto max-w-3xl rounded-2xl border border-slate-200 bg-white p-7 shadow-sm sm:p-10">
             <p className="border-b border-slate-200 pb-6 text-sm text-slate-500">
-              Please contact Momentum Wellness if you need clarification about
-              these policies or how they apply to a specific service.
+              Please{" "}
+              <Link
+                href="/contact"
+                className="font-semibold text-emerald-700 underline decoration-emerald-700/30 underline-offset-4 hover:text-emerald-600"
+              >
+                contact Momentum Wellness
+              </Link>{" "}
+              if you need clarification about these policies or how they apply
+              to a specific service.
             </p>
 
             <div className="divide-y divide-slate-200">

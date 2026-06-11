@@ -74,15 +74,20 @@ isolated.
 The intended journey is:
 
 1. Review the program and pricing.
-2. Join the membership.
+2. Use the approved Trainerize enrollment link to start the program.
 3. Receive app access.
 4. Set goals and select a program path.
 5. Follow daily training, nutrition, and habit targets.
 6. Track progress and complete check-ins.
 7. Continue through monthly programming phases.
 
-The current website does not implement payment, membership creation, app
-provisioning, or onboarding automation.
+The current website links to Trainerize for enrollment. Adult Strength is
+configured at $150 per month with Stripe connected inside Trainerize. On the
+purchase date, the current product setup gives the client Full Access with
+one-way messaging and subscribes the client to Adult Strength. Do not describe
+the entire workflow as fully automated until invitation delivery, readiness
+review, waiver confirmation, cancellation, and manual deactivation have been
+tested and documented.
 
 ## Primary Calls to Action
 
@@ -93,8 +98,20 @@ Use clear calls to action such as:
 - View Pricing
 - Contact Us
 
-Until checkout exists, these actions may lead to an honest inquiry or waitlist
-flow. Do not imply instant access if access is not automated.
+Do not imply instant access if account provisioning or onboarding still
+requires manual review.
+
+## Trainerize and Client Data
+
+The current purchase and program-start workflow uses Trainerize's direct Stripe
+connection and does not require Zapier. Do not assume direct Trainerize API or
+webhook access exists. Use those options only if a future workflow needs them
+and access is confirmed. Keep a manual admin-task fallback for exceptions,
+readiness review, signed-waiver confirmation, and cancellations.
+
+Never place Trainerize credentials, client names, health information, progress
+photos, food logs, medical details, or private purchase data in public code.
+Use environment variables and approved secure systems.
 
 ## Claims and Expectations
 

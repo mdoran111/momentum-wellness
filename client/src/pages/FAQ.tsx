@@ -36,7 +36,7 @@ const individualQuestions = [
   {
     question: "How do I get started or ask about cancellation?",
     answer:
-      "Contact Momentum Wellness for current enrollment, billing, cancellation, and app-access details.",
+      "Select Start Your Program to open the secure Trainerize enrollment page. Contact Momentum Wellness with questions about billing, cancellation, or app access.",
   },
 ];
 

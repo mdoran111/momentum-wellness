@@ -26,7 +26,7 @@ The primary audiences are:
    coaching, accountability, progress tracking, and community support.
 2. Companies with 50 or more employees that want employee wellness programs
    built around workforce health, energy, morale, accountability, and
-   community.
+   culture.
 
 ## Brand Promise
 
@@ -43,10 +43,11 @@ The brand should feel:
 - Clean
 - Trustworthy
 - Health-transformation focused
+- Practical
 - Distinct from a generic fitness brand
 
-Avoid sounding repetitive, generic, aggressive, clinical, shame-based, overly
-corporate, or like a guaranteed-results fitness scheme.
+Avoid sounding repetitive, generic, aggressive, clinical, fear-based,
+shame-based, overly corporate, or like a guaranteed-results fitness scheme.
 
 ## Voice and Tone
 
@@ -74,6 +75,7 @@ Avoid:
 - Claims that every participant will achieve the same result
 - Fake testimonials or client results
 - Overhyped fitness language
+- Fear-based or shame-based messaging
 
 ## Visual Direction
 
@@ -113,6 +115,8 @@ Visual characteristics:
 ## Trust Rules
 
 - Treat health, pricing, privacy, legal, and outcome claims as sensitive.
+- Never publicly display private client information, progress photos, food
+  logs, medical details, or private purchase data.
 - Do not invent testimonials, credentials, client counts, partnerships, or
   results.
 - Do not present illustrative testimonials as verified customer statements.

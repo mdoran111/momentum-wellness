@@ -8,7 +8,7 @@ companies with 50 or more employees through the Momentum Wellness app.
 The program includes training, nutrition, habits, accountability, community,
 progress tracking, company-wide engagement, consultation-based setup, and
 employer-level reporting. It is built around workforce health, energy, morale,
-accountability, and community.
+accountability, and culture.
 
 ## Ideal Customer
 
@@ -143,3 +143,8 @@ employer.
 
 Employer-level reporting must protect individual privacy and must not expose
 personal health information without a lawful, documented basis.
+
+Never hard-code or publicly display employee names, health information,
+progress photos, food logs, medical details, or private purchase data. Use
+approved secure systems and collect only the minimum information necessary for
+the program.
