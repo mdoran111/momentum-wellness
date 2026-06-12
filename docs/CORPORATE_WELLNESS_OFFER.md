@@ -101,6 +101,9 @@ Do not promise healthcare-cost savings.
 
 Primary CTA: **Book a Corporate Wellness Consultation**
 
+Use `CORPORATE_SALES_PLAYBOOK.md` for the approved intake, consultation,
+qualification, proposal-review, email, lead-stage, and follow-up process.
+
 The consultation may gather:
 
 - Contact name and work email

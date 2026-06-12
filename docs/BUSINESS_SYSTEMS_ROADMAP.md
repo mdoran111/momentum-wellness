@@ -193,6 +193,16 @@ pricing or prospect information publicly.
 - Consultation workflow
 - Proposal status tracking
 
+### Current Foundation
+
+- The corporate calculator and proposal generator are available as protected
+  internal tools.
+- Company records can be tracked in the shared onboarding tracker with an
+  owner, status, next action, follow-up date, notes, and checklist.
+- `CORPORATE_SALES_PLAYBOOK.md` defines consultation questions, qualification
+  rules, email templates, lead stages, and recommended follow-up timing.
+- Pricing scenarios and proposal content remain human-reviewed and private.
+
 ### Suggested Proposal Statuses
 
 - Discovery
