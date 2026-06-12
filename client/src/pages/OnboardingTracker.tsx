@@ -85,7 +85,7 @@ const companyChecklist = [
   ["Confirm qualification after discovery", true],
   ["Gather the details required for a proposal", false],
   ["Generate and review a proposal when appropriate", true],
-  ["Record the next follow-up date outside this tracker", false],
+  ["Record the next action and follow-up date in this tracker", false],
 ] as const;
 
 function createChecklist(type: RecordType): ChecklistItem[] {
