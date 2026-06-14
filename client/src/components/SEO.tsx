@@ -1,4 +1,5 @@
 import { Helmet } from "react-helmet-async";
+import { useEffect } from "react";
 import { useLocation } from "wouter";
 import { siteUrl } from "@/lib/links";
 
@@ -26,6 +27,48 @@ export default function SEO({
   const canonicalPath = location.split("?")[0] || "/";
   const canonicalUrl = new URL(canonicalPath, siteUrl).toString();
   const socialImageUrl = new URL("/opengraph.jpg", siteUrl).toString();
+
+  useEffect(() => {
+    const cleanupId = window.requestAnimationFrame(() => {
+      const keepLastTag = (selector: string) => {
+        const tags = Array.from(document.head.querySelectorAll(selector));
+        tags.slice(0, -1).forEach((tag) => tag.remove());
+      };
+
+      [
+        'meta[name="description"]',
+        'meta[property="og:title"]',
+        'meta[property="og:description"]',
+        'meta[property="og:type"]',
+        'meta[property="og:url"]',
+        'meta[property="og:image"]',
+        'meta[name="twitter:card"]',
+        'meta[name="twitter:title"]',
+        'meta[name="twitter:description"]',
+        'meta[name="twitter:image"]',
+      ].forEach(keepLastTag);
+
+      if (keywords) {
+        keepLastTag('meta[name="keywords"]');
+      } else {
+        document
+          .head
+          .querySelectorAll('meta[name="keywords"]')
+          .forEach((tag) => tag.remove());
+      }
+
+      if (robots) {
+        keepLastTag('meta[name="robots"]');
+      } else {
+        document
+          .head
+          .querySelectorAll('meta[name="robots"]')
+          .forEach((tag) => tag.remove());
+      }
+    });
+
+    return () => window.cancelAnimationFrame(cleanupId);
+  }, [description, keywords, ogD, ogT, robots, title, location]);
 
   return (
     <Helmet>
