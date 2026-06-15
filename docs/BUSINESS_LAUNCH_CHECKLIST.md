@@ -63,6 +63,8 @@ Status: first manual workflow tested, operating procedure documented.
 - [x] Cancellation/deactivation workflow tested.
 - [x] Operating procedure documented.
 - [x] Signed client waivers will be stored in each client's Trainerize profile.
+- [x] Trainerize weekly message, monthly programming, and behavior calendar
+  operations documented.
 - [ ] Record and upload custom Momentum Wellness welcome video when ready.
 - [ ] Run a final dummy-client onboarding test before accepting a real client.
 - [ ] Confirm who reviews readiness and consultation forms.
@@ -117,6 +119,7 @@ Status: in progress.
 - [x] Prepare business email announcement copy.
 - [x] Prepare a basic corporate outreach message.
 - [x] Decide whether to start with warm contacts before cold outreach.
+- [x] Create a 30-day online training marketing plan.
 - [ ] Add analytics provider only after the first launch flow is stable.
 
 ## Recommended Next Order
@@ -124,9 +127,9 @@ Status: in progress.
 1. Save the lead response templates somewhere easy to use from business email.
 2. Have the business partner test admin access and tracker CRUD.
 3. Run one final dummy-client onboarding test in Trainerize.
-4. Confirm readiness-form review, retention rules, and legal/privacy review
+4. Record and upload the custom Momentum Wellness welcome video.
+5. Confirm readiness-form review, retention rules, and legal/privacy review
    needs.
-5. Prepare a sample corporate proposal.
-6. Build or choose a simple outreach tracker.
-7. Create the first launch announcement and outreach messages.
+6. Use the weekly client message templates with the next test or real client.
+7. Use the first-week launch plan and 30-day online training marketing plan.
 8. Add analytics only after lead capture and onboarding are stable.
