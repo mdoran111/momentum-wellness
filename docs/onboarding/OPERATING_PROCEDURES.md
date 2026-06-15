@@ -42,20 +42,21 @@ Trainerize and Stripe show a successful Adult Strength purchase.
    Wellness welcome email.
 6. Confirm the consultation form, PAR-Q attachment, and approved liability
    waiver were delivered.
-7. Review the readiness response in its secure source. If review is required:
+7. Confirm the signed waiver is stored in the client's Trainerize profile.
+8. Review the readiness response in its secure source. If review is required:
    - Set the tracker status to `Needs review` or `Blocked`.
    - Record only the operational outcome.
    - Do not copy medical details into the tracker.
-8. Confirm the client is subscribed to `Strength in Momentum`.
-9. Set Calendar look-ahead to `Follow Training Phase` if Trainerize has not
+9. Confirm the client is subscribed to `Strength in Momentum`.
+10. Set Calendar look-ahead to `Follow Training Phase` if Trainerize has not
    applied it automatically.
-10. Confirm the client can see the current phase, scheduled workouts, exercise
+11. Confirm the client can see the current phase, scheduled workouts, exercise
     demonstrations, habits, and first-sign-in message.
-11. Update the tracker:
+12. Update the tracker:
     - Status: `Active`
     - Next action: first planned client check-in
     - Next action date: agreed check-in date
-12. Mark checklist items complete only after each item is verified.
+13. Mark checklist items complete only after each item is verified.
 
 ### Manual Fallback
 
@@ -143,13 +144,14 @@ through an Adult Strength purchase.
    - Owner: responsible administrator
 5. Send or confirm the invitation, welcome email, consultation form, PAR-Q,
    and approved liability waiver.
-6. Review readiness responses using the same human-review rule as a purchased
+6. Confirm the signed waiver is stored in the client's Trainerize profile.
+7. Review readiness responses using the same human-review rule as a purchased
    client.
-7. Manually subscribe the client to `Strength in Momentum` when appropriate.
-8. Set Calendar look-ahead to `Follow Training Phase`.
-9. Verify app access, current-phase visibility, workouts, exercise
+8. Manually subscribe the client to `Strength in Momentum` when appropriate.
+9. Set Calendar look-ahead to `Follow Training Phase`.
+10. Verify app access, current-phase visibility, workouts, exercise
    demonstrations, habits, and first-sign-in message.
-10. Set the tracker to `Active` and schedule the first check-in.
+11. Set the tracker to `Active` and schedule the first check-in.
 
 ### Important
 
@@ -197,4 +199,3 @@ public website pages, public documents, or public SEO metadata.
 
 - Business partner must create, edit, and delete a tracker test record.
 - Record and upload the custom Momentum Wellness welcome video when ready.
-

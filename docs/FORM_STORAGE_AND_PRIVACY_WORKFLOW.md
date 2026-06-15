@@ -66,17 +66,21 @@ Recommended handling:
 Current system:
 
 - Liability waiver template files exist in `/docs/onboarding`.
-- Final signed waiver storage location must be confirmed by the owner.
+- Signed client waivers should be stored in the client's Trainerize profile.
+- Trainerize should remain the source of truth for signed client waivers.
 
 Recommended handling:
 
-1. Store signed waivers in the approved secure system, not in the website repo.
+1. Store signed waivers in the client's Trainerize profile, not in the website
+   repo, GitHub, routine email threads, or the onboarding tracker.
 2. Use the tracker only to mark operational status:
    - `Waiver sent`
    - `Waiver received`
    - `Waiver needs review`
-3. Do not upload signed waivers to GitHub.
-4. Do not paste waiver contents, signatures, or private client data into the
+3. Confirm the signed waiver is attached to the correct Trainerize client
+   profile before marking it complete.
+4. Do not upload signed waivers to GitHub.
+5. Do not paste waiver contents, signatures, or private client data into the
    tracker.
 
 ## Payment And Billing Data
@@ -148,7 +152,7 @@ If someone asks about their information:
 2. Identify which systems may contain the record:
    - Formspree
    - Business email
-   - Trainerize
+   - Trainerize, including client profiles and signed waivers
    - Stripe
    - Shared onboarding tracker
 3. Do not send private information to an unverified requester.
@@ -157,10 +161,9 @@ If someone asks about their information:
 
 ## Owner Decisions Still Needed
 
-- Final signed waiver storage location.
 - Who reviews readiness forms.
 - How long Formspree submissions are retained.
 - How long tracker records are retained.
 - How cancellation/refund records are retained.
-- Whether a legal professional should revise the public legal page and waiver.
-
+- Whether a legal professional should revise the public legal page and any
+  future waiver changes.

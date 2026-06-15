@@ -220,10 +220,10 @@ readiness question or selects No or I am unsure for medical clearance:
 - **Welcome video:** Add-ons > Custom Branded Mobile App > Welcome Video
 
 Trainerize can attach a PDF to the custom welcome email, but an attached waiver
-is not the same as a signed waiver. Use an approved e-signature link when
-possible. Until that system is chosen, use a manual fallback: send the waiver,
-receive the completed signed copy through a private business channel, confirm
-receipt, and then mark the client checklist complete.
+is not the same as a signed waiver. Store each completed client waiver in that
+client's Trainerize profile. The onboarding tracker should only record the
+operational status, such as `Waiver received`, and should not contain signed
+forms, signatures, or private client details.
 
 ## Confirmed Adult Strength Product Behavior
 
