@@ -2,6 +2,7 @@ import type { Express } from "express";
 import { createServer, type Server } from "http";
 import { storage } from "./storage";
 import { registerAdminAuthRoutes } from "./adminAuth";
+import { registerClientOperationsRoutes } from "./clientOperationsRoutes";
 import { registerOnboardingRoutes } from "./onboardingRoutes";
 
 export async function registerRoutes(
@@ -9,6 +10,7 @@ export async function registerRoutes(
   app: Express
 ): Promise<Server> {
   registerAdminAuthRoutes(app);
+  registerClientOperationsRoutes(app);
   registerOnboardingRoutes(app);
 
   // put application routes here
