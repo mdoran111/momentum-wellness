@@ -62,9 +62,10 @@ Status: first manual workflow tested, operating procedure documented.
 - [x] Calendar look-ahead adjusted so Phase 1 displays correctly.
 - [x] Cancellation/deactivation workflow tested.
 - [x] Operating procedure documented.
+- [x] Signed client waivers will be stored in each client's Trainerize profile.
 - [ ] Record and upload custom Momentum Wellness welcome video when ready.
 - [ ] Run a final dummy-client onboarding test before accepting a real client.
-- [ ] Confirm where signed forms are stored and who reviews them.
+- [ ] Confirm who reviews readiness and consultation forms.
 
 ## 5. Corporate Wellness Sales Workflow
 
@@ -89,10 +90,11 @@ Status: practical rules are documented; owner review still needed.
   or tracker records.
 - [x] Contact form privacy notice is live.
 - [x] Draft form storage and privacy workflow.
+- [x] Confirm signed waivers are stored in each client's Trainerize profile.
 - [ ] Owner should review legal, liability, privacy, and refund language.
 - [ ] Confirm retention expectations for contact submissions, tracker records,
   forms, and client files.
-- [ ] Confirm where signed waivers and readiness forms will be stored.
+- [ ] Confirm readiness and consultation form retention rules.
 
 ## 7. Publishing And Git Hygiene
 
@@ -122,7 +124,8 @@ Status: in progress.
 1. Save the lead response templates somewhere easy to use from business email.
 2. Have the business partner test admin access and tracker CRUD.
 3. Run one final dummy-client onboarding test in Trainerize.
-4. Confirm signed-form storage and legal/privacy review needs.
+4. Confirm readiness-form review, retention rules, and legal/privacy review
+   needs.
 5. Prepare a sample corporate proposal.
 6. Build or choose a simple outreach tracker.
 7. Create the first launch announcement and outreach messages.
