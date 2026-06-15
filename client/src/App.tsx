@@ -16,6 +16,7 @@ import Legal from "@/pages/Legal";
 import InsideTheApp from "@/pages/InsideTheApp";
 import EmployeeWellness from "@/pages/EmployeeWellness";
 import AdminDashboard from "@/pages/AdminDashboard";
+import ClientOperations from "@/pages/ClientOperations";
 import CorporateCalculator from "@/pages/CorporateCalculator";
 import ProposalGenerator from "@/pages/ProposalGenerator";
 import LocationFeasibility from "@/pages/LocationFeasibility";
@@ -37,6 +38,10 @@ function Router() {
       <main className="flex-1">
         <Switch>
           <Route path="/admin" component={AdminDashboard} />
+          <Route
+            path="/admin/client-operations"
+            component={ClientOperations}
+          />
           <Route
             path="/admin/corporate-calculator"
             component={CorporateCalculator}

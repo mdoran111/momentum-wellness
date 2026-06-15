@@ -95,9 +95,14 @@ Current limitations:
 - The tracker supports shared create, update, refresh, import, and delete
   workflows. It does not send emails, process payments, or perform Trainerize
   actions.
+- A shared client operations checklist exists at `/admin/client-operations`.
+  It stores weekly message, monthly programming, behavior calendar, and
+  form/waiver review checklists in PostgreSQL through authenticated admin API
+  routes. It does not send messages, update Trainerize programming, add
+  behaviors, or perform client actions.
 - Existing browser-only tracker records can be explicitly imported once.
-- The Express server provides admin authentication and shared onboarding
-  record API routes.
+- The Express server provides admin authentication, shared onboarding record
+  API routes, and shared client operations checklist API routes.
 - A lightweight analytics event utility exists, but no third-party analytics
   provider is installed.
 - No payment or membership workflow is installed.

@@ -1,6 +1,7 @@
 import {
   Building2,
   Calculator,
+  CalendarCheck,
   ClipboardList,
   FileText,
   MapPinned,
@@ -16,6 +17,13 @@ const tools = [
     description:
       "Track individual clients, corporate leads, notes, status, and next actions.",
     icon: ClipboardList,
+  },
+  {
+    href: "/admin/client-operations",
+    title: "Client Operations",
+    description:
+      "Run weekly messages, monthly programming, behavior, and form-review checklists.",
+    icon: CalendarCheck,
   },
   {
     href: "/admin/corporate-calculator",

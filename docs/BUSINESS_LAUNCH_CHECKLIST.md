@@ -44,6 +44,8 @@ Status: functional, partner verification still needed.
 - [x] Location feasibility calculator exists.
 - [x] Shared onboarding tracker exists.
 - [x] Tracker records persist in the private database.
+- [x] Shared client operations checklist exists for weekly messages, monthly
+  programming, behavior calendar, and form/waiver review workflows.
 - [x] Admin pages require the shared password.
 - [ ] Business partner should create, edit, and delete one test tracker record.
 - [ ] Remove any remaining test records after partner verification.
