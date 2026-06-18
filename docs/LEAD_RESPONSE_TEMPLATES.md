@@ -36,7 +36,7 @@ accountability to help you stay consistent over time.
 The next step is to review the program details and decide whether you are ready
 to start. You can view the program here:
 
-https://www.trainerize.me/profile/momentumwellness6/?planGUID=8bb77914b268416bac5814c814ea283d
+https://www.trainerize.me/checkout/momentumwellness6/Michael.Doran?planGUID=8bb77914b268416bac5814c814ea283d
 
 If you have questions before joining, reply here and we will help point you in
 the right direction.
@@ -112,4 +112,3 @@ the timing is not right, no problem. You can reach back out whenever you are
 ready.
 
 Momentum Wellness
-
