@@ -5,6 +5,7 @@ export const operationTypes = [
   "monthly_programming",
   "behavior_calendar",
   "form_waiver_review",
+  "online_training_marketing",
 ] as const;
 
 export const operationStatuses = [
@@ -67,4 +68,3 @@ export type ClientOperationRecord = CreateClientOperation & {
   createdAt: string;
   updatedAt: string;
 };
-

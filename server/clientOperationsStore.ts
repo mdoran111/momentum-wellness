@@ -75,7 +75,8 @@ async function initializeClientOperationsTable() {
               'weekly_client_review',
               'monthly_programming',
               'behavior_calendar',
-              'form_waiver_review'
+              'form_waiver_review',
+              'online_training_marketing'
             )
           ),
           title TEXT NOT NULL,
@@ -102,6 +103,25 @@ async function initializeClientOperationsTable() {
       await pool.query(`
         CREATE INDEX IF NOT EXISTS client_operation_records_due_date_index
         ON client_operation_records (due_date, status)
+      `);
+
+      await pool.query(`
+        ALTER TABLE client_operation_records
+        DROP CONSTRAINT IF EXISTS client_operation_records_type_check
+      `);
+
+      await pool.query(`
+        ALTER TABLE client_operation_records
+        ADD CONSTRAINT client_operation_records_type_check
+        CHECK (
+          type IN (
+            'weekly_client_review',
+            'monthly_programming',
+            'behavior_calendar',
+            'form_waiver_review',
+            'online_training_marketing'
+          )
+        )
       `);
     })().catch((error) => {
       initializationPromise = null;
