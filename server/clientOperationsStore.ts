@@ -15,7 +15,7 @@ type ClientOperationRow = QueryResultRow & {
   client_focus: string;
   owner: string;
   status: ClientOperationRecord["status"];
-  due_date: string | null;
+  due_date: Date | string | null;
   notes: string;
   checklist: ClientOperationRecord["checklist"];
   revision: number;
@@ -25,6 +25,26 @@ type ClientOperationRow = QueryResultRow & {
 
 let initializationPromise: Promise<void> | null = null;
 
+function toDateOnly(value: Date | string | null) {
+  if (!value) {
+    return "";
+  }
+
+  if (value instanceof Date) {
+    return Number.isNaN(value.getTime()) ? "" : value.toISOString().slice(0, 10);
+  }
+
+  return value.split("T")[0] ?? "";
+}
+
+function toIsoString(value: Date | string) {
+  const date = value instanceof Date ? value : new Date(value);
+
+  return Number.isNaN(date.getTime())
+    ? new Date().toISOString()
+    : date.toISOString();
+}
+
 function toRecord(row: ClientOperationRow): ClientOperationRecord {
   return {
     id: row.id,
@@ -33,12 +53,12 @@ function toRecord(row: ClientOperationRow): ClientOperationRecord {
     clientFocus: row.client_focus,
     owner: row.owner,
     status: row.status,
-    dueDate: row.due_date ?? "",
+    dueDate: toDateOnly(row.due_date),
     notes: row.notes,
     checklist: row.checklist,
     revision: row.revision,
-    createdAt: new Date(row.created_at).toISOString(),
-    updatedAt: new Date(row.updated_at).toISOString(),
+    createdAt: toIsoString(row.created_at),
+    updatedAt: toIsoString(row.updated_at),
   };
 }
 
@@ -185,4 +205,3 @@ export async function deleteClientOperationRecord(id: string) {
 
   return (result.rowCount ?? 0) > 0;
 }
-
