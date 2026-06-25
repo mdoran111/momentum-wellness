@@ -58,6 +58,176 @@ For questions:
 3. Momentum Wellness replies manually.
 4. Real follow-up is tracked in the onboarding tracker.
 
+## Instagram And Meta Operating Workflow
+
+Use the Momentum Wellness Instagram account as the primary individual-client
+marketing channel. Facebook can reuse the same content when useful. LinkedIn
+should stay more professional and can be used later for corporate wellness
+credibility.
+
+Do not share or store Instagram, Facebook, Meta Business Suite, or email
+passwords in Codex, the repository, website code, or internal trackers.
+The business owner should log in directly. Codex may help draft content,
+organize calendars, review copy, and guide posting while the owner remains the
+human approver.
+
+### Human Approval Rule
+
+Before anything is posted, scheduled, commented, or sent as a direct message:
+
+1. Draft the content.
+2. Review for Momentum Wellness brand voice.
+3. Review for prohibited claims.
+4. Confirm the CTA and destination link.
+5. Get owner approval.
+6. Post or schedule manually through Instagram or Meta Business Suite.
+
+Do not auto-post, auto-DM, or reply publicly without explicit owner approval.
+
+### Weekly Instagram Workflow
+
+Use the **Weekly Online Training Marketing Checklist** in the Client Operations
+tool as the control center.
+
+Each week:
+
+1. Choose one weekly theme.
+2. Draft three pieces of content.
+3. Choose one asset type for each post.
+4. Review every caption for claim safety.
+5. Post or schedule the approved content.
+6. Reply to real comments and messages.
+7. Add qualified leads to the onboarding tracker.
+8. Record what created conversations.
+
+Recommended early cadence:
+
+- Three feed posts or reels per week
+- Three to five stories per week
+- One clear offer reminder per week
+- One weekly review of comments, DMs, Formspree, and Trainerize activity
+
+### Weekly Theme Options
+
+Rotate these themes:
+
+- Structure over guessing
+- Adult Strength program overview
+- Inside the app
+- Training consistency
+- Practical nutrition structure
+- Habit tracking
+- Accountability and follow-through
+- What happens after someone joins
+- FAQ or objection handling
+
+### Post Types
+
+Use a simple mix:
+
+- Talking-head video from Michael
+- Gym floor training clip
+- App screenshot or screen recording
+- Short carousel explaining one idea
+- Founder point-of-view post
+- FAQ post
+- Clear offer post
+
+Do not use client photos, progress photos, private messages, form answers, food
+logs, health information, or screenshots that reveal private client data.
+
+### Caption Formula
+
+Use this structure for most posts:
+
+1. Hook: one clear sentence that names the problem or desire.
+2. Context: explain why the problem matters.
+3. Momentum Wellness angle: connect the idea to structure, app support, or
+   accountability.
+4. Practical next step: tell the reader what to do.
+5. CTA: point to pricing, programs, inside the app, or contact.
+
+Approved CTA links:
+
+- `https://momentumwellness.health/pricing`
+- `https://momentumwellness.health/programs`
+- `https://momentumwellness.health/inside-the-app`
+- `https://momentumwellness.health/contact`
+
+### Story Flow
+
+Use a simple three-frame story sequence:
+
+1. Problem or question
+2. Momentum Wellness solution
+3. CTA link or instruction to visit the website
+
+Example:
+
+1. `Tired of restarting your fitness plan every Monday?`
+2. `Adult Strength gives you app-based training, nutrition structure, habits,
+   and accountability.`
+3. `Start here: momentumwellness.health/pricing`
+
+### Comments And DM Rules
+
+Keep public replies short and practical. Move real sales conversations to the
+website contact form, Trainerize checkout, or an approved manual conversation.
+
+Allowed response:
+
+`Thanks for reaching out. Adult Strength is our app-based training option with
+training structure, nutrition guidance, habit tracking, and accountability. You
+can start here: https://momentumwellness.health/pricing`
+
+If someone asks for medical advice, injury advice, or private health guidance,
+do not answer clinically. Use a safe redirect:
+
+`I cannot give medical advice here. If you have a medical concern, check with a
+qualified healthcare professional before starting a new fitness or nutrition
+program. If you want to learn how Momentum Wellness is structured, you can use
+the contact page.`
+
+### Lead Handoff
+
+Create an onboarding tracker record only when someone becomes a real lead:
+
+- They ask about joining.
+- They submit the contact form.
+- They ask for the program link.
+- They say they are ready to start.
+- They buy through Trainerize.
+
+Suggested tracker entry:
+
+- Type: `Individual Client`
+- Source: `Instagram`
+- Status: `Needs review`
+- Next action: `Reply to inquiry and confirm next step`
+- Notes: Keep notes operational only. Do not copy private health details.
+
+### What Codex Can Help With
+
+Codex can:
+
+- Draft captions
+- Draft reel scripts
+- Build weekly schedules
+- Review copy for brand and claim safety
+- Help organize post ideas
+- Create response templates
+- Help track marketing tasks in the internal checklist
+- Guide manual posting through Instagram or Meta Business Suite
+
+Codex should not:
+
+- Store passwords
+- Receive Instagram credentials
+- Auto-post without approval
+- Auto-send direct messages without approval
+- Invent testimonials, results, or client proof
+- Store private client data in repo files or website tools
+
 ## Content Pillars
 
 Use these content themes weekly.
@@ -215,13 +385,18 @@ Momentum Wellness
 
 Do this once per week:
 
-1. Publish three to five pieces of content.
-2. Send a small number of warm outreach messages.
-3. Reply to every real inquiry.
-4. Add real leads to the onboarding tracker.
-5. Review which posts or messages created conversations.
-6. Note common questions for future content.
-7. Keep the Programs page and Trainerize link as the main conversion path.
+1. Open the **Weekly Online Training Marketing Checklist**.
+2. Choose one weekly theme.
+3. Draft three pieces of content.
+4. Review each post for prohibited claims.
+5. Publish or schedule approved posts.
+6. Send a small number of warm outreach messages if appropriate.
+7. Reply to every real inquiry.
+8. Add real leads to the onboarding tracker.
+9. Review which posts or messages created conversations.
+10. Note common questions for future content.
+11. Keep the Pricing page, Programs page, and Trainerize checkout as the main
+    conversion path.
 
 ## Metrics To Track Manually
 
@@ -254,4 +429,3 @@ Safe first marketing automation:
 - Remind Momentum Wellness to follow up
 - Track campaign source manually or with simple UTM links
 - Add analytics provider after privacy and consent needs are reviewed
-
