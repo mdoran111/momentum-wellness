@@ -140,6 +140,27 @@ const operationTemplates: Record<
       },
     ],
   },
+  online_training_marketing: {
+    label: "Online training marketing launch",
+    defaultTitle: "Weekly Online Training Marketing Checklist",
+    defaultClientFocus: "Adult Strength online training leads",
+    description:
+      "Plan content, outreach, and lead follow-up for online training without using unsupported claims.",
+    checklist: [
+      { label: "Review website pricing, contact form, and Trainerize checkout paths" },
+      { label: "Choose one weekly online training content theme" },
+      { label: "Draft three short posts or reels for Adult Strength" },
+      { label: "Publish or schedule at least one online training offer post" },
+      { label: "Send warm outreach to qualified individual leads" },
+      { label: "Record responses and next follow-up actions" },
+      { label: "Check Formspree and Trainerize for new lead or purchase activity" },
+      {
+        label:
+          "Review messaging for no medical claims, guaranteed results, or fake client proof",
+        requiresApproval: true,
+      },
+    ],
+  },
 };
 
 function createChecklist(type: OperationType): OperationChecklistItem[] {
