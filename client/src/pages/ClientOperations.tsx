@@ -191,12 +191,24 @@ function getStatusLabel(status: OperationStatus) {
   );
 }
 
-function formatDate(value: string) {
+function parseDisplayDate(value: string) {
   if (!value) {
-    return "No date set";
+    return null;
   }
 
-  const date = new Date(`${value}T12:00:00`);
+  const date = /^\d{4}-\d{2}-\d{2}$/.test(value)
+    ? new Date(`${value}T12:00:00`)
+    : new Date(value);
+
+  return Number.isNaN(date.getTime()) ? null : date;
+}
+
+function formatDate(value: string) {
+  const date = parseDisplayDate(value);
+
+  if (!date) {
+    return "No date set";
+  }
 
   return new Intl.DateTimeFormat("en-US", {
     month: "short",
@@ -212,7 +224,12 @@ function getDueLabel(record: ClientOperationRecord) {
 
   const today = new Date();
   today.setHours(0, 0, 0, 0);
-  const dueDate = new Date(`${record.dueDate}T12:00:00`);
+  const dueDate = parseDisplayDate(record.dueDate);
+
+  if (!dueDate) {
+    return "";
+  }
+
   dueDate.setHours(0, 0, 0, 0);
   const daysUntilDue = Math.round(
     (dueDate.getTime() - today.getTime()) / 86_400_000,
@@ -958,4 +975,3 @@ function OperationDetail({
     </section>
   );
 }
-
